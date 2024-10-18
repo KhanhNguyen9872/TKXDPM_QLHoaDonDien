@@ -1,4 +1,4 @@
-package com.nhom2.detail;
+package com.nhom2.detail.addInvoice;
 
 public class ModelView {
     private String status;

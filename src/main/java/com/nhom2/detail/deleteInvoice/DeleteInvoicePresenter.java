@@ -1,15 +1,14 @@
-package com.nhom2.detail;
-
-import com.nhom2.detail.observer.*;
+package com.nhom2.detail.deleteInvoice;
 
 import com.nhom2.businessRules.ResponseData;
 import com.nhom2.businessRules.ResponseError;
-import com.nhom2.businessRules.addInvoice.AddInvoiceOutputBoundary;
+import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceOutputBoundary;
+import com.nhom2.detail.observer.Publisher;
 
-public class AddInvoicePresenter extends Publisher implements AddInvoiceOutputBoundary {
+public class DeleteInvoicePresenter extends Publisher implements DeleteInvoiceOutputBoundary {
     private ModelView modelView;
 
-    public AddInvoicePresenter(ModelView modelView) {
+    public DeleteInvoicePresenter(ModelView modelView) {
         this.modelView = modelView;
     }
 

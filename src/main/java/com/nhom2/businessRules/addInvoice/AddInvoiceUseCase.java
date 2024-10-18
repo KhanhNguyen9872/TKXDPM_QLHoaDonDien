@@ -4,8 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.nhom2.businessRules.*;
-import com.nhom2.businessRules.model.InvoiceVN;
-import com.nhom2.businessRules.model.InvoiceNuocNgoai;
+import com.nhom2.businessRules.entity.InvoiceNuocNgoai;
+import com.nhom2.businessRules.entity.InvoiceVN;
 
 public class AddInvoiceUseCase implements AddInvoiceInputBoundary {
     private AddInvoiceOutputBoundary addInvoiceOutputBoundary;

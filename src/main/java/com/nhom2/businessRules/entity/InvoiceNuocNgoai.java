@@ -1,4 +1,4 @@
-package com.nhom2.businessRules.model;
+package com.nhom2.businessRules.entity;
 
 import java.sql.Date;
 
