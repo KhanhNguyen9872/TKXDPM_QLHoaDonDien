@@ -13,6 +13,10 @@ public class DAOMySQL {
     protected String username;
     protected String password;
 
+    public DAOMySQL() throws Exception {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+    }
+
     protected void connect() {
         if (this.connection == null) {
             try {

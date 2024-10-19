@@ -7,8 +7,8 @@ import com.nhom2.businessRules.addInvoice.AddInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.entity.*;
 
 public class AddInvoiceDAOMySQL extends DAOMySQL implements AddInvoiceDatabaseBoundary {
+    
     public AddInvoiceDAOMySQL(String ipAddress, int port, String database, String username, String password) throws Exception {
-        Class.forName("com.mysql.cj.jdbc.Driver");
         this.ipAddress = ipAddress;
         this.port = port;
         this.database = database;

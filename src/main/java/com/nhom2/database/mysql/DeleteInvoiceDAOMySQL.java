@@ -5,8 +5,8 @@ import java.sql.PreparedStatement;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceDatabaseBoundary;
 
 public class DeleteInvoiceDAOMySQL extends DAOMySQL implements DeleteInvoiceDatabaseBoundary {
+    
     public DeleteInvoiceDAOMySQL(String ipAddress, int port, String database, String username, String password) throws Exception {
-        Class.forName("com.mysql.cj.jdbc.Driver");
         this.ipAddress = ipAddress;
         this.port = port;
         this.database = database;

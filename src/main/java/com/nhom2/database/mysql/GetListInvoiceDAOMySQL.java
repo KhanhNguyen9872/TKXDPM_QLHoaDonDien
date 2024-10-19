@@ -13,7 +13,6 @@ import com.nhom2.businessRules.getListInvoice.GetListInvoiceDatabaseBoundary;
 public class GetListInvoiceDAOMySQL extends DAOMySQL implements GetListInvoiceDatabaseBoundary {
 
     public GetListInvoiceDAOMySQL(String ipAddress, int port, String database, String username, String password) throws Exception {
-        Class.forName("com.mysql.cj.jdbc.Driver");
         this.ipAddress = ipAddress;
         this.port = port;
         this.database = database;
