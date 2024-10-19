@@ -3,30 +3,46 @@ package com.nhom2.detail.deleteInvoice;
 import com.nhom2.businessRules.ResponseData;
 import com.nhom2.businessRules.ResponseError;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceOutputBoundary;
-import com.nhom2.detail.observer.Publisher;
+import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceOutputDTO;
 
-public class DeleteInvoicePresenter extends Publisher implements DeleteInvoiceOutputBoundary {
-    private ModelView modelView;
+public class DeleteInvoicePresenter implements DeleteInvoiceOutputBoundary {
+    private DeleteInvoiceView deleteInvoiceView;
+    private DeleteInvoiceViewModel deleteInvoiceViewModel;
 
-    public DeleteInvoicePresenter(ModelView modelView) {
-        this.modelView = modelView;
+    public DeleteInvoicePresenter(DeleteInvoiceView deleteInvoiceView) {
+        this.deleteInvoiceView = deleteInvoiceView;
     }
 
     @Override
     public void exportError(ResponseError responseError) {
-        this.modelView.setStatus("error");
-        this.modelView.setMsg(responseError.getMsg());
-        changeState();
+        this.deleteInvoiceViewModel = new DeleteInvoiceViewModel();
+        this.deleteInvoiceViewModel.status = "error";
+        this.deleteInvoiceViewModel.msg = responseError.getMsg();
+        viewShow();
+
     }
 
     @Override
     public void exportResult(ResponseData responseData) {
-        this.modelView.setStatus("success");
-        this.modelView.setMsg(responseData.getMsg());
-        changeState();
+        this.deleteInvoiceViewModel = new DeleteInvoiceViewModel();
+        this.deleteInvoiceViewModel.status = "success";
+        this.deleteInvoiceViewModel.msg = responseData.getMsg();
+        viewShow();
     }
 
-    private void changeState() {
-        notifySubscribers();
+    @Override
+    public void present(DeleteInvoiceOutputDTO outputDTO) {
+        this.deleteInvoiceViewModel = new DeleteInvoiceViewModel();
+        this.deleteInvoiceViewModel.status = "success";
+        this.deleteInvoiceViewModel.msg = outputDTO.getMsg();
+        viewShow();
+    }
+
+    private void viewShow() {
+        this.deleteInvoiceView.show(this.deleteInvoiceViewModel);
+    }
+
+    public DeleteInvoiceViewModel getDeleteInvoiceViewModel() {
+        return this.deleteInvoiceViewModel;
     }
 }

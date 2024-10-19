@@ -6,6 +6,5 @@ import com.nhom2.businessRules.entity.*;
 
 public interface AddInvoiceDatabaseBoundary {
     public void addInvoice(Invoice invoice);
-    public List<Invoice> getAllInvoices();
     public boolean isExist(int maKH);
 }

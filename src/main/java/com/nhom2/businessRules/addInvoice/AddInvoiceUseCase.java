@@ -23,7 +23,7 @@ public class AddInvoiceUseCase implements AddInvoiceInputBoundary {
     @Override
     public void execute(RequestData requestData) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        ResponseData responseData = new ResponseData();
+        // ResponseData responseData = new ResponseData();
         ResponseError responseError = new ResponseError();
 
         if (!verify(requestData)) {
@@ -35,7 +35,7 @@ public class AddInvoiceUseCase implements AddInvoiceInputBoundary {
         int maKH = Integer.parseInt(requestData.getMaKH());
 
         if (this.isExist(maKH)) {
-            responseError.setMsg("Đã tồn tại!");
+            responseError.setMsg("Đã tồn tại! (KH: " + requestData.getMaKH() + ")");
             this.addInvoiceOutputBoundary.exportError(responseError);
             return;
         }
@@ -80,8 +80,12 @@ public class AddInvoiceUseCase implements AddInvoiceInputBoundary {
             this.addInvoiceDatabaseBoundary.addInvoice(invoiceNuocNgoai);
         }
 
-        responseData.setMsg("Đã thêm thành công!");
-        this.addInvoiceOutputBoundary.exportResult(responseData);
+        // responseData.setMsg("Đã thêm thành công!");
+        // this.addInvoiceOutputBoundary.exportResult(responseData);
+
+        AddInvoiceOutputDTO outputDTO = new AddInvoiceOutputDTO("Đã thêm thành công! (KH: " + maKH + ")");
+
+        this.addInvoiceOutputBoundary.present(outputDTO);
     }
 
     private boolean verify(RequestData requestData) {

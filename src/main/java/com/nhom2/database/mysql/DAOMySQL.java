@@ -4,16 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
-import java.util.List;
-import java.util.ArrayList;
-
-import com.nhom2.businessRules.entity.Invoice;
-import com.nhom2.businessRules.entity.InvoiceNuocNgoai;
-import com.nhom2.businessRules.entity.InvoiceVN;
-
-public abstract class DAOMySQL {
+public class DAOMySQL {
     protected Connection connection = null;
     protected String ipAddress;
     protected int port;
@@ -24,7 +16,7 @@ public abstract class DAOMySQL {
     protected void connect() {
         if (this.connection == null) {
             try {
-                this.connection = DriverManager.getConnection("jdbc:mysql://" + ipAddress + ":" + port + "/" + database + "?useSSL=false", username, password);
+                this.connection = DriverManager.getConnection("jdbc:mysql://" + ipAddress + ":" + port + "/" + database + "?allowPublicKeyRetrieval=true&useSSL=false", username, password);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -65,50 +57,5 @@ public abstract class DAOMySQL {
         close();
 
         return result;
-    }
-
-    public List<Invoice> getAllInvoices() {
-        List<Invoice> invoices = new ArrayList<>();
-
-        connect();
-        
-        String sql = "select * from invoice;";
-        try {
-            Statement statement = this.connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(sql);
-            Invoice invoice;
-
-            while(resultSet.next()) {
-                if (!resultSet.getString("quocTich").isEmpty()) {
-                    invoice = new InvoiceVN(
-                        resultSet.getInt("maKH"),
-                        resultSet.getString("tenKH"),
-                        resultSet.getDate("ngayHD"),
-                        resultSet.getInt("soLuong"), 
-                        resultSet.getInt("donGia"),
-                        resultSet.getString("doiTuongKH"),
-                        resultSet.getInt("dinhMuc")
-                    );
-
-                } else {
-                    invoice = new InvoiceNuocNgoai(
-                        resultSet.getInt("maKH"),
-                        resultSet.getString("tenKH"),
-                        resultSet.getDate("ngayHD"),
-                        resultSet.getInt("soLuong"), 
-                        resultSet.getInt("donGia"),
-                        resultSet.getString("quocTich")
-                    );
-
-                }
-                
-                invoices.add(invoice);
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-        close();
-        return invoices;
     }
 }

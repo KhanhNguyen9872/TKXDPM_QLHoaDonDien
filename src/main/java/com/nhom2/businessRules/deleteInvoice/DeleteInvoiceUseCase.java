@@ -29,14 +29,14 @@ public class DeleteInvoiceUseCase implements DeleteInvoiceInputBoundary {
         int maKH = Integer.parseInt(requestData.getMaKH());
 
         if (!this.isExist(maKH)) {
-            responseError.setMsg("Không tồn tại!");
+            responseError.setMsg("Không tồn tại! (KH: " + requestData.getMaKH() + ")");
             this.deleteInvoiceOutputBoundary.exportError(responseError);
             return;
         }
 
         this.deleteInvoiceDatabaseBoundary.deleteInvoice(maKH);
 
-        responseData.setMsg("Đã xóa thành công!");
+        responseData.setMsg("Đã xóa thành công! (KH: " + requestData.getMaKH() + ")");
         this.deleteInvoiceOutputBoundary.exportResult(responseData);
     }
 

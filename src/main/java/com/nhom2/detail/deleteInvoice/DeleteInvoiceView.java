@@ -1,19 +1,26 @@
 package com.nhom2.detail.deleteInvoice;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
-import com.nhom2.detail.observer.Subscriber;
 
-public class DeleteInvoiceView extends JFrame implements Subscriber {
-    private ModelView modelView;
+public class DeleteInvoiceView extends JFrame {
 
-    public DeleteInvoiceView(ModelView modelView) {
-        this.modelView = modelView;
-    }
-
-    @Override
-    public void update() {
+    public DeleteInvoiceView() {
         
     }
+    
+    public void show(DeleteInvoiceViewModel deleteInvoiceViewModel) {
+        this.setTitle(deleteInvoiceViewModel.status);
+        this.setSize(400, 300);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // Show alert dialog
+        JOptionPane.showMessageDialog(this,
+                deleteInvoiceViewModel.msg,
+                deleteInvoiceViewModel.status,
+                JOptionPane.INFORMATION_MESSAGE);
+
+        this.setVisible(true);
+    }
 }
