@@ -39,7 +39,7 @@ public class DeleteInvoicePresenter implements DeleteInvoiceOutputBoundary {
     }
 
     private void viewShow() {
-        this.deleteInvoiceView.show(this.deleteInvoiceViewModel);
+        this.deleteInvoiceView.showResult(this.deleteInvoiceViewModel);
     }
 
     public DeleteInvoiceViewModel getDeleteInvoiceViewModel() {

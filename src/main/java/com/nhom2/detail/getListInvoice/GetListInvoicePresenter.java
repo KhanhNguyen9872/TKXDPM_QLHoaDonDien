@@ -48,7 +48,7 @@ public class GetListInvoicePresenter implements GetListInvoiceOutputBoundary {
             this.listViewModel.add(new GetListInvoiceViewModel(maKH, tenKH, ngayHD, soLuong, donGia,quocTich, doiTuongKH, dinhMuc, thanhTien));
         }
 
-        this.getListInvoiceView.show(this.listViewModel);;
+        this.getListInvoiceView.showResult(this.listViewModel);;
     }
 
     public List<GetListInvoiceViewModel> getGetListInvoiceViewModel() {

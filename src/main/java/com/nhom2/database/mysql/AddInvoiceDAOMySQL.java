@@ -9,11 +9,7 @@ import com.nhom2.businessRules.entity.*;
 public class AddInvoiceDAOMySQL extends DAOMySQL implements AddInvoiceDatabaseBoundary {
     
     public AddInvoiceDAOMySQL(String ipAddress, int port, String database, String username, String password) throws Exception {
-        this.ipAddress = ipAddress;
-        this.port = port;
-        this.database = database;
-        this.username = username;
-        this.password = password;
+        super(ipAddress, port, database, username, password);
     }
 
     @Override
@@ -24,7 +20,7 @@ public class AddInvoiceDAOMySQL extends DAOMySQL implements AddInvoiceDatabaseBo
             "(?, ?, ?, ?, ?, ?, ?, ?);";
 
         try {
-            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = getPrepareStatement(sql);
 
             preparedStatement.setInt(1, invoice.getMaKH());
             preparedStatement.setString(2, invoice.getTenKH());

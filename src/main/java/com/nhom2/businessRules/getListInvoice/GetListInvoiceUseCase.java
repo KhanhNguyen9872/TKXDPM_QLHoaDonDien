@@ -3,7 +3,6 @@ package com.nhom2.businessRules.getListInvoice;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.nhom2.businessRules.*;
 import com.nhom2.businessRules.entity.Invoice;
 import com.nhom2.businessRules.entity.InvoiceNuocNgoai;
 import com.nhom2.businessRules.entity.InvoiceVN;
@@ -18,7 +17,7 @@ public class GetListInvoiceUseCase implements GetListInvoiceInputBoundary {
     }
 
     @Override
-    public void execute(RequestData requestData) {
+    public void execute() {
         List<GetListInvoiceOutputDTO> listOutputDTO = new ArrayList();
 
         List<Invoice> listInvoice = this.getListInvoiceDatabaseBoundary.getAllInvoices();

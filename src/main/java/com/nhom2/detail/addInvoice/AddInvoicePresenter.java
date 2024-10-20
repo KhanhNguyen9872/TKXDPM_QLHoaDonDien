@@ -42,6 +42,6 @@ public class AddInvoicePresenter implements AddInvoiceOutputBoundary {
     }
 
     private void viewShow() {
-        this.addInvoiceView.show(this.addInvoiceViewModel);
+        this.addInvoiceView.showResult(this.addInvoiceViewModel);
     }
 }

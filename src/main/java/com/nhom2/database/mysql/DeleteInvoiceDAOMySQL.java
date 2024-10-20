@@ -7,11 +7,7 @@ import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceDatabaseBoundary;
 public class DeleteInvoiceDAOMySQL extends DAOMySQL implements DeleteInvoiceDatabaseBoundary {
     
     public DeleteInvoiceDAOMySQL(String ipAddress, int port, String database, String username, String password) throws Exception {
-        this.ipAddress = ipAddress;
-        this.port = port;
-        this.database = database;
-        this.username = username;
-        this.password = password;
+        super(ipAddress, port, database, username, password);
     }
 
     @Override
@@ -21,7 +17,7 @@ public class DeleteInvoiceDAOMySQL extends DAOMySQL implements DeleteInvoiceData
         String sql = "DELETE FROM invoice WHERE (maKH = ?)";
 
         try {
-            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = getPrepareStatement(sql);
             preparedStatement.setInt(1, maKH);
             
             preparedStatement.execute();

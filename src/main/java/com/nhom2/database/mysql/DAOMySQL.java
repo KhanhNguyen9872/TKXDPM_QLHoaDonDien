@@ -4,17 +4,45 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class DAOMySQL {
-    protected Connection connection = null;
-    protected String ipAddress;
-    protected int port;
-    protected String database;
-    protected String username;
-    protected String password;
+    private Connection connection = null;
+    private String ipAddress;
+    private int port;
+    private String database;
+    private String username;
+    private String password;
 
-    public DAOMySQL() throws Exception {
+    private void prepareDriver() throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
+    }
+
+    public DAOMySQL(String ipAddress, int port, String database, String username, String password) throws Exception {
+        prepareDriver();
+        this.ipAddress = ipAddress;
+        this.port = port;
+        this.database = database;
+        this.username = username;
+        this.password = password;
+    }
+
+    protected PreparedStatement getPrepareStatement(String sql) {
+        try {
+            return this.connection.prepareStatement(sql);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
+    protected Statement createStatement() {
+        try {
+            return this.connection.createStatement();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
     }
 
     protected void connect() {

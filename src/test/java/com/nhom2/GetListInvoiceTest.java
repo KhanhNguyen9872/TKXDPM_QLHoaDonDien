@@ -15,12 +15,6 @@ import com.nhom2.detail.getListInvoice.GetListInvoiceView;
 
 public class GetListInvoiceTest 
 {
-    private RequestData getRequestData() {
-        RequestData requestData = new RequestData();
-
-        return requestData;
-    }
-
     @Test
     public void getListInvoiceSuccess() throws Exception
     {
@@ -29,7 +23,7 @@ public class GetListInvoiceTest
         GetListInvoiceDatabaseBoundary getListInvoiceDatabaseBoundary = new GetListInvoiceDAOMySQL("127.0.0.1", 3306, "invoice", "root", "12345678");
         GetListInvoiceInputBoundary getListInvoiceInputBoundary = new GetListInvoiceUseCase(getListInvoiceOutputBoundary, getListInvoiceDatabaseBoundary);
         
-        getListInvoiceInputBoundary.execute(getRequestData());
+        getListInvoiceInputBoundary.execute();
 
         assertEquals(((GetListInvoicePresenter)getListInvoiceOutputBoundary).getGetListInvoiceViewModel().size(), 1);
     }

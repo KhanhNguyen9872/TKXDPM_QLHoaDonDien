@@ -3,7 +3,6 @@ package com.nhom2.detail.getListInvoice;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Font;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.swing.BorderFactory;
@@ -16,13 +15,24 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 public class GetListInvoiceView extends JFrame {
+    private GetListInvoiceController getListInvoiceController;
     private List<GetListInvoiceViewModel> listInvoice;
 
     public GetListInvoiceView() {
         
     }
 
-    public void show(List<GetListInvoiceViewModel> listInvoice) {
+    public void mainShow() {
+        buildPanel();
+        this.setVisible(true);
+    }
+
+    private void buildPanel() {
+        this.setTitle("Xuất hóa đơn tiền điện");
+        this.setSize(400, 300);
+    }
+
+    public void showResult(List<GetListInvoiceViewModel> listInvoice) {
         this.listInvoice = listInvoice;
         this.setTitle("Invoice management");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -97,5 +107,9 @@ public class GetListInvoiceView extends JFrame {
             
             return c;
         }
+    }
+
+    public void setGetListInvoiceController(GetListInvoiceController getListInvoiceController) {
+        this.getListInvoiceController = getListInvoiceController;
     }
 }

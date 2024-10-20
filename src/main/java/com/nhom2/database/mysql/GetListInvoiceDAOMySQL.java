@@ -13,11 +13,7 @@ import com.nhom2.businessRules.getListInvoice.GetListInvoiceDatabaseBoundary;
 public class GetListInvoiceDAOMySQL extends DAOMySQL implements GetListInvoiceDatabaseBoundary {
 
     public GetListInvoiceDAOMySQL(String ipAddress, int port, String database, String username, String password) throws Exception {
-        this.ipAddress = ipAddress;
-        this.port = port;
-        this.database = database;
-        this.username = username;
-        this.password = password;
+        super(ipAddress, port, database, username, password);
     }
 
     @Override
@@ -28,7 +24,7 @@ public class GetListInvoiceDAOMySQL extends DAOMySQL implements GetListInvoiceDa
         
         String sql = "select * from invoice;";
         try {
-            Statement statement = this.connection.createStatement();
+            Statement statement = createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             Invoice invoice;
 
