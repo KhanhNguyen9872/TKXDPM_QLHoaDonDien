@@ -18,7 +18,7 @@ public class GetListInvoiceUseCase implements GetListInvoiceInputBoundary {
 
     @Override
     public void execute() {
-        List<GetListInvoiceOutputDTO> listOutputDTO = new ArrayList();
+        List<GetListInvoiceOutputDTO> listOutputDTO = new ArrayList<>();
 
         List<Invoice> listInvoice = this.getListInvoiceDatabaseBoundary.getAllInvoices();
 

@@ -1,7 +1,7 @@
 package com.nhom2.detail.addInvoice;
 
-import com.nhom2.businessRules.RequestData;
 import com.nhom2.businessRules.addInvoice.AddInvoiceInputBoundary;
+import com.nhom2.businessRules.addInvoice.RequestData;
 
 public class AddInvoiceController {
     private AddInvoiceInputBoundary addInvoiceInputBoundary;

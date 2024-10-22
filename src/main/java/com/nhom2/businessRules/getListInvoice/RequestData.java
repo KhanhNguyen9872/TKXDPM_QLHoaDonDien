@@ -1,4 +1,4 @@
-package com.nhom2.businessRules;
+package com.nhom2.businessRules.getListInvoice;
 
 public class RequestData {
     private String maKH;

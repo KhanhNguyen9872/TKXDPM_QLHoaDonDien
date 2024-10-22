@@ -3,7 +3,7 @@ package com.nhom2.detail.getListInvoice;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.nhom2.businessRules.ResponseData;
+import com.nhom2.businessRules.getListInvoice.ResponseData;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceOutputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceOutputDTO;
 
@@ -48,7 +48,9 @@ public class GetListInvoicePresenter implements GetListInvoiceOutputBoundary {
             this.listViewModel.add(new GetListInvoiceViewModel(maKH, tenKH, ngayHD, soLuong, donGia,quocTich, doiTuongKH, dinhMuc, thanhTien));
         }
 
-        this.getListInvoiceView.showResult(this.listViewModel);;
+        if (this.getListInvoiceView != null) {
+            this.getListInvoiceView.showResult(this.listViewModel);
+        }
     }
 
     public List<GetListInvoiceViewModel> getGetListInvoiceViewModel() {

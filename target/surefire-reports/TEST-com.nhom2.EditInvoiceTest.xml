@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.nhom2.AppTest" time="0.456" tests="2" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.nhom2.EditInvoiceTest" time="0.073" tests="2" errors="2" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Java\jdk-21.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\KHANHN~1\AppData\Local\Temp\surefire16651908958010541054\surefirebooter5939975365079127238.jar C:\Users\KhanhNguyen9872\AppData\Local\Temp\surefire16651908958010541054 2024-10-18T16-35-41_280-jvmRun1 surefire6194090291108272971tmp surefire_06616694197320964730tmp"/>
+    <property name="sun.java.command" value="C:\Users\KHANHN~1\AppData\Local\Temp\surefire2946909122767116565\surefirebooter337417603596575576.jar C:\Users\KhanhNguyen9872\AppData\Local\Temp\surefire2946909122767116565 2024-10-22T16-24-17_767-jvmRun1 surefire7193052485999951137tmp surefire_012519332932646308756tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="c:\Users\KhanhNguyen9872\Documents\GitHub\TKXDPM_QLHoaDonDien\target\test-classes;c:\Users\KhanhNguyen9872\Documents\GitHub\TKXDPM_QLHoaDonDien\target\classes;C:\Users\KhanhNguyen9872\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\KhanhNguyen9872\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\KhanhNguyen9872\.m2\repository\mysql\mysql-connector-java\8.0.11\mysql-connector-java-8.0.11.jar;C:\Users\KhanhNguyen9872\.m2\repository\com\google\protobuf\protobuf-java\2.6.0\protobuf-java-2.6.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\KHANHN~1\AppData\Local\Temp\surefire16651908958010541054\surefirebooter5939975365079127238.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\KHANHN~1\AppData\Local\Temp\surefire2946909122767116565\surefirebooter337417603596575576.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.2+13-58"/>
@@ -58,10 +58,14 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="addInvoiceSuccess" classname="com.nhom2.AppTest" time="0.398">
-    <failure message="expected:&lt;[error]&gt; but was:&lt;[success]&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: expected:<[error]> but was:<[success]>
-	at com.nhom2.AppTest.addInvoiceSuccess(AppTest.java:36)
-]]></failure>
+  <testcase name="editInvoiceError" classname="com.nhom2.EditInvoiceTest" time="0.071">
+    <error message="Cannot read field &quot;msg&quot; because the return value of &quot;com.nhom2.detail.editInvoice.EditInvoicePresenter.getEditInvoiceViewModel()&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot read field "msg" because the return value of "com.nhom2.detail.editInvoice.EditInvoicePresenter.getEditInvoiceViewModel()" is null
+	at com.nhom2.EditInvoiceTest.editInvoiceError(EditInvoiceTest.java:60)
+</error>
   </testcase>
-  <testcase name="addInvoiceError" classname="com.nhom2.AppTest" time="0"/>
+  <testcase name="editInvoiceSuccess" classname="com.nhom2.EditInvoiceTest" time="0.001">
+    <error message="Cannot read field &quot;msg&quot; because the return value of &quot;com.nhom2.detail.editInvoice.EditInvoicePresenter.getEditInvoiceViewModel()&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot read field "msg" because the return value of "com.nhom2.detail.editInvoice.EditInvoicePresenter.getEditInvoiceViewModel()" is null
+	at com.nhom2.EditInvoiceTest.editInvoiceSuccess(EditInvoiceTest.java:45)
+</error>
+  </testcase>
 </testsuite>

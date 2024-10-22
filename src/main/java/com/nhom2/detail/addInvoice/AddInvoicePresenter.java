@@ -1,9 +1,9 @@
 package com.nhom2.detail.addInvoice;
 
-import com.nhom2.businessRules.ResponseData;
-import com.nhom2.businessRules.ResponseError;
 import com.nhom2.businessRules.addInvoice.AddInvoiceOutputBoundary;
 import com.nhom2.businessRules.addInvoice.AddInvoiceOutputDTO;
+import com.nhom2.businessRules.addInvoice.ResponseData;
+import com.nhom2.businessRules.addInvoice.ResponseError;
 
 public class AddInvoicePresenter implements AddInvoiceOutputBoundary {
     private AddInvoiceView addInvoiceView;
@@ -42,6 +42,8 @@ public class AddInvoicePresenter implements AddInvoiceOutputBoundary {
     }
 
     private void viewShow() {
-        this.addInvoiceView.showResult(this.addInvoiceViewModel);
+        if (this.addInvoiceView != null) {
+            this.addInvoiceView.showResult(this.addInvoiceViewModel);
+        }
     }
 }

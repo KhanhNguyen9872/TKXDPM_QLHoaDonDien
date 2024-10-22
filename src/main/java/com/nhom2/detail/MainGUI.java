@@ -6,6 +6,7 @@ import javax.swing.*;
 
 import com.nhom2.detail.addInvoice.AddInvoiceView;
 import com.nhom2.detail.deleteInvoice.DeleteInvoiceView;
+import com.nhom2.detail.editInvoice.EditInvoiceView;
 import com.nhom2.detail.getListInvoice.GetListInvoiceView;
 
 import java.awt.event.*;
@@ -14,6 +15,7 @@ import java.awt.*;
 public class MainGUI extends JFrame implements ActionListener {
     private AddInvoiceView addInvoiceView;
     private DeleteInvoiceView deleteInvoiceView;
+    private EditInvoiceView editInvoiceView;
     private GetListInvoiceView getListInvoiceView;
 
     public MainGUI() {
@@ -63,6 +65,10 @@ public class MainGUI extends JFrame implements ActionListener {
         this.deleteInvoiceView = deleteInvoiceView;
     }
 
+    public void setEditInvoiceView(EditInvoiceView editInvoiceView) {
+        this.editInvoiceView = editInvoiceView;
+    }
+
     public void setGetListInvoiceView(GetListInvoiceView getListInvoiceView) {
         this.getListInvoiceView = getListInvoiceView;
     }
@@ -84,7 +90,9 @@ public class MainGUI extends JFrame implements ActionListener {
         }
 
         if (cmd.equals("Sửa")) {
-
+            if (editInvoiceView != null) {
+                editInvoiceView.mainShow();
+            }
         }
 
         if (cmd.equals("Xuất")) {

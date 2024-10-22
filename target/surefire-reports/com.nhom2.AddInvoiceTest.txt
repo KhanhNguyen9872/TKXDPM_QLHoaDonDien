@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.nhom2.AddInvoiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.46 s <<< FAILURE! - in com.nhom2.AddInvoiceTest
+addInvoiceError(com.nhom2.AddInvoiceTest)  Time elapsed: 0.053 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<Đã t[hêm thành công]! (KH: 1)> but was:<Đã t[ồn tại]! (KH: 1)>
+	at com.nhom2.AddInvoiceTest.addInvoiceError(AddInvoiceTest.java:61)
+

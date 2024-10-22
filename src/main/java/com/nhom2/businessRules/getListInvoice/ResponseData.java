@@ -1,9 +1,9 @@
-package com.nhom2.businessRules;
+package com.nhom2.businessRules.getListInvoice;
 
-public class ResponseError {
+public class ResponseData {
     private String msg;
 
-    public ResponseError() {
+    public ResponseData() {
 
     }
 

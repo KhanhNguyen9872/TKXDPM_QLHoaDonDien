@@ -1,4 +1,4 @@
-package com.nhom2.businessRules;
+package com.nhom2.businessRules.deleteInvoice;
 
 public class ResponseData {
     private String msg;

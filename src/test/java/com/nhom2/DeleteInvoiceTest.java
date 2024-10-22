@@ -4,17 +4,22 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.nhom2.businessRules.RequestData;
+import com.nhom2.businessRules.deleteInvoice.RequestData;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceInputBoundary;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceOutputBoundary;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceUseCase;
 import com.nhom2.database.mysql.DeleteInvoiceDAOMySQL;
 import com.nhom2.detail.deleteInvoice.DeleteInvoicePresenter;
-import com.nhom2.detail.deleteInvoice.DeleteInvoiceView;
 
 public class DeleteInvoiceTest 
 {
+    private final String ipAddress = "127.0.0.1";
+    private final int port = 3306;
+    private final String db = "invoice";
+    private final String username = "root";
+    private final String password = "12345678";
+
     private RequestData getRequestData() {
         RequestData requestData = new RequestData();
 
@@ -26,9 +31,8 @@ public class DeleteInvoiceTest
     @Test
     public void deleteInvoiceSuccess() throws Exception
     {
-        DeleteInvoiceView deleteInvoiceView = new DeleteInvoiceView();
-        DeleteInvoiceOutputBoundary deleteInvoiceOutputBoundary = new DeleteInvoicePresenter(deleteInvoiceView);
-        DeleteInvoiceDatabaseBoundary deleteInvoiceDatabaseBoundary = new DeleteInvoiceDAOMySQL("127.0.0.1", 3306, "invoice", "root", "12345678");
+        DeleteInvoiceOutputBoundary deleteInvoiceOutputBoundary = new DeleteInvoicePresenter(null);
+        DeleteInvoiceDatabaseBoundary deleteInvoiceDatabaseBoundary = new DeleteInvoiceDAOMySQL(ipAddress, port, db, username, password);
         DeleteInvoiceInputBoundary deleteInvoiceInputBoundary = new DeleteInvoiceUseCase(deleteInvoiceOutputBoundary, deleteInvoiceDatabaseBoundary);
 
         RequestData requestData = getRequestData();
@@ -40,9 +44,8 @@ public class DeleteInvoiceTest
     @Test
     public void deleteInvoiceError() throws Exception
     {
-        DeleteInvoiceView deleteInvoiceView = new DeleteInvoiceView();
-        DeleteInvoiceOutputBoundary deleteInvoiceOutputBoundary = new DeleteInvoicePresenter(deleteInvoiceView);
-        DeleteInvoiceDatabaseBoundary deleteInvoiceDatabaseBoundary = new DeleteInvoiceDAOMySQL("127.0.0.1", 3306, "invoice", "root", "12345678");
+        DeleteInvoiceOutputBoundary deleteInvoiceOutputBoundary = new DeleteInvoicePresenter(null);
+        DeleteInvoiceDatabaseBoundary deleteInvoiceDatabaseBoundary = new DeleteInvoiceDAOMySQL(ipAddress, port, db, username, password);
         DeleteInvoiceInputBoundary deleteInvoiceInputBoundary = new DeleteInvoiceUseCase(deleteInvoiceOutputBoundary, deleteInvoiceDatabaseBoundary);
 
         RequestData requestData = getRequestData();

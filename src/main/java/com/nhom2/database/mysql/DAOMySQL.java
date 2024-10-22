@@ -29,6 +29,10 @@ public class DAOMySQL {
 
     protected PreparedStatement getPrepareStatement(String sql) {
         try {
+            if (this.connection == null) {
+                return null;
+            }
+            
             return this.connection.prepareStatement(sql);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -38,6 +42,10 @@ public class DAOMySQL {
 
     protected Statement createStatement() {
         try {
+            if (this.connection == null) {
+                return null;
+            }
+
             return this.connection.createStatement();
         } catch (Exception ex) {
             ex.printStackTrace();

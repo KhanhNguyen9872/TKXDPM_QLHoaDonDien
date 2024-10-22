@@ -4,14 +4,19 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.nhom2.businessRules.RequestData;
 import com.nhom2.businessRules.addInvoice.*;
 import com.nhom2.database.mysql.AddInvoiceDAOMySQL;
+import com.nhom2.detail.addInvoice.AddInvoiceController;
 import com.nhom2.detail.addInvoice.AddInvoicePresenter;
-import com.nhom2.detail.addInvoice.AddInvoiceView;
 
 public class AddInvoiceTest 
 {
+    private final String ipAddress = "127.0.0.1";
+    private final int port = 3306;
+    private final String db = "invoice";
+    private final String username = "root";
+    private final String password = "12345678";
+
     private RequestData getRequestData() {
         RequestData requestData = new RequestData();
 
@@ -29,23 +34,21 @@ public class AddInvoiceTest
     @Test
     public void addInvoiceSuccess() throws Exception
     {
-        AddInvoiceView addInvoiceView = new AddInvoiceView();
-        AddInvoiceOutputBoundary addInvoiceOutputBoundary = new AddInvoicePresenter(addInvoiceView);
-        AddInvoiceDatabaseBoundary addInvoiceDatabaseBoundary = new AddInvoiceDAOMySQL("127.0.0.1", 3306, "invoice", "root", "12345678");
+        AddInvoiceOutputBoundary addInvoiceOutputBoundary = new AddInvoicePresenter(null);
+        AddInvoiceDatabaseBoundary addInvoiceDatabaseBoundary = new AddInvoiceDAOMySQL(ipAddress, port, db, username, password);
         AddInvoiceInputBoundary addInvoiceInputBoundary = new AddInvoiceUseCase(addInvoiceOutputBoundary, addInvoiceDatabaseBoundary);
 
         RequestData requestData = getRequestData();
         addInvoiceInputBoundary.execute(requestData);
-        
+
         assertEquals(((AddInvoicePresenter)addInvoiceOutputBoundary).getAddInvoiceViewModel().msg, "Đã thêm thành công! (KH: " + requestData.getMaKH() + ")");
     }
 
     @Test
     public void addInvoiceError() throws Exception
     {
-        AddInvoiceView addInvoiceView = new AddInvoiceView();
-        AddInvoiceOutputBoundary addInvoiceOutputBoundary = new AddInvoicePresenter(addInvoiceView);
-        AddInvoiceDatabaseBoundary addInvoiceDatabaseBoundary = new AddInvoiceDAOMySQL("127.0.0.1", 3306, "invoice", "root", "12345678");
+        AddInvoiceOutputBoundary addInvoiceOutputBoundary = new AddInvoicePresenter(null);
+        AddInvoiceDatabaseBoundary addInvoiceDatabaseBoundary = new AddInvoiceDAOMySQL(ipAddress, port, db, username, password);
         AddInvoiceInputBoundary addInvoiceInputBoundary = new AddInvoiceUseCase(addInvoiceOutputBoundary, addInvoiceDatabaseBoundary);
 
         RequestData requestData = getRequestData();

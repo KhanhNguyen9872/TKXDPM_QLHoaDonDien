@@ -8,12 +8,17 @@ import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceInputBoundary;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceOutputBoundary;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceUseCase;
+import com.nhom2.businessRules.editInvoice.EditInvoiceDatabaseBoundary;
+import com.nhom2.businessRules.editInvoice.EditInvoiceInputBoundary;
+import com.nhom2.businessRules.editInvoice.EditInvoiceOutputBoundary;
+import com.nhom2.businessRules.editInvoice.EditInvoiceUseCase;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceInputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceOutputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceUseCase;
 import com.nhom2.database.mysql.AddInvoiceDAOMySQL;
 import com.nhom2.database.mysql.DeleteInvoiceDAOMySQL;
+import com.nhom2.database.mysql.EditInvoiceDAOMySQL;
 import com.nhom2.database.mysql.GetListInvoiceDAOMySQL;
 import com.nhom2.detail.MainGUI;
 import com.nhom2.detail.addInvoice.AddInvoiceController;
@@ -22,6 +27,9 @@ import com.nhom2.detail.addInvoice.AddInvoiceView;
 import com.nhom2.detail.deleteInvoice.DeleteInvoiceController;
 import com.nhom2.detail.deleteInvoice.DeleteInvoicePresenter;
 import com.nhom2.detail.deleteInvoice.DeleteInvoiceView;
+import com.nhom2.detail.editInvoice.EditInvoiceController;
+import com.nhom2.detail.editInvoice.EditInvoicePresenter;
+import com.nhom2.detail.editInvoice.EditInvoiceView;
 import com.nhom2.detail.getListInvoice.GetListInvoiceController;
 import com.nhom2.detail.getListInvoice.GetListInvoicePresenter;
 import com.nhom2.detail.getListInvoice.GetListInvoiceView;
@@ -53,6 +61,14 @@ public class QLHoaDonTienDienApp
         DeleteInvoiceController deleteInvoiceController = new DeleteInvoiceController(deleteInvoiceInputBoundary);
         deleteInvoiceView.setDeleteInvoiceController(deleteInvoiceController);
 
+        // edit Invoice
+        EditInvoiceView editInvoiceView = new EditInvoiceView();
+        EditInvoiceOutputBoundary editInvoiceOutputBoundary = new EditInvoicePresenter(editInvoiceView);
+        EditInvoiceDatabaseBoundary editInvoiceDatabaseBoundary  = new EditInvoiceDAOMySQL(ipAddress, port, db, username, password);
+        EditInvoiceInputBoundary editInvoiceInputBoundary = new EditInvoiceUseCase(editInvoiceOutputBoundary, editInvoiceDatabaseBoundary);
+        EditInvoiceController editInvoiceController = new EditInvoiceController(editInvoiceInputBoundary);
+        editInvoiceView.setEditInvoiceController(editInvoiceController);
+
         // get list Invoice
         GetListInvoiceView getListInvoiceView = new GetListInvoiceView();
         GetListInvoiceOutputBoundary getListInvoiceOutputBoundary = new GetListInvoicePresenter(getListInvoiceView);
@@ -65,6 +81,7 @@ public class QLHoaDonTienDienApp
         MainGUI mainGUI = new MainGUI();
         mainGUI.setAddInvoiceView(addInvoiceView);
         mainGUI.setDeleteInvoiceView(deleteInvoiceView);
+        mainGUI.setEditInvoiceView(editInvoiceView);
         mainGUI.setGetListInvoiceView(getListInvoiceView);
 
         // setVisible(true)
