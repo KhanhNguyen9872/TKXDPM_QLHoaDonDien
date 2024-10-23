@@ -1,9 +1,9 @@
 package com.nhom2.businessRules.deleteInvoice;
 
-public class RequestData {
+public class DeleteInvoiceInputDTO {
     private String maKH;
 
-    public RequestData() {
+    public DeleteInvoiceInputDTO() {
 
     }
 

@@ -1,7 +1,7 @@
 package com.nhom2.detail.addInvoice;
 
 import com.nhom2.businessRules.addInvoice.AddInvoiceInputBoundary;
-import com.nhom2.businessRules.addInvoice.RequestData;
+import com.nhom2.businessRules.addInvoice.AddInvoiceInputDTO;
 
 public class AddInvoiceController {
     private AddInvoiceInputBoundary addInvoiceInputBoundary;
@@ -10,8 +10,7 @@ public class AddInvoiceController {
         this.addInvoiceInputBoundary = addInvoiceInputBoundary;
     }
 
-    public void execute(AddInvoiceViewModel addInvoiceViewModel) {
-        RequestData requestData = new RequestData();
-        this.addInvoiceInputBoundary.execute(requestData);
+    public void execute(AddInvoiceInputDTO addInvoiceInputDTO) {
+        this.addInvoiceInputBoundary.execute(addInvoiceInputDTO);
     }
 }

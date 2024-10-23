@@ -12,27 +12,30 @@ public class DeleteInvoiceView extends JFrame {
     }
 
     public void mainShow() {
-        buildPanel();
+        build();
         this.setVisible(true);
     }
 
-    private void buildPanel() {
+    private void build() {
+        getContentPane().removeAll();
         this.setTitle("Xóa hóa đơn tiền điện");
         this.setSize(400, 300);
     }
     
-    public void showResult(DeleteInvoiceViewModel deleteInvoiceViewModel) {
-        this.setTitle(deleteInvoiceViewModel.status);
-        this.setSize(400, 300);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+    public void showMsgResult(DeleteInvoiceViewModel deleteInvoiceViewModel) {
         // Show alert dialog
-        JOptionPane.showMessageDialog(this,
+        JOptionPane.showMessageDialog(null,
                 deleteInvoiceViewModel.msg,
                 deleteInvoiceViewModel.status,
                 JOptionPane.INFORMATION_MESSAGE);
+    }
 
-        this.setVisible(true);
+    public void showMsgError(DeleteInvoiceViewModel deleteInvoiceViewModel) {
+        // Show alert dialog
+        JOptionPane.showMessageDialog(null,
+                deleteInvoiceViewModel.msg,
+                deleteInvoiceViewModel.status,
+                JOptionPane.ERROR_MESSAGE);
     }
 
     public void setDeleteInvoiceController(DeleteInvoiceController deleteInvoiceController) {

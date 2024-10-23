@@ -1,6 +1,6 @@
 package com.nhom2.detail.deleteInvoice;
 
-import com.nhom2.businessRules.deleteInvoice.RequestData;
+import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceInputDTO;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceInputBoundary;
 
 public class DeleteInvoiceController {
@@ -11,7 +11,7 @@ public class DeleteInvoiceController {
     }
 
     public void execute(DeleteInvoiceViewModel deleteInvoiceViewModel) {
-        RequestData requestData = new RequestData();
+        DeleteInvoiceInputDTO requestData = new DeleteInvoiceInputDTO();
         // set requestData
 
         //

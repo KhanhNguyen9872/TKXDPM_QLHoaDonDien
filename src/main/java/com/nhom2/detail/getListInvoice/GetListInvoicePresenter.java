@@ -3,7 +3,6 @@ package com.nhom2.detail.getListInvoice;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.nhom2.businessRules.getListInvoice.ResponseData;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceOutputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceOutputDTO;
 
@@ -16,13 +15,17 @@ public class GetListInvoicePresenter implements GetListInvoiceOutputBoundary {
     }
 
     @Override
-    public void exportResult(ResponseData responseData) {
+    public void exportError(GetListInvoiceOutputDTO responseData) {
+        GetListInvoiceViewModel getListInvoiceViewModel = new GetListInvoiceViewModel(responseData.getStatus(), responseData.getMsg());
         
+        if (this.getListInvoiceView != null) {
+            this.getListInvoiceView.showMsgError(getListInvoiceViewModel);
+        }
     }
 
     @Override
     public void present(List<GetListInvoiceOutputDTO> listOutputDTO) {
-        this.listViewModel = new ArrayList();
+        this.listViewModel = new ArrayList<>();
 
         String maKH;
         String tenKH;
@@ -45,7 +48,7 @@ public class GetListInvoicePresenter implements GetListInvoiceOutputBoundary {
             dinhMuc = String.valueOf(outputDTO.getDinhMuc());
             thanhTien = String.valueOf(outputDTO.getThanhTien());
 
-            this.listViewModel.add(new GetListInvoiceViewModel(maKH, tenKH, ngayHD, soLuong, donGia,quocTich, doiTuongKH, dinhMuc, thanhTien));
+            this.listViewModel.add(new GetListInvoiceViewModel("success", "", maKH, tenKH, ngayHD, soLuong, donGia,quocTich, doiTuongKH, dinhMuc, thanhTien));
         }
 
         if (this.getListInvoiceView != null) {

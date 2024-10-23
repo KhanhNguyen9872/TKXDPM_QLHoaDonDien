@@ -1,6 +1,8 @@
+create database invoice;
+use invoice;
 
 CREATE TABLE `invoice` (
-  `maKH` int(11) NOT NULL,
+  `maKH` int(11) NOT NULL AUTO_INCREMENT,
   `tenKH` varchar(255) NOT NULL,
   `ngayHD` date NOT NULL,
   `soLuong` int(11) NOT NULL,
@@ -24,4 +26,3 @@ CREATE TABLE `invoice` (
 -- (10, '2024/03/12', 1350, 'C', '', '', 65),
 -- (11, '2024/03/23', 2000, '', 'Thường', 'Đồng Nai', 50),
 -- (12, '2024/03/25', 2550, 'B', '', '', 70);
-invoice

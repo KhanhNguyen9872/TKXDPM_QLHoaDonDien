@@ -3,6 +3,7 @@ package com.nhom2.database.mysql;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 
 import com.nhom2.businessRules.editInvoice.EditInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.entity.Invoice;
@@ -17,6 +18,7 @@ public class EditInvoiceDAOMySQL extends DAOMySQL implements EditInvoiceDatabase
 
     @Override
     public Invoice getInvoice(int maKH) {
+        connect();
         Invoice invoice = null;
         String sql = "SELECT * FROM invoice WHERE (maKH = ?);";
 
@@ -44,20 +46,23 @@ public class EditInvoiceDAOMySQL extends DAOMySQL implements EditInvoiceDatabase
             }
 
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }
-
+        close();
         return invoice;
     }
 
     @Override
     public void updateInvoice(Invoice invoice) {
+        connect();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String sql = "UPDATE invoice SET tenKH = ?, ngayHD = ?, soLuong = ?, donGia = ?, doiTuongKH = ?, dinhMuc = ?, quocTich = ?  WHERE (maKH = ?);";
         
         try {
             PreparedStatement preparedStatement = getPrepareStatement(sql);
             preparedStatement.setString(1, invoice.getTenKH());
-            preparedStatement.setString(2, invoice.getNgayHD().toString());
+            
+            preparedStatement.setString(2, dateFormat.format(invoice.getNgayHD()));
             preparedStatement.setInt(3, invoice.getSoLuong());
             preparedStatement.setInt(4, invoice.getDonGia());
             if (invoice.getClass().equals(InvoiceNuocNgoai.class)) {
@@ -77,7 +82,8 @@ public class EditInvoiceDAOMySQL extends DAOMySQL implements EditInvoiceDatabase
             preparedStatement.setInt(8, invoice.getMaKH());
             preparedStatement.execute();
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }
+        close();
     }
 }

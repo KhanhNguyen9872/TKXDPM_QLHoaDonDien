@@ -2,6 +2,8 @@ package com.nhom2;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Test;
 
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceDatabaseBoundary;
@@ -10,6 +12,7 @@ import com.nhom2.businessRules.getListInvoice.GetListInvoiceOutputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceUseCase;
 import com.nhom2.database.mysql.GetListInvoiceDAOMySQL;
 import com.nhom2.detail.getListInvoice.GetListInvoicePresenter;
+import com.nhom2.detail.getListInvoice.GetListInvoiceViewModel;
 
 public class GetListInvoiceTest 
 {
@@ -29,6 +32,7 @@ public class GetListInvoiceTest
         
         getListInvoiceInputBoundary.execute();
 
-        assertEquals(((GetListInvoicePresenter)getListInvoiceOutputBoundary).getGetListInvoiceViewModel().size(), 1);
+        List<GetListInvoiceViewModel> getListInvoiceViewModel = ((GetListInvoicePresenter)getListInvoiceOutputBoundary).getGetListInvoiceViewModel();
+        assertEquals(getListInvoiceViewModel.size(), 1);
     }
 }

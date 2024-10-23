@@ -6,8 +6,8 @@ import org.junit.Test;
 
 import com.nhom2.businessRules.addInvoice.*;
 import com.nhom2.database.mysql.AddInvoiceDAOMySQL;
-import com.nhom2.detail.addInvoice.AddInvoiceController;
 import com.nhom2.detail.addInvoice.AddInvoicePresenter;
+import com.nhom2.detail.addInvoice.AddInvoiceViewModel;
 
 public class AddInvoiceTest 
 {
@@ -17,18 +17,17 @@ public class AddInvoiceTest
     private final String username = "root";
     private final String password = "12345678";
 
-    private RequestData getRequestData() {
-        RequestData requestData = new RequestData();
+    private AddInvoiceInputDTO getRequestData() {
+        AddInvoiceInputDTO addInvoiceInputDTO = new AddInvoiceInputDTO();
 
-        requestData.setMaKH("1");
-        requestData.setTenKH("Khanh");
-        requestData.setNgayHD("2023-12-31");
-        requestData.setSoLuong("50");
-        requestData.setDonGia("150");
-        requestData.setDoiTuongKH("Sinh hoạt");
-        requestData.setDinhMuc("55");
+        addInvoiceInputDTO.setTenKH("Khanh");
+        addInvoiceInputDTO.setNgayHD("2023-12-31");
+        addInvoiceInputDTO.setSoLuong("50");
+        addInvoiceInputDTO.setDonGia("150");
+        addInvoiceInputDTO.setDoiTuongKH("Sinh hoạt");
+        addInvoiceInputDTO.setDinhMuc("55");
         
-        return requestData;
+        return addInvoiceInputDTO;
     }
 
     @Test
@@ -38,10 +37,12 @@ public class AddInvoiceTest
         AddInvoiceDatabaseBoundary addInvoiceDatabaseBoundary = new AddInvoiceDAOMySQL(ipAddress, port, db, username, password);
         AddInvoiceInputBoundary addInvoiceInputBoundary = new AddInvoiceUseCase(addInvoiceOutputBoundary, addInvoiceDatabaseBoundary);
 
-        RequestData requestData = getRequestData();
-        addInvoiceInputBoundary.execute(requestData);
+        AddInvoiceInputDTO addInvoiceInputDTO = getRequestData();
+        addInvoiceInputBoundary.execute(addInvoiceInputDTO);
 
-        assertEquals(((AddInvoicePresenter)addInvoiceOutputBoundary).getAddInvoiceViewModel().msg, "Đã thêm thành công! (KH: " + requestData.getMaKH() + ")");
+        AddInvoiceViewModel addInvoiceViewModel = ((AddInvoicePresenter)addInvoiceOutputBoundary).getAddInvoiceViewModel();
+
+        assertEquals(addInvoiceViewModel.msg, "Đã thêm thành công! (TenKH: " + addInvoiceInputDTO.getTenKH() + ")");
     }
 
     @Test
@@ -51,14 +52,12 @@ public class AddInvoiceTest
         AddInvoiceDatabaseBoundary addInvoiceDatabaseBoundary = new AddInvoiceDAOMySQL(ipAddress, port, db, username, password);
         AddInvoiceInputBoundary addInvoiceInputBoundary = new AddInvoiceUseCase(addInvoiceOutputBoundary, addInvoiceDatabaseBoundary);
 
-        RequestData requestData = getRequestData();
+        AddInvoiceInputDTO requestData = getRequestData();
 
-        requestData.setMaKH("ID01");
+        requestData.setNgayHD("20240101");
         addInvoiceInputBoundary.execute(requestData);
-        assertEquals(((AddInvoicePresenter)addInvoiceOutputBoundary).getAddInvoiceViewModel().msg, "Dữ liệu không hợp lệ!");
+        AddInvoiceViewModel addInvoiceViewModel = ((AddInvoicePresenter)addInvoiceOutputBoundary).getAddInvoiceViewModel();
 
-        requestData.setMaKH("1");
-        addInvoiceInputBoundary.execute(requestData);
-        assertEquals(((AddInvoicePresenter)addInvoiceOutputBoundary).getAddInvoiceViewModel().msg, "Đã tồn tại! (KH: " + requestData.getMaKH() + ")");
+        assertEquals(addInvoiceViewModel.msg, "Dữ liệu không hợp lệ!");
     }
 }

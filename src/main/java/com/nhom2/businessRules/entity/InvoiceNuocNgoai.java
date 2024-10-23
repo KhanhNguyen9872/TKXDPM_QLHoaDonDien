@@ -1,6 +1,6 @@
 package com.nhom2.businessRules.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class InvoiceNuocNgoai extends Invoice {
     private String quocTich;

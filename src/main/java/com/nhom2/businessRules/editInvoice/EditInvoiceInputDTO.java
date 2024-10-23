@@ -1,6 +1,6 @@
-package com.nhom2.businessRules.getListInvoice;
+package com.nhom2.businessRules.editInvoice;
 
-public class RequestData {
+public class EditInvoiceInputDTO {
     private String maKH;
     private String tenKH;
     private String ngayHD;
@@ -10,7 +10,7 @@ public class RequestData {
     private String dinhMuc;
     private String quocTich;
     
-    public RequestData() {
+    public EditInvoiceInputDTO() {
 
     }
 

@@ -1,7 +1,5 @@
 package com.nhom2.detail.deleteInvoice;
 
-import com.nhom2.businessRules.deleteInvoice.ResponseData;
-import com.nhom2.businessRules.deleteInvoice.ResponseError;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceOutputBoundary;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceOutputDTO;
 
@@ -14,20 +12,14 @@ public class DeleteInvoicePresenter implements DeleteInvoiceOutputBoundary {
     }
 
     @Override
-    public void exportError(ResponseError responseError) {
+    public void exportError(DeleteInvoiceOutputDTO responseError) {
         this.deleteInvoiceViewModel = new DeleteInvoiceViewModel();
         this.deleteInvoiceViewModel.status = "error";
         this.deleteInvoiceViewModel.msg = responseError.getMsg();
-        viewShow();
 
-    }
-
-    @Override
-    public void exportResult(ResponseData responseData) {
-        this.deleteInvoiceViewModel = new DeleteInvoiceViewModel();
-        this.deleteInvoiceViewModel.status = "success";
-        this.deleteInvoiceViewModel.msg = responseData.getMsg();
-        viewShow();
+        if (this.deleteInvoiceView != null) {
+            this.deleteInvoiceView.showMsgError(this.deleteInvoiceViewModel);
+        }
     }
 
     @Override
@@ -35,12 +27,8 @@ public class DeleteInvoicePresenter implements DeleteInvoiceOutputBoundary {
         this.deleteInvoiceViewModel = new DeleteInvoiceViewModel();
         this.deleteInvoiceViewModel.status = "success";
         this.deleteInvoiceViewModel.msg = outputDTO.getMsg();
-        viewShow();
-    }
-
-    private void viewShow() {
         if (this.deleteInvoiceView != null) {
-            this.deleteInvoiceView.showResult(this.deleteInvoiceViewModel);
+            this.deleteInvoiceView.showMsgResult(this.deleteInvoiceViewModel);
         }
     }
 

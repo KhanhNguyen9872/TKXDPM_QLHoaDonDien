@@ -1,7 +1,6 @@
 package com.nhom2.businessRules.addInvoice;
 
-public class RequestData {
-    private String maKH;
+public class AddInvoiceInputDTO {
     private String tenKH;
     private String ngayHD;
     private String soLuong;
@@ -10,16 +9,8 @@ public class RequestData {
     private String dinhMuc;
     private String quocTich;
     
-    public RequestData() {
+    public AddInvoiceInputDTO() {
 
-    }
-
-    public String getMaKH() {
-        return maKH;
-    }
-
-    public void setMaKH(String maKH) {
-        this.maKH = maKH;
     }
 
     public String getTenKH() {

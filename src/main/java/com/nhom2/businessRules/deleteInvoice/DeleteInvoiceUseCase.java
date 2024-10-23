@@ -1,7 +1,5 @@
 package com.nhom2.businessRules.deleteInvoice;
 
-import com.nhom2.businessRules.*;
-
 public class DeleteInvoiceUseCase implements DeleteInvoiceInputBoundary {
     private DeleteInvoiceOutputBoundary deleteInvoiceOutputBoundary;
     private DeleteInvoiceDatabaseBoundary deleteInvoiceDatabaseBoundary;
@@ -16,33 +14,38 @@ public class DeleteInvoiceUseCase implements DeleteInvoiceInputBoundary {
     }
 
     @Override
-    public void execute(RequestData requestData) {
-        ResponseData responseData = new ResponseData();
-        ResponseError responseError = new ResponseError();
+    public void execute(DeleteInvoiceInputDTO deleteInvoiceInputDTO) {
+        DeleteInvoiceOutputDTO responseError;
 
-        if (!verify(requestData)) {
+        if (!verify(deleteInvoiceInputDTO)) {
+            responseError = new DeleteInvoiceOutputDTO();
+            responseError.setStatus("error");
             responseError.setMsg("Dữ liệu không hợp lệ!");
             deleteInvoiceOutputBoundary.exportError(responseError);
             return;
         }
 
-        int maKH = Integer.parseInt(requestData.getMaKH());
+        int maKH = Integer.parseInt(deleteInvoiceInputDTO.getMaKH());
 
         if (!this.isExist(maKH)) {
-            responseError.setMsg("Không tồn tại! (KH: " + requestData.getMaKH() + ")");
-            this.deleteInvoiceOutputBoundary.exportError(responseError);
+            responseError = new DeleteInvoiceOutputDTO();
+            responseError.setStatus("error");
+            responseError.setMsg("Không tồn tại! (KH: " + deleteInvoiceInputDTO.getMaKH() + ")");
+            deleteInvoiceOutputBoundary.exportError(responseError);
             return;
         }
 
-        this.deleteInvoiceDatabaseBoundary.deleteInvoice(maKH);
+        deleteInvoiceDatabaseBoundary.deleteInvoice(maKH);
 
-        responseData.setMsg("Đã xóa thành công! (KH: " + requestData.getMaKH() + ")");
-        this.deleteInvoiceOutputBoundary.exportResult(responseData);
+        DeleteInvoiceOutputDTO outputDTO = new DeleteInvoiceOutputDTO();
+        outputDTO.setStatus("error");
+        outputDTO.setMsg("Đã xóa thành công! (KH: " + deleteInvoiceInputDTO.getMaKH() + ")");
+        deleteInvoiceOutputBoundary.present(outputDTO);
     }
 
-    private boolean verify(RequestData requestData) {
+    private boolean verify(DeleteInvoiceInputDTO deleteInvoiceInputDTO) {
         try {
-            int maKH = Integer.parseInt(requestData.getMaKH());
+            int maKH = Integer.parseInt(deleteInvoiceInputDTO.getMaKH());
             
         } catch (Exception ex) {
             return false;

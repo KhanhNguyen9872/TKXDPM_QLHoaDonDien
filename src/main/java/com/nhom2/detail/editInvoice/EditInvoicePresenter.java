@@ -2,8 +2,6 @@ package com.nhom2.detail.editInvoice;
 
 import com.nhom2.businessRules.editInvoice.EditInvoiceOutputBoundary;
 import com.nhom2.businessRules.editInvoice.EditInvoiceOutputDTO;
-import com.nhom2.businessRules.editInvoice.ResponseData;
-import com.nhom2.businessRules.editInvoice.ResponseError;
 
 public class EditInvoicePresenter implements EditInvoiceOutputBoundary {
     private EditInvoiceView editInvoiceView;
@@ -18,28 +16,43 @@ public class EditInvoicePresenter implements EditInvoiceOutputBoundary {
     }
 
     @Override
-    public void exportError(ResponseError responseError) {
-        // TODO Auto-generated method stub
-        
-    }
+    public void exportError(EditInvoiceOutputDTO responseError) {
+        this.editInvoiceViewModel = new EditInvoiceViewModel();
+        editInvoiceViewModel.status = responseError.getStatus();
+        editInvoiceViewModel.msg = responseError.getMsg();
 
-    @Override
-    public void exportResult(ResponseData responseData) {
-        // TODO Auto-generated method stub
-        
+        if (this.editInvoiceView != null) {
+            this.editInvoiceView.showMsgError(this.editInvoiceViewModel);
+        }
     }
 
     @Override
     public void present(EditInvoiceOutputDTO outputDTO) {
         this.editInvoiceViewModel = new EditInvoiceViewModel();
-        
-        viewShow();
-    }
+        editInvoiceViewModel.msg = outputDTO.getMsg();
+        editInvoiceViewModel.status = outputDTO.getStatus();
 
-    private void viewShow() {
         if (this.editInvoiceView != null) {
-            this.editInvoiceView.showResult(this.editInvoiceViewModel);
+            this.editInvoiceView.showMsgResult(this.editInvoiceViewModel);
         }
     }
-    
+
+    @Override
+    public void presentFind(EditInvoiceOutputDTO editInvoiceOutputDTO) {
+        this.editInvoiceViewModel = new EditInvoiceViewModel();
+        editInvoiceViewModel.status = editInvoiceOutputDTO.getStatus();
+        editInvoiceViewModel.msg = editInvoiceOutputDTO.getMsg();
+        editInvoiceViewModel.maKH = editInvoiceOutputDTO.getMaKH();
+        editInvoiceViewModel.tenKH = editInvoiceOutputDTO.getTenKH();
+        editInvoiceViewModel.ngayHD = editInvoiceOutputDTO.getNgayHD();
+        editInvoiceViewModel.donGia = editInvoiceOutputDTO.getDonGia();
+        editInvoiceViewModel.soLuong = editInvoiceOutputDTO.getSoLuong();
+        editInvoiceViewModel.quocTich = editInvoiceOutputDTO.getQuocTich();
+        editInvoiceViewModel.doiTuongKH = editInvoiceOutputDTO.getDoiTuongKH();
+        editInvoiceViewModel.dinhMuc = editInvoiceOutputDTO.getDinhMuc();
+        
+        if (this.editInvoiceView != null) {
+            this.editInvoiceView.showInvoice(this.editInvoiceViewModel);
+        }
+    }
 }

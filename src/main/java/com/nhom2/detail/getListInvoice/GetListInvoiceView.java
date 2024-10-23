@@ -8,6 +8,7 @@ import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
@@ -23,13 +24,14 @@ public class GetListInvoiceView extends JFrame {
     }
 
     public void mainShow() {
-        buildPanel();
-        this.setVisible(true);
+        build();
+        setVisible(true);
     }
 
-    private void buildPanel() {
-        this.setTitle("Xuất hóa đơn tiền điện");
-        this.setSize(400, 300);
+    private void build() {
+        getContentPane().removeAll();
+        setTitle("Xuất hóa đơn tiền điện");
+        setSize(400, 300);
     }
 
     public void showResult(List<GetListInvoiceViewModel> listInvoice) {
@@ -111,5 +113,13 @@ public class GetListInvoiceView extends JFrame {
 
     public void setGetListInvoiceController(GetListInvoiceController getListInvoiceController) {
         this.getListInvoiceController = getListInvoiceController;
+    }
+
+    public void showMsgError(GetListInvoiceViewModel responseData) {
+        // Show alert dialog
+        JOptionPane.showMessageDialog(null,
+                responseData.msg,
+                responseData.status,
+                JOptionPane.ERROR_MESSAGE);
     }
 }

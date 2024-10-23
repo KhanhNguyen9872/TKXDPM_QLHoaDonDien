@@ -3,6 +3,7 @@ package com.nhom2.businessRules.addInvoice;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.nhom2.businessRules.entity.Invoice;
 import com.nhom2.businessRules.entity.InvoiceNuocNgoai;
 import com.nhom2.businessRules.entity.InvoiceVN;
 
@@ -15,50 +16,39 @@ public class AddInvoiceUseCase implements AddInvoiceInputBoundary {
         this.addInvoiceDatabaseBoundary = addInvoiceDatabaseBoundary;
     }
 
-    private boolean isExist(int maKH) {
-        return this.addInvoiceDatabaseBoundary.isExist(maKH);
-    }
-
     @Override
-    public void execute(RequestData requestData) {
+    public void execute(AddInvoiceInputDTO addInvoiceInputDTO) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        // ResponseData responseData = new ResponseData();
-        ResponseError responseError = new ResponseError();
+        AddInvoiceOutputDTO responseError;
+        Invoice invoice;
 
-        if (!verify(requestData)) {
+        if (!verify(addInvoiceInputDTO)) {
+            responseError = new AddInvoiceOutputDTO();
+            responseError.setStatus("error");
             responseError.setMsg("Dữ liệu không hợp lệ!");
             addInvoiceOutputBoundary.exportError(responseError);
             return;
         }
 
-        int maKH = Integer.parseInt(requestData.getMaKH());
-
-        if (this.isExist(maKH)) {
-            responseError.setMsg("Đã tồn tại! (KH: " + requestData.getMaKH() + ")");
-            this.addInvoiceOutputBoundary.exportError(responseError);
-            return;
-        }
-
-        String tenKH = requestData.getTenKH();
+        String tenKH = addInvoiceInputDTO.getTenKH();
         Date ngayHD = null;
 
         try {
-            ngayHD = formatter.parse(requestData.getNgayHD());
+            ngayHD = formatter.parse(addInvoiceInputDTO.getNgayHD());
         } catch (Exception e) {
             
         }
         
-        int soLuong = Integer.parseInt(requestData.getSoLuong());
-        int donGia = Integer.parseInt(requestData.getDonGia());
+        int soLuong = Integer.parseInt(addInvoiceInputDTO.getSoLuong());
+        int donGia = Integer.parseInt(addInvoiceInputDTO.getDonGia());
 
-        String quocTich = requestData.getQuocTich();
+        String quocTich = addInvoiceInputDTO.getQuocTich();
 
         if (quocTich == null || quocTich.isEmpty()) {
-            String doiTuongKH = requestData.getDoiTuongKH();
-            int dinhMuc = Integer.parseInt(requestData.getDinhMuc());
+            String doiTuongKH = addInvoiceInputDTO.getDoiTuongKH();
+            int dinhMuc = Integer.parseInt(addInvoiceInputDTO.getDinhMuc());
             
             InvoiceVN invoiceVN = new InvoiceVN();
-            invoiceVN.setMaKH(maKH);
             invoiceVN.setTenKH(tenKH);
             invoiceVN.setNgayHD(ngayHD);
             invoiceVN.setDoiTuongKH(doiTuongKH);
@@ -66,32 +56,31 @@ public class AddInvoiceUseCase implements AddInvoiceInputBoundary {
             invoiceVN.setDonGia(donGia);
             invoiceVN.setDinhMuc(dinhMuc);
             
-            this.addInvoiceDatabaseBoundary.addInvoice(invoiceVN);
+            invoice = (Invoice)invoiceVN;
         } else {
             InvoiceNuocNgoai invoiceNuocNgoai = new InvoiceNuocNgoai();
-            invoiceNuocNgoai.setMaKH(maKH);
             invoiceNuocNgoai.setTenKH(tenKH);
             invoiceNuocNgoai.setNgayHD(ngayHD);
             invoiceNuocNgoai.setSoLuong(soLuong);
             invoiceNuocNgoai.setDonGia(donGia);
             invoiceNuocNgoai.setQuocTich(quocTich);
 
-            this.addInvoiceDatabaseBoundary.addInvoice(invoiceNuocNgoai);
+            invoice = (Invoice)invoiceNuocNgoai;
         }
 
-        // responseData.setMsg("Đã thêm thành công!");
-        // this.addInvoiceOutputBoundary.exportResult(responseData);
+        this.addInvoiceDatabaseBoundary.addInvoice((invoice));
 
-        AddInvoiceOutputDTO outputDTO = new AddInvoiceOutputDTO("Đã thêm thành công! (KH: " + maKH + ")");
+        AddInvoiceOutputDTO outputDTO = new AddInvoiceOutputDTO();
+        outputDTO.setStatus("success");
+        outputDTO.setMsg("Đã thêm thành công! (TenKH: " + tenKH + ")");
 
         this.addInvoiceOutputBoundary.present(outputDTO);
     }
 
-    private boolean verify(RequestData requestData) {
+    private boolean verify(AddInvoiceInputDTO requestData) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
         try {
-            int maKH = Integer.parseInt(requestData.getMaKH());
             String tenKH = requestData.getTenKH();
             Date ngayHD = formatter.parse(requestData.getNgayHD());
             int soLuong = Integer.parseInt(requestData.getSoLuong());
@@ -111,6 +100,7 @@ public class AddInvoiceUseCase implements AddInvoiceInputBoundary {
             }
             
         } catch (Exception ex) {
+            ex.printStackTrace();
             return false;
         }
 

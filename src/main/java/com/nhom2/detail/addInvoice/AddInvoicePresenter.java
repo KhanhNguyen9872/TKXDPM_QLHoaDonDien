@@ -2,8 +2,6 @@ package com.nhom2.detail.addInvoice;
 
 import com.nhom2.businessRules.addInvoice.AddInvoiceOutputBoundary;
 import com.nhom2.businessRules.addInvoice.AddInvoiceOutputDTO;
-import com.nhom2.businessRules.addInvoice.ResponseData;
-import com.nhom2.businessRules.addInvoice.ResponseError;
 
 public class AddInvoicePresenter implements AddInvoiceOutputBoundary {
     private AddInvoiceView addInvoiceView;
@@ -18,32 +16,24 @@ public class AddInvoicePresenter implements AddInvoiceOutputBoundary {
     }
 
     @Override
-    public void exportError(ResponseError responseError) {
+    public void exportError(AddInvoiceOutputDTO responseError) {
         this.addInvoiceViewModel = new AddInvoiceViewModel();
-        this.addInvoiceViewModel.status = "error";
+        this.addInvoiceViewModel.status = responseError.getStatus();
         this.addInvoiceViewModel.msg = responseError.getMsg();
-        viewShow();
-    }
 
-    @Override
-    public void exportResult(ResponseData responseData) {
-        this.addInvoiceViewModel = new AddInvoiceViewModel();
-        this.addInvoiceViewModel.status = "success";
-        this.addInvoiceViewModel.msg = responseData.getMsg();
-        viewShow();
+        if (this.addInvoiceView != null) {
+            this.addInvoiceView.showMsgError(this.addInvoiceViewModel);
+        }
     }
 
     @Override
     public void present(AddInvoiceOutputDTO outputDTO) {
         this.addInvoiceViewModel = new AddInvoiceViewModel();
-        this.addInvoiceViewModel.status = "success";
+        this.addInvoiceViewModel.status = outputDTO.getStatus();
         this.addInvoiceViewModel.msg = outputDTO.getMsg();
-        viewShow();
-    }
 
-    private void viewShow() {
         if (this.addInvoiceView != null) {
-            this.addInvoiceView.showResult(this.addInvoiceViewModel);
+            this.addInvoiceView.showMsgResult(this.addInvoiceViewModel);
         }
     }
 }
