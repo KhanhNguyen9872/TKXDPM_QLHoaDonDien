@@ -1,0 +1,7 @@
+package com.nhom2.detail.avgMoneyInvoiceNuocNgoai;
+
+import com.nhom2.businessRules.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiOutputBoundary;
+
+public class AvgMoneyInvoiceNuocNgoaiPresenter implements AvgMoneyInvoiceNuocNgoaiOutputBoundary {
+
+}

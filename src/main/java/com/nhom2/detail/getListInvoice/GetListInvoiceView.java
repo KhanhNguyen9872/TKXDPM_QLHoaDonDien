@@ -24,20 +24,13 @@ public class GetListInvoiceView extends JFrame {
     }
 
     public void mainShow() {
-        build();
-        setVisible(true);
-    }
-
-    private void build() {
         getContentPane().removeAll();
-        setTitle("Xuất hóa đơn tiền điện");
-        setSize(400, 300);
+        getListInvoiceController.execute();
     }
 
     public void showResult(List<GetListInvoiceViewModel> listInvoice) {
         this.listInvoice = listInvoice;
-        this.setTitle("Invoice management");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Xuất hóa đơn tiền điện");
         this.setSize(900, 500);
 
         // Create title label
@@ -58,7 +51,7 @@ public class GetListInvoiceView extends JFrame {
         table.setDefaultRenderer(Object.class, new InvoiceCellRenderer());
 
         // Add student data to the table
-        for (GetListInvoiceViewModel invoice : listInvoice) {
+        for (GetListInvoiceViewModel invoice: listInvoice) {
             Object[] row = {
                 invoice.maKH,
                 invoice.tenKH,

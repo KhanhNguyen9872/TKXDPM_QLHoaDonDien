@@ -18,7 +18,7 @@ public class GetListInvoiceDAOMySQL extends DAOMySQL implements GetListInvoiceDa
 
     @Override
     public List<Invoice> getAllInvoices() {
-        List<Invoice> invoices = new ArrayList<>();
+        List<Invoice> invoices = null;
 
         connect();
         
@@ -26,6 +26,7 @@ public class GetListInvoiceDAOMySQL extends DAOMySQL implements GetListInvoiceDa
         try {
             Statement statement = createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
+            invoices = new ArrayList<>();
             Invoice invoice;
 
             while(resultSet.next()) {

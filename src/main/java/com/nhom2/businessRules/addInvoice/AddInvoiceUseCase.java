@@ -68,7 +68,7 @@ public class AddInvoiceUseCase implements AddInvoiceInputBoundary {
             invoice = (Invoice)invoiceNuocNgoai;
         }
 
-        this.addInvoiceDatabaseBoundary.addInvoice((invoice));
+        this.addInvoiceDatabaseBoundary.addInvoice(invoice);
 
         AddInvoiceOutputDTO outputDTO = new AddInvoiceOutputDTO();
         outputDTO.setStatus("success");

@@ -10,11 +10,7 @@ public class DeleteInvoiceController {
         this.deleteInvoiceInputBoundary = deleteInvoiceInputBoundary;
     }
 
-    public void execute(DeleteInvoiceViewModel deleteInvoiceViewModel) {
-        DeleteInvoiceInputDTO requestData = new DeleteInvoiceInputDTO();
-        // set requestData
-
-        //
-        this.deleteInvoiceInputBoundary.execute(requestData);
+    public void execute(DeleteInvoiceInputDTO deleteInvoiceInputDTO) {
+        this.deleteInvoiceInputBoundary.execute(deleteInvoiceInputDTO);
     }
 }

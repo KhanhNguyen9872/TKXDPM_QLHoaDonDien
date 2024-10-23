@@ -22,6 +22,14 @@ public class GetListInvoiceUseCase implements GetListInvoiceInputBoundary {
 
         List<Invoice> listInvoice = this.getListInvoiceDatabaseBoundary.getAllInvoices();
 
+        if (listInvoice == null) {
+            GetListInvoiceOutputDTO responseError = new GetListInvoiceOutputDTO();
+            responseError.setStatus("error");
+            responseError.setMsg("Đã xảy ra lỗi tại Database!");
+            this.getListInvoiceOutputBoundary.exportError(responseError);
+            return;
+        }
+
         for (Invoice invoice : listInvoice) {
             if (invoice.getClass().equals(InvoiceNuocNgoai.class)) {
                 InvoiceNuocNgoai invoiceNuocNgoai = (InvoiceNuocNgoai)invoice;

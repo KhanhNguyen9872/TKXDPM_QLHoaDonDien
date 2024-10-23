@@ -2,6 +2,7 @@ package com.nhom2;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
@@ -12,6 +13,7 @@ import com.nhom2.businessRules.getListInvoice.GetListInvoiceOutputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceUseCase;
 import com.nhom2.database.mysql.GetListInvoiceDAOMySQL;
 import com.nhom2.detail.getListInvoice.GetListInvoicePresenter;
+import com.nhom2.detail.getListInvoice.GetListInvoiceView;
 import com.nhom2.detail.getListInvoice.GetListInvoiceViewModel;
 
 public class GetListInvoiceTest 
@@ -26,13 +28,12 @@ public class GetListInvoiceTest
     @Test
     public void getListInvoiceSuccess() throws Exception
     {
-        GetListInvoiceOutputBoundary getListInvoiceOutputBoundary = new GetListInvoicePresenter(null);
+        List<GetListInvoiceViewModel> getListInvoiceViewModel = new ArrayList<>();
+        GetListInvoiceOutputBoundary getListInvoiceOutputBoundary = new GetListInvoicePresenter(null, getListInvoiceViewModel);
         GetListInvoiceDatabaseBoundary getListInvoiceDatabaseBoundary = new GetListInvoiceDAOMySQL(ipAddress, port, db, username, password);
         GetListInvoiceInputBoundary getListInvoiceInputBoundary = new GetListInvoiceUseCase(getListInvoiceOutputBoundary, getListInvoiceDatabaseBoundary);
         
         getListInvoiceInputBoundary.execute();
-
-        List<GetListInvoiceViewModel> getListInvoiceViewModel = ((GetListInvoicePresenter)getListInvoiceOutputBoundary).getGetListInvoiceViewModel();
         assertEquals(getListInvoiceViewModel.size(), 1);
     }
 }

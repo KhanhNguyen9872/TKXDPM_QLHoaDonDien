@@ -10,12 +10,14 @@ public class GetListInvoicePresenter implements GetListInvoiceOutputBoundary {
     private GetListInvoiceView getListInvoiceView;
     private List<GetListInvoiceViewModel> listViewModel;
 
-    public GetListInvoicePresenter(GetListInvoiceView getListInvoiceView) {
+    public GetListInvoicePresenter(GetListInvoiceView getListInvoiceView, List<GetListInvoiceViewModel> getListInvoiceViewModel) {
         this.getListInvoiceView = getListInvoiceView;
+        this.listViewModel = getListInvoiceViewModel;
     }
 
     @Override
     public void exportError(GetListInvoiceOutputDTO responseData) {
+        this.listViewModel.clear();
         GetListInvoiceViewModel getListInvoiceViewModel = new GetListInvoiceViewModel(responseData.getStatus(), responseData.getMsg());
         
         if (this.getListInvoiceView != null) {
@@ -25,7 +27,7 @@ public class GetListInvoicePresenter implements GetListInvoiceOutputBoundary {
 
     @Override
     public void present(List<GetListInvoiceOutputDTO> listOutputDTO) {
-        this.listViewModel = new ArrayList<>();
+        this.listViewModel.clear();
 
         String maKH;
         String tenKH;
@@ -48,15 +50,11 @@ public class GetListInvoicePresenter implements GetListInvoiceOutputBoundary {
             dinhMuc = String.valueOf(outputDTO.getDinhMuc());
             thanhTien = String.valueOf(outputDTO.getThanhTien());
 
-            this.listViewModel.add(new GetListInvoiceViewModel("success", "", maKH, tenKH, ngayHD, soLuong, donGia,quocTich, doiTuongKH, dinhMuc, thanhTien));
+            this.listViewModel.add(new GetListInvoiceViewModel("success", "", maKH, tenKH, ngayHD, soLuong, donGia, quocTich, doiTuongKH, dinhMuc, thanhTien));
         }
 
         if (this.getListInvoiceView != null) {
             this.getListInvoiceView.showResult(this.listViewModel);
         }
-    }
-
-    public List<GetListInvoiceViewModel> getGetListInvoiceViewModel() {
-        return this.listViewModel;
     }
 }

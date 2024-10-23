@@ -7,17 +7,13 @@ public class AddInvoicePresenter implements AddInvoiceOutputBoundary {
     private AddInvoiceView addInvoiceView;
     private AddInvoiceViewModel addInvoiceViewModel;
 
-    public AddInvoicePresenter(AddInvoiceView addInvoiceView) {
+    public AddInvoicePresenter(AddInvoiceView addInvoiceView, AddInvoiceViewModel addInvoiceViewModel) {
         this.addInvoiceView = addInvoiceView;
-    }
-
-    public AddInvoiceViewModel getAddInvoiceViewModel() {
-        return this.addInvoiceViewModel;
+        this.addInvoiceViewModel = addInvoiceViewModel;
     }
 
     @Override
     public void exportError(AddInvoiceOutputDTO responseError) {
-        this.addInvoiceViewModel = new AddInvoiceViewModel();
         this.addInvoiceViewModel.status = responseError.getStatus();
         this.addInvoiceViewModel.msg = responseError.getMsg();
 
@@ -28,7 +24,6 @@ public class AddInvoicePresenter implements AddInvoiceOutputBoundary {
 
     @Override
     public void present(AddInvoiceOutputDTO outputDTO) {
-        this.addInvoiceViewModel = new AddInvoiceViewModel();
         this.addInvoiceViewModel.status = outputDTO.getStatus();
         this.addInvoiceViewModel.msg = outputDTO.getMsg();
 

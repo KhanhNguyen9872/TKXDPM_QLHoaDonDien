@@ -33,14 +33,13 @@ public class AddInvoiceTest
     @Test
     public void addInvoiceSuccess() throws Exception
     {
-        AddInvoiceOutputBoundary addInvoiceOutputBoundary = new AddInvoicePresenter(null);
+        AddInvoiceViewModel addInvoiceViewModel = new AddInvoiceViewModel();
+        AddInvoiceOutputBoundary addInvoiceOutputBoundary = new AddInvoicePresenter(null, addInvoiceViewModel);
         AddInvoiceDatabaseBoundary addInvoiceDatabaseBoundary = new AddInvoiceDAOMySQL(ipAddress, port, db, username, password);
         AddInvoiceInputBoundary addInvoiceInputBoundary = new AddInvoiceUseCase(addInvoiceOutputBoundary, addInvoiceDatabaseBoundary);
 
         AddInvoiceInputDTO addInvoiceInputDTO = getRequestData();
         addInvoiceInputBoundary.execute(addInvoiceInputDTO);
-
-        AddInvoiceViewModel addInvoiceViewModel = ((AddInvoicePresenter)addInvoiceOutputBoundary).getAddInvoiceViewModel();
 
         assertEquals(addInvoiceViewModel.msg, "Đã thêm thành công! (TenKH: " + addInvoiceInputDTO.getTenKH() + ")");
     }
@@ -48,7 +47,8 @@ public class AddInvoiceTest
     @Test
     public void addInvoiceError() throws Exception
     {
-        AddInvoiceOutputBoundary addInvoiceOutputBoundary = new AddInvoicePresenter(null);
+        AddInvoiceViewModel addInvoiceViewModel = new AddInvoiceViewModel();
+        AddInvoiceOutputBoundary addInvoiceOutputBoundary = new AddInvoicePresenter(null, addInvoiceViewModel);
         AddInvoiceDatabaseBoundary addInvoiceDatabaseBoundary = new AddInvoiceDAOMySQL(ipAddress, port, db, username, password);
         AddInvoiceInputBoundary addInvoiceInputBoundary = new AddInvoiceUseCase(addInvoiceOutputBoundary, addInvoiceDatabaseBoundary);
 
@@ -56,7 +56,6 @@ public class AddInvoiceTest
 
         requestData.setNgayHD("20240101");
         addInvoiceInputBoundary.execute(requestData);
-        AddInvoiceViewModel addInvoiceViewModel = ((AddInvoicePresenter)addInvoiceOutputBoundary).getAddInvoiceViewModel();
 
         assertEquals(addInvoiceViewModel.msg, "Dữ liệu không hợp lệ!");
     }

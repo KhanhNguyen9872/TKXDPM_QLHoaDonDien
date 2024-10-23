@@ -53,5 +53,9 @@ public class GetListInvoiceViewModel {
         this.thanhTien = thanhTien;
     }
 
+    public GetListInvoiceViewModel() {
+        //TODO Auto-generated constructor stub
+    }
+
     
 }

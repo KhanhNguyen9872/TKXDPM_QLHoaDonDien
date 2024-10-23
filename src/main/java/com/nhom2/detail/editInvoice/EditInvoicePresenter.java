@@ -7,8 +7,9 @@ public class EditInvoicePresenter implements EditInvoiceOutputBoundary {
     private EditInvoiceView editInvoiceView;
     private EditInvoiceViewModel editInvoiceViewModel;
 
-    public EditInvoicePresenter(EditInvoiceView editInvoiceView) {
+    public EditInvoicePresenter(EditInvoiceView editInvoiceView, EditInvoiceViewModel editInvoiceViewModel) {
         this.editInvoiceView = editInvoiceView;
+        this.editInvoiceViewModel = editInvoiceViewModel;
     }
 
     public EditInvoiceViewModel getEditInvoiceViewModel() {
@@ -17,7 +18,6 @@ public class EditInvoicePresenter implements EditInvoiceOutputBoundary {
 
     @Override
     public void exportError(EditInvoiceOutputDTO responseError) {
-        this.editInvoiceViewModel = new EditInvoiceViewModel();
         editInvoiceViewModel.status = responseError.getStatus();
         editInvoiceViewModel.msg = responseError.getMsg();
 
@@ -28,7 +28,6 @@ public class EditInvoicePresenter implements EditInvoiceOutputBoundary {
 
     @Override
     public void present(EditInvoiceOutputDTO outputDTO) {
-        this.editInvoiceViewModel = new EditInvoiceViewModel();
         editInvoiceViewModel.msg = outputDTO.getMsg();
         editInvoiceViewModel.status = outputDTO.getStatus();
 
@@ -39,7 +38,6 @@ public class EditInvoicePresenter implements EditInvoiceOutputBoundary {
 
     @Override
     public void presentFind(EditInvoiceOutputDTO editInvoiceOutputDTO) {
-        this.editInvoiceViewModel = new EditInvoiceViewModel();
         editInvoiceViewModel.status = editInvoiceOutputDTO.getStatus();
         editInvoiceViewModel.msg = editInvoiceOutputDTO.getMsg();
         editInvoiceViewModel.maKH = editInvoiceOutputDTO.getMaKH();

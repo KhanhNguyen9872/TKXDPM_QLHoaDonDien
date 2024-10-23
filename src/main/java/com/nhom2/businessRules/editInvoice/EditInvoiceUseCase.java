@@ -78,7 +78,13 @@ public class EditInvoiceUseCase implements EditInvoiceInputBoundary {
         }
 
         int maKH = Integer.parseInt(editInvoiceInputDTO.getMaKH());
-        if (!this.isExist(maKH)) {
+        Boolean isE = this.isExist(maKH);
+        if (isE == null) {
+            responseError.setStatus("error");
+            responseError.setMsg("Đã xảy ra lỗi tại Database!");
+            editInvoiceOutputBoundary.exportError(responseError);
+            return;
+        } else if (!isE) {
             responseError.setStatus("error");
             responseError.setMsg("Không tồn tại! (KH: " + maKH + ")");
             editInvoiceOutputBoundary.exportError(responseError);
@@ -155,7 +161,7 @@ public class EditInvoiceUseCase implements EditInvoiceInputBoundary {
         return true;
     }
 
-    private boolean isExist(int maKH) {
+    private Boolean isExist(int maKH) {
         return editInvoiceDatabaseBoundary.isExist(maKH);
     }
 }

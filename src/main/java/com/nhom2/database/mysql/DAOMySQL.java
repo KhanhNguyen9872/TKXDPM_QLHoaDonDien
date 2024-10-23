@@ -74,8 +74,8 @@ public class DAOMySQL {
         }
     }
 
-    public boolean isExist(int maKH) {
-        boolean result = false;
+    public Boolean isExist(int maKH) {
+        Boolean result = false;
 
         connect();
 
@@ -92,6 +92,7 @@ public class DAOMySQL {
 
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
 
         close();

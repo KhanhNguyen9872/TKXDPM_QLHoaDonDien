@@ -28,7 +28,9 @@ public class GetListInvoiceOutputDTO {
         this.thanhTien = thanhTien;
     }
 
-    
+    public GetListInvoiceOutputDTO() {
+
+    }
 
     public String getStatus() {
         return status;

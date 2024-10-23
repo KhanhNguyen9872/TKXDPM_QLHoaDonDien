@@ -32,14 +32,13 @@ public class DeleteInvoiceTest
     @Test
     public void deleteInvoiceSuccess() throws Exception
     {
-        DeleteInvoiceOutputBoundary deleteInvoiceOutputBoundary = new DeleteInvoicePresenter(null);
+        DeleteInvoiceViewModel deleteInvoiceViewModel = new DeleteInvoiceViewModel();
+        DeleteInvoiceOutputBoundary deleteInvoiceOutputBoundary = new DeleteInvoicePresenter(null, deleteInvoiceViewModel);
         DeleteInvoiceDatabaseBoundary deleteInvoiceDatabaseBoundary = new DeleteInvoiceDAOMySQL(ipAddress, port, db, username, password);
         DeleteInvoiceInputBoundary deleteInvoiceInputBoundary = new DeleteInvoiceUseCase(deleteInvoiceOutputBoundary, deleteInvoiceDatabaseBoundary);
 
         DeleteInvoiceInputDTO requestData = getRequestData();
         deleteInvoiceInputBoundary.execute(requestData);
-
-        DeleteInvoiceViewModel deleteInvoiceViewModel = ((DeleteInvoicePresenter)deleteInvoiceOutputBoundary).getDeleteInvoiceViewModel();
         
         assertEquals(deleteInvoiceViewModel.msg, "Đã xóa thành công! (KH: " + requestData.getMaKH() + ")");
     }
@@ -47,7 +46,8 @@ public class DeleteInvoiceTest
     @Test
     public void deleteInvoiceError() throws Exception
     {
-        DeleteInvoiceOutputBoundary deleteInvoiceOutputBoundary = new DeleteInvoicePresenter(null);
+        DeleteInvoiceViewModel deleteInvoiceViewModel = new DeleteInvoiceViewModel();
+        DeleteInvoiceOutputBoundary deleteInvoiceOutputBoundary = new DeleteInvoicePresenter(null, deleteInvoiceViewModel);
         DeleteInvoiceDatabaseBoundary deleteInvoiceDatabaseBoundary = new DeleteInvoiceDAOMySQL(ipAddress, port, db, username, password);
         DeleteInvoiceInputBoundary deleteInvoiceInputBoundary = new DeleteInvoiceUseCase(deleteInvoiceOutputBoundary, deleteInvoiceDatabaseBoundary);
 
@@ -55,14 +55,10 @@ public class DeleteInvoiceTest
 
         requestData.setMaKH("ID01");
         deleteInvoiceInputBoundary.execute(requestData);
-
-        DeleteInvoiceViewModel deleteInvoiceViewModel = ((DeleteInvoicePresenter)deleteInvoiceOutputBoundary).getDeleteInvoiceViewModel();
         assertEquals(deleteInvoiceViewModel.msg, "Dữ liệu không hợp lệ!");
 
         requestData.setMaKH("0");
         deleteInvoiceInputBoundary.execute(requestData);
-
-        DeleteInvoiceViewModel deleteInvoiceViewModel2 = ((DeleteInvoicePresenter)deleteInvoiceOutputBoundary).getDeleteInvoiceViewModel();
-        assertEquals(deleteInvoiceViewModel2.msg, "Không tồn tại! (KH: " + requestData.getMaKH() + ")");
+        assertEquals(deleteInvoiceViewModel.msg, "Không tồn tại! (KH: " + requestData.getMaKH() + ")");
     }
 }
