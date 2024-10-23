@@ -9,14 +9,8 @@ import com.nhom2.database.mysql.AddInvoiceDAOMySQL;
 import com.nhom2.detail.addInvoice.AddInvoicePresenter;
 import com.nhom2.detail.addInvoice.AddInvoiceViewModel;
 
-public class AddInvoiceTest 
+public class AddInvoiceTest extends Nhom2Test
 {
-    private final String ipAddress = "127.0.0.1";
-    private final int port = 3306;
-    private final String db = "invoice";
-    private final String username = "root";
-    private final String password = "12345678";
-
     private AddInvoiceInputDTO getRequestData() {
         AddInvoiceInputDTO addInvoiceInputDTO = new AddInvoiceInputDTO();
 

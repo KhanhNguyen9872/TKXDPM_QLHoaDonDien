@@ -2,20 +2,25 @@ package com.nhom2.detail.editInvoice;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import javax.swing.*;
+
+import org.jdesktop.swingx.JXDatePicker;
+
 import java.awt.*;
 
 import com.nhom2.businessRules.editInvoice.EditInvoiceInputDTO;
-import com.nhom2.businessRules.editInvoice.EditInvoiceOutputDTO;
 
 public class EditInvoiceView extends JFrame implements ActionListener {
     private EditInvoiceController editInvoiceController;
-    private JTextField tf_MaKH, tf_TenKH, tf_NgayHD, tf_SoLuong, tf_DonGia, tf_QuocTich, tf_DinhMuc;
+    private JTextField tf_MaKH, tf_TenKH, tf_SoLuong, tf_DonGia, tf_QuocTich, tf_DinhMuc;
     private JLabel lb_MaKH, lb_TenKH, lb_NgayHD, lb_SoLuong, lb_DonGia, lb_QuocTich, lb_DoiTuongKH, lb_DinhMuc;
     private JComboBox<String> cb_DoiTuongKH;
-    private JButton editBtn;
-    private JFrame jFrameEdit;
+    private JButton editInvoiceBtn, findInvoiceBtn;
+    private JXDatePicker dp_NgayHD;
+    private SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
     public EditInvoiceView() {
         
@@ -31,15 +36,15 @@ public class EditInvoiceView extends JFrame implements ActionListener {
     }
 
     private void mainShowEdit() {
-        jFrameEdit.setTitle("Sửa hóa đơn tiền điện");
-        jFrameEdit.setSize(400, 400);
-        jFrameEdit.setResizable(false);
-        jFrameEdit.setLayout(new GridLayout(9, 2));
-        jFrameEdit.setVisible(true);
+        setTitle("Sửa hóa đơn tiền điện");
+        setSize(400, 400);
+        setResizable(false);
+        setLayout(new GridLayout(9, 2));
+        setVisible(true);
     }
 
     private void build() {
-        this.jFrameEdit = new JFrame();
+        getContentPane().removeAll();
 
         // Initialize JLabels as instance variables
         lb_MaKH = new JLabel("Mã khách hàng:");
@@ -54,7 +59,6 @@ public class EditInvoiceView extends JFrame implements ActionListener {
         // Initialize JTextFields as instance variables
         tf_MaKH = new JTextField(10);
         tf_TenKH = new JTextField(10);
-        tf_NgayHD = new JTextField(10);
         tf_SoLuong = new JTextField(10);
         tf_DonGia = new JTextField(10);
         tf_QuocTich = new JTextField(10);
@@ -64,21 +68,26 @@ public class EditInvoiceView extends JFrame implements ActionListener {
         String[] options = {"", "Sinh hoạt", "Kinh doanh", "Sản xuất"};
         cb_DoiTuongKH = new JComboBox<>(options);
 
+        // Initialize JXDatePicker
+        dp_NgayHD = new JXDatePicker();
+        dp_NgayHD.setDate(Calendar.getInstance().getTime());
+        dp_NgayHD.setFormats(formatter);
+
         // Add JLabels and JTextFields to the frame
-        jFrameEdit.add(lb_MaKH); jFrameEdit.add(tf_MaKH);
-        jFrameEdit.add(lb_TenKH); jFrameEdit.add(tf_TenKH);
-        jFrameEdit.add(lb_NgayHD); jFrameEdit.add(tf_NgayHD);
-        jFrameEdit.add(lb_SoLuong); jFrameEdit.add(tf_SoLuong);
-        jFrameEdit.add(lb_DonGia); jFrameEdit.add(tf_DonGia);
-        jFrameEdit.add(lb_QuocTich); jFrameEdit.add(tf_QuocTich);
-        jFrameEdit.add(lb_DoiTuongKH); jFrameEdit.add(cb_DoiTuongKH);
-        jFrameEdit.add(lb_DinhMuc); jFrameEdit.add(tf_DinhMuc);
+        add(lb_MaKH); add(tf_MaKH);
+        add(lb_TenKH); add(tf_TenKH);
+        add(lb_NgayHD); add(dp_NgayHD);
+        add(lb_SoLuong); add(tf_SoLuong);
+        add(lb_DonGia); add(tf_DonGia);
+        add(lb_QuocTich); add(tf_QuocTich);
+        add(lb_DoiTuongKH); add(cb_DoiTuongKH);
+        add(lb_DinhMuc); add(tf_DinhMuc);
 
         // Create and add submit button
-        editBtn = new JButton("Update");
-        editBtn.addActionListener(this);
-        jFrameEdit.add(new JLabel());
-        jFrameEdit.add(editBtn);
+        editInvoiceBtn = new JButton("Update");
+        editInvoiceBtn.addActionListener(this);
+        add(new JLabel());
+        add(editInvoiceBtn);
     }
 
     private void buildFind() {
@@ -94,10 +103,10 @@ public class EditInvoiceView extends JFrame implements ActionListener {
         add(lb_MaKH); add(tf_MaKH);
 
         // Create and add submit button
-        JButton btnSubmit = new JButton("Find");
-        btnSubmit.addActionListener(this);
+        findInvoiceBtn = new JButton("Find");
+        findInvoiceBtn.addActionListener(this);
         add(new JLabel()); // Empty cell in grid
-        add(btnSubmit);
+        add(findInvoiceBtn);
     }
 
     public void setEditInvoiceController(EditInvoiceController editInvoiceController) {
@@ -115,9 +124,16 @@ public class EditInvoiceView extends JFrame implements ActionListener {
         String dinhMuc = editInvoiceViewModel.dinhMuc;
 
         build();
+
         tf_MaKH.setText(maKH);
         tf_TenKH.setText(tenKH);
-        tf_NgayHD.setText(ngayHD);
+
+        try {
+            dp_NgayHD.setDate(formatter.parse(ngayHD));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
         tf_SoLuong.setText(soLuong);
         tf_DonGia.setText(donGia);
         tf_QuocTich.setText(quocTich);
@@ -147,24 +163,21 @@ public class EditInvoiceView extends JFrame implements ActionListener {
         String cmd = e.getActionCommand();
         EditInvoiceInputDTO editInvoiceInputDTO = new EditInvoiceInputDTO();
 
-        if (cmd.equals("Find")) {
+        if (cmd.equals(findInvoiceBtn.getActionCommand())) {
             editInvoiceInputDTO.setMaKH(tf_MaKH.getText());
             editInvoiceController.executeFind(editInvoiceInputDTO);
-            this.setVisible(false);
         }
 
-        if (cmd.equals("Update")) {
+        if (cmd.equals(editInvoiceBtn.getActionCommand())) {
             editInvoiceInputDTO.setMaKH(tf_MaKH.getText());
             editInvoiceInputDTO.setTenKH(tf_TenKH.getText());
-            editInvoiceInputDTO.setNgayHD(tf_NgayHD.getText());
+            editInvoiceInputDTO.setNgayHD(formatter.format(dp_NgayHD.getDate()));
             editInvoiceInputDTO.setSoLuong(tf_SoLuong.getText());
             editInvoiceInputDTO.setDonGia(tf_DonGia.getText());
             editInvoiceInputDTO.setQuocTich(tf_QuocTich.getText());
             editInvoiceInputDTO.setDoiTuongKH(cb_DoiTuongKH.getSelectedItem().toString());
             editInvoiceInputDTO.setDinhMuc(tf_DinhMuc.getText());
             editInvoiceController.execute(editInvoiceInputDTO);
-            jFrameEdit.setVisible(false);
-            jFrameEdit.dispose();
         }
     }
 }

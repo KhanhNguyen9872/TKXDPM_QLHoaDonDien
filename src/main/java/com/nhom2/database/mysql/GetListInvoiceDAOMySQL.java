@@ -30,7 +30,7 @@ public class GetListInvoiceDAOMySQL extends DAOMySQL implements GetListInvoiceDa
             Invoice invoice;
 
             while(resultSet.next()) {
-                if (!resultSet.getString("quocTich").isEmpty()) {
+                if (resultSet.getString("quocTich").isEmpty()) {
                     invoice = new InvoiceVN(
                         resultSet.getInt("maKH"),
                         resultSet.getString("tenKH"),

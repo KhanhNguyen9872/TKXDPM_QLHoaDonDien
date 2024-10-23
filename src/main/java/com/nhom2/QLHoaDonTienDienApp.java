@@ -15,6 +15,10 @@ import com.nhom2.businessRules.editInvoice.EditInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.editInvoice.EditInvoiceInputBoundary;
 import com.nhom2.businessRules.editInvoice.EditInvoiceOutputBoundary;
 import com.nhom2.businessRules.editInvoice.EditInvoiceUseCase;
+import com.nhom2.businessRules.findInvoice.FindInvoiceDatabaseBoundary;
+import com.nhom2.businessRules.findInvoice.FindInvoiceInputBoundary;
+import com.nhom2.businessRules.findInvoice.FindInvoiceOutputBoundary;
+import com.nhom2.businessRules.findInvoice.FindInvoiceUseCase;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceInputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceOutputBoundary;
@@ -22,6 +26,7 @@ import com.nhom2.businessRules.getListInvoice.GetListInvoiceUseCase;
 import com.nhom2.database.mysql.AddInvoiceDAOMySQL;
 import com.nhom2.database.mysql.DeleteInvoiceDAOMySQL;
 import com.nhom2.database.mysql.EditInvoiceDAOMySQL;
+import com.nhom2.database.mysql.FindInvoiceDAOMySQL;
 import com.nhom2.database.mysql.GetListInvoiceDAOMySQL;
 import com.nhom2.detail.MainGUI;
 import com.nhom2.detail.addInvoice.AddInvoiceController;
@@ -36,6 +41,10 @@ import com.nhom2.detail.editInvoice.EditInvoiceController;
 import com.nhom2.detail.editInvoice.EditInvoicePresenter;
 import com.nhom2.detail.editInvoice.EditInvoiceView;
 import com.nhom2.detail.editInvoice.EditInvoiceViewModel;
+import com.nhom2.detail.findInvoice.FindInvoiceController;
+import com.nhom2.detail.findInvoice.FindInvoicePresenter;
+import com.nhom2.detail.findInvoice.FindInvoiceView;
+import com.nhom2.detail.findInvoice.FindInvoiceViewModel;
 import com.nhom2.detail.getListInvoice.GetListInvoiceController;
 import com.nhom2.detail.getListInvoice.GetListInvoicePresenter;
 import com.nhom2.detail.getListInvoice.GetListInvoiceView;
@@ -45,6 +54,8 @@ public class QLHoaDonTienDienApp
 {
     public static void main( String[] args ) throws Exception
     {
+        Class.forName("org.jdesktop.swingx.JXDatePicker");
+
         // config db
         String ipAddress = "127.0.0.1";
         int port = 3306;
@@ -80,13 +91,22 @@ public class QLHoaDonTienDienApp
         editInvoiceView.setEditInvoiceController(editInvoiceController);
 
         // get list Invoice
-        List<GetListInvoiceViewModel> listViewModel = new ArrayList<>();
+        List<GetListInvoiceViewModel> listGetListInvoiceViewModel = new ArrayList<>();
         GetListInvoiceView getListInvoiceView = new GetListInvoiceView();
-        GetListInvoiceOutputBoundary getListInvoiceOutputBoundary = new GetListInvoicePresenter(getListInvoiceView, listViewModel);
+        GetListInvoiceOutputBoundary getListInvoiceOutputBoundary = new GetListInvoicePresenter(getListInvoiceView, listGetListInvoiceViewModel);
         GetListInvoiceDatabaseBoundary getListInvoiceDatabaseBoundary = new GetListInvoiceDAOMySQL(ipAddress, port, db, username, password);
         GetListInvoiceInputBoundary getListInvoiceInputBoundary = new GetListInvoiceUseCase(getListInvoiceOutputBoundary, getListInvoiceDatabaseBoundary);
         GetListInvoiceController getListInvoiceController = new GetListInvoiceController(getListInvoiceInputBoundary);
         getListInvoiceView.setGetListInvoiceController(getListInvoiceController);
+
+        // find Invoice
+        List<FindInvoiceViewModel> listFindInvoiceViewModel = new ArrayList<>();
+        FindInvoiceView findInvoiceView = new FindInvoiceView();
+        FindInvoiceOutputBoundary findInvoiceOutputBoundary = new FindInvoicePresenter(findInvoiceView, listFindInvoiceViewModel);
+        FindInvoiceDatabaseBoundary findInvoiceDatabaseBoundary = new FindInvoiceDAOMySQL(ipAddress, port, db, username, password);
+        FindInvoiceInputBoundary findInvoiceInputBoundary = new FindInvoiceUseCase(findInvoiceOutputBoundary, findInvoiceDatabaseBoundary);
+        FindInvoiceController findInvoiceController = new FindInvoiceController(findInvoiceInputBoundary);
+        findInvoiceView.setFindInvoiceController(findInvoiceController);
 
         // MainGUI
         MainGUI mainGUI = new MainGUI();
@@ -94,6 +114,7 @@ public class QLHoaDonTienDienApp
         mainGUI.setDeleteInvoiceView(deleteInvoiceView);
         mainGUI.setEditInvoiceView(editInvoiceView);
         mainGUI.setGetListInvoiceView(getListInvoiceView);
+        mainGUI.setFindInvoiceView(findInvoiceView);
 
         // setVisible(true)
         mainGUI.showGUI();

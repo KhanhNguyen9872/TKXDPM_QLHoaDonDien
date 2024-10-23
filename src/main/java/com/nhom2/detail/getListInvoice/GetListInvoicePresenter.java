@@ -1,7 +1,6 @@
 package com.nhom2.detail.getListInvoice;
 
 import java.util.List;
-import java.util.ArrayList;
 
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceOutputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceOutputDTO;
@@ -16,9 +15,9 @@ public class GetListInvoicePresenter implements GetListInvoiceOutputBoundary {
     }
 
     @Override
-    public void exportError(GetListInvoiceOutputDTO responseData) {
+    public void exportError(GetListInvoiceOutputDTO responseError) {
         this.listViewModel.clear();
-        GetListInvoiceViewModel getListInvoiceViewModel = new GetListInvoiceViewModel(responseData.getStatus(), responseData.getMsg());
+        GetListInvoiceViewModel getListInvoiceViewModel = new GetListInvoiceViewModel(responseError.getStatus(), responseError.getMsg());
         
         if (this.getListInvoiceView != null) {
             this.getListInvoiceView.showMsgError(getListInvoiceViewModel);

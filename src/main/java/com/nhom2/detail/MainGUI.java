@@ -92,6 +92,22 @@ public class MainGUI extends JFrame implements ActionListener {
         this.getListInvoiceView = getListInvoiceView;
     }
 
+    public void setExportInvoiceByMonthBtn(JButton exportInvoiceByMonthBtn) {
+        this.exportInvoiceByMonthBtn = exportInvoiceByMonthBtn;
+    }
+
+    public void setFindInvoiceView(FindInvoiceView findInvoiceView) {
+        this.findInvoiceView = findInvoiceView;
+    }
+
+    public void setAvgMoneyInvoiceNuocNgoaiView(AvgMoneyInvoiceNuocNgoaiView avgMoneyInvoiceNuocNgoaiView) {
+        this.avgMoneyInvoiceNuocNgoaiView = avgMoneyInvoiceNuocNgoaiView;
+    }
+
+    public void setSumKHInvoiceView(SumKHInvoiceView sumKHInvoiceView) {
+        this.sumKHInvoiceView = sumKHInvoiceView;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();
@@ -121,6 +137,12 @@ public class MainGUI extends JFrame implements ActionListener {
         }
 
         if (cmd.equals(exportInvoiceByMonthBtn.getActionCommand())) {
+            // if (findInvoiceView != null) {
+            //     findInvoiceView.mainShow();
+            // }
+        }
+
+        if (cmd.equals(findInvoiceBtn.getActionCommand())) {
             if (findInvoiceView != null) {
                 findInvoiceView.mainShow();
             }

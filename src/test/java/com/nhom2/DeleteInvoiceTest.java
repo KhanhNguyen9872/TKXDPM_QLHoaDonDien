@@ -13,14 +13,8 @@ import com.nhom2.database.mysql.DeleteInvoiceDAOMySQL;
 import com.nhom2.detail.deleteInvoice.DeleteInvoicePresenter;
 import com.nhom2.detail.deleteInvoice.DeleteInvoiceViewModel;
 
-public class DeleteInvoiceTest 
+public class DeleteInvoiceTest extends Nhom2Test 
 {
-    private final String ipAddress = "127.0.0.1";
-    private final int port = 3306;
-    private final String db = "invoice";
-    private final String username = "root";
-    private final String password = "12345678";
-
     private DeleteInvoiceInputDTO getRequestData() {
         DeleteInvoiceInputDTO requestData = new DeleteInvoiceInputDTO();
 

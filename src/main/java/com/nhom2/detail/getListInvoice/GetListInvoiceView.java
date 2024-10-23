@@ -30,8 +30,9 @@ public class GetListInvoiceView extends JFrame {
 
     public void showResult(List<GetListInvoiceViewModel> listInvoice) {
         this.listInvoice = listInvoice;
-        this.setTitle("Xuất hóa đơn tiền điện");
-        this.setSize(900, 500);
+        setTitle("Xuất hóa đơn tiền điện");
+        setResizable(false);
+        setSize(900, 500);
 
         // Create title label
         JLabel titleLabel = new JLabel("DANH SÁCH HÓA ĐƠN TIỀN ĐIỆN", SwingConstants.CENTER);

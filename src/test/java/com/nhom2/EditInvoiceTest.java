@@ -14,14 +14,8 @@ import com.nhom2.detail.editInvoice.EditInvoiceController;
 import com.nhom2.detail.editInvoice.EditInvoicePresenter;
 import com.nhom2.detail.editInvoice.EditInvoiceViewModel;
 
-public class EditInvoiceTest 
+public class EditInvoiceTest extends Nhom2Test
 {
-    private final String ipAddress = "127.0.0.1";
-    private final int port = 3306;
-    private final String db = "invoice";
-    private final String username = "root";
-    private final String password = "12345678";
-
     private EditInvoiceInputDTO getEditInvoiceInputDTO() {
         EditInvoiceInputDTO editInvoiceInputDTO = new EditInvoiceInputDTO();
         editInvoiceInputDTO.setMaKH("1");

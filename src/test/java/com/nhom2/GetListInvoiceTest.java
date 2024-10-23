@@ -13,18 +13,10 @@ import com.nhom2.businessRules.getListInvoice.GetListInvoiceOutputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceUseCase;
 import com.nhom2.database.mysql.GetListInvoiceDAOMySQL;
 import com.nhom2.detail.getListInvoice.GetListInvoicePresenter;
-import com.nhom2.detail.getListInvoice.GetListInvoiceView;
 import com.nhom2.detail.getListInvoice.GetListInvoiceViewModel;
 
-public class GetListInvoiceTest 
+public class GetListInvoiceTest extends Nhom2Test
 {
-    private final String ipAddress = "127.0.0.1";
-    private final int port = 3306;
-    private final String db = "invoice";
-    private final String username = "root";
-    private final String password = "12345678";
-
-
     @Test
     public void getListInvoiceSuccess() throws Exception
     {
