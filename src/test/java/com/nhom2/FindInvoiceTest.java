@@ -17,7 +17,7 @@ import com.nhom2.detail.findInvoice.FindInvoicePresenter;
 import com.nhom2.detail.findInvoice.FindInvoiceViewModel;
 
 public class FindInvoiceTest extends Nhom2Test {
-    public FindInvoiceInputDTO getFindInvoiceInputBoundary() {
+    private FindInvoiceInputDTO getFindInvoiceInputBoundary() {
         FindInvoiceInputDTO findInvoiceInputDTO = new FindInvoiceInputDTO();
         findInvoiceInputDTO.setTenKH("Khanh");
         return findInvoiceInputDTO;

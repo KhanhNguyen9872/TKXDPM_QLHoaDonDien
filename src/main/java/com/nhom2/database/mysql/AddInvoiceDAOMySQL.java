@@ -31,7 +31,7 @@ public class AddInvoiceDAOMySQL extends DAOMySQL implements AddInvoiceDatabaseBo
                 InvoiceNuocNgoai invoiceNuocNgoai = (InvoiceNuocNgoai)invoice;
                 preparedStatement.setString(5, invoiceNuocNgoai.getQuocTich());
                 preparedStatement.setString(6, "");
-                preparedStatement.setString(7, "");
+                preparedStatement.setInt(7, 0);
 
             } else if (invoice.getClass().equals(InvoiceVN.class)) {
                 InvoiceVN invoiceVN = (InvoiceVN)invoice;

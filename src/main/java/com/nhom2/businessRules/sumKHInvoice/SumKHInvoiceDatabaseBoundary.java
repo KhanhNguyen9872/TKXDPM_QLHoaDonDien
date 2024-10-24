@@ -1,5 +1,9 @@
 package com.nhom2.businessRules.sumKHInvoice;
 
-public interface SumKHInvoiceDatabaseBoundary {
+import java.util.List;
 
+import com.nhom2.businessRules.entity.Invoice;
+
+public interface SumKHInvoiceDatabaseBoundary {
+    public List<Invoice> getAllInvoices();
 }

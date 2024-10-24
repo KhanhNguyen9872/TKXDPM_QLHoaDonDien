@@ -23,11 +23,16 @@ import com.nhom2.businessRules.getListInvoice.GetListInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceInputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceOutputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceUseCase;
+import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceDatabaseBoundary;
+import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceInputBoundary;
+import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceOutputBoundary;
+import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceUseCase;
 import com.nhom2.database.mysql.AddInvoiceDAOMySQL;
 import com.nhom2.database.mysql.DeleteInvoiceDAOMySQL;
 import com.nhom2.database.mysql.EditInvoiceDAOMySQL;
 import com.nhom2.database.mysql.FindInvoiceDAOMySQL;
 import com.nhom2.database.mysql.GetListInvoiceDAOMySQL;
+import com.nhom2.database.mysql.SumKHInvoiceDAOMySQL;
 import com.nhom2.detail.MainGUI;
 import com.nhom2.detail.addInvoice.AddInvoiceController;
 import com.nhom2.detail.addInvoice.AddInvoicePresenter;
@@ -49,6 +54,10 @@ import com.nhom2.detail.getListInvoice.GetListInvoiceController;
 import com.nhom2.detail.getListInvoice.GetListInvoicePresenter;
 import com.nhom2.detail.getListInvoice.GetListInvoiceView;
 import com.nhom2.detail.getListInvoice.GetListInvoiceViewModel;
+import com.nhom2.detail.sumKHInvoice.SumKHInvoiceController;
+import com.nhom2.detail.sumKHInvoice.SumKHInvoicePresenter;
+import com.nhom2.detail.sumKHInvoice.SumKHInvoiceView;
+import com.nhom2.detail.sumKHInvoice.SumKHInvoiceViewModel;
 
 public class QLHoaDonTienDienApp 
 {
@@ -108,6 +117,15 @@ public class QLHoaDonTienDienApp
         FindInvoiceController findInvoiceController = new FindInvoiceController(findInvoiceInputBoundary);
         findInvoiceView.setFindInvoiceController(findInvoiceController);
 
+        // sum KH Invoice 
+        SumKHInvoiceViewModel sumKHInvoiceViewModel = new SumKHInvoiceViewModel();
+        SumKHInvoiceView sumKHInvoiceView = new SumKHInvoiceView();
+        SumKHInvoiceOutputBoundary sumKHInvoiceOutputBoundary = new SumKHInvoicePresenter(sumKHInvoiceView, sumKHInvoiceViewModel);
+        SumKHInvoiceDatabaseBoundary sumKHInvoiceDatabaseBoundary = new SumKHInvoiceDAOMySQL(ipAddress, port, db, username, password);
+        SumKHInvoiceInputBoundary sumKHInvoiceInputBoundary = new SumKHInvoiceUseCase(sumKHInvoiceOutputBoundary, sumKHInvoiceDatabaseBoundary);
+        SumKHInvoiceController sumKHInvoiceController = new SumKHInvoiceController(sumKHInvoiceInputBoundary);
+        sumKHInvoiceView.setSumKHInvoiceController(sumKHInvoiceController);
+
         // MainGUI
         MainGUI mainGUI = new MainGUI();
         mainGUI.setAddInvoiceView(addInvoiceView);
@@ -115,6 +133,7 @@ public class QLHoaDonTienDienApp
         mainGUI.setEditInvoiceView(editInvoiceView);
         mainGUI.setGetListInvoiceView(getListInvoiceView);
         mainGUI.setFindInvoiceView(findInvoiceView);
+        mainGUI.setSumKHInvoiceView(sumKHInvoiceView);
 
         // setVisible(true)
         mainGUI.showGUI();
