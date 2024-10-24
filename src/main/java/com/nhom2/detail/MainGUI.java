@@ -136,11 +136,11 @@ public class MainGUI extends JFrame implements ActionListener {
             }
         }
 
-        if (cmd.equals(exportInvoiceByMonthBtn.getActionCommand())) {
-            // if (findInvoiceView != null) {
-            //     findInvoiceView.mainShow();
-            // }
-        }
+        // if (cmd.equals(exportInvoiceByMonthBtn.getActionCommand())) {
+        //     // if (findInvoiceView != null) {
+        //     //     findInvoiceView.mainShow();
+        //     // }
+        // }
 
         if (cmd.equals(findInvoiceBtn.getActionCommand())) {
             if (findInvoiceView != null) {

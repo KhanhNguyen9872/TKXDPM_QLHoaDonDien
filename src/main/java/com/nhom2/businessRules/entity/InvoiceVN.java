@@ -22,7 +22,15 @@ public class InvoiceVN extends Invoice {
 
     @Override
     public double tinhThanhTien() {
-        return 0.0;
+        double thanhTien = 0.0;
+
+        if (getSoLuong() <= getDinhMuc()) {
+            thanhTien = getSoLuong() * getDonGia();
+        } else {
+            thanhTien = (getSoLuong() * getDonGia()) * (getDinhMuc() + (getDinhMuc() - getSoLuong()) * getDonGia() * 2.5);
+        }
+
+        return thanhTien;
     }
 
     public String getDoiTuongKH() {

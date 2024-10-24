@@ -7,6 +7,10 @@ import com.nhom2.businessRules.addInvoice.AddInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.addInvoice.AddInvoiceInputBoundary;
 import com.nhom2.businessRules.addInvoice.AddInvoiceOutputBoundary;
 import com.nhom2.businessRules.addInvoice.AddInvoiceUseCase;
+import com.nhom2.businessRules.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiDatabaseBoundary;
+import com.nhom2.businessRules.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiInputBoundary;
+import com.nhom2.businessRules.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiOutputBoundary;
+import com.nhom2.businessRules.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiUseCase;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceInputBoundary;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceOutputBoundary;
@@ -28,6 +32,7 @@ import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceInputBoundary;
 import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceOutputBoundary;
 import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceUseCase;
 import com.nhom2.database.mysql.AddInvoiceDAOMySQL;
+import com.nhom2.database.mysql.AvgMoneyInvoiceNuocNgoaiDAOMySQL;
 import com.nhom2.database.mysql.DeleteInvoiceDAOMySQL;
 import com.nhom2.database.mysql.EditInvoiceDAOMySQL;
 import com.nhom2.database.mysql.FindInvoiceDAOMySQL;
@@ -38,6 +43,10 @@ import com.nhom2.detail.addInvoice.AddInvoiceController;
 import com.nhom2.detail.addInvoice.AddInvoicePresenter;
 import com.nhom2.detail.addInvoice.AddInvoiceView;
 import com.nhom2.detail.addInvoice.AddInvoiceViewModel;
+import com.nhom2.detail.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiController;
+import com.nhom2.detail.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiPresenter;
+import com.nhom2.detail.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiView;
+import com.nhom2.detail.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiViewModel;
 import com.nhom2.detail.deleteInvoice.DeleteInvoiceController;
 import com.nhom2.detail.deleteInvoice.DeleteInvoicePresenter;
 import com.nhom2.detail.deleteInvoice.DeleteInvoiceView;
@@ -126,14 +135,28 @@ public class QLHoaDonTienDienApp
         SumKHInvoiceController sumKHInvoiceController = new SumKHInvoiceController(sumKHInvoiceInputBoundary);
         sumKHInvoiceView.setSumKHInvoiceController(sumKHInvoiceController);
 
+        // avg Money Invoice Nuoc Ngoai
+        AvgMoneyInvoiceNuocNgoaiViewModel avgMoneyInvoiceNuocNgoaiViewModel = new AvgMoneyInvoiceNuocNgoaiViewModel();
+        AvgMoneyInvoiceNuocNgoaiView avgMoneyInvoiceNuocNgoaiView = new AvgMoneyInvoiceNuocNgoaiView();
+        AvgMoneyInvoiceNuocNgoaiOutputBoundary avgMoneyInvoiceNuocNgoaiOutputBoundary = new AvgMoneyInvoiceNuocNgoaiPresenter(avgMoneyInvoiceNuocNgoaiView, avgMoneyInvoiceNuocNgoaiViewModel);
+        AvgMoneyInvoiceNuocNgoaiDatabaseBoundary avgMoneyInvoiceNuocNgoaiDatabaseBoundary = new AvgMoneyInvoiceNuocNgoaiDAOMySQL(ipAddress, port, db, username, password);
+        AvgMoneyInvoiceNuocNgoaiInputBoundary avgMoneyInvoiceNuocNgoaiInputBoundary = new AvgMoneyInvoiceNuocNgoaiUseCase(avgMoneyInvoiceNuocNgoaiDatabaseBoundary, avgMoneyInvoiceNuocNgoaiOutputBoundary);
+        AvgMoneyInvoiceNuocNgoaiController avgMoneyInvoiceNuocNgoaiController = new AvgMoneyInvoiceNuocNgoaiController(avgMoneyInvoiceNuocNgoaiInputBoundary);
+        avgMoneyInvoiceNuocNgoaiView.setAvgMoneyInvoiceNuocNgoaiController(avgMoneyInvoiceNuocNgoaiController);
+
+        // export Invoice by Month
+        
+
         // MainGUI
         MainGUI mainGUI = new MainGUI();
         mainGUI.setAddInvoiceView(addInvoiceView);
         mainGUI.setDeleteInvoiceView(deleteInvoiceView);
         mainGUI.setEditInvoiceView(editInvoiceView);
         mainGUI.setGetListInvoiceView(getListInvoiceView);
+        mainGUI.setExportInvoiceByMonthBtn(null);
         mainGUI.setFindInvoiceView(findInvoiceView);
         mainGUI.setSumKHInvoiceView(sumKHInvoiceView);
+        mainGUI.setAvgMoneyInvoiceNuocNgoaiView(avgMoneyInvoiceNuocNgoaiView);
 
         // setVisible(true)
         mainGUI.showGUI();
