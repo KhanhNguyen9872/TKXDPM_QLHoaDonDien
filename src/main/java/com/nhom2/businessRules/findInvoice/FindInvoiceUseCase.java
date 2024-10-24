@@ -32,6 +32,13 @@ public class FindInvoiceUseCase implements FindInvoiceInputBoundary {
 
         List<Invoice> listInvoice = findInvoiceDatabaseBoundary.findInvoice(tenKH);
 
+        if (listInvoice.size() == 0) {
+            responseError.setStatus("error");
+            responseError.setMsg("Không có hóa đơn nào cho tên KH [" + tenKH + "]!");
+            findInvoiceOutputBoundary.exportError(responseError);
+            return;
+        }
+
         for (Invoice invoice : listInvoice) {
             if (invoice.getClass().equals(InvoiceNuocNgoai.class)) {
                 InvoiceNuocNgoai invoiceNuocNgoai = (InvoiceNuocNgoai)invoice;

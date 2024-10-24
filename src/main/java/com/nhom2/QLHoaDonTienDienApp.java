@@ -19,6 +19,10 @@ import com.nhom2.businessRules.editInvoice.EditInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.editInvoice.EditInvoiceInputBoundary;
 import com.nhom2.businessRules.editInvoice.EditInvoiceOutputBoundary;
 import com.nhom2.businessRules.editInvoice.EditInvoiceUseCase;
+import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthDatabaseBoundary;
+import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthInputBoundary;
+import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthOutputBoundary;
+import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthUseCase;
 import com.nhom2.businessRules.findInvoice.FindInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.findInvoice.FindInvoiceInputBoundary;
 import com.nhom2.businessRules.findInvoice.FindInvoiceOutputBoundary;
@@ -35,6 +39,7 @@ import com.nhom2.database.mysql.AddInvoiceDAOMySQL;
 import com.nhom2.database.mysql.AvgMoneyInvoiceNuocNgoaiDAOMySQL;
 import com.nhom2.database.mysql.DeleteInvoiceDAOMySQL;
 import com.nhom2.database.mysql.EditInvoiceDAOMySQL;
+import com.nhom2.database.mysql.ExportInvoiceByMonthDAOMySQL;
 import com.nhom2.database.mysql.FindInvoiceDAOMySQL;
 import com.nhom2.database.mysql.GetListInvoiceDAOMySQL;
 import com.nhom2.database.mysql.SumKHInvoiceDAOMySQL;
@@ -55,6 +60,10 @@ import com.nhom2.detail.editInvoice.EditInvoiceController;
 import com.nhom2.detail.editInvoice.EditInvoicePresenter;
 import com.nhom2.detail.editInvoice.EditInvoiceView;
 import com.nhom2.detail.editInvoice.EditInvoiceViewModel;
+import com.nhom2.detail.exportInvoiceByMonth.ExportInvoiceByMonthController;
+import com.nhom2.detail.exportInvoiceByMonth.ExportInvoiceByMonthPresenter;
+import com.nhom2.detail.exportInvoiceByMonth.ExportInvoiceByMonthView;
+import com.nhom2.detail.exportInvoiceByMonth.ExportInvoiceByMonthViewModel;
 import com.nhom2.detail.findInvoice.FindInvoiceController;
 import com.nhom2.detail.findInvoice.FindInvoicePresenter;
 import com.nhom2.detail.findInvoice.FindInvoiceView;
@@ -75,11 +84,11 @@ public class QLHoaDonTienDienApp
         Class.forName("org.jdesktop.swingx.JXDatePicker");
 
         // config db
-        String ipAddress = "127.0.0.1";
-        int port = 3306;
-        String db = "invoice";
-        String username = "root";
-        String password = "12345678";
+        final String ipAddress = "127.0.0.1";
+        final int port = 3306;
+        final String db = "invoice";
+        final String username = "root";
+        final String password = "12345678";
 
         // add Invoice
         AddInvoiceViewModel addInvoiceViewModel = new AddInvoiceViewModel();
@@ -145,7 +154,13 @@ public class QLHoaDonTienDienApp
         avgMoneyInvoiceNuocNgoaiView.setAvgMoneyInvoiceNuocNgoaiController(avgMoneyInvoiceNuocNgoaiController);
 
         // export Invoice by Month
-        
+        List<ExportInvoiceByMonthViewModel> exportInvoiceByMonthViewModel = new ArrayList<>();
+        ExportInvoiceByMonthView exportInvoiceByMonthView = new ExportInvoiceByMonthView();
+        ExportInvoiceByMonthOutputBoundary exportInvoiceByMonthOutputBoundary = new ExportInvoiceByMonthPresenter(exportInvoiceByMonthView, exportInvoiceByMonthViewModel);
+        ExportInvoiceByMonthDatabaseBoundary exportInvoiceByMonthDatabaseBoundary = new ExportInvoiceByMonthDAOMySQL(ipAddress, port, db, username, password);
+        ExportInvoiceByMonthInputBoundary exportInvoiceByMonthInputBoundary = new ExportInvoiceByMonthUseCase(exportInvoiceByMonthDatabaseBoundary, exportInvoiceByMonthOutputBoundary);
+        ExportInvoiceByMonthController exportInvoiceByMonthController = new ExportInvoiceByMonthController(exportInvoiceByMonthInputBoundary);
+        exportInvoiceByMonthView.setExportInvoiceByMonthController(exportInvoiceByMonthController);
 
         // MainGUI
         MainGUI mainGUI = new MainGUI();
@@ -153,7 +168,7 @@ public class QLHoaDonTienDienApp
         mainGUI.setDeleteInvoiceView(deleteInvoiceView);
         mainGUI.setEditInvoiceView(editInvoiceView);
         mainGUI.setGetListInvoiceView(getListInvoiceView);
-        mainGUI.setExportInvoiceByMonthBtn(null);
+        mainGUI.setExportInvoiceByMonthView(exportInvoiceByMonthView);
         mainGUI.setFindInvoiceView(findInvoiceView);
         mainGUI.setSumKHInvoiceView(sumKHInvoiceView);
         mainGUI.setAvgMoneyInvoiceNuocNgoaiView(avgMoneyInvoiceNuocNgoaiView);

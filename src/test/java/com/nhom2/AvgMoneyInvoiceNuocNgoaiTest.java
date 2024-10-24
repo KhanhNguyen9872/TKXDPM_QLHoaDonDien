@@ -24,7 +24,7 @@ public class AvgMoneyInvoiceNuocNgoaiTest extends Nhom2Test {
         AvgMoneyInvoiceNuocNgoaiController avgMoneyInvoiceNuocNgoaiController = new AvgMoneyInvoiceNuocNgoaiController(avgMoneyInvoiceNuocNgoaiInputBoundary);
                 
         avgMoneyInvoiceNuocNgoaiController.execute();
-        assertEquals(avgMoneyInvoiceNuocNgoaiViewModel.msg, "Tổng trung bình thành tiền (Nước ngoài): 625.0 VND");
+        assertEquals(avgMoneyInvoiceNuocNgoaiViewModel.msg, "Tổng trung bình thành tiền (Nước ngoài): 7390.0 VND");
     }
 
 }

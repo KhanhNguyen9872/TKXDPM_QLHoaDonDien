@@ -1,13 +1,6 @@
-package com.nhom2.detail.getListInvoice;
+package com.nhom2.detail.exportInvoiceByMonth;
 
-/*
- * ViewModel hoàn toàn là chuỗi (String, boolean) [boolean: đặt biến cờ]
- * View chỉ lấy dữ liệu và xuất lên màn hình [check theo biến cờ để xuất lên màn hình cho phù hợp]
- * Presenter xử lý [khởi tạo biến cờ vào ViewModel]
- * 
- */
-
-public class GetListInvoiceViewModel {
+public class ExportInvoiceByMonthViewModel {
     public String status;
     public String msg;
     public String maKH;
@@ -20,12 +13,12 @@ public class GetListInvoiceViewModel {
     public String dinhMuc;
     public String thanhTien;
 
-    public GetListInvoiceViewModel(String status, String msg) {
+    public ExportInvoiceByMonthViewModel(String status, String msg) {
         this.status = status;
         this.msg = msg;
     }
     
-    public GetListInvoiceViewModel(String status, String msg, String maKH, String tenKH, String ngayHD, String soLuong, String donGia,
+    public ExportInvoiceByMonthViewModel(String status, String msg, String maKH, String tenKH, String ngayHD, String soLuong, String donGia,
             String quocTich, String doiTuongKH, String dinhMuc, String thanhTien) {
         this.maKH = maKH;
         this.tenKH = tenKH;
@@ -38,7 +31,7 @@ public class GetListInvoiceViewModel {
         this.thanhTien = thanhTien;
     }
 
-    public GetListInvoiceViewModel(String maKH, String tenKH, String ngayHD, String soLuong, String donGia,
+    public ExportInvoiceByMonthViewModel(String maKH, String tenKH, String ngayHD, String soLuong, String donGia,
             String quocTich, String doiTuongKH, String dinhMuc, String thanhTien) {
         this.status = "success";
         this.msg = "";
@@ -53,8 +46,8 @@ public class GetListInvoiceViewModel {
         this.thanhTien = thanhTien;
     }
 
-    public GetListInvoiceViewModel() {
+    public ExportInvoiceByMonthViewModel() {
         
     }
-    
+
 }

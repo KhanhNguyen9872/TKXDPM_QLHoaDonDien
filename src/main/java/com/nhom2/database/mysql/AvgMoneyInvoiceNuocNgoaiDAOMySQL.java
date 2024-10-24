@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.nhom2.businessRules.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiDatabaseBoundary;
-import com.nhom2.businessRules.entity.Invoice;
 import com.nhom2.businessRules.entity.InvoiceNuocNgoai;
 
 public class AvgMoneyInvoiceNuocNgoaiDAOMySQL extends DAOMySQL implements AvgMoneyInvoiceNuocNgoaiDatabaseBoundary {

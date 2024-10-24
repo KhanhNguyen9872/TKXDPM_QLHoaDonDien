@@ -12,6 +12,7 @@ import com.nhom2.businessRules.getListInvoice.GetListInvoiceInputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceOutputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceUseCase;
 import com.nhom2.database.mysql.GetListInvoiceDAOMySQL;
+import com.nhom2.detail.getListInvoice.GetListInvoiceController;
 import com.nhom2.detail.getListInvoice.GetListInvoicePresenter;
 import com.nhom2.detail.getListInvoice.GetListInvoiceViewModel;
 
@@ -24,8 +25,9 @@ public class GetListInvoiceTest extends Nhom2Test
         GetListInvoiceOutputBoundary getListInvoiceOutputBoundary = new GetListInvoicePresenter(null, getListInvoiceViewModel);
         GetListInvoiceDatabaseBoundary getListInvoiceDatabaseBoundary = new GetListInvoiceDAOMySQL(ipAddress, port, db, username, password);
         GetListInvoiceInputBoundary getListInvoiceInputBoundary = new GetListInvoiceUseCase(getListInvoiceOutputBoundary, getListInvoiceDatabaseBoundary);
-        
-        getListInvoiceInputBoundary.execute();
-        assertEquals(getListInvoiceViewModel.size(), 1);
+        GetListInvoiceController getListInvoiceController = new GetListInvoiceController(getListInvoiceInputBoundary);
+
+        getListInvoiceController.execute();
+        assertEquals(getListInvoiceViewModel.size(), 8);
     }
 }

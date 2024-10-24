@@ -8,6 +8,7 @@ import com.nhom2.detail.addInvoice.AddInvoiceView;
 import com.nhom2.detail.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiView;
 import com.nhom2.detail.deleteInvoice.DeleteInvoiceView;
 import com.nhom2.detail.editInvoice.EditInvoiceView;
+import com.nhom2.detail.exportInvoiceByMonth.ExportInvoiceByMonthView;
 import com.nhom2.detail.findInvoice.FindInvoiceView;
 import com.nhom2.detail.getListInvoice.GetListInvoiceView;
 import com.nhom2.detail.sumKHInvoice.SumKHInvoiceView;
@@ -24,6 +25,7 @@ public class MainGUI extends JFrame implements ActionListener {
     private FindInvoiceView findInvoiceView;
     private AvgMoneyInvoiceNuocNgoaiView avgMoneyInvoiceNuocNgoaiView;
     private SumKHInvoiceView sumKHInvoiceView;
+    private ExportInvoiceByMonthView exportInvoiceByMonthView;
 
     public MainGUI() {
         setTitle("Quản lý hóa đơn tiền điện");
@@ -92,8 +94,8 @@ public class MainGUI extends JFrame implements ActionListener {
         this.getListInvoiceView = getListInvoiceView;
     }
 
-    public void setExportInvoiceByMonthBtn(JButton exportInvoiceByMonthBtn) {
-        this.exportInvoiceByMonthBtn = exportInvoiceByMonthBtn;
+    public void setExportInvoiceByMonthView(ExportInvoiceByMonthView exportInvoiceByMonthView) {
+        this.exportInvoiceByMonthView = exportInvoiceByMonthView;
     }
 
     public void setFindInvoiceView(FindInvoiceView findInvoiceView) {
@@ -136,11 +138,11 @@ public class MainGUI extends JFrame implements ActionListener {
             }
         }
 
-        // if (cmd.equals(exportInvoiceByMonthBtn.getActionCommand())) {
-        //     // if (findInvoiceView != null) {
-        //     //     findInvoiceView.mainShow();
-        //     // }
-        // }
+        if (cmd.equals(exportInvoiceByMonthBtn.getActionCommand())) {
+            if (exportInvoiceByMonthView != null) {
+                exportInvoiceByMonthView.mainShow();
+            }
+        }
 
         if (cmd.equals(findInvoiceBtn.getActionCommand())) {
             if (findInvoiceView != null) {

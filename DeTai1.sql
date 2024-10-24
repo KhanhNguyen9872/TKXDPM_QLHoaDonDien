@@ -13,16 +13,16 @@ CREATE TABLE `invoice` (
   primary key (`maKH`)
 );
 
--- INSERT INTO `invoice` (`maGiaoDich`, `ngayGiaoDich`, `donGia`, `loaiDat`, `loaiNha`, `diaChi`, `dienTich`) VALUES
--- (1, '2024/01/02', 2500, 'A', '', '', 30),
--- (2, '2024/01/13', 5000, '', 'Cao cấp', 'Đà Lạt', 100),
--- (3, '2024/01/23', 1500, '', 'Thường', 'Bình Thuận', 50),
--- (4, '2024/01/25', 1500, 'B', '', '', 40),
--- (5, '2024/02/03', 2500, '', 'Thường', 'Bình Dương', 30),
--- (6, '2024/02/10', 2000, 'C', '', '', 100),
--- (7, '2024/02/25', 6500, '', 'Cao cấp', 'HCM', 90),
--- (8, '2024/02/28', 2000, '', 'Cao cấp', 'Vũng Tàu', 100),
--- (9, '2024/03/02', 1200, '', 'Thường', 'HCM', 40),
--- (10, '2024/03/12', 1350, 'C', '', '', 65),
--- (11, '2024/03/23', 2000, '', 'Thường', 'Đồng Nai', 50),
--- (12, '2024/03/25', 2550, 'B', '', '', 70);
+DELETE FROM `invoice`;
+ALTER TABLE `invoice` AUTO_INCREMENT = 1;
+
+INSERT INTO `invoice` (`tenKH`, `ngayHD`, `soLuong`, `donGia`, `quocTich`, `doiTuongKH`, `dinhMuc`) VALUES
+('Văn Khánh', '2024-04-01', '12', '100', '', 'Sinh hoạt', '20'),
+('Chiến Thắng', '2024-05-05', '8', '120', '', 'Sinh hoạt', '20'),
+('Đức Thịnh', '2024-04-20', '7', '125', '', 'Sinh hoạt', '20'),
+('Ngọc Hào', '2024-04-16', '14', '90', '', 'Sinh hoạt', '20'),
+('Văn A', '2024-03-12', '17', '160', 'USA', '', '0'),
+('Văn B', '2024-02-04', '13', '140', 'USA', '', '0'),
+('Văn C', '2024-05-09', '19', '150', 'USA', '', '0');
+
+SELECT * FROM invoice;
