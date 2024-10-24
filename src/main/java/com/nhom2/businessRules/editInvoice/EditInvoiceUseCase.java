@@ -21,9 +21,9 @@ public class EditInvoiceUseCase implements EditInvoiceInputBoundary {
     public void execute(EditInvoiceInputDTO editInvoiceInputDTO) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         EditInvoiceOutputDTO responseError = new EditInvoiceOutputDTO();
+        responseError.setStatus("error");
 
         if (!this.verify(editInvoiceInputDTO)) {
-            responseError.setStatus("error");
             responseError.setMsg("Dữ liệu không hợp lệ!");
             editInvoiceOutputBoundary.exportError(responseError);
             return;
@@ -31,7 +31,6 @@ public class EditInvoiceUseCase implements EditInvoiceInputBoundary {
 
         int maKH = Integer.parseInt(editInvoiceInputDTO.getMaKH());
         if (!this.isExist(maKH)) {
-            responseError.setStatus("error");
             responseError.setMsg("Mã KH không tồn tại!");
             editInvoiceOutputBoundary.exportError(responseError);
             return;
@@ -69,9 +68,9 @@ public class EditInvoiceUseCase implements EditInvoiceInputBoundary {
     @Override
     public void executeFind(EditInvoiceInputDTO editInvoiceInputDTO) {
         EditInvoiceOutputDTO responseError = new EditInvoiceOutputDTO();
+        responseError.setStatus("error");
 
         if (!this.verifyFind(editInvoiceInputDTO)) {
-            responseError.setStatus("error");
             responseError.setMsg("Dữ liệu không hợp lệ!");
             editInvoiceOutputBoundary.exportError(responseError);
             return;
@@ -80,12 +79,10 @@ public class EditInvoiceUseCase implements EditInvoiceInputBoundary {
         int maKH = Integer.parseInt(editInvoiceInputDTO.getMaKH());
         Boolean isE = this.isExist(maKH);
         if (isE == null) {
-            responseError.setStatus("error");
             responseError.setMsg("Đã xảy ra lỗi tại Database!");
             editInvoiceOutputBoundary.exportError(responseError);
             return;
         } else if (!isE) {
-            responseError.setStatus("error");
             responseError.setMsg("Không tồn tại! (KH: " + maKH + ")");
             editInvoiceOutputBoundary.exportError(responseError);
             return;

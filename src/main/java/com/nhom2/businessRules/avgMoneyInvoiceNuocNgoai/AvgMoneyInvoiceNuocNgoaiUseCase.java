@@ -18,8 +18,17 @@ public class AvgMoneyInvoiceNuocNgoaiUseCase implements AvgMoneyInvoiceNuocNgoai
 
     @Override
     public void execute() {
+        AvgMoneyInvoiceNuocNgoaiOutputDTO responseError = new AvgMoneyInvoiceNuocNgoaiOutputDTO();
+        responseError.setStatus("error");
+
         List<InvoiceNuocNgoai> listInvoice = this.avgMoneyInvoiceNuocNgoaiDatabaseBoundary.getNuocNgoaiInvoices();
         List<Invoice> newListInvoice = new ArrayList<>();
+
+        if (listInvoice == null) {
+            responseError.setMsg("Đã xảy ra lỗi tại Database!");
+            this.avgMoneyInvoiceNuocNgoaiOutputBoundary.exportError(responseError);
+            return;
+        }
 
         for (Invoice invoice: listInvoice) {
             if (!invoice.getClass().equals(InvoiceNuocNgoai.class)) {

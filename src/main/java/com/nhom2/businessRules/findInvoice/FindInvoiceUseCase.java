@@ -19,10 +19,11 @@ public class FindInvoiceUseCase implements FindInvoiceInputBoundary {
     @Override
     public void execute(FindInvoiceInputDTO findInvoiceInputDTO) {
         List<FindInvoiceOutputDTO> listOutputDTO = new ArrayList<>();
+
         FindInvoiceOutputDTO responseError = new FindInvoiceOutputDTO();
+        responseError.setStatus("error");
 
         if (!this.verify(findInvoiceInputDTO)) {
-            responseError.setStatus("error");
             responseError.setMsg("Dữ liệu không hợp lệ!");
             findInvoiceOutputBoundary.exportError(responseError);
             return;
@@ -32,8 +33,12 @@ public class FindInvoiceUseCase implements FindInvoiceInputBoundary {
 
         List<Invoice> listInvoice = findInvoiceDatabaseBoundary.findInvoice(tenKH);
 
+        if (listInvoice == null) {
+            responseError.setMsg("Đã xảy ra lỗi tại Database!");
+            this.findInvoiceOutputBoundary.exportError(responseError);
+        }
+
         if (listInvoice.size() == 0) {
-            responseError.setStatus("error");
             responseError.setMsg("Không có hóa đơn nào cho tên KH [" + tenKH + "]!");
             findInvoiceOutputBoundary.exportError(responseError);
             return;
@@ -55,7 +60,9 @@ public class FindInvoiceUseCase implements FindInvoiceInputBoundary {
     private boolean verify(FindInvoiceInputDTO findInvoiceInputDTO) {
         try {
             String tenKH = String.valueOf(findInvoiceInputDTO.getTenKH());
-            
+            if (tenKH == null || tenKH.isEmpty()) {
+                return false;
+            }
         } catch (Exception ex) {
             return false;
         }

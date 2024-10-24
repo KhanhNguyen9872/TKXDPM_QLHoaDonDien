@@ -19,9 +19,9 @@ public class ExportInvoiceByMonthUseCase implements ExportInvoiceByMonthInputBou
     @Override
     public void execute(ExportInvoiceByMonthInputDTO exportInvoiceByMonthInputDTO) {
         ExportInvoiceByMonthOutputDTO responseError = new ExportInvoiceByMonthOutputDTO();
+        responseError.setStatus("error");
 
         if (!this.verify(exportInvoiceByMonthInputDTO)) {
-            responseError.setStatus("error");
             responseError.setMsg("Dữ liệu không hợp lệ!");
             this.exportInvoiceByMonthOutputBoundary.exportError(responseError);
             return;    
@@ -34,14 +34,12 @@ public class ExportInvoiceByMonthUseCase implements ExportInvoiceByMonthInputBou
         ExportInvoiceByMonthOutputDTO outputDTO;
 
         if (listInvoices == null) {
-            responseError.setStatus("error");
             responseError.setMsg("Đã xảy ra lỗi tại Database!");
             this.exportInvoiceByMonthOutputBoundary.exportError(responseError);
             return;
         }
 
         if (listInvoices.size() == 0) {
-            responseError.setStatus("error");
             responseError.setMsg("Không có hóa đơn nào cho tháng " + month +"!");
             this.exportInvoiceByMonthOutputBoundary.exportError(responseError);
             return;

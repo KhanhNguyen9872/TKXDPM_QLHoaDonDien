@@ -22,4 +22,14 @@ public class AvgMoneyInvoiceNuocNgoaiPresenter implements AvgMoneyInvoiceNuocNgo
         }
     }
 
+    @Override
+    public void exportError(AvgMoneyInvoiceNuocNgoaiOutputDTO responseError) {
+        this.avgMoneyInvoiceNuocNgoaiViewModel.status = responseError.getStatus();
+        this.avgMoneyInvoiceNuocNgoaiViewModel.msg = responseError.getMsg();
+        
+        if (this.avgMoneyInvoiceNuocNgoaiView != null) {
+            this.avgMoneyInvoiceNuocNgoaiView.showMsgError(avgMoneyInvoiceNuocNgoaiViewModel);
+        }
+    }
+
 }

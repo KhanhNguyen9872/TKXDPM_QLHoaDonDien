@@ -9,17 +9,16 @@ public class DeleteInvoiceUseCase implements DeleteInvoiceInputBoundary {
         this.deleteInvoiceDatabaseBoundary = deleteInvoiceDatabaseBoundary;
     }
 
-    private boolean isExist(int maKH) {
+    private Boolean isExist(int maKH) {
         return this.deleteInvoiceDatabaseBoundary.isExist(maKH);
     }
 
     @Override
     public void execute(DeleteInvoiceInputDTO deleteInvoiceInputDTO) {
-        DeleteInvoiceOutputDTO responseError;
+        DeleteInvoiceOutputDTO responseError  = new DeleteInvoiceOutputDTO();
+        responseError.setStatus("error");
 
         if (!verify(deleteInvoiceInputDTO)) {
-            responseError = new DeleteInvoiceOutputDTO();
-            responseError.setStatus("error");
             responseError.setMsg("Dữ liệu không hợp lệ!");
             deleteInvoiceOutputBoundary.exportError(responseError);
             return;
@@ -27,9 +26,12 @@ public class DeleteInvoiceUseCase implements DeleteInvoiceInputBoundary {
 
         int maKH = Integer.parseInt(deleteInvoiceInputDTO.getMaKH());
 
-        if (!this.isExist(maKH)) {
-            responseError = new DeleteInvoiceOutputDTO();
-            responseError.setStatus("error");
+        Boolean isE = this.isExist(maKH);
+        if (isE == null) {
+            responseError.setMsg("Đã xảy ra lỗi tại Database!");
+            deleteInvoiceOutputBoundary.exportError(responseError);
+            return;
+        } else if (!isE) {
             responseError.setMsg("Không tồn tại! (KH: " + deleteInvoiceInputDTO.getMaKH() + ")");
             deleteInvoiceOutputBoundary.exportError(responseError);
             return;

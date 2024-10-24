@@ -20,9 +20,9 @@ public class SumKHInvoiceUseCase implements SumKHInvoiceInputBoundary {
     @Override
     public void execute(SumKHInvoiceInputDTO sumKHInvoiceInputDTO) {
         SumKHInvoiceOutputDTO responseError = new SumKHInvoiceOutputDTO();
+        responseError.setStatus("error");
 
         if (!this.verify(sumKHInvoiceInputDTO)) {
-            responseError.setStatus("error");
             responseError.setMsg("Dữ liệu không hợp lệ!");
             this.sumKHInvoiceOutputBoundary.exportError(responseError);
             return;
@@ -32,6 +32,11 @@ public class SumKHInvoiceUseCase implements SumKHInvoiceInputBoundary {
 
         List<Invoice> listInvoice = this.sumKHInvoiceDatabaseBoundary.getAllInvoices();
         List<Invoice> newListInvoice = new ArrayList<>();
+
+        if (listInvoice == null) {
+            responseError.setMsg("Đã xảy ra lỗi tại Database!");
+            this.sumKHInvoiceOutputBoundary.exportError(responseError);
+        }
 
         for (Invoice invoice : listInvoice) {
             if (loaiKH.equals("Tất cả")) {

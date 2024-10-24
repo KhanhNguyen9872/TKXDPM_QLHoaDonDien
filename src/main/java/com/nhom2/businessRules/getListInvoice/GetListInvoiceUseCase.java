@@ -18,13 +18,14 @@ public class GetListInvoiceUseCase implements GetListInvoiceInputBoundary {
 
     @Override
     public void execute() {
+        GetListInvoiceOutputDTO responseError = new GetListInvoiceOutputDTO();
+        responseError.setStatus("error");
+
         List<GetListInvoiceOutputDTO> listOutputDTO = new ArrayList<>();
 
         List<Invoice> listInvoice = this.getListInvoiceDatabaseBoundary.getAllInvoices();
 
         if (listInvoice == null) {
-            GetListInvoiceOutputDTO responseError = new GetListInvoiceOutputDTO();
-            responseError.setStatus("error");
             responseError.setMsg("Đã xảy ra lỗi tại Database!");
             this.getListInvoiceOutputBoundary.exportError(responseError);
             return;

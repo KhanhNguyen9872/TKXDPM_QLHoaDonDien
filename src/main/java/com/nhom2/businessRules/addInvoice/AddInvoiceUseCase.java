@@ -19,12 +19,11 @@ public class AddInvoiceUseCase implements AddInvoiceInputBoundary {
     @Override
     public void execute(AddInvoiceInputDTO addInvoiceInputDTO) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        AddInvoiceOutputDTO responseError;
+        AddInvoiceOutputDTO responseError = new AddInvoiceOutputDTO();
+        responseError.setStatus("error");
         Invoice invoice;
 
         if (!verify(addInvoiceInputDTO)) {
-            responseError = new AddInvoiceOutputDTO();
-            responseError.setStatus("error");
             responseError.setMsg("Dữ liệu không hợp lệ!");
             addInvoiceOutputBoundary.exportError(responseError);
             return;
