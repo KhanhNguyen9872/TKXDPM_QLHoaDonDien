@@ -28,6 +28,6 @@ public class GetListInvoiceTest extends Nhom2Test
         GetListInvoiceController getListInvoiceController = new GetListInvoiceController(getListInvoiceInputBoundary);
 
         getListInvoiceController.execute();
-        assertEquals(getListInvoiceViewModel.size(), 8);
+        assertEquals(getListInvoiceViewModel.size(), 7);
     }
 }

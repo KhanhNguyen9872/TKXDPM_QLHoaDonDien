@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.nhom2.DeleteInvoiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.067 s <<< FAILURE! - in com.nhom2.DeleteInvoiceTest
+deleteInvoiceSuccess(com.nhom2.DeleteInvoiceTest)  Time elapsed: 0.002 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[Không tồn tại]! (KH: 8)> but was:<[Đã xóa thành công]! (KH: 8)>
+	at com.nhom2.DeleteInvoiceTest.deleteInvoiceSuccess(DeleteInvoiceTest.java:39)
+

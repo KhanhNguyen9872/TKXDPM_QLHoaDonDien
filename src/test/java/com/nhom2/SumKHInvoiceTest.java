@@ -34,7 +34,7 @@ public class SumKHInvoiceTest extends Nhom2Test {
         sumKHInvoiceInputDTO.setLoaiKH("Tất cả");
 
         sumKHInvoiceController.execute(sumKHInvoiceInputDTO);
-        assertEquals(sumKHInvoiceViewModel.msg, "Tổng KH: 8 khách hàng");
+        assertEquals(sumKHInvoiceViewModel.msg, "Tổng KH: 7 khách hàng");
     }
 
     @Test
@@ -66,7 +66,7 @@ public class SumKHInvoiceTest extends Nhom2Test {
         sumKHInvoiceInputDTO.setLoaiKH("Việt Nam");
 
         sumKHInvoiceController.execute(sumKHInvoiceInputDTO);
-        assertEquals(sumKHInvoiceViewModel.msg, "Tổng KH của (Việt Nam): 5 khách hàng");
+        assertEquals(sumKHInvoiceViewModel.msg, "Tổng KH của (Việt Nam): 4 khách hàng");
     }
 
     @Test

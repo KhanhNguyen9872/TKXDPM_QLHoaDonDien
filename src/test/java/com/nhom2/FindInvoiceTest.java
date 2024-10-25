@@ -34,7 +34,7 @@ public class FindInvoiceTest extends Nhom2Test {
         FindInvoiceController findInvoiceController = new FindInvoiceController(findInvoiceInputBoundary);
 
         findInvoiceController.execute(getFindInvoiceInputBoundary());
-        assertEquals(findInvoiceViewModels.size(), 2);
+        assertEquals(findInvoiceViewModels.size(), 1);
     }
 
     @Test

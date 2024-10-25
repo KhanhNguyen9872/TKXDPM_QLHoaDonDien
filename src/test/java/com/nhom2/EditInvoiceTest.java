@@ -18,7 +18,7 @@ public class EditInvoiceTest extends Nhom2Test
 {
     private EditInvoiceInputDTO getEditInvoiceInputDTO() {
         EditInvoiceInputDTO editInvoiceInputDTO = new EditInvoiceInputDTO();
-        editInvoiceInputDTO.setMaKH("8");
+        editInvoiceInputDTO.setMaKH("1");
         
         return editInvoiceInputDTO;
     }

@@ -31,14 +31,27 @@ public class SumKHInvoiceUseCase implements SumKHInvoiceInputBoundary {
         String loaiKH = sumKHInvoiceInputDTO.getLoaiKH();
 
         List<Invoice> listInvoice = this.sumKHInvoiceDatabaseBoundary.getAllInvoices();
-        List<Invoice> newListInvoice = new ArrayList<>();
-
+        
         if (listInvoice == null) {
             responseError.setMsg("Đã xảy ra lỗi tại Database!");
             this.sumKHInvoiceOutputBoundary.exportError(responseError);
         }
 
-        for (Invoice invoice : listInvoice) {
+        List<Invoice> newListInvoice = filterLoaiKH(listInvoice, loaiKH);
+
+        TinhToanInvoice tinhToanInvoice = new TinhToanInvoice();
+        int total = tinhToanInvoice.tinhTongInvoice(newListInvoice);
+
+        SumKHInvoiceOutputDTO sumKHInvoiceOutputDTO = new SumKHInvoiceOutputDTO();
+        sumKHInvoiceOutputDTO.setLoaiKH(loaiKH);
+        sumKHInvoiceOutputDTO.setTotal(String.valueOf(total));
+        this.sumKHInvoiceOutputBoundary.present(sumKHInvoiceOutputDTO);
+    }
+
+    private List<Invoice> filterLoaiKH(List<Invoice> listInvoices, String loaiKH) {
+        List<Invoice> newListInvoice = new ArrayList<>();
+
+        for (Invoice invoice : listInvoices) {
             if (loaiKH.equals("Tất cả")) {
 
             } else if (loaiKH.equals("Nước ngoài")) {
@@ -56,13 +69,7 @@ public class SumKHInvoiceUseCase implements SumKHInvoiceInputBoundary {
             newListInvoice.add(invoice);
         }
 
-        TinhToanInvoice tinhToanInvoice = new TinhToanInvoice();
-        int total = tinhToanInvoice.tinhTongInvoice(newListInvoice);
-
-        SumKHInvoiceOutputDTO sumKHInvoiceOutputDTO = new SumKHInvoiceOutputDTO();
-        sumKHInvoiceOutputDTO.setLoaiKH(loaiKH);
-        sumKHInvoiceOutputDTO.setTotal(String.valueOf(total));
-        this.sumKHInvoiceOutputBoundary.present(sumKHInvoiceOutputDTO);
+        return newListInvoice;
     }
 
     private boolean verify(SumKHInvoiceInputDTO sumKHInvoiceInputDTO) {
