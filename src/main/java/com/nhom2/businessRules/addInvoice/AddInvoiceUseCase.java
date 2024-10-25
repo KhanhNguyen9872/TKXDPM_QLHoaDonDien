@@ -81,7 +81,15 @@ public class AddInvoiceUseCase implements AddInvoiceInputBoundary {
 
         try {
             String tenKH = requestData.getTenKH();
+            if (tenKH == null || tenKH.isEmpty()) {
+                return false;
+            }
+
             Date ngayHD = formatter.parse(requestData.getNgayHD());
+            if (ngayHD == null) {
+                return false;
+            }
+            
             int soLuong = Integer.parseInt(requestData.getSoLuong());
             int donGia = Integer.parseInt(requestData.getDonGia());
 

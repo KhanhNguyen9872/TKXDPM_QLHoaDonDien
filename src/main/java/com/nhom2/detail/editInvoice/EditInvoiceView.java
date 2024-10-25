@@ -58,6 +58,7 @@ public class EditInvoiceView extends JFrame implements ActionListener {
 
         // Initialize JTextFields as instance variables
         tf_MaKH = new JTextField(10);
+        tf_MaKH.setEditable(false);
         tf_TenKH = new JTextField(10);
         tf_SoLuong = new JTextField(10);
         tf_DonGia = new JTextField(10);
@@ -148,6 +149,8 @@ public class EditInvoiceView extends JFrame implements ActionListener {
         editInvoiceViewModel.msg,
         editInvoiceViewModel.status,
                 JOptionPane.INFORMATION_MESSAGE);
+
+        setVisible(false);
     }
 
     public void showMsgError(EditInvoiceViewModel editInvoiceViewModel) {

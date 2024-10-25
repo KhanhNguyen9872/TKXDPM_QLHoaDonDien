@@ -27,7 +27,7 @@ public class EditInvoicePresenter implements EditInvoiceOutputBoundary {
     }
 
     @Override
-    public void present(EditInvoiceOutputDTO outputDTO) {
+    public void exportResult(EditInvoiceOutputDTO outputDTO) {
         editInvoiceViewModel.msg = outputDTO.getMsg();
         editInvoiceViewModel.status = outputDTO.getStatus();
 
@@ -37,7 +37,7 @@ public class EditInvoicePresenter implements EditInvoiceOutputBoundary {
     }
 
     @Override
-    public void presentFind(EditInvoiceOutputDTO editInvoiceOutputDTO) {
+    public void present(EditInvoiceOutputDTO editInvoiceOutputDTO) {
         editInvoiceViewModel.status = editInvoiceOutputDTO.getStatus();
         editInvoiceViewModel.msg = editInvoiceOutputDTO.getMsg();
         editInvoiceViewModel.maKH = editInvoiceOutputDTO.getMaKH();

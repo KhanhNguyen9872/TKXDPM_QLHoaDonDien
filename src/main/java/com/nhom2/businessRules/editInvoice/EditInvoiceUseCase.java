@@ -30,11 +30,6 @@ public class EditInvoiceUseCase implements EditInvoiceInputBoundary {
         }
 
         int maKH = Integer.parseInt(editInvoiceInputDTO.getMaKH());
-        if (!this.isExist(maKH)) {
-            responseError.setMsg("Mã KH không tồn tại!");
-            editInvoiceOutputBoundary.exportError(responseError);
-            return;
-        }
 
         Invoice invoice;
         String tenKH = editInvoiceInputDTO.getTenKH();
@@ -62,7 +57,7 @@ public class EditInvoiceUseCase implements EditInvoiceInputBoundary {
         EditInvoiceOutputDTO editInvoiceOutputDTO = new EditInvoiceOutputDTO();
         editInvoiceOutputDTO.setStatus("success");
         editInvoiceOutputDTO.setMsg("Đã sửa thành công (KH: " + maKH + ")");
-        editInvoiceOutputBoundary.present(editInvoiceOutputDTO);
+        editInvoiceOutputBoundary.exportResult(editInvoiceOutputDTO);
     }
 
     @Override
@@ -113,7 +108,7 @@ public class EditInvoiceUseCase implements EditInvoiceInputBoundary {
 
         editInvoiceOutputDTO.setStatus("success");
         editInvoiceOutputDTO.setMsg("Đã lấy thành công hóa đơn! (KH: " + maKH + ")");
-        editInvoiceOutputBoundary.presentFind(editInvoiceOutputDTO);
+        editInvoiceOutputBoundary.present(editInvoiceOutputDTO);
     }
 
     private boolean verifyFind(EditInvoiceInputDTO editInvoiceInputDTO) {
@@ -133,7 +128,15 @@ public class EditInvoiceUseCase implements EditInvoiceInputBoundary {
         try {
             int maKH = Integer.parseInt(requestData.getMaKH());
             String tenKH = requestData.getTenKH();
+            if (tenKH == null || tenKH.isEmpty()) {
+                return false;
+            }
+
             Date ngayHD = formatter.parse(requestData.getNgayHD());
+            if (ngayHD == null) {
+                return false;
+            }
+
             int soLuong = Integer.parseInt(requestData.getSoLuong());
             int donGia = Integer.parseInt(requestData.getDonGia());
 

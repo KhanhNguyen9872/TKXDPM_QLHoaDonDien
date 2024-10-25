@@ -27,7 +27,7 @@ public class InvoiceVN extends Invoice {
         if (getSoLuong() <= getDinhMuc()) {
             thanhTien = getSoLuong() * getDonGia();
         } else {
-            thanhTien = (getSoLuong() * getDonGia()) * (getDinhMuc() + (getDinhMuc() - getSoLuong()) * getDonGia() * 2.5);
+            thanhTien = (getSoLuong() * getDonGia() * getDinhMuc()) + ((getDinhMuc() - getSoLuong()) * getDonGia() * 2.5);
         }
 
         return thanhTien;

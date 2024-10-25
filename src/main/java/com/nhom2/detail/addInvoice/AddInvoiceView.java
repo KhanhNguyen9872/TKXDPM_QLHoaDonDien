@@ -88,6 +88,17 @@ public class AddInvoiceView extends JFrame implements ActionListener {
                 addInvoiceViewModel.msg,
                 addInvoiceViewModel.status,
                 JOptionPane.INFORMATION_MESSAGE);
+        wipeInput();
+    }
+
+    private void wipeInput() {
+        tf_TenKH.setText("");
+        tf_SoLuong.setText("0");
+        tf_DonGia.setText("0");
+        tf_QuocTich.setText("");
+        tf_DinhMuc.setText("0");
+        cb_DoiTuongKH.setSelectedIndex(0);
+        dp_NgayHD.setDate(Calendar.getInstance().getTime());
     }
 
     public void showMsgError(AddInvoiceViewModel addInvoiceViewModel) {

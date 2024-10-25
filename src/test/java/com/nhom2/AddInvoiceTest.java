@@ -10,16 +10,6 @@ import com.nhom2.detail.addInvoice.AddInvoiceController;
 import com.nhom2.detail.addInvoice.AddInvoicePresenter;
 import com.nhom2.detail.addInvoice.AddInvoiceViewModel;
 
-// Các bước test case
-// 1. Add
-// 2. Edit
-// 3. Find
-// 4. GetList
-// 5. AvgMoney
-// 6. SumKH
-// 7. ExportByMonth
-// 8. Delete
-
 public class AddInvoiceTest extends Nhom2Test
 {
     private AddInvoiceInputDTO getRequestData() {

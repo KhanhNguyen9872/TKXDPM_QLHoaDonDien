@@ -61,7 +61,10 @@ public class ExportInvoiceByMonthUseCase implements ExportInvoiceByMonthInputBou
     private boolean verify(ExportInvoiceByMonthInputDTO exportInvoiceByMonthInputDTO) {
         try {
             int month = Integer.parseInt(exportInvoiceByMonthInputDTO.getMonth());
-
+            
+            if (month < 1 || month > 12) {
+                return false;
+            }
             return true;
         } catch (Exception e) {
             e.printStackTrace();
