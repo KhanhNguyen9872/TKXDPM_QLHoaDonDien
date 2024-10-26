@@ -13,7 +13,6 @@ import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthInputDTO
 import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthOutputBoundary;
 import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthUseCase;
 import com.nhom2.database.mysql.ExportInvoiceByMonthDAOMySQL;
-import com.nhom2.detail.exportInvoiceByMonth.ExportInvoiceByMonthController;
 import com.nhom2.detail.exportInvoiceByMonth.ExportInvoiceByMonthPresenter;
 import com.nhom2.detail.exportInvoiceByMonth.ExportInvoiceByMonthViewModel;
 
@@ -31,11 +30,10 @@ public class ExportInvoiceByMonthTest extends Nhom2Test {
         ExportInvoiceByMonthOutputBoundary exportInvoiceByMonthOutputBoundary = new ExportInvoiceByMonthPresenter(null, exportInvoiceByMonthViewModels);
         ExportInvoiceByMonthDatabaseBoundary exportInvoiceByMonthDatabaseBoundary = new ExportInvoiceByMonthDAOMySQL(ipAddress, port, db, username, password);
         ExportInvoiceByMonthInputBoundary exportInvoiceByMonthInputBoundary = new ExportInvoiceByMonthUseCase(exportInvoiceByMonthDatabaseBoundary, exportInvoiceByMonthOutputBoundary);
-        ExportInvoiceByMonthController exportInvoiceByMonthController = new ExportInvoiceByMonthController(exportInvoiceByMonthInputBoundary);
 
         ExportInvoiceByMonthInputDTO exportInvoiceByMonthInputDTO = getExportInvoiceByMonthInputDTO();
 
-        exportInvoiceByMonthController.execute(exportInvoiceByMonthInputDTO);
+        exportInvoiceByMonthInputBoundary.execute(exportInvoiceByMonthInputDTO);
         assertEquals(exportInvoiceByMonthViewModels.size(), 3);
     }
 
@@ -46,12 +44,11 @@ public class ExportInvoiceByMonthTest extends Nhom2Test {
         ExportInvoiceByMonthOutputBoundary exportInvoiceByMonthOutputBoundary = new ExportInvoiceByMonthPresenter(null, exportInvoiceByMonthViewModels);
         ExportInvoiceByMonthDatabaseBoundary exportInvoiceByMonthDatabaseBoundary = new ExportInvoiceByMonthDAOMySQL(ipAddress, port, db, username, password);
         ExportInvoiceByMonthInputBoundary exportInvoiceByMonthInputBoundary = new ExportInvoiceByMonthUseCase(exportInvoiceByMonthDatabaseBoundary, exportInvoiceByMonthOutputBoundary);
-        ExportInvoiceByMonthController exportInvoiceByMonthController = new ExportInvoiceByMonthController(exportInvoiceByMonthInputBoundary);
 
         ExportInvoiceByMonthInputDTO exportInvoiceByMonthInputDTO = getExportInvoiceByMonthInputDTO();
         exportInvoiceByMonthInputDTO.setMonth("1");
 
-        exportInvoiceByMonthController.execute(exportInvoiceByMonthInputDTO);
+        exportInvoiceByMonthInputBoundary.execute(exportInvoiceByMonthInputDTO);
         assertEquals(exportInvoiceByMonthViewModels.size(), 0);
     }
 }

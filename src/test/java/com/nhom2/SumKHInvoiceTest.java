@@ -10,7 +10,6 @@ import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceInputDTO;
 import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceOutputBoundary;
 import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceUseCase;
 import com.nhom2.database.mysql.SumKHInvoiceDAOMySQL;
-import com.nhom2.detail.sumKHInvoice.SumKHInvoiceController;
 import com.nhom2.detail.sumKHInvoice.SumKHInvoicePresenter;
 import com.nhom2.detail.sumKHInvoice.SumKHInvoiceViewModel;
 
@@ -28,12 +27,11 @@ public class SumKHInvoiceTest extends Nhom2Test {
         SumKHInvoiceOutputBoundary sumKHInvoiceOutputBoundary = new SumKHInvoicePresenter(null, sumKHInvoiceViewModel);
         SumKHInvoiceDatabaseBoundary sumKHInvoiceDatabaseBoundary = new SumKHInvoiceDAOMySQL(ipAddress, port, db, username, password);
         SumKHInvoiceInputBoundary sumKHInvoiceInputBoundary = new SumKHInvoiceUseCase(sumKHInvoiceOutputBoundary, sumKHInvoiceDatabaseBoundary);
-        SumKHInvoiceController sumKHInvoiceController = new SumKHInvoiceController(sumKHInvoiceInputBoundary);
         
         SumKHInvoiceInputDTO sumKHInvoiceInputDTO = getSumKHInvoiceInputDTO();
         sumKHInvoiceInputDTO.setLoaiKH("Tất cả");
 
-        sumKHInvoiceController.execute(sumKHInvoiceInputDTO);
+        sumKHInvoiceInputBoundary.execute(sumKHInvoiceInputDTO);
         assertEquals(sumKHInvoiceViewModel.msg, "Tổng KH: 7 khách hàng");
     }
 
@@ -44,12 +42,11 @@ public class SumKHInvoiceTest extends Nhom2Test {
         SumKHInvoiceOutputBoundary sumKHInvoiceOutputBoundary = new SumKHInvoicePresenter(null, sumKHInvoiceViewModel);
         SumKHInvoiceDatabaseBoundary sumKHInvoiceDatabaseBoundary = new SumKHInvoiceDAOMySQL(ipAddress, port, db, username, password);
         SumKHInvoiceInputBoundary sumKHInvoiceInputBoundary = new SumKHInvoiceUseCase(sumKHInvoiceOutputBoundary, sumKHInvoiceDatabaseBoundary);
-        SumKHInvoiceController sumKHInvoiceController = new SumKHInvoiceController(sumKHInvoiceInputBoundary);
         
         SumKHInvoiceInputDTO sumKHInvoiceInputDTO = getSumKHInvoiceInputDTO();
         sumKHInvoiceInputDTO.setLoaiKH("Nước ngoài");
 
-        sumKHInvoiceController.execute(sumKHInvoiceInputDTO);
+        sumKHInvoiceInputBoundary.execute(sumKHInvoiceInputDTO);
         assertEquals(sumKHInvoiceViewModel.msg, "Tổng KH của (Nước ngoài): 3 khách hàng");
     }
 
@@ -60,12 +57,11 @@ public class SumKHInvoiceTest extends Nhom2Test {
         SumKHInvoiceOutputBoundary sumKHInvoiceOutputBoundary = new SumKHInvoicePresenter(null, sumKHInvoiceViewModel);
         SumKHInvoiceDatabaseBoundary sumKHInvoiceDatabaseBoundary = new SumKHInvoiceDAOMySQL(ipAddress, port, db, username, password);
         SumKHInvoiceInputBoundary sumKHInvoiceInputBoundary = new SumKHInvoiceUseCase(sumKHInvoiceOutputBoundary, sumKHInvoiceDatabaseBoundary);
-        SumKHInvoiceController sumKHInvoiceController = new SumKHInvoiceController(sumKHInvoiceInputBoundary);
         
         SumKHInvoiceInputDTO sumKHInvoiceInputDTO = getSumKHInvoiceInputDTO();
         sumKHInvoiceInputDTO.setLoaiKH("Việt Nam");
 
-        sumKHInvoiceController.execute(sumKHInvoiceInputDTO);
+        sumKHInvoiceInputBoundary.execute(sumKHInvoiceInputDTO);
         assertEquals(sumKHInvoiceViewModel.msg, "Tổng KH của (Việt Nam): 4 khách hàng");
     }
 
@@ -76,12 +72,11 @@ public class SumKHInvoiceTest extends Nhom2Test {
         SumKHInvoiceOutputBoundary sumKHInvoiceOutputBoundary = new SumKHInvoicePresenter(null, sumKHInvoiceViewModel);
         SumKHInvoiceDatabaseBoundary sumKHInvoiceDatabaseBoundary = new SumKHInvoiceDAOMySQL(ipAddress, port, db, username, password);
         SumKHInvoiceInputBoundary sumKHInvoiceInputBoundary = new SumKHInvoiceUseCase(sumKHInvoiceOutputBoundary, sumKHInvoiceDatabaseBoundary);
-        SumKHInvoiceController sumKHInvoiceController = new SumKHInvoiceController(sumKHInvoiceInputBoundary);
         
         SumKHInvoiceInputDTO sumKHInvoiceInputDTO = getSumKHInvoiceInputDTO();
         sumKHInvoiceInputDTO.setLoaiKH("");
 
-        sumKHInvoiceController.execute(sumKHInvoiceInputDTO);
+        sumKHInvoiceInputBoundary.execute(sumKHInvoiceInputDTO);
         assertEquals(sumKHInvoiceViewModel.msg, "Dữ liệu không hợp lệ!");
     }
 }

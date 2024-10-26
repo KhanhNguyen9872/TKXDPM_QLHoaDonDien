@@ -13,7 +13,6 @@ import com.nhom2.businessRules.findInvoice.FindInvoiceInputDTO;
 import com.nhom2.businessRules.findInvoice.FindInvoiceOutputBoundary;
 import com.nhom2.businessRules.findInvoice.FindInvoiceUseCase;
 import com.nhom2.database.mysql.FindInvoiceDAOMySQL;
-import com.nhom2.detail.findInvoice.FindInvoiceController;
 import com.nhom2.detail.findInvoice.FindInvoicePresenter;
 import com.nhom2.detail.findInvoice.FindInvoiceViewModel;
 
@@ -31,9 +30,8 @@ public class FindInvoiceTest extends Nhom2Test {
         FindInvoiceOutputBoundary findInvoiceOutputBoundary = new FindInvoicePresenter(null, findInvoiceViewModels);
         FindInvoiceDatabaseBoundary findInvoiceDatabaseBoundary = new FindInvoiceDAOMySQL(ipAddress, port, db, username, password);
         FindInvoiceInputBoundary findInvoiceInputBoundary = new FindInvoiceUseCase(findInvoiceOutputBoundary, findInvoiceDatabaseBoundary);
-        FindInvoiceController findInvoiceController = new FindInvoiceController(findInvoiceInputBoundary);
 
-        findInvoiceController.execute(getFindInvoiceInputBoundary());
+        findInvoiceInputBoundary.execute(getFindInvoiceInputBoundary());
         assertEquals(findInvoiceViewModels.size(), 1);
     }
 
@@ -44,12 +42,11 @@ public class FindInvoiceTest extends Nhom2Test {
         FindInvoiceOutputBoundary findInvoiceOutputBoundary = new FindInvoicePresenter(null, findInvoiceViewModels);
         FindInvoiceDatabaseBoundary findInvoiceDatabaseBoundary = new FindInvoiceDAOMySQL(ipAddress, port, db, username, password);
         FindInvoiceInputBoundary findInvoiceInputBoundary = new FindInvoiceUseCase(findInvoiceOutputBoundary, findInvoiceDatabaseBoundary);
-        FindInvoiceController findInvoiceController = new FindInvoiceController(findInvoiceInputBoundary);
 
         FindInvoiceInputDTO findInvoiceInputDTO = getFindInvoiceInputBoundary();
         findInvoiceInputDTO.setTenKH("Nhom2");
 
-        findInvoiceController.execute(findInvoiceInputDTO);
+        findInvoiceInputBoundary.execute(findInvoiceInputDTO);
         assertEquals(findInvoiceViewModels.size(), 0);
     }
 }

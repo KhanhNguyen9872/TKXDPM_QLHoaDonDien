@@ -10,7 +10,6 @@ import com.nhom2.businessRules.editInvoice.EditInvoiceOutputBoundary;
 import com.nhom2.businessRules.editInvoice.EditInvoiceUseCase;
 import com.nhom2.businessRules.editInvoice.EditInvoiceInputDTO;
 import com.nhom2.database.mysql.EditInvoiceDAOMySQL;
-import com.nhom2.detail.editInvoice.EditInvoiceController;
 import com.nhom2.detail.editInvoice.EditInvoicePresenter;
 import com.nhom2.detail.editInvoice.EditInvoiceViewModel;
 
@@ -30,11 +29,10 @@ public class EditInvoiceTest extends Nhom2Test
         EditInvoiceOutputBoundary editInvoiceOutputBoundary = new EditInvoicePresenter(null, editInvoiceViewModel);
         EditInvoiceDatabaseBoundary editInvoiceDatabaseBoundary  = new EditInvoiceDAOMySQL(ipAddress, port, db, username, password);
         EditInvoiceInputBoundary editInvoiceInputBoundary = new EditInvoiceUseCase(editInvoiceOutputBoundary, editInvoiceDatabaseBoundary);
-        EditInvoiceController editInvoiceController = new EditInvoiceController(editInvoiceInputBoundary);
 
         // find id 1
         EditInvoiceInputDTO editInvoiceInputDTO = getEditInvoiceInputDTO();
-        editInvoiceController.executeFind(editInvoiceInputDTO);
+        editInvoiceInputBoundary.executeFind(editInvoiceInputDTO);
         
         assertEquals(editInvoiceViewModel.msg, "Đã lấy thành công hóa đơn! (KH: " + editInvoiceInputDTO.getMaKH() + ")");
         assertEquals(editInvoiceViewModel.maKH, editInvoiceInputDTO.getMaKH());
@@ -48,7 +46,7 @@ public class EditInvoiceTest extends Nhom2Test
         editInvoiceInputDTO.setDoiTuongKH(editInvoiceViewModel.doiTuongKH);
         editInvoiceInputDTO.setDinhMuc(editInvoiceViewModel.dinhMuc);
 
-        editInvoiceController.execute(editInvoiceInputDTO);
+        editInvoiceInputBoundary.execute(editInvoiceInputDTO);
         assertEquals(editInvoiceViewModel.msg, "Đã sửa thành công (KH: " + editInvoiceInputDTO.getMaKH() + ")");
     }
 
@@ -59,11 +57,10 @@ public class EditInvoiceTest extends Nhom2Test
         EditInvoiceOutputBoundary editInvoiceOutputBoundary = new EditInvoicePresenter(null, editInvoiceViewModel);
         EditInvoiceDatabaseBoundary editInvoiceDatabaseBoundary  = new EditInvoiceDAOMySQL(ipAddress, port, db, username, password);
         EditInvoiceInputBoundary editInvoiceInputBoundary = new EditInvoiceUseCase(editInvoiceOutputBoundary, editInvoiceDatabaseBoundary);
-        EditInvoiceController editInvoiceController = new EditInvoiceController(editInvoiceInputBoundary);
 
         // find id 1
         EditInvoiceInputDTO editInvoiceInputDTO = getEditInvoiceInputDTO();
-        editInvoiceController.executeFind(editInvoiceInputDTO);
+        editInvoiceInputBoundary.executeFind(editInvoiceInputDTO);
         
         assertEquals(editInvoiceViewModel.maKH, editInvoiceInputDTO.getMaKH());
 
@@ -76,7 +73,7 @@ public class EditInvoiceTest extends Nhom2Test
         editInvoiceInputDTO.setDoiTuongKH(editInvoiceViewModel.doiTuongKH);
         editInvoiceInputDTO.setDinhMuc(editInvoiceViewModel.dinhMuc);
 
-        editInvoiceController.execute(editInvoiceInputDTO);
+        editInvoiceInputBoundary.execute(editInvoiceInputDTO);
         assertEquals(editInvoiceViewModel.msg, "Dữ liệu không hợp lệ!");
     }
 }

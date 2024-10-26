@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import com.nhom2.businessRules.addInvoice.*;
 import com.nhom2.database.mysql.AddInvoiceDAOMySQL;
-import com.nhom2.detail.addInvoice.AddInvoiceController;
 import com.nhom2.detail.addInvoice.AddInvoicePresenter;
 import com.nhom2.detail.addInvoice.AddInvoiceViewModel;
 
@@ -32,10 +31,9 @@ public class AddInvoiceTest extends Nhom2Test
         AddInvoiceOutputBoundary addInvoiceOutputBoundary = new AddInvoicePresenter(null, addInvoiceViewModel);
         AddInvoiceDatabaseBoundary addInvoiceDatabaseBoundary = new AddInvoiceDAOMySQL(ipAddress, port, db, username, password);
         AddInvoiceInputBoundary addInvoiceInputBoundary = new AddInvoiceUseCase(addInvoiceOutputBoundary, addInvoiceDatabaseBoundary);
-        AddInvoiceController addInvoiceController = new AddInvoiceController(addInvoiceInputBoundary);
 
         AddInvoiceInputDTO addInvoiceInputDTO = getRequestData();
-        addInvoiceController.execute(addInvoiceInputDTO);
+        addInvoiceInputBoundary.execute(addInvoiceInputDTO);
 
         assertEquals(addInvoiceViewModel.msg, "Đã thêm thành công! (TenKH: " + addInvoiceInputDTO.getTenKH() + ")");
     }
@@ -47,12 +45,11 @@ public class AddInvoiceTest extends Nhom2Test
         AddInvoiceOutputBoundary addInvoiceOutputBoundary = new AddInvoicePresenter(null, addInvoiceViewModel);
         AddInvoiceDatabaseBoundary addInvoiceDatabaseBoundary = new AddInvoiceDAOMySQL(ipAddress, port, db, username, password);
         AddInvoiceInputBoundary addInvoiceInputBoundary = new AddInvoiceUseCase(addInvoiceOutputBoundary, addInvoiceDatabaseBoundary);
-        AddInvoiceController addInvoiceController = new AddInvoiceController(addInvoiceInputBoundary);
 
         AddInvoiceInputDTO requestData = getRequestData();
 
         requestData.setNgayHD("20240101");
-        addInvoiceController.execute(requestData);
+        addInvoiceInputBoundary.execute(requestData);
 
         assertEquals(addInvoiceViewModel.msg, "Dữ liệu không hợp lệ!");
     }
