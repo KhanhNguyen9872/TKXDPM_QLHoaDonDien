@@ -18,6 +18,7 @@ public class FindInvoicePresenter implements FindInvoiceOutputBoundary {
     public void exportError(FindInvoiceOutputDTO responseError) {
         this.listViewModel.clear();
         FindInvoiceViewModel findInvoiceViewModel = new FindInvoiceViewModel(responseError.getStatus(), responseError.getMsg());
+        this.listViewModel.add(findInvoiceViewModel);
         
         if (this.findInvoiceView != null) {
             this.findInvoiceView.showMsgError(findInvoiceViewModel);

@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 
 import javax.swing.*;
 
@@ -12,8 +13,14 @@ import org.jdesktop.swingx.JXDatePicker;
 import java.awt.*;
 
 import com.nhom2.businessRules.editInvoice.EditInvoiceInputDTO;
+import com.nhom2.businessRules.findInvoice.FindInvoiceInputBoundary;
+import com.nhom2.businessRules.findInvoice.FindInvoiceInputDTO;
+import com.nhom2.detail.findInvoice.FindInvoiceController;
+import com.nhom2.detail.findInvoice.FindInvoiceViewModel;
 
 public class EditInvoiceView extends JFrame implements ActionListener {
+    private List<FindInvoiceViewModel> findInvoiceViewModels;
+    private FindInvoiceInputBoundary findInvoiceInputBoundary;
     private EditInvoiceController editInvoiceController;
     private JTextField tf_MaKH, tf_TenKH, tf_SoLuong, tf_DonGia, tf_QuocTich, tf_DinhMuc;
     private JLabel lb_MaKH, lb_TenKH, lb_NgayHD, lb_SoLuong, lb_DonGia, lb_QuocTich, lb_DoiTuongKH, lb_DinhMuc;
@@ -114,6 +121,11 @@ public class EditInvoiceView extends JFrame implements ActionListener {
         this.editInvoiceController = editInvoiceController;
     }
 
+    public void setFindInvoice(FindInvoiceInputBoundary findInvoiceInputBoundary, List<FindInvoiceViewModel> findInvoiceViewModels) {
+        this.findInvoiceInputBoundary = findInvoiceInputBoundary;
+        this.findInvoiceViewModels = findInvoiceViewModels;
+    }
+
     public void showInvoice(EditInvoiceViewModel editInvoiceViewModel) {
         String maKH = editInvoiceViewModel.maKH;
         String tenKH = editInvoiceViewModel.tenKH;
@@ -164,14 +176,40 @@ public class EditInvoiceView extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();
-        EditInvoiceInputDTO editInvoiceInputDTO = new EditInvoiceInputDTO();
-
+        
         if (cmd.equals(findInvoiceBtn.getActionCommand())) {
-            editInvoiceInputDTO.setMaKH(tf_MaKH.getText());
-            editInvoiceController.executeFind(editInvoiceInputDTO);
+            FindInvoiceInputDTO findInvoiceInputDTO = new FindInvoiceInputDTO();
+            findInvoiceInputDTO.setMaKH(tf_MaKH.getText());
+            
+            findInvoiceInputBoundary.execute(findInvoiceInputDTO);
+            
+            EditInvoiceViewModel editInvoiceViewModel = new EditInvoiceViewModel();
+            FindInvoiceViewModel findInvoiceViewModel = this.findInvoiceViewModels.get(0);
+            String status = findInvoiceViewModel.status;
+            
+            if (status.equals("success")) {
+                editInvoiceViewModel.maKH = findInvoiceViewModel.maKH;
+                editInvoiceViewModel.tenKH = findInvoiceViewModel.tenKH;
+                editInvoiceViewModel.ngayHD = findInvoiceViewModel.ngayHD;
+                editInvoiceViewModel.soLuong = findInvoiceViewModel.soLuong;
+                editInvoiceViewModel.donGia = findInvoiceViewModel.donGia;
+                editInvoiceViewModel.quocTich = findInvoiceViewModel.quocTich;
+                editInvoiceViewModel.doiTuongKH = findInvoiceViewModel.doiTuongKH;
+                editInvoiceViewModel.dinhMuc = findInvoiceViewModel.dinhMuc;
+
+                showInvoice(editInvoiceViewModel);
+            }
+
+            if (status.equals("error")) {
+                editInvoiceViewModel.status = findInvoiceViewModel.status;
+                editInvoiceViewModel.msg = findInvoiceViewModel.msg;
+                showMsgError(editInvoiceViewModel);
+            }
         }
 
         if (cmd.equals(editInvoiceBtn.getActionCommand())) {
+            EditInvoiceInputDTO editInvoiceInputDTO = new EditInvoiceInputDTO();
+
             editInvoiceInputDTO.setMaKH(tf_MaKH.getText());
             editInvoiceInputDTO.setTenKH(tf_TenKH.getText());
             editInvoiceInputDTO.setNgayHD(formatter.format(dp_NgayHD.getDate()));

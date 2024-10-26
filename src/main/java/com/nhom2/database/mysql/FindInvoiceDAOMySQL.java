@@ -15,15 +15,14 @@ public class FindInvoiceDAOMySQL extends DAOMySQL implements FindInvoiceDatabase
         super(ipAddress, port, database, username, password);
     }
 
-    @Override
-    public List<Invoice> findInvoice(String tenKH) {
+    private List<Invoice> findInvoice(String column, String value) {
         List<Invoice> listInvoices = null;
         connect();
         
-        String sql = "SELECT * FROM invoice WHERE (tenKH like ?);";
+        String sql = "SELECT * FROM invoice WHERE (" + column + " like ?);";
         try {
             PreparedStatement preparedStatement = getPrepareStatement(sql);
-            preparedStatement.setString(1, "%" + tenKH + "%");
+            preparedStatement.setString(1, "%" + value + "%");
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -62,5 +61,20 @@ public class FindInvoiceDAOMySQL extends DAOMySQL implements FindInvoiceDatabase
 
         close();
         return listInvoices;
+    }
+
+    @Override
+    public List<Invoice> findInvoiceTenKH(String tenKH) {
+        return this.findInvoice("tenKH", tenKH);
+    }
+
+    @Override
+    public List<Invoice> findInvoiceMaKH(String maKH) {
+        return this.findInvoice("maKH", maKH);
+    }
+
+    @Override
+    public List<Invoice> findInvoiceNgayHD(String ngayHD) {
+        return this.findInvoice("ngayHD", ngayHD);
     }
 }

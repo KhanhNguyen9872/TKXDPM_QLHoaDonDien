@@ -15,7 +15,8 @@ import java.util.Calendar;
 public class AddInvoiceView extends JFrame implements ActionListener {
     private AddInvoiceController addInvoiceController;
     private JTextField tf_TenKH, tf_SoLuong, tf_DonGia, tf_QuocTich, tf_DinhMuc;
-    private JLabel lb_TenKH, lb_NgayHD, lb_SoLuong, lb_DonGia, lb_QuocTich, lb_DoiTuongKH, lb_DinhMuc;
+    private JLabel lb_TenKH, lb_NgayHD, lb_SoLuong, lb_DonGia, lb_QuocTich, lb_DoiTuongKH, lb_DinhMuc, lb_isKHNN;
+    private JCheckBox jCb_isKHNN;
     private JComboBox<String> cb_DoiTuongKH;
     private JButton addInvoiceBtn;
     private JXDatePicker dp_NgayHD;
@@ -34,7 +35,7 @@ public class AddInvoiceView extends JFrame implements ActionListener {
         setTitle("Add Invoice Form");
         setSize(400, 400);
         setResizable(false);
-        setLayout(new GridLayout(8, 2));
+        setLayout(new GridLayout(9, 2));
         setVisible(true);
     }
 
@@ -46,6 +47,7 @@ public class AddInvoiceView extends JFrame implements ActionListener {
         lb_NgayHD = new JLabel("Ngày hóa đơn:");
         lb_SoLuong = new JLabel("Số lượng:");
         lb_DonGia = new JLabel("Đơn giá:");
+        lb_isKHNN = new JLabel("Là khách hàng nước ngoài: ");
         lb_QuocTich = new JLabel("Quốc tịch:");
         lb_DoiTuongKH = new JLabel("Đối tượng KH:");
         lb_DinhMuc = new JLabel("Định mức:");
@@ -56,6 +58,28 @@ public class AddInvoiceView extends JFrame implements ActionListener {
         tf_DonGia = new JTextField("0");
         tf_QuocTich = new JTextField();
         tf_DinhMuc = new JTextField("0");
+
+        // Initialize JCheckBox as instance variables
+        jCb_isKHNN = new JCheckBox();
+        jCb_isKHNN.addItemListener(v -> {
+            
+            if (!jCb_isKHNN.isSelected()) {
+                tf_QuocTich.setText("");
+                tf_QuocTich.setEnabled(false);
+
+                cb_DoiTuongKH.setEnabled(true);
+
+                tf_DinhMuc.setEnabled(true);
+            } else {
+                tf_QuocTich.setEnabled(true);
+
+                cb_DoiTuongKH.setSelectedIndex(0);
+                cb_DoiTuongKH.setEnabled(false);
+
+                tf_DinhMuc.setText("0");
+                tf_DinhMuc.setEnabled(false);
+            }
+        });
 
         // Initialize JComboBox as instance variables
         String[] options = {"", "Sinh hoạt", "Kinh doanh", "Sản xuất"};
@@ -71,6 +95,7 @@ public class AddInvoiceView extends JFrame implements ActionListener {
         add(lb_NgayHD); add(dp_NgayHD);
         add(lb_SoLuong); add(tf_SoLuong);
         add(lb_DonGia); add(tf_DonGia);
+        add(lb_isKHNN); add(jCb_isKHNN);
         add(lb_QuocTich); add(tf_QuocTich);
         add(lb_DoiTuongKH); add(cb_DoiTuongKH);
         add(lb_DinhMuc); add(tf_DinhMuc);
@@ -80,6 +105,11 @@ public class AddInvoiceView extends JFrame implements ActionListener {
         addInvoiceBtn.addActionListener(this);
         add(new JLabel()); // Empty cell in grid
         add(addInvoiceBtn);
+
+        tf_QuocTich.setText("");
+        tf_QuocTich.setEnabled(false);
+        cb_DoiTuongKH.setEnabled(true);
+        tf_DinhMuc.setEnabled(true);
     }
 
     public void showMsgResult(AddInvoiceViewModel addInvoiceViewModel) {

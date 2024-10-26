@@ -48,7 +48,10 @@ public class AddInvoiceTest extends Nhom2Test
 
         AddInvoiceInputDTO requestData = getRequestData();
 
-        requestData.setNgayHD("20240101");
+        requestData.setNgayHD("19990101");
+        requestData.setDinhMuc("");
+        requestData.setDoiTuongKH("");
+        requestData.setDonGia("");
         addInvoiceInputBoundary.execute(requestData);
 
         assertEquals(addInvoiceViewModel.msg, "Dữ liệu không hợp lệ!");

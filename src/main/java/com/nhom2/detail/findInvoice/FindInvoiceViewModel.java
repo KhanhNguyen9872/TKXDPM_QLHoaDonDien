@@ -20,6 +20,8 @@ public class FindInvoiceViewModel {
     
     public FindInvoiceViewModel(String status, String msg, String maKH, String tenKH, String ngayHD, String soLuong, String donGia,
             String quocTich, String doiTuongKH, String dinhMuc, String thanhTien) {
+        this.status = status;
+        this.msg = msg;
         this.maKH = maKH;
         this.tenKH = tenKH;
         this.ngayHD = ngayHD;

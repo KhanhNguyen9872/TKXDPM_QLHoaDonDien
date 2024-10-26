@@ -60,68 +60,6 @@ public class EditInvoiceUseCase implements EditInvoiceInputBoundary {
         editInvoiceOutputBoundary.exportResult(editInvoiceOutputDTO);
     }
 
-    @Override
-    public void executeFind(EditInvoiceInputDTO editInvoiceInputDTO) {
-        EditInvoiceOutputDTO responseError = new EditInvoiceOutputDTO();
-        responseError.setStatus("error");
-
-        if (!this.verifyFind(editInvoiceInputDTO)) {
-            responseError.setMsg("Dữ liệu không hợp lệ!");
-            editInvoiceOutputBoundary.exportError(responseError);
-            return;
-        }
-
-        int maKH = Integer.parseInt(editInvoiceInputDTO.getMaKH());
-        Boolean isE = this.isExist(maKH);
-        if (isE == null) {
-            responseError.setMsg("Đã xảy ra lỗi tại Database!");
-            editInvoiceOutputBoundary.exportError(responseError);
-            return;
-        } else if (!isE) {
-            responseError.setMsg("Không tồn tại! (KH: " + maKH + ")");
-            editInvoiceOutputBoundary.exportError(responseError);
-            return;
-        }
-
-        Invoice invoice = editInvoiceDatabaseBoundary.getInvoice(maKH);
-
-        EditInvoiceOutputDTO editInvoiceOutputDTO = new EditInvoiceOutputDTO();
-        editInvoiceOutputDTO.setMaKH(String.valueOf(invoice.getMaKH()));
-        editInvoiceOutputDTO.setTenKH(String.valueOf(invoice.getTenKH()));
-        editInvoiceOutputDTO.setNgayHD(invoice.getNgayHD().toString());
-        editInvoiceOutputDTO.setSoLuong(String.valueOf(invoice.getSoLuong()));
-        editInvoiceOutputDTO.setDonGia(String.valueOf(invoice.getDonGia()));
-        String quocTich = "", doiTuongKH = "";
-        int dinhMuc = 0;
-        if (invoice.getClass().equals(InvoiceVN.class)) {
-            InvoiceVN invoiceVN = (InvoiceVN)invoice;
-            doiTuongKH = invoiceVN.getDoiTuongKH();
-            dinhMuc = invoiceVN.getDinhMuc();
-        }
-        if (invoice.getClass().equals(InvoiceNuocNgoai.class)) {
-            InvoiceNuocNgoai invoiceNuocNgoai = (InvoiceNuocNgoai)invoice;
-            quocTich = invoiceNuocNgoai.getQuocTich();
-        }
-        editInvoiceOutputDTO.setQuocTich(String.valueOf(quocTich));
-        editInvoiceOutputDTO.setDoiTuongKH(String.valueOf(doiTuongKH));
-        editInvoiceOutputDTO.setDinhMuc(String.valueOf(dinhMuc));
-
-        editInvoiceOutputDTO.setStatus("success");
-        editInvoiceOutputDTO.setMsg("Đã lấy thành công hóa đơn! (KH: " + maKH + ")");
-        editInvoiceOutputBoundary.present(editInvoiceOutputDTO);
-    }
-
-    private boolean verifyFind(EditInvoiceInputDTO editInvoiceInputDTO) {
-        try {
-            int maKH = Integer.parseInt(editInvoiceInputDTO.getMaKH());
-            
-        } catch (Exception ex) {
-            return false;
-        }
-
-        return true;
-    }
-
     private boolean verify(EditInvoiceInputDTO requestData) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 

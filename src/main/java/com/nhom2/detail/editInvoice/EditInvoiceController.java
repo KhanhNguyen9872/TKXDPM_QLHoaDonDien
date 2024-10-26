@@ -10,10 +10,6 @@ public class EditInvoiceController {
         this.editInvoiceInputBoundary = editInvoiceInputBoundary;
     }
 
-    public void executeFind(EditInvoiceInputDTO editInvoiceInputDTO) {
-       this.editInvoiceInputBoundary.executeFind(editInvoiceInputDTO); 
-    }
-
     public void execute(EditInvoiceInputDTO editInvoiceInputDTO) {
         this.editInvoiceInputBoundary.execute(editInvoiceInputDTO);
     }

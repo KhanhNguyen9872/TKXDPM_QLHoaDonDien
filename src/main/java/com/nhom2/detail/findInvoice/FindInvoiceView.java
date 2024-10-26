@@ -10,6 +10,7 @@ import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -24,8 +25,9 @@ import com.nhom2.businessRules.findInvoice.FindInvoiceInputDTO;
 
 public class FindInvoiceView extends JFrame implements ActionListener {
     private FindInvoiceController findInvoiceController;
-    private JLabel lb_TenKH;
-    private JTextField tf_TenKH;
+    private JLabel loaiTimKiem;
+    private JComboBox<String> cb_loaiTimKiem;
+    private JTextField tf_Nhap;
     private JButton findInvoiceBtn;
     private List<FindInvoiceViewModel> listViewModel;
     
@@ -38,7 +40,7 @@ public class FindInvoiceView extends JFrame implements ActionListener {
         setTitle("Tìm kiếm hóa đơn tiền điện");
         setSize(400, 400);
         setResizable(false);
-        setLayout(new GridLayout(6, 2));
+        setLayout(new GridLayout(8, 2));
         setVisible(true);
     }
 
@@ -46,13 +48,18 @@ public class FindInvoiceView extends JFrame implements ActionListener {
         getContentPane().removeAll();
         
         // Initialize JLabels as instance variables
-        lb_TenKH = new JLabel("Tên khách hàng: ");
+        loaiTimKiem = new JLabel("Loại tìm kiếm: ");
+
+        // Initialize JComboBox as instance variables
+        String[] options = {"Mã KH", "Tên KH", "Ngày HD"};
+        cb_loaiTimKiem = new JComboBox<>(options);
 
         // Initialize JTextFields as instance variables
-        tf_TenKH = new JTextField();
+        tf_Nhap = new JTextField();
 
         // Add JLabels and JTextFields to the frame
-        add(lb_TenKH); add(tf_TenKH);
+        add(loaiTimKiem); add(cb_loaiTimKiem);
+        add(new JLabel("Nhập:")); add(tf_Nhap);
 
         // Create and add submit button
         findInvoiceBtn = new JButton("Find");
@@ -73,15 +80,26 @@ public class FindInvoiceView extends JFrame implements ActionListener {
         this.findInvoiceController = findInvoiceController;
     }
 
-
-
     @Override
     public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();
 
         if (cmd.equals(findInvoiceBtn.getActionCommand())) {
             FindInvoiceInputDTO findInvoiceInputDTO = new FindInvoiceInputDTO();
-            findInvoiceInputDTO.setTenKH(tf_TenKH.getText());
+            String loai = cb_loaiTimKiem.getSelectedItem().toString();
+
+            if (loai.equals("Mã KH")) {
+                findInvoiceInputDTO.setMaKH(tf_Nhap.getText());
+            }
+
+            if (loai.equals("Tên KH")) {
+                findInvoiceInputDTO.setTenKH(tf_Nhap.getText());
+            }
+
+            if (loai.equals("Ngày HD")) {
+                findInvoiceInputDTO.setNgayHD(tf_Nhap.getText());
+            }
+            
             findInvoiceController.execute(findInvoiceInputDTO);
         }
     }

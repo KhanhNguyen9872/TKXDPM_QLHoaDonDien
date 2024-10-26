@@ -29,17 +29,51 @@ public class FindInvoiceUseCase implements FindInvoiceInputBoundary {
             return;
         }
 
+        String maKH = findInvoiceInputDTO.getMaKH();
         String tenKH = findInvoiceInputDTO.getTenKH();
+        String ngayHD = findInvoiceInputDTO.getNgayHD();
 
-        List<Invoice> listInvoice = findInvoiceDatabaseBoundary.findInvoice(tenKH);
+        List<Invoice> listInvoice = null;
+        String loaiTimKiem = null;
+        String inputTimKiem = "";
 
+        if (maKH == null || maKH.isEmpty()) {
+            
+        } else {
+            listInvoice = findInvoiceDatabaseBoundary.findInvoiceMaKH(maKH);
+            loaiTimKiem = "Mã KH";
+            inputTimKiem = maKH;
+        }
+
+        if (tenKH == null || tenKH.isEmpty()) {
+
+        } else {
+            listInvoice = findInvoiceDatabaseBoundary.findInvoiceTenKH(tenKH);
+            loaiTimKiem = "Tên KH";
+            inputTimKiem = tenKH;
+        }
+
+        if (ngayHD == null || ngayHD.isEmpty()) {
+
+        } else {
+            listInvoice = findInvoiceDatabaseBoundary.findInvoiceNgayHD(ngayHD);
+            loaiTimKiem = "Ngày HD";
+            inputTimKiem = ngayHD;
+        }
+
+        if (loaiTimKiem == null) {
+            responseError.setMsg("Chưa chọn loại tìm kiếm nào!");
+            findInvoiceOutputBoundary.exportError(responseError);
+            return;
+        }
+        
         if (listInvoice == null) {
             responseError.setMsg("Đã xảy ra lỗi tại Database!");
             this.findInvoiceOutputBoundary.exportError(responseError);
         }
 
         if (listInvoice.size() == 0) {
-            responseError.setMsg("Không có hóa đơn nào cho tên KH [" + tenKH + "]!");
+            responseError.setMsg("Không có hóa đơn nào cho " + loaiTimKiem + " [" + inputTimKiem + "]!");
             findInvoiceOutputBoundary.exportError(responseError);
             return;
         }

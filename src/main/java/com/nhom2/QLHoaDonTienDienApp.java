@@ -108,6 +108,15 @@ public class QLHoaDonTienDienApp
         DeleteInvoiceController deleteInvoiceController = new DeleteInvoiceController(deleteInvoiceInputBoundary);
         deleteInvoiceView.setDeleteInvoiceController(deleteInvoiceController);
 
+        // find Invoice
+        List<FindInvoiceViewModel> listFindInvoiceViewModel = new ArrayList<>();
+        FindInvoiceView findInvoiceView = new FindInvoiceView();
+        FindInvoiceOutputBoundary findInvoiceOutputBoundary = new FindInvoicePresenter(findInvoiceView, listFindInvoiceViewModel);
+        FindInvoiceDatabaseBoundary findInvoiceDatabaseBoundary = new FindInvoiceDAOMySQL(ipAddress, port, db, username, password);
+        FindInvoiceInputBoundary findInvoiceInputBoundary = new FindInvoiceUseCase(findInvoiceOutputBoundary, findInvoiceDatabaseBoundary);
+        FindInvoiceController findInvoiceController = new FindInvoiceController(findInvoiceInputBoundary);
+        findInvoiceView.setFindInvoiceController(findInvoiceController);
+
         // edit Invoice
         EditInvoiceViewModel editInvoiceViewModel = new EditInvoiceViewModel();
         EditInvoiceView editInvoiceView = new EditInvoiceView();
@@ -117,6 +126,14 @@ public class QLHoaDonTienDienApp
         EditInvoiceController editInvoiceController = new EditInvoiceController(editInvoiceInputBoundary);
         editInvoiceView.setEditInvoiceController(editInvoiceController);
 
+        // tận dụng lại findInvoice
+        List<FindInvoiceViewModel> listFindInvoiceViewModel2 = new ArrayList<>();
+        FindInvoiceOutputBoundary findInvoiceOutputBoundary2 = new FindInvoicePresenter(null, listFindInvoiceViewModel2);
+        FindInvoiceDatabaseBoundary findInvoiceDatabaseBoundary2 = new FindInvoiceDAOMySQL(ipAddress, port, db, username, password);
+        FindInvoiceInputBoundary findInvoiceInputBoundary2 = new FindInvoiceUseCase(findInvoiceOutputBoundary2, findInvoiceDatabaseBoundary2);
+
+        editInvoiceView.setFindInvoice(findInvoiceInputBoundary2, listFindInvoiceViewModel2);
+
         // get list Invoice
         List<GetListInvoiceViewModel> listGetListInvoiceViewModel = new ArrayList<>();
         GetListInvoiceView getListInvoiceView = new GetListInvoiceView();
@@ -125,15 +142,6 @@ public class QLHoaDonTienDienApp
         GetListInvoiceInputBoundary getListInvoiceInputBoundary = new GetListInvoiceUseCase(getListInvoiceOutputBoundary, getListInvoiceDatabaseBoundary);
         GetListInvoiceController getListInvoiceController = new GetListInvoiceController(getListInvoiceInputBoundary);
         getListInvoiceView.setGetListInvoiceController(getListInvoiceController);
-
-        // find Invoice
-        List<FindInvoiceViewModel> listFindInvoiceViewModel = new ArrayList<>();
-        FindInvoiceView findInvoiceView = new FindInvoiceView();
-        FindInvoiceOutputBoundary findInvoiceOutputBoundary = new FindInvoicePresenter(findInvoiceView, listFindInvoiceViewModel);
-        FindInvoiceDatabaseBoundary findInvoiceDatabaseBoundary = new FindInvoiceDAOMySQL(ipAddress, port, db, username, password);
-        FindInvoiceInputBoundary findInvoiceInputBoundary = new FindInvoiceUseCase(findInvoiceOutputBoundary, findInvoiceDatabaseBoundary);
-        FindInvoiceController findInvoiceController = new FindInvoiceController(findInvoiceInputBoundary);
-        findInvoiceView.setFindInvoiceController(findInvoiceController);
 
         // sum KH Invoice 
         SumKHInvoiceViewModel sumKHInvoiceViewModel = new SumKHInvoiceViewModel();
