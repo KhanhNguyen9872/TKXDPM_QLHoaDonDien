@@ -15,7 +15,22 @@ public class SumKHInvoicePresenter implements SumKHInvoiceOutputBoundary {
     @Override
     public void exportError(SumKHInvoiceOutputDTO responseError) {        
         sumKHInvoiceViewModel.status = responseError.getStatus();
-        sumKHInvoiceViewModel.msg = responseError.getMsg();
+        String inputNameError, msg;
+
+        try {
+            inputNameError = responseError.getMsg().split(",")[0];
+            msg = responseError.getMsg().split(",")[1];
+
+            if (inputNameError.equals("loaiKH")) {
+                sumKHInvoiceViewModel.loaiKHErr = true;
+            } else {
+                sumKHInvoiceViewModel.loaiKHErr = false;
+            }
+        } catch (Exception e) {
+            msg = responseError.getMsg();
+        }
+
+        sumKHInvoiceViewModel.msg = msg;
 
         if (this.sumKHInvoiceView != null) {
             this.sumKHInvoiceView.showMsgError(this.sumKHInvoiceViewModel);

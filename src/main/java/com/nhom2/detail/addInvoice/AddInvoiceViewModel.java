@@ -10,8 +10,15 @@ package com.nhom2.detail.addInvoice;
 public class AddInvoiceViewModel {
     public String status;
     public String msg;
+    public boolean tenKHErr;
+    public boolean ngayHDErr;
+    public boolean soLuongErr;
+    public boolean donGiaErr;
+    public boolean doiTuongKHErr;
+    public boolean dinhMucErr;
+    public boolean quocTichErr;
 
     public AddInvoiceViewModel() {
-
+        
     }
 }

@@ -1,6 +1,7 @@
 package com.nhom2.businessRules.findInvoice;
 
 public class FindInvoiceInputDTO {
+    private String findType = null;
     private String maKH = null;
     private String tenKH = null;
     private String ngayHD = null;
@@ -31,6 +32,14 @@ public class FindInvoiceInputDTO {
 
     public String getNgayHD() {
         return ngayHD;
+    }
+
+    public String getFindType() {
+        return findType;
+    }
+
+    public void setFindType(String findType) {
+        this.findType = findType;
     }
 
     

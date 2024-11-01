@@ -18,14 +18,14 @@ public class AddInvoiceUseCase implements AddInvoiceInputBoundary {
 
     @Override
     public void execute(AddInvoiceInputDTO addInvoiceInputDTO) {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         AddInvoiceOutputDTO responseError = new AddInvoiceOutputDTO();
         responseError.setStatus("error");
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         Invoice invoice;
 
-        if (!verify(addInvoiceInputDTO)) {
-            responseError.setMsg("Dữ liệu không hợp lệ!");
-            addInvoiceOutputBoundary.exportError(responseError);
+        if (!verify(addInvoiceInputDTO, responseError)) {
+            this.addInvoiceOutputBoundary.exportError(responseError);
             return;
         }
 
@@ -76,38 +76,135 @@ public class AddInvoiceUseCase implements AddInvoiceInputBoundary {
         this.addInvoiceOutputBoundary.present(outputDTO);
     }
 
-    private boolean verify(AddInvoiceInputDTO requestData) {
+    private boolean verify(AddInvoiceInputDTO requestData, AddInvoiceOutputDTO responseError) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
+        String tenKH = requestData.getTenKH();
         try {
-            String tenKH = requestData.getTenKH();
             if (tenKH == null || tenKH.isEmpty()) {
-                return false;
+                throw new Exception("Tên không được để trống");
             }
 
-            Date ngayHD = formatter.parse(requestData.getNgayHD());
-            if (ngayHD == null) {
-                return false;
+            if (tenKH.length() < 5) {
+                throw new Exception("Tên phải lớn hơn 5 kí tự");
+            }
+        } catch (Exception ex) {
+            responseError.setMsg("tenKH," + ex.getMessage());
+            return false;
+        }
+
+        try {
+            String ngayHDStr = requestData.getNgayHD();
+            Date ngayHD;
+
+            if (ngayHDStr == null || ngayHDStr.isEmpty()) {
+                throw new Exception("Ngày HD không được để trống");
+            }
+
+            try {
+                ngayHD = formatter.parse(ngayHDStr);
+            } catch (Exception e) {
+                throw new Exception("Định dạng ngày không hợp lệ");
             }
             
-            int soLuong = Integer.parseInt(requestData.getSoLuong());
-            int donGia = Integer.parseInt(requestData.getDonGia());
+            // Ngày hiện tại
+            Date currentDate = new Date();
 
-            String quocTich = requestData.getQuocTich();
+            if (ngayHD.after(currentDate)) {
+                throw new Exception("Ngày HD không được lớn hơn ngày hiện tại");
+            } else {
+
+            }
             
-            if (quocTich == null || quocTich.isEmpty()) {
+        } catch (Exception e) {
+            responseError.setMsg("ngayHD," + e.getMessage());
+            return false;
+        }
+        
+        try {
+            String soLuongStr = requestData.getSoLuong();
+
+            if (soLuongStr == null || soLuongStr.isEmpty()) {
+                throw new Exception("Số lượng không được để trống");
+            }
+
+            int soLuong;
+            try {
+                soLuong = Integer.parseInt(soLuongStr);
+            } catch (Exception e) {
+                throw new Exception("Số lượng phải là số");
+            }
+            
+            if (soLuong < 1) {
+                throw new Exception("Số lượng không được bé hơn 1");
+            }
+        } catch (Exception e) {
+            responseError.setMsg("soLuong," + e.getMessage());
+            return false;
+        }
+
+        try {
+            String donGiaStr = requestData.getDonGia();
+            if (donGiaStr == null || donGiaStr.isEmpty()) {
+                throw new Exception("Đơn giá không được để trống");
+            }
+
+            int donGia;
+            try {
+                donGia = Integer.parseInt(donGiaStr);
+            } catch (Exception e) {
+                throw new Exception("Đơn giá phải là số");
+            }
+            if (donGia < 1) {
+                throw new Exception("Đơn giá không được bé hơn 1");
+            }
+        } catch (Exception e) {
+            responseError.setMsg("donGia," + e.getMessage());
+            return false;
+        }
+
+        try {
+            boolean laNuocNgoai = requestData.isLaNuocNgoai();
+            if (laNuocNgoai) {
+                String quocTich = requestData.getQuocTich();
+                if (quocTich == null || quocTich.isEmpty()) {
+                    throw new Exception("quocTich,Quốc tịch không được để trống");
+                }
+
+                if (quocTich.toLowerCase().equals("vn") || quocTich.toLowerCase().equals("viet nam") || quocTich.toLowerCase().equals("vietnam") || quocTich.toLowerCase().equals("việt nam")) {
+                    throw new Exception("quocTich,Quốc tịch không được là Việt Nam");
+                }
+            } else {
                 String doiTuongKH = requestData.getDoiTuongKH();
-                int dinhMuc = Integer.parseInt(requestData.getDinhMuc());
+
+                if (doiTuongKH == null || doiTuongKH.isEmpty()) {
+                    throw new Exception("doiTuongKH,Đối tượng khách hàng không được để trống");
+                }
                 
                 if (doiTuongKH.equals("Sinh hoạt") || doiTuongKH.equals("Kinh doanh") || doiTuongKH.equals("Sản xuất")) {
 
                 } else {
-                    return false;
+                    throw new Exception("doiTuongKH,Đối tượng khách hàng VN phải là (Sinh hoạt | Kinh doanh | Sản xuất)");
+                }
+
+                String dinhMucStr = requestData.getDinhMuc();
+                if (dinhMucStr == null || dinhMucStr.isEmpty()) {
+                    throw new Exception("dinhMuc,Định mức không được để trống");
+                }
+
+                int dinhMuc;
+                try {
+                    dinhMuc = Integer.parseInt(dinhMucStr);
+                } catch (Exception e) {
+                    throw new Exception("dinhMuc,Định mức phải là số");
+                }
+
+                if (dinhMuc < 1) {
+                    throw new Exception("dinhMuc,Định mức không được bé hơn 1");
                 }
             }
-            
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        } catch (Exception e) {
+            responseError.setMsg(e.getMessage());
             return false;
         }
 

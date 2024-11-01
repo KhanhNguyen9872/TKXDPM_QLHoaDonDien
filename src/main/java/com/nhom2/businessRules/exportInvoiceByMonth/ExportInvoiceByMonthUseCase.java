@@ -21,8 +21,7 @@ public class ExportInvoiceByMonthUseCase implements ExportInvoiceByMonthInputBou
         ExportInvoiceByMonthOutputDTO responseError = new ExportInvoiceByMonthOutputDTO();
         responseError.setStatus("error");
 
-        if (!this.verify(exportInvoiceByMonthInputDTO)) {
-            responseError.setMsg("Dữ liệu không hợp lệ!");
+        if (!this.verify(exportInvoiceByMonthInputDTO, responseError)) {
             this.exportInvoiceByMonthOutputBoundary.exportError(responseError);
             return;    
         }
@@ -58,17 +57,27 @@ public class ExportInvoiceByMonthUseCase implements ExportInvoiceByMonthInputBou
         this.exportInvoiceByMonthOutputBoundary.present(listOutputDTO);
     }
 
-    private boolean verify(ExportInvoiceByMonthInputDTO exportInvoiceByMonthInputDTO) {
-        try {
-            int month = Integer.parseInt(exportInvoiceByMonthInputDTO.getMonth());
-            
-            if (month < 1 || month > 12) {
-                return false;
-            }
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
+    private boolean verify(ExportInvoiceByMonthInputDTO exportInvoiceByMonthInputDTO, ExportInvoiceByMonthOutputDTO responseError) {
+        String monthStr = exportInvoiceByMonthInputDTO.getMonth();
+
+        if (monthStr == null || monthStr.isEmpty()) {
+            responseError.setMsg("month,Tháng không được để trống");
+            return false;
         }
-        return false;
+
+        int month;
+        try {
+            month = Integer.parseInt(monthStr);
+        } catch (Exception e) {
+            responseError.setMsg("month,Tháng phải là số");
+            return false;
+        }
+        
+        if (month < 1 || month > 12) {
+            responseError.setMsg("month,Tháng phải từ 1 đến 12");
+            return false;
+        }
+
+        return true;
     }
 }

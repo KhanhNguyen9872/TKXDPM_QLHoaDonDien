@@ -13,6 +13,9 @@ public class FindInvoiceViewModel {
     public String dinhMuc;
     public String thanhTien;
 
+    public boolean typeFindErr;
+    public boolean inputFindErr;
+
     public FindInvoiceViewModel(String status, String msg) {
         this.status = status;
         this.msg = msg;

@@ -15,7 +15,23 @@ public class DeleteInvoicePresenter implements DeleteInvoiceOutputBoundary {
     @Override
     public void exportError(DeleteInvoiceOutputDTO responseError) {
         this.deleteInvoiceViewModel.status = "error";
-        this.deleteInvoiceViewModel.msg = responseError.getMsg();
+        String inputNameError;
+        String msg;
+        try {
+            inputNameError = responseError.getMsg().split(",")[0];
+            msg = responseError.getMsg().split(",")[1];
+
+            if (inputNameError.equals("maKH")) {
+                this.deleteInvoiceViewModel.maKH = false;
+            } else {
+                this.deleteInvoiceViewModel.maKH = true;
+            }
+
+        } catch (Exception e) {
+            msg = responseError.getMsg();
+        }
+        
+        this.deleteInvoiceViewModel.msg = msg;
 
         if (this.deleteInvoiceView != null) {
             this.deleteInvoiceView.showMsgError(this.deleteInvoiceViewModel);

@@ -15,7 +15,6 @@ import java.awt.*;
 import com.nhom2.businessRules.editInvoice.EditInvoiceInputDTO;
 import com.nhom2.businessRules.findInvoice.FindInvoiceInputBoundary;
 import com.nhom2.businessRules.findInvoice.FindInvoiceInputDTO;
-import com.nhom2.detail.findInvoice.FindInvoiceController;
 import com.nhom2.detail.findInvoice.FindInvoiceViewModel;
 
 public class EditInvoiceView extends JFrame implements ActionListener {
@@ -23,7 +22,10 @@ public class EditInvoiceView extends JFrame implements ActionListener {
     private FindInvoiceInputBoundary findInvoiceInputBoundary;
     private EditInvoiceController editInvoiceController;
     private JTextField tf_MaKH, tf_TenKH, tf_SoLuong, tf_DonGia, tf_QuocTich, tf_DinhMuc;
-    private JLabel lb_MaKH, lb_TenKH, lb_NgayHD, lb_SoLuong, lb_DonGia, lb_QuocTich, lb_DoiTuongKH, lb_DinhMuc;
+    private JLabel lb_MaKH, lb_TenKH, lb_NgayHD, lb_SoLuong, lb_DonGia, lb_QuocTich, lb_DoiTuongKH, lb_DinhMuc, lb_isKHNN;
+    private JLabel lb_TenKHErr, lb_NgayHDErr, lb_SoLuongErr, lb_DonGiaErr, lb_QuocTichErr, lb_DoiTuongKHErr, lb_DinhMucErr;
+    private JCheckBox jCb_isKHNN;
+    private JLabel lb_MaKHErr;
     private JComboBox<String> cb_DoiTuongKH;
     private JButton editInvoiceBtn, findInvoiceBtn;
     private JXDatePicker dp_NgayHD;
@@ -36,17 +38,17 @@ public class EditInvoiceView extends JFrame implements ActionListener {
     public void mainShow() {
         buildFind();
         setTitle("Sửa hóa đơn tiền điện");
-        setSize(400, 400);
+        setSize(600, 200);
         setResizable(false);
-        setLayout(new GridLayout(6, 2));
+        setLayout(new GridLayout(4, 2));
         setVisible(true);
     }
 
     private void mainShowEdit() {
         setTitle("Sửa hóa đơn tiền điện");
-        setSize(400, 400);
+        setSize(650, 450);
         setResizable(false);
-        setLayout(new GridLayout(9, 2));
+        setLayout(new GridLayout(19, 2));
         setVisible(true);
     }
 
@@ -59,9 +61,26 @@ public class EditInvoiceView extends JFrame implements ActionListener {
         lb_NgayHD = new JLabel("Ngày hóa đơn:");
         lb_SoLuong = new JLabel("Số lượng:");
         lb_DonGia = new JLabel("Đơn giá:");
+        lb_isKHNN = new JLabel("Là khách hàng nước ngoài: ");
         lb_QuocTich = new JLabel("Quốc tịch:");
         lb_DoiTuongKH = new JLabel("Đối tượng KH:");
         lb_DinhMuc = new JLabel("Định mức:");
+
+        lb_TenKHErr = new JLabel("");
+        lb_NgayHDErr = new JLabel("");
+        lb_SoLuongErr = new JLabel("");
+        lb_DonGiaErr = new JLabel("");
+        lb_QuocTichErr = new JLabel("");
+        lb_DoiTuongKHErr = new JLabel("");
+        lb_DinhMucErr = new JLabel("");
+
+        lb_TenKHErr.setForeground(Color.RED);
+        lb_NgayHDErr.setForeground(Color.RED);
+        lb_SoLuongErr.setForeground(Color.RED);
+        lb_DonGiaErr.setForeground(Color.RED);
+        lb_QuocTichErr.setForeground(Color.RED);
+        lb_DoiTuongKHErr.setForeground(Color.RED);
+        lb_DinhMucErr.setForeground(Color.RED);
 
         // Initialize JTextFields as instance variables
         tf_MaKH = new JTextField(10);
@@ -75,27 +94,68 @@ public class EditInvoiceView extends JFrame implements ActionListener {
         // Initialize JComboBox as instance variables
         String[] options = {"", "Sinh hoạt", "Kinh doanh", "Sản xuất"};
         cb_DoiTuongKH = new JComboBox<>(options);
+        cb_DoiTuongKH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lb_DoiTuongKHErr.setText("");
+            }
+        });
 
         // Initialize JXDatePicker
         dp_NgayHD = new JXDatePicker();
         dp_NgayHD.setDate(Calendar.getInstance().getTime());
         dp_NgayHD.setFormats(formatter);
 
+        // Initialize JCheckBox as instance variables
+        jCb_isKHNN = new JCheckBox();
+        jCb_isKHNN.addItemListener(v -> {
+            
+            if (!jCb_isKHNN.isSelected()) {
+                tf_QuocTich.setText("");
+                tf_QuocTich.setEnabled(false);
+
+                cb_DoiTuongKH.setEnabled(true);
+
+                tf_DinhMuc.setEnabled(true);
+            } else {
+                tf_QuocTich.setEnabled(true);
+
+                cb_DoiTuongKH.setSelectedIndex(0);
+                cb_DoiTuongKH.setEnabled(false);
+
+                tf_DinhMuc.setText("0");
+                tf_DinhMuc.setEnabled(false);
+            }
+        });
+
         // Add JLabels and JTextFields to the frame
         add(lb_MaKH); add(tf_MaKH);
         add(lb_TenKH); add(tf_TenKH);
+        add(new Label()); add(lb_TenKHErr);
         add(lb_NgayHD); add(dp_NgayHD);
+        add(new Label()); add(lb_NgayHDErr);
         add(lb_SoLuong); add(tf_SoLuong);
+        add(new Label()); add(lb_SoLuongErr);
         add(lb_DonGia); add(tf_DonGia);
+        add(new Label()); add(lb_DonGiaErr);
+        add(lb_isKHNN); add(jCb_isKHNN);
         add(lb_QuocTich); add(tf_QuocTich);
+        add(new Label()); add(lb_QuocTichErr);
         add(lb_DoiTuongKH); add(cb_DoiTuongKH);
+        add(new Label()); add(lb_DoiTuongKHErr);
         add(lb_DinhMuc); add(tf_DinhMuc);
+        add(new Label()); add(lb_DinhMucErr);
 
         // Create and add submit button
         editInvoiceBtn = new JButton("Update");
         editInvoiceBtn.addActionListener(this);
         add(new JLabel());
         add(editInvoiceBtn);
+
+        tf_QuocTich.setText("");
+        tf_QuocTich.setEnabled(false);
+        cb_DoiTuongKH.setEnabled(true);
+        tf_DinhMuc.setEnabled(true);
     }
 
     private void buildFind() {
@@ -103,12 +163,15 @@ public class EditInvoiceView extends JFrame implements ActionListener {
         
         // Initialize JLabels as instance variables
         lb_MaKH = new JLabel("Mã khách hàng: ");
+        lb_MaKHErr = new JLabel("");
+        lb_MaKHErr.setForeground(Color.RED);
 
         // Initialize JTextFields as instance variables
         tf_MaKH = new JTextField();
 
         // Add JLabels and JTextFields to the frame
         add(lb_MaKH); add(tf_MaKH);
+        add(new JLabel()); add(lb_MaKHErr);
 
         // Create and add submit button
         findInvoiceBtn = new JButton("Find");
@@ -166,9 +229,60 @@ public class EditInvoiceView extends JFrame implements ActionListener {
     }
 
     public void showMsgError(EditInvoiceViewModel editInvoiceViewModel) {
+        String msg = editInvoiceViewModel.msg;
+
+        if (editInvoiceViewModel.dinhMucErr) {
+            tf_DinhMuc.requestFocusInWindow();
+            lb_DinhMucErr.setText(msg);
+        } else {
+            lb_DinhMucErr.setText("");
+        }
+
+        if (editInvoiceViewModel.doiTuongKHErr) {
+            cb_DoiTuongKH.requestFocusInWindow();
+            lb_DoiTuongKHErr.setText(msg);
+        } else {
+            lb_DoiTuongKHErr.setText("");
+        }
+
+        if (editInvoiceViewModel.quocTichErr) {
+            tf_QuocTich.requestFocusInWindow();
+            lb_QuocTichErr.setText(msg);
+        } else {
+            lb_QuocTichErr.setText("");
+        }
+
+        if (editInvoiceViewModel.donGiaErr) {
+            tf_DonGia.requestFocusInWindow();
+            lb_DonGiaErr.setText(msg);
+        } else {
+            lb_DonGiaErr.setText("");
+        }
+
+        if (editInvoiceViewModel.soLuongErr) {
+            tf_SoLuong.requestFocusInWindow();
+            lb_SoLuongErr.setText(msg);
+        } else {
+            lb_SoLuongErr.setText("");
+        }
+
+        if (editInvoiceViewModel.ngayHDErr) {
+            dp_NgayHD.requestFocusInWindow();
+            lb_NgayHDErr.setText(msg);
+        } else {
+            lb_NgayHDErr.setText("");
+        }
+
+        if (editInvoiceViewModel.tenKHErr) {
+            tf_TenKH.requestFocusInWindow();
+            lb_TenKHErr.setText(msg);
+        } else {
+            lb_TenKHErr.setText("");
+        }
+
         // Show alert dialog
         JOptionPane.showMessageDialog(null,
-        editInvoiceViewModel.msg,
+        msg,
         editInvoiceViewModel.status,
                 JOptionPane.ERROR_MESSAGE);
     }
@@ -179,6 +293,7 @@ public class EditInvoiceView extends JFrame implements ActionListener {
         
         if (cmd.equals(findInvoiceBtn.getActionCommand())) {
             FindInvoiceInputDTO findInvoiceInputDTO = new FindInvoiceInputDTO();
+            findInvoiceInputDTO.setFindType("Mã KH");
             findInvoiceInputDTO.setMaKH(tf_MaKH.getText());
             
             findInvoiceInputBoundary.execute(findInvoiceInputDTO);
@@ -203,8 +318,10 @@ public class EditInvoiceView extends JFrame implements ActionListener {
             if (status.equals("error")) {
                 editInvoiceViewModel.status = findInvoiceViewModel.status;
                 editInvoiceViewModel.msg = findInvoiceViewModel.msg;
+                editInvoiceViewModel.maKHErr = findInvoiceViewModel.inputFindErr;
                 showMsgError(editInvoiceViewModel);
             }
+            return;
         }
 
         if (cmd.equals(editInvoiceBtn.getActionCommand())) {
@@ -215,10 +332,13 @@ public class EditInvoiceView extends JFrame implements ActionListener {
             editInvoiceInputDTO.setNgayHD(formatter.format(dp_NgayHD.getDate()));
             editInvoiceInputDTO.setSoLuong(tf_SoLuong.getText());
             editInvoiceInputDTO.setDonGia(tf_DonGia.getText());
+            editInvoiceInputDTO.setLaNuocNgoai(jCb_isKHNN.isSelected());
             editInvoiceInputDTO.setQuocTich(tf_QuocTich.getText());
             editInvoiceInputDTO.setDoiTuongKH(cb_DoiTuongKH.getSelectedItem().toString());
             editInvoiceInputDTO.setDinhMuc(tf_DinhMuc.getText());
             editInvoiceController.execute(editInvoiceInputDTO);
+            return;
         }
+        
     }
 }

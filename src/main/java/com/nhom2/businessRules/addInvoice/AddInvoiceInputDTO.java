@@ -1,6 +1,7 @@
 package com.nhom2.businessRules.addInvoice;
 
 public class AddInvoiceInputDTO {
+    private boolean laNuocNgoai;
     private String tenKH;
     private String ngayHD;
     private String soLuong;
@@ -10,7 +11,7 @@ public class AddInvoiceInputDTO {
     private String quocTich;
     
     public AddInvoiceInputDTO() {
-
+        this.laNuocNgoai = false;
     }
 
     public String getTenKH() {
@@ -67,6 +68,18 @@ public class AddInvoiceInputDTO {
 
     public void setQuocTich(String quocTich) {
         this.quocTich = quocTich;
+    }
+
+
+
+    public boolean isLaNuocNgoai() {
+        return laNuocNgoai;
+    }
+
+
+
+    public void setLaNuocNgoai(boolean laNuocNgoai) {
+        this.laNuocNgoai = laNuocNgoai;
     }
 
     

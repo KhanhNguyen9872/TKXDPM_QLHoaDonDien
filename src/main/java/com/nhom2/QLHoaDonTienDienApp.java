@@ -126,7 +126,7 @@ public class QLHoaDonTienDienApp
         EditInvoiceController editInvoiceController = new EditInvoiceController(editInvoiceInputBoundary);
         editInvoiceView.setEditInvoiceController(editInvoiceController);
 
-        // tận dụng lại findInvoice
+        // tận dụng lại useCase findInvoice cho EditInvoice
         List<FindInvoiceViewModel> listFindInvoiceViewModel2 = new ArrayList<>();
         FindInvoiceOutputBoundary findInvoiceOutputBoundary2 = new FindInvoicePresenter(null, listFindInvoiceViewModel2);
         FindInvoiceDatabaseBoundary findInvoiceDatabaseBoundary2 = new FindInvoiceDAOMySQL(ipAddress, port, db, username, password);

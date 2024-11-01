@@ -17,14 +17,21 @@ import com.nhom2.detail.getListInvoice.GetListInvoiceViewModel;
 
 public class GetListInvoiceTest extends Nhom2Test
 {
+    private List<GetListInvoiceViewModel> getListInvoiceViewModel;
+    private GetListInvoiceInputBoundary getListInvoiceInputBoundary;
+
+    private void prepareUseCase() throws Exception {
+        this.getListInvoiceViewModel = new ArrayList<>();
+        GetListInvoiceOutputBoundary getListInvoiceOutputBoundary = new GetListInvoicePresenter(null, getListInvoiceViewModel);
+        GetListInvoiceDatabaseBoundary getListInvoiceDatabaseBoundary = new GetListInvoiceDAOMySQL(ipAddress, port, db, username, password);
+        this.getListInvoiceInputBoundary = new GetListInvoiceUseCase(getListInvoiceOutputBoundary, getListInvoiceDatabaseBoundary);
+    }
+
+    // SUCCESS
     @Test
     public void getListInvoiceSuccess() throws Exception
     {
-        List<GetListInvoiceViewModel> getListInvoiceViewModel = new ArrayList<>();
-        GetListInvoiceOutputBoundary getListInvoiceOutputBoundary = new GetListInvoicePresenter(null, getListInvoiceViewModel);
-        GetListInvoiceDatabaseBoundary getListInvoiceDatabaseBoundary = new GetListInvoiceDAOMySQL(ipAddress, port, db, username, password);
-        GetListInvoiceInputBoundary getListInvoiceInputBoundary = new GetListInvoiceUseCase(getListInvoiceOutputBoundary, getListInvoiceDatabaseBoundary);
-
+        prepareUseCase();
         getListInvoiceInputBoundary.execute();
         assertEquals(getListInvoiceViewModel.size(), 7);
     }

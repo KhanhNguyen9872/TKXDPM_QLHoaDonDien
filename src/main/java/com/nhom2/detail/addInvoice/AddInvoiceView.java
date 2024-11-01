@@ -16,6 +16,7 @@ public class AddInvoiceView extends JFrame implements ActionListener {
     private AddInvoiceController addInvoiceController;
     private JTextField tf_TenKH, tf_SoLuong, tf_DonGia, tf_QuocTich, tf_DinhMuc;
     private JLabel lb_TenKH, lb_NgayHD, lb_SoLuong, lb_DonGia, lb_QuocTich, lb_DoiTuongKH, lb_DinhMuc, lb_isKHNN;
+    private JLabel lb_TenKHErr, lb_NgayHDErr, lb_SoLuongErr, lb_DonGiaErr, lb_QuocTichErr, lb_DoiTuongKHErr, lb_DinhMucErr;
     private JCheckBox jCb_isKHNN;
     private JComboBox<String> cb_DoiTuongKH;
     private JButton addInvoiceBtn;
@@ -33,9 +34,9 @@ public class AddInvoiceView extends JFrame implements ActionListener {
     public void mainShow() {
         build();
         setTitle("Add Invoice Form");
-        setSize(400, 400);
+        setSize(600, 400);
         setResizable(false);
-        setLayout(new GridLayout(9, 2));
+        setLayout(new GridLayout(17, 2));
         setVisible(true);
     }
 
@@ -51,6 +52,22 @@ public class AddInvoiceView extends JFrame implements ActionListener {
         lb_QuocTich = new JLabel("Quốc tịch:");
         lb_DoiTuongKH = new JLabel("Đối tượng KH:");
         lb_DinhMuc = new JLabel("Định mức:");
+
+        lb_TenKHErr = new JLabel("");
+        lb_NgayHDErr = new JLabel("");
+        lb_SoLuongErr = new JLabel("");
+        lb_DonGiaErr = new JLabel("");
+        lb_QuocTichErr = new JLabel("");
+        lb_DoiTuongKHErr = new JLabel("");
+        lb_DinhMucErr = new JLabel("");
+
+        lb_TenKHErr.setForeground(Color.RED);
+        lb_NgayHDErr.setForeground(Color.RED);
+        lb_SoLuongErr.setForeground(Color.RED);
+        lb_DonGiaErr.setForeground(Color.RED);
+        lb_QuocTichErr.setForeground(Color.RED);
+        lb_DoiTuongKHErr.setForeground(Color.RED);
+        lb_DinhMucErr.setForeground(Color.RED);
 
         // Initialize JTextFields as instance variables
         tf_TenKH = new JTextField();
@@ -84,6 +101,12 @@ public class AddInvoiceView extends JFrame implements ActionListener {
         // Initialize JComboBox as instance variables
         String[] options = {"", "Sinh hoạt", "Kinh doanh", "Sản xuất"};
         cb_DoiTuongKH = new JComboBox<>(options);
+        cb_DoiTuongKH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lb_DoiTuongKHErr.setText("");
+            }
+        });
 
         // Initialize JXDatePicker
         dp_NgayHD = new JXDatePicker();
@@ -92,13 +115,20 @@ public class AddInvoiceView extends JFrame implements ActionListener {
 
         // Add JLabels and JTextFields to the frame
         add(lb_TenKH); add(tf_TenKH);
+        add(new Label()); add(lb_TenKHErr);
         add(lb_NgayHD); add(dp_NgayHD);
+        add(new Label()); add(lb_NgayHDErr);
         add(lb_SoLuong); add(tf_SoLuong);
+        add(new Label()); add(lb_SoLuongErr);
         add(lb_DonGia); add(tf_DonGia);
+        add(new Label()); add(lb_DonGiaErr);
         add(lb_isKHNN); add(jCb_isKHNN);
         add(lb_QuocTich); add(tf_QuocTich);
+        add(new Label()); add(lb_QuocTichErr);
         add(lb_DoiTuongKH); add(cb_DoiTuongKH);
+        add(new Label()); add(lb_DoiTuongKHErr);
         add(lb_DinhMuc); add(tf_DinhMuc);
+        add(new Label()); add(lb_DinhMucErr);
 
         // Create and add submit button
         addInvoiceBtn = new JButton("Add");
@@ -129,12 +159,71 @@ public class AddInvoiceView extends JFrame implements ActionListener {
         tf_DinhMuc.setText("0");
         cb_DoiTuongKH.setSelectedIndex(0);
         dp_NgayHD.setDate(Calendar.getInstance().getTime());
+
+        lb_TenKHErr.setText("");
+        lb_NgayHDErr.setText("");
+        lb_SoLuongErr.setText("");
+        lb_DonGiaErr.setText("");
+        lb_QuocTichErr.setText("");
+        lb_DoiTuongKHErr.setText("");
+        lb_DinhMucErr.setText("");
     }
 
     public void showMsgError(AddInvoiceViewModel addInvoiceViewModel) {
+        String msg = addInvoiceViewModel.msg;
+
+        if (addInvoiceViewModel.dinhMucErr) {
+            tf_DinhMuc.requestFocusInWindow();
+            lb_DinhMucErr.setText(msg);
+        } else {
+            lb_DinhMucErr.setText("");
+        }
+
+        if (addInvoiceViewModel.doiTuongKHErr) {
+            cb_DoiTuongKH.requestFocusInWindow();
+            lb_DoiTuongKHErr.setText(msg);
+        } else {
+            lb_DoiTuongKHErr.setText("");
+        }
+
+        if (addInvoiceViewModel.quocTichErr) {
+            tf_QuocTich.requestFocusInWindow();
+            lb_QuocTichErr.setText(msg);
+        } else {
+            lb_QuocTichErr.setText("");
+        }
+
+        if (addInvoiceViewModel.donGiaErr) {
+            tf_DonGia.requestFocusInWindow();
+            lb_DonGiaErr.setText(msg);
+        } else {
+            lb_DonGiaErr.setText("");
+        }
+
+        if (addInvoiceViewModel.soLuongErr) {
+            tf_SoLuong.requestFocusInWindow();
+            lb_SoLuongErr.setText(msg);
+        } else {
+            lb_SoLuongErr.setText("");
+        }
+
+        if (addInvoiceViewModel.ngayHDErr) {
+            dp_NgayHD.requestFocusInWindow();
+            lb_NgayHDErr.setText(msg);
+        } else {
+            lb_NgayHDErr.setText("");
+        }
+
+        if (addInvoiceViewModel.tenKHErr) {
+            tf_TenKH.requestFocusInWindow();
+            lb_TenKHErr.setText(msg);
+        } else {
+            lb_TenKHErr.setText("");
+        }
+
         // Show alert dialog
         JOptionPane.showMessageDialog(null,
-                addInvoiceViewModel.msg,
+                msg,
                 addInvoiceViewModel.status,
                 JOptionPane.ERROR_MESSAGE);
     }
@@ -150,6 +239,7 @@ public class AddInvoiceView extends JFrame implements ActionListener {
             addInvoiceInputDTO.setNgayHD(formatter.format(dp_NgayHD.getDate()));
             addInvoiceInputDTO.setSoLuong(tf_SoLuong.getText());
             addInvoiceInputDTO.setDonGia(tf_DonGia.getText());
+            addInvoiceInputDTO.setLaNuocNgoai(jCb_isKHNN.isSelected());
             addInvoiceInputDTO.setQuocTich(tf_QuocTich.getText());
             addInvoiceInputDTO.setDoiTuongKH(cb_DoiTuongKH.getSelectedItem().toString());
             addInvoiceInputDTO.setDinhMuc(tf_DinhMuc.getText());

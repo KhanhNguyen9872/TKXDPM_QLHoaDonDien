@@ -9,13 +9,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthInputDTO;
 
 import java.awt.BorderLayout;
-import java.awt.Component;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.*;
@@ -24,6 +23,7 @@ import java.util.List;
 public class ExportInvoiceByMonthView extends JFrame implements ActionListener {
     private ExportInvoiceByMonthController exportInvoiceByMonthController;
     private JLabel lb_Month;
+    private JLabel lb_MonthErr;
     private JComboBox<String> cb_Month;
     private JButton exportInvoiceBtn;
     private List<ExportInvoiceByMonthViewModel> listViewModel;
@@ -35,9 +35,9 @@ public class ExportInvoiceByMonthView extends JFrame implements ActionListener {
     public void mainShow() {
         build();
         setTitle("Xuất hóa đơn tiền điện theo tháng");
-        setSize(400, 400);
+        setSize(500, 150);
         setResizable(false);
-        setLayout(new GridLayout(6, 2));
+        setLayout(new GridLayout(3, 2));
         setVisible(true);
     }
 
@@ -46,16 +46,25 @@ public class ExportInvoiceByMonthView extends JFrame implements ActionListener {
 
         // Initialize JLabels as instance variables
         lb_Month = new JLabel("Tháng: ");
+        lb_MonthErr = new JLabel("");
+        lb_MonthErr.setForeground(Color.RED);
 
         // Initialize JComboBox as instance variables
         String[] options = {"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
         cb_Month = new JComboBox<>(options);
+        cb_Month.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lb_MonthErr.setText("");
+            }
+        });
 
         // Add JLabels and JTextFields to the frame
         add(lb_Month); add(cb_Month);
+        add(new JLabel()); add(lb_MonthErr);
 
         // Create and add submit button
-        exportInvoiceBtn = new JButton("Find");
+        exportInvoiceBtn = new JButton("Export");
         exportInvoiceBtn.addActionListener(this);
         add(new JLabel()); // Empty cell in grid
         add(exportInvoiceBtn);
@@ -97,9 +106,6 @@ public class ExportInvoiceByMonthView extends JFrame implements ActionListener {
         DefaultTableModel tableModel = new DefaultTableModel(columns, 0);
         JTable table = new JTable(tableModel);
 
-        //custom
-        table.setDefaultRenderer(Object.class, new InvoiceCellRenderer());
-
         // Add student data to the table
         for (ExportInvoiceByMonthViewModel viewModel: listViewModel) {
             Object[] row = {
@@ -129,35 +135,19 @@ public class ExportInvoiceByMonthView extends JFrame implements ActionListener {
         this.setVisible(true);
     }
 
-    class InvoiceCellRenderer extends DefaultTableCellRenderer {
-        @Override
-        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-            Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-
-            ExportInvoiceByMonthViewModel vm = listViewModel.get(row);
-
-            // if(column == 5){
-            //     c.setForeground(vm.textColor);
-            //         if(vm.bold){
-            //             c.setFont(c.getFont().deriveFont(Font.BOLD));
-            //         }
-
-            //         if (vm.bold && vm.italic) {
-            //             c.setFont(c.getFont().deriveFont(Font.BOLD | Font.ITALIC));
-            //         }
-                
-            // } else {
-            //     c.setForeground(Color.BLACK);
-            // }
-            
-            return c;
-        }
-    }
-
     public void showMsgError(ExportInvoiceByMonthViewModel responseError) {
+        String msg = responseError.msg;
+
+        if (responseError.monthErr) {
+            cb_Month.requestFocusInWindow();
+            lb_MonthErr.setText(msg);
+        } else {
+            lb_MonthErr.setText("");
+        }
+
         // Show alert dialog
         JOptionPane.showMessageDialog(null,
-                responseError.msg,
+                msg,
                 responseError.status,
                 JOptionPane.ERROR_MESSAGE);
     }

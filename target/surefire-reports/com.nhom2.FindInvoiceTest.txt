@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.nhom2.FindInvoiceTest
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in com.nhom2.FindInvoiceTest
-findInvoiceSuccess(com.nhom2.FindInvoiceTest)  Time elapsed: 0.001 s  <<< FAILURE!
-java.lang.AssertionError: expected:<5> but was:<1>
-	at com.nhom2.FindInvoiceTest.findInvoiceSuccess(FindInvoiceTest.java:37)
-

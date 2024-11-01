@@ -13,6 +13,8 @@ public class ExportInvoiceByMonthViewModel {
     public String dinhMuc;
     public String thanhTien;
 
+    public boolean monthErr;
+
     public ExportInvoiceByMonthViewModel(String status, String msg) {
         this.status = status;
         this.msg = msg;

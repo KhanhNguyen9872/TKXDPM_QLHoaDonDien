@@ -18,11 +18,78 @@ public class FindInvoiceDAOMySQL extends DAOMySQL implements FindInvoiceDatabase
     private List<Invoice> findInvoice(String column, String value) {
         List<Invoice> listInvoices = null;
         connect();
-        
-        String sql = "SELECT * FROM invoice WHERE (" + column + " like ?);";
+
+        int yyyy = 0;
+        int MM = 0;
+        int dd = 0;
+        String sql;
+
+        if (column.equals("ngayHD")) {
+            sql = "SELECT * FROM invoice WHERE (";
+            
+            try {
+                yyyy = Integer.parseInt(value.split("-")[0]);
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+
+            try {
+                MM = Integer.parseInt(value.split("-")[1]);
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+
+            try {
+                dd = Integer.parseInt(value.split("-")[2]);
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+
+            if (yyyy != 0) {
+                sql = sql + "(YEAR(ngayHD) = ?) AND";
+            }
+
+            if (MM != 0) {
+                sql = sql + "(MONTH(ngayHD) = ?) AND";
+            }
+
+            if (dd != 0) {
+                sql = sql + "(DAY(ngayHD) = ?) AND";
+            }
+
+            if (sql.substring(sql.length() - 3, sql.length()).equals("AND")) {
+                sql = sql.substring(0, sql.length() - 3);
+            }
+
+            sql = sql + ");";
+
+            System.out.println(sql);
+        } else { 
+            sql = "SELECT * FROM invoice WHERE (" + column + " like ?);";
+        }
         try {
             PreparedStatement preparedStatement = getPrepareStatement(sql);
-            preparedStatement.setString(1, "%" + value + "%");
+
+            if (column.equals("ngayHD")) {
+                int count = 1;
+                if (sql.contains("YEAR(ngayHD)")) {
+                    preparedStatement.setInt(count, yyyy);
+                    count = count + 1;
+                }
+                
+                if (sql.contains("MONTH(ngayHD)")) {
+                    preparedStatement.setInt(count, MM);
+                    count = count + 1;
+                }
+                
+                if (sql.contains("DAY(ngayHD)")) {
+                    preparedStatement.setInt(count, dd);
+                    count = count + 1;
+                }
+                
+            } else {
+                preparedStatement.setString(1, "%" + value + "%");
+            }
 
             ResultSet resultSet = preparedStatement.executeQuery();
 

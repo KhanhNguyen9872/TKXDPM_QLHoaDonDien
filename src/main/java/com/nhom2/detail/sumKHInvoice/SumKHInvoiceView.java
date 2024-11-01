@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceInputDTO;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,15 +16,16 @@ import java.awt.event.ActionListener;
 public class SumKHInvoiceView extends JFrame implements ActionListener {
     private SumKHInvoiceController sumKHInvoiceController;
     private JLabel lb_loaiKH;
+    private JLabel lb_loaiKHErr;
     private JComboBox<String> cb_loaiKH;
     private JButton sumInvoiceBtn;
 
     public void mainShow() {
         build();
         setTitle("Sum Customer Invoice Form");
-        setSize(400, 400);
+        setSize(500, 200);
         setResizable(false);
-        setLayout(new GridLayout(8, 2));
+        setLayout(new GridLayout(3, 2));
         setVisible(true);
     }
 
@@ -32,13 +34,22 @@ public class SumKHInvoiceView extends JFrame implements ActionListener {
 
         // Initialize JLabels as instance variables
         lb_loaiKH = new JLabel("Loại khách hàng:");
+        lb_loaiKHErr = new JLabel("");
+        lb_loaiKHErr.setForeground(Color.RED);
 
         // Initialize JComboBox as instance variables
         String[] options = {"", "Tất cả", "Nước ngoài", "Việt Nam"};
         cb_loaiKH = new JComboBox<>(options);
+        cb_loaiKH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lb_loaiKHErr.setText("");
+            }
+        });
 
         // Add JLabels and JTextFields to the frame
         add(lb_loaiKH); add(cb_loaiKH);
+        add(new JLabel()); add(lb_loaiKHErr);
 
         // Create and add submit button
         sumInvoiceBtn = new JButton("Sum");
@@ -59,8 +70,17 @@ public class SumKHInvoiceView extends JFrame implements ActionListener {
     }
 
     public void showMsgError(SumKHInvoiceViewModel sumKHInvoiceViewModel) {
+        String msg = sumKHInvoiceViewModel.msg;
+
+        if (sumKHInvoiceViewModel.loaiKHErr) {
+            cb_loaiKH.requestFocusInWindow();
+            lb_loaiKHErr.setText(msg);
+        } else {
+            lb_loaiKHErr.setText("");
+        }
+
         JOptionPane.showMessageDialog(null,
-            sumKHInvoiceViewModel.msg,
+            msg,
             sumKHInvoiceViewModel.status,
                 JOptionPane.ERROR_MESSAGE);
     }

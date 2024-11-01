@@ -18,8 +18,7 @@ public class DeleteInvoiceUseCase implements DeleteInvoiceInputBoundary {
         DeleteInvoiceOutputDTO responseError  = new DeleteInvoiceOutputDTO();
         responseError.setStatus("error");
 
-        if (!verify(deleteInvoiceInputDTO)) {
-            responseError.setMsg("Dữ liệu không hợp lệ!");
+        if (!verify(deleteInvoiceInputDTO, responseError)) {
             deleteInvoiceOutputBoundary.exportError(responseError);
             return;
         }
@@ -45,11 +44,22 @@ public class DeleteInvoiceUseCase implements DeleteInvoiceInputBoundary {
         deleteInvoiceOutputBoundary.present(outputDTO);
     }
 
-    private boolean verify(DeleteInvoiceInputDTO deleteInvoiceInputDTO) {
+    private boolean verify(DeleteInvoiceInputDTO deleteInvoiceInputDTO, DeleteInvoiceOutputDTO responseError) {
         try {
-            int maKH = Integer.parseInt(deleteInvoiceInputDTO.getMaKH());
+            String maKHStr = deleteInvoiceInputDTO.getMaKH();
+            if (maKHStr == null || maKHStr.isEmpty()) {
+                throw new Exception("Mã KH không được để trống");
+            }
+            
+            int maKH;
+            try {
+                maKH = Integer.parseInt(maKHStr);
+            } catch (Exception e) {
+                throw new Exception("Mã KH phải là số");
+            }
             
         } catch (Exception ex) {
+            responseError.setMsg("maKH," + ex.getMessage());
             return false;
         }
 

@@ -17,8 +17,29 @@ public class ExportInvoiceByMonthPresenter implements ExportInvoiceByMonthOutput
     @Override
     public void exportError(ExportInvoiceByMonthOutputDTO responseError) {
         this.exportInvoiceByMonthViewModel.clear();
-        ExportInvoiceByMonthViewModel exportInvoiceByMonthViewModel = new ExportInvoiceByMonthViewModel(responseError.getStatus(), responseError.getMsg());
+        ExportInvoiceByMonthViewModel exportInvoiceByMonthViewModel = new ExportInvoiceByMonthViewModel();
         
+        exportInvoiceByMonthViewModel.status = responseError.getStatus();
+        String msg;
+        String inputNameError;
+        try {
+            inputNameError = responseError.getMsg().split(",")[0];
+            msg = responseError.getMsg().split(",")[1];
+
+            if (inputNameError.equals("month")) {
+                exportInvoiceByMonthViewModel.monthErr = true;
+            } else {
+                exportInvoiceByMonthViewModel.monthErr = false;
+            }
+
+        } catch (Exception e) {
+            msg = responseError.getMsg();
+        }
+        
+        exportInvoiceByMonthViewModel.msg = msg;
+
+        this.exportInvoiceByMonthViewModel.add(exportInvoiceByMonthViewModel);
+
         if (this.exportInvoiceByMonthView != null) {
             this.exportInvoiceByMonthView.showMsgError(exportInvoiceByMonthViewModel);
         }

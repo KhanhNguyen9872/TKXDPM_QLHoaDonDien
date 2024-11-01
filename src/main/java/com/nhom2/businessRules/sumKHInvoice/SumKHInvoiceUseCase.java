@@ -22,8 +22,7 @@ public class SumKHInvoiceUseCase implements SumKHInvoiceInputBoundary {
         SumKHInvoiceOutputDTO responseError = new SumKHInvoiceOutputDTO();
         responseError.setStatus("error");
 
-        if (!this.verify(sumKHInvoiceInputDTO)) {
-            responseError.setMsg("Dữ liệu không hợp lệ!");
+        if (!this.verify(sumKHInvoiceInputDTO, responseError)) {
             this.sumKHInvoiceOutputBoundary.exportError(responseError);
             return;
         }
@@ -72,17 +71,21 @@ public class SumKHInvoiceUseCase implements SumKHInvoiceInputBoundary {
         return newListInvoice;
     }
 
-    private boolean verify(SumKHInvoiceInputDTO sumKHInvoiceInputDTO) {
-        try {
-            String loaiKH = sumKHInvoiceInputDTO.getLoaiKH();
-            if (loaiKH == null || loaiKH.isEmpty()) {
-                return false;
-            }
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
+    private boolean verify(SumKHInvoiceInputDTO sumKHInvoiceInputDTO, SumKHInvoiceOutputDTO responseError) {
+        String loaiKH = sumKHInvoiceInputDTO.getLoaiKH();
+        if (loaiKH == null || loaiKH.isEmpty()) {
+            responseError.setMsg("loaiKH,Loại khách hàng không được để trống");
+            return false;
         }
-        return false;
+
+        if (loaiKH.equals("Tất cả") || loaiKH.equals("Việt Nam") || loaiKH.equals("Nước ngoài")) {
+
+        } else {
+            responseError.setMsg("loaiKH,Loại khách hàng không hợp lệ");
+            return false;
+        }
+        
+        return true;
     }
 
     

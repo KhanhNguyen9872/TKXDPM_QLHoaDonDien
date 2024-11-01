@@ -19,7 +19,60 @@ public class EditInvoicePresenter implements EditInvoiceOutputBoundary {
     @Override
     public void exportError(EditInvoiceOutputDTO responseError) {
         editInvoiceViewModel.status = responseError.getStatus();
-        editInvoiceViewModel.msg = responseError.getMsg();
+        editInvoiceViewModel.status = responseError.getStatus();
+        String inputNameError;
+        String msg;
+
+        try {
+            inputNameError = responseError.getMsg().split(",")[0];
+            msg = responseError.getMsg().split(",")[1];
+
+            if (inputNameError.equals("tenKH")) {
+                this.editInvoiceViewModel.tenKHErr = true;
+            } else {
+                this.editInvoiceViewModel.tenKHErr = false;
+            }
+    
+            if (inputNameError.equals("ngayHD")) {
+                this.editInvoiceViewModel.ngayHDErr = true;
+            } else {
+                this.editInvoiceViewModel.ngayHDErr = false;
+            }
+    
+            if (inputNameError.equals("soLuong")) {
+                this.editInvoiceViewModel.soLuongErr = true;
+            } else {
+                this.editInvoiceViewModel.soLuongErr = false;
+            }
+    
+            if (inputNameError.equals("donGia")) {
+                this.editInvoiceViewModel.donGiaErr = true;
+            } else {
+                this.editInvoiceViewModel.donGiaErr = false;
+            }
+    
+            if (inputNameError.equals("doiTuongKH")) {
+                this.editInvoiceViewModel.doiTuongKHErr = true;
+            } else {
+                this.editInvoiceViewModel.doiTuongKHErr = false;
+            }
+    
+            if (inputNameError.equals("dinhMuc")) {
+                this.editInvoiceViewModel.dinhMucErr = true;
+            } else {
+                this.editInvoiceViewModel.dinhMucErr = false;
+            }
+    
+            if (inputNameError.equals("quocTich")) {
+                this.editInvoiceViewModel.quocTichErr = true;
+            } else {
+                this.editInvoiceViewModel.quocTichErr = false;
+            }
+        } catch (Exception e) {
+            msg = responseError.getMsg();
+        }
+        
+        this.editInvoiceViewModel.msg = msg;
 
         if (this.editInvoiceView != null) {
             this.editInvoiceView.showMsgError(this.editInvoiceViewModel);

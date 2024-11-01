@@ -1,6 +1,7 @@
 package com.nhom2.businessRules.editInvoice;
 
 public class EditInvoiceInputDTO {
+    private boolean laNuocNgoai;
     private String maKH;
     private String tenKH;
     private String ngayHD;
@@ -13,6 +14,8 @@ public class EditInvoiceInputDTO {
     public EditInvoiceInputDTO() {
 
     }
+
+    
 
     public String getMaKH() {
         return maKH;
@@ -76,6 +79,18 @@ public class EditInvoiceInputDTO {
 
     public void setQuocTich(String quocTich) {
         this.quocTich = quocTich;
+    }
+
+
+
+    public boolean isLaNuocNgoai() {
+        return laNuocNgoai;
+    }
+
+
+
+    public void setLaNuocNgoai(boolean laNuocNgoai) {
+        this.laNuocNgoai = laNuocNgoai;
     }
 
     

@@ -14,5 +14,18 @@ public class EditInvoiceViewModel {
     public String dinhMuc;
     public String thanhTien;
 
+    public boolean maKHErr;
+    public boolean tenKHErr;
+    public boolean ngayHDErr;
+    public boolean soLuongErr;
+    public boolean donGiaErr;
+    public boolean quocTichErr;
+    public boolean doiTuongKHErr;
+    public boolean dinhMucErr;
+    public boolean thanhTienErr;
+
+    public EditInvoiceViewModel() {
+
+    }
     
 }

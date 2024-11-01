@@ -1,6 +1,7 @@
 package com.nhom2.detail.findInvoice;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -25,7 +26,7 @@ import com.nhom2.businessRules.findInvoice.FindInvoiceInputDTO;
 
 public class FindInvoiceView extends JFrame implements ActionListener {
     private FindInvoiceController findInvoiceController;
-    private JLabel loaiTimKiem;
+    private JLabel loaiTimKiem, lb_loaiTimKiemErr, lb_NhapErr;
     private JComboBox<String> cb_loaiTimKiem;
     private JTextField tf_Nhap;
     private JButton findInvoiceBtn;
@@ -38,9 +39,9 @@ public class FindInvoiceView extends JFrame implements ActionListener {
     public void mainShow() {
         buildFind();
         setTitle("Tìm kiếm hóa đơn tiền điện");
-        setSize(400, 400);
+        setSize(600, 200);
         setResizable(false);
-        setLayout(new GridLayout(8, 2));
+        setLayout(new GridLayout(6, 2));
         setVisible(true);
     }
 
@@ -49,17 +50,31 @@ public class FindInvoiceView extends JFrame implements ActionListener {
         
         // Initialize JLabels as instance variables
         loaiTimKiem = new JLabel("Loại tìm kiếm: ");
+        lb_loaiTimKiemErr = new JLabel("");
+        lb_loaiTimKiemErr.setForeground(Color.RED);
+
+        lb_NhapErr = new JLabel("");
+        lb_NhapErr.setForeground(Color.RED);
 
         // Initialize JComboBox as instance variables
-        String[] options = {"Mã KH", "Tên KH", "Ngày HD"};
+        String[] options = {"", "Mã KH", "Tên KH", "Ngày HD"};
         cb_loaiTimKiem = new JComboBox<>(options);
+
+        cb_loaiTimKiem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lb_NhapErr.setText("");
+            }
+        });
 
         // Initialize JTextFields as instance variables
         tf_Nhap = new JTextField();
 
         // Add JLabels and JTextFields to the frame
         add(loaiTimKiem); add(cb_loaiTimKiem);
+        add(new JLabel()); add(lb_loaiTimKiemErr);
         add(new JLabel("Nhập:")); add(tf_Nhap);
+        add(new JLabel()); add(lb_NhapErr);
 
         // Create and add submit button
         findInvoiceBtn = new JButton("Find");
@@ -69,8 +84,25 @@ public class FindInvoiceView extends JFrame implements ActionListener {
     }
 
     public void showMsgError(FindInvoiceViewModel findInvoiceViewModel) {
+
+        String msg = findInvoiceViewModel.msg;
+
+        if (findInvoiceViewModel.typeFindErr) {
+            cb_loaiTimKiem.requestFocusInWindow();
+            lb_loaiTimKiemErr.setText(msg);
+        } else {
+            lb_loaiTimKiemErr.setText("");
+        }
+
+        if (findInvoiceViewModel.inputFindErr) {
+            tf_Nhap.requestFocusInWindow();
+            lb_NhapErr.setText(msg);
+        } else {
+            lb_NhapErr.setText("");
+        }
+
         JOptionPane.showMessageDialog(null,
-            findInvoiceViewModel.msg,
+            msg,
             findInvoiceViewModel.status,
                 JOptionPane.ERROR_MESSAGE);
     }
@@ -90,15 +122,13 @@ public class FindInvoiceView extends JFrame implements ActionListener {
 
             if (loai.equals("Mã KH")) {
                 findInvoiceInputDTO.setMaKH(tf_Nhap.getText());
-            }
-
-            if (loai.equals("Tên KH")) {
+            } else if (loai.equals("Tên KH")) {
                 findInvoiceInputDTO.setTenKH(tf_Nhap.getText());
-            }
-
-            if (loai.equals("Ngày HD")) {
+            } else if (loai.equals("Ngày HD")) {
                 findInvoiceInputDTO.setNgayHD(tf_Nhap.getText());
             }
+
+            findInvoiceInputDTO.setFindType(loai);
             
             findInvoiceController.execute(findInvoiceInputDTO);
         }
