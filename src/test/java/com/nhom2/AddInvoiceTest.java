@@ -10,6 +10,7 @@ import org.junit.Test;
 import com.nhom2.businessRules.addInvoice.*;
 import com.nhom2.database.mysql.AddInvoiceDAOMySQL;
 import com.nhom2.detail.addInvoice.AddInvoicePresenter;
+import com.nhom2.detail.addInvoice.AddInvoiceView;
 import com.nhom2.detail.addInvoice.AddInvoiceViewModel;
 
 public class AddInvoiceTest extends Nhom2Test
@@ -19,7 +20,8 @@ public class AddInvoiceTest extends Nhom2Test
 
     private void prepareUseCase() throws Exception {
         this.addInvoiceViewModel = new AddInvoiceViewModel();
-        AddInvoiceOutputBoundary addInvoiceOutputBoundary = new AddInvoicePresenter(null, addInvoiceViewModel);
+        AddInvoiceView addInvoiceView = new AddInvoiceView();
+        AddInvoiceOutputBoundary addInvoiceOutputBoundary = new AddInvoicePresenter(addInvoiceView, addInvoiceViewModel);
         AddInvoiceDatabaseBoundary addInvoiceDatabaseBoundary = new AddInvoiceDAOMySQL(ipAddress, port, db, username, password);
         this.addInvoiceInputBoundary = new AddInvoiceUseCase(addInvoiceOutputBoundary, addInvoiceDatabaseBoundary);
     }

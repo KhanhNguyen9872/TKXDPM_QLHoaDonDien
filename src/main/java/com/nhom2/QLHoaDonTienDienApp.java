@@ -7,33 +7,52 @@ import com.nhom2.businessRules.addInvoice.AddInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.addInvoice.AddInvoiceInputBoundary;
 import com.nhom2.businessRules.addInvoice.AddInvoiceOutputBoundary;
 import com.nhom2.businessRules.addInvoice.AddInvoiceUseCase;
+import com.nhom2.businessRules.addInvoice.AddInvoiceUIInputBoundary;
+import com.nhom2.businessRules.addInvoice.AddInvoiceUIUseCase;
 import com.nhom2.businessRules.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiDatabaseBoundary;
 import com.nhom2.businessRules.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiInputBoundary;
 import com.nhom2.businessRules.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiOutputBoundary;
+import com.nhom2.businessRules.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiUIInputBoundary;
+import com.nhom2.businessRules.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiUIUseCase;
 import com.nhom2.businessRules.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiUseCase;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceInputBoundary;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceOutputBoundary;
+import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceUIInputBoundary;
+import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceUIUseCase;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceUseCase;
 import com.nhom2.businessRules.editInvoice.EditInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.editInvoice.EditInvoiceInputBoundary;
 import com.nhom2.businessRules.editInvoice.EditInvoiceOutputBoundary;
+import com.nhom2.businessRules.editInvoice.EditInvoiceUIInputBoundary;
+import com.nhom2.businessRules.editInvoice.EditInvoiceUIUseCase;
 import com.nhom2.businessRules.editInvoice.EditInvoiceUseCase;
 import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthDatabaseBoundary;
 import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthInputBoundary;
 import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthOutputBoundary;
+import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthUIInputBoundary;
+import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthUIUseCase;
 import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthUseCase;
 import com.nhom2.businessRules.findInvoice.FindInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.findInvoice.FindInvoiceInputBoundary;
 import com.nhom2.businessRules.findInvoice.FindInvoiceOutputBoundary;
+import com.nhom2.businessRules.findInvoice.FindInvoiceUIInputBoundary;
+import com.nhom2.businessRules.findInvoice.FindInvoiceUIUseCase;
 import com.nhom2.businessRules.findInvoice.FindInvoiceUseCase;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceInputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceOutputBoundary;
+import com.nhom2.businessRules.getListInvoice.GetListInvoiceUIInputBoundary;
+import com.nhom2.businessRules.getListInvoice.GetListInvoiceUIUseCase;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceUseCase;
+import com.nhom2.businessRules.quanLyHDTienDien.QuanLyHDTienDienInputBoundary;
+import com.nhom2.businessRules.quanLyHDTienDien.QuanLyHDTienDienOutputBoundary;
+import com.nhom2.businessRules.quanLyHDTienDien.QuanLyHDTienDienUseCase;
 import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceInputBoundary;
 import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceOutputBoundary;
+import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceUIInputBoundary;
+import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceUIUseCase;
 import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceUseCase;
 import com.nhom2.database.mysql.AddInvoiceDAOMySQL;
 import com.nhom2.database.mysql.AvgMoneyInvoiceNuocNgoaiDAOMySQL;
@@ -43,7 +62,6 @@ import com.nhom2.database.mysql.ExportInvoiceByMonthDAOMySQL;
 import com.nhom2.database.mysql.FindInvoiceDAOMySQL;
 import com.nhom2.database.mysql.GetListInvoiceDAOMySQL;
 import com.nhom2.database.mysql.SumKHInvoiceDAOMySQL;
-import com.nhom2.detail.MainGUI;
 import com.nhom2.detail.addInvoice.AddInvoiceController;
 import com.nhom2.detail.addInvoice.AddInvoicePresenter;
 import com.nhom2.detail.addInvoice.AddInvoiceView;
@@ -72,6 +90,10 @@ import com.nhom2.detail.getListInvoice.GetListInvoiceController;
 import com.nhom2.detail.getListInvoice.GetListInvoicePresenter;
 import com.nhom2.detail.getListInvoice.GetListInvoiceView;
 import com.nhom2.detail.getListInvoice.GetListInvoiceViewModel;
+import com.nhom2.detail.quanLyHDTienDien.QuanLyHDTienDienController;
+import com.nhom2.detail.quanLyHDTienDien.QuanLyHDTienDienPresenter;
+import com.nhom2.detail.quanLyHDTienDien.QuanLyHDTienDienView;
+import com.nhom2.detail.quanLyHDTienDien.QuanLyHDTienDienViewModel;
 import com.nhom2.detail.sumKHInvoice.SumKHInvoiceController;
 import com.nhom2.detail.sumKHInvoice.SumKHInvoicePresenter;
 import com.nhom2.detail.sumKHInvoice.SumKHInvoiceView;
@@ -99,6 +121,9 @@ public class QLHoaDonTienDienApp
         AddInvoiceController addInvoiceController = new AddInvoiceController(addInvoiceInputBoundary);
         addInvoiceView.setAddInvoiceController(addInvoiceController);
 
+        // UC show Add Invoice UI
+        AddInvoiceUIInputBoundary addInvoiceUIInputBoundary = new AddInvoiceUIUseCase(addInvoiceView);
+
         // delete Invoice
         DeleteInvoiceViewModel DeleteInvoiceViewModel = new DeleteInvoiceViewModel();
         DeleteInvoiceView deleteInvoiceView = new DeleteInvoiceView();
@@ -107,6 +132,9 @@ public class QLHoaDonTienDienApp
         DeleteInvoiceInputBoundary deleteInvoiceInputBoundary = new DeleteInvoiceUseCase(deleteInvoiceOutputBoundary, deleteInvoiceDatabaseBoundary);
         DeleteInvoiceController deleteInvoiceController = new DeleteInvoiceController(deleteInvoiceInputBoundary);
         deleteInvoiceView.setDeleteInvoiceController(deleteInvoiceController);
+
+        // UC show Delete Invoice UI
+        DeleteInvoiceUIInputBoundary deleteInvoiceUIInputBoundary = new DeleteInvoiceUIUseCase(deleteInvoiceView);
 
         // find Invoice
         List<FindInvoiceViewModel> listFindInvoiceViewModel = new ArrayList<>();
@@ -117,6 +145,9 @@ public class QLHoaDonTienDienApp
         FindInvoiceController findInvoiceController = new FindInvoiceController(findInvoiceInputBoundary);
         findInvoiceView.setFindInvoiceController(findInvoiceController);
 
+        // UC show Find Invoice UI
+        FindInvoiceUIInputBoundary findInvoiceUIInputBoundary = new FindInvoiceUIUseCase(findInvoiceView);
+
         // edit Invoice
         EditInvoiceViewModel editInvoiceViewModel = new EditInvoiceViewModel();
         EditInvoiceView editInvoiceView = new EditInvoiceView();
@@ -126,12 +157,14 @@ public class QLHoaDonTienDienApp
         EditInvoiceController editInvoiceController = new EditInvoiceController(editInvoiceInputBoundary);
         editInvoiceView.setEditInvoiceController(editInvoiceController);
 
+        // UC show Edit Invoice UI
+        EditInvoiceUIInputBoundary editInvoiceUIInputBoundary = new EditInvoiceUIUseCase(editInvoiceView);
+
         // tận dụng lại useCase findInvoice cho EditInvoice
         List<FindInvoiceViewModel> listFindInvoiceViewModel2 = new ArrayList<>();
         FindInvoiceOutputBoundary findInvoiceOutputBoundary2 = new FindInvoicePresenter(null, listFindInvoiceViewModel2);
         FindInvoiceDatabaseBoundary findInvoiceDatabaseBoundary2 = new FindInvoiceDAOMySQL(ipAddress, port, db, username, password);
         FindInvoiceInputBoundary findInvoiceInputBoundary2 = new FindInvoiceUseCase(findInvoiceOutputBoundary2, findInvoiceDatabaseBoundary2);
-
         editInvoiceView.setFindInvoice(findInvoiceInputBoundary2, listFindInvoiceViewModel2);
 
         // get list Invoice
@@ -143,6 +176,9 @@ public class QLHoaDonTienDienApp
         GetListInvoiceController getListInvoiceController = new GetListInvoiceController(getListInvoiceInputBoundary);
         getListInvoiceView.setGetListInvoiceController(getListInvoiceController);
 
+        // UC show GetList Invoice UI
+        GetListInvoiceUIInputBoundary getListInvoiceUIInputBoundary = new GetListInvoiceUIUseCase(getListInvoiceView);
+
         // sum KH Invoice 
         SumKHInvoiceViewModel sumKHInvoiceViewModel = new SumKHInvoiceViewModel();
         SumKHInvoiceView sumKHInvoiceView = new SumKHInvoiceView();
@@ -152,6 +188,9 @@ public class QLHoaDonTienDienApp
         SumKHInvoiceController sumKHInvoiceController = new SumKHInvoiceController(sumKHInvoiceInputBoundary);
         sumKHInvoiceView.setSumKHInvoiceController(sumKHInvoiceController);
 
+        // UC show SumKHH Invoice UI
+        SumKHInvoiceUIInputBoundary sumKHInvoiceUIInputBoundary = new SumKHInvoiceUIUseCase(sumKHInvoiceView);
+
         // avg Money Invoice Nuoc Ngoai
         AvgMoneyInvoiceNuocNgoaiViewModel avgMoneyInvoiceNuocNgoaiViewModel = new AvgMoneyInvoiceNuocNgoaiViewModel();
         AvgMoneyInvoiceNuocNgoaiView avgMoneyInvoiceNuocNgoaiView = new AvgMoneyInvoiceNuocNgoaiView();
@@ -160,6 +199,9 @@ public class QLHoaDonTienDienApp
         AvgMoneyInvoiceNuocNgoaiInputBoundary avgMoneyInvoiceNuocNgoaiInputBoundary = new AvgMoneyInvoiceNuocNgoaiUseCase(avgMoneyInvoiceNuocNgoaiDatabaseBoundary, avgMoneyInvoiceNuocNgoaiOutputBoundary);
         AvgMoneyInvoiceNuocNgoaiController avgMoneyInvoiceNuocNgoaiController = new AvgMoneyInvoiceNuocNgoaiController(avgMoneyInvoiceNuocNgoaiInputBoundary);
         avgMoneyInvoiceNuocNgoaiView.setAvgMoneyInvoiceNuocNgoaiController(avgMoneyInvoiceNuocNgoaiController);
+        
+        // UC show AvgMoney Invoice UI
+        AvgMoneyInvoiceNuocNgoaiUIInputBoundary avgMoneyInvoiceNuocNgoaiUIInputBoundary = new AvgMoneyInvoiceNuocNgoaiUIUseCase(avgMoneyInvoiceNuocNgoaiView);
 
         // export Invoice by Month
         List<ExportInvoiceByMonthViewModel> exportInvoiceByMonthViewModel = new ArrayList<>();
@@ -170,18 +212,27 @@ public class QLHoaDonTienDienApp
         ExportInvoiceByMonthController exportInvoiceByMonthController = new ExportInvoiceByMonthController(exportInvoiceByMonthInputBoundary);
         exportInvoiceByMonthView.setExportInvoiceByMonthController(exportInvoiceByMonthController);
 
+        // UC show AvgMoney Invoice UI
+        ExportInvoiceByMonthUIInputBoundary exportInvoiceByMonthUIInputBoundary = new ExportInvoiceByMonthUIUseCase(exportInvoiceByMonthView);
+
         // MainGUI
-        MainGUI mainGUI = new MainGUI();
-        mainGUI.setAddInvoiceView(addInvoiceView);
-        mainGUI.setDeleteInvoiceView(deleteInvoiceView);
-        mainGUI.setEditInvoiceView(editInvoiceView);
-        mainGUI.setGetListInvoiceView(getListInvoiceView);
-        mainGUI.setExportInvoiceByMonthView(exportInvoiceByMonthView);
-        mainGUI.setFindInvoiceView(findInvoiceView);
-        mainGUI.setSumKHInvoiceView(sumKHInvoiceView);
-        mainGUI.setAvgMoneyInvoiceNuocNgoaiView(avgMoneyInvoiceNuocNgoaiView);
+        QuanLyHDTienDienViewModel quanLyHDTienDienViewModel = new QuanLyHDTienDienViewModel();
+        QuanLyHDTienDienView quanLyHDTienDienView = new QuanLyHDTienDienView();
+        QuanLyHDTienDienOutputBoundary quanLyHDTienDienOutputBoundary = new QuanLyHDTienDienPresenter(quanLyHDTienDienView, quanLyHDTienDienViewModel);
+        QuanLyHDTienDienInputBoundary quanLyHDTienDienInputBoundary = new QuanLyHDTienDienUseCase(quanLyHDTienDienOutputBoundary);
+        QuanLyHDTienDienController quanLyHDTienDienController = new QuanLyHDTienDienController(quanLyHDTienDienInputBoundary);
+
+        quanLyHDTienDienView.setQuanLyHDTienDienController(quanLyHDTienDienController);
+        quanLyHDTienDienInputBoundary.setAddInvoiceUIInputBoundary(addInvoiceUIInputBoundary);
+        quanLyHDTienDienInputBoundary.setDeleteInvoiceUIInputBoundary(deleteInvoiceUIInputBoundary);
+        quanLyHDTienDienInputBoundary.setEditInvoiceUIInputBoundary(editInvoiceUIInputBoundary);
+        quanLyHDTienDienInputBoundary.setFindInvoiceUIInputBoundary(findInvoiceUIInputBoundary);
+        quanLyHDTienDienInputBoundary.setAvgMoneyInvoiceNuocNgoaiUIInputBoundary(avgMoneyInvoiceNuocNgoaiUIInputBoundary);
+        quanLyHDTienDienInputBoundary.setSumKHInvoiceUIInputBoundary(sumKHInvoiceUIInputBoundary);
+        quanLyHDTienDienInputBoundary.setGetListInvoiceUIInputBoundary(getListInvoiceUIInputBoundary);
+        quanLyHDTienDienInputBoundary.setExportInvoiceByMonthUIInputBoundary(exportInvoiceByMonthUIInputBoundary);
 
         // setVisible(true)
-        mainGUI.showGUI();
+        quanLyHDTienDienController.execute(null);
     }
 }
