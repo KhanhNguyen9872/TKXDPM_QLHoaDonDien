@@ -81,20 +81,25 @@ public class AddInvoiceView extends JFrame implements ActionListener {
         jCb_isKHNN.addItemListener(v -> {
             
             if (!jCb_isKHNN.isSelected()) {
+                lb_QuocTich.setVisible(true);
                 tf_QuocTich.setText("");
-                tf_QuocTich.setEnabled(false);
+                tf_QuocTich.setVisible(true);
 
-                cb_DoiTuongKH.setEnabled(true);
-
-                tf_DinhMuc.setEnabled(true);
+                cb_DoiTuongKH.setVisible(false);
+                tf_DinhMuc.setVisible(false);
+                lb_DoiTuongKH.setVisible(false);
+                lb_DinhMuc.setVisible(false);
             } else {
-                tf_QuocTich.setEnabled(true);
+                lb_QuocTich.setVisible(false);
+                tf_QuocTich.setVisible(false);
 
                 cb_DoiTuongKH.setSelectedIndex(0);
-                cb_DoiTuongKH.setEnabled(false);
+                cb_DoiTuongKH.setVisible(true);
 
                 tf_DinhMuc.setText("0");
-                tf_DinhMuc.setEnabled(false);
+                tf_DinhMuc.setVisible(true);
+                lb_DoiTuongKH.setVisible(true);
+                lb_DinhMuc.setVisible(true);
             }
         });
 
@@ -137,9 +142,11 @@ public class AddInvoiceView extends JFrame implements ActionListener {
         add(addInvoiceBtn);
 
         tf_QuocTich.setText("");
-        tf_QuocTich.setEnabled(false);
-        cb_DoiTuongKH.setEnabled(true);
-        tf_DinhMuc.setEnabled(true);
+        tf_QuocTich.setVisible(true);
+        cb_DoiTuongKH.setVisible(false);
+        tf_DinhMuc.setVisible(false);
+        lb_DoiTuongKH.setVisible(false);
+        lb_DinhMuc.setVisible(false);
     }
 
     public void showMsgResult(AddInvoiceViewModel addInvoiceViewModel) {
