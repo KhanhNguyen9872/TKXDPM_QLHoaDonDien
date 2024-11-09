@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2024-11-08T18:47:37.543Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.7.5 Chrome/114.0.5735.289 Electron/25.8.1 Safari/537.36" etag="QpEOV2Hqn8VQR42lsCmV" version="21.7.5" type="device" pages="4">
+<mxfile host="Electron" modified="2024-11-09T05:16:36.279Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.7.5 Chrome/114.0.5735.289 Electron/25.8.1 Safari/537.36" etag="IG_UUBPKDIhSjWewCJYO" version="21.7.5" type="device" pages="4">
   <diagram name="Xác định/Thu thập yêu cầu" id="nuaTaDaw0M5cNVKKgpfW">
     <mxGraphModel dx="1954" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -120,13 +120,13 @@
           <mxGeometry x="290" y="1000" width="91" height="30" as="geometry" />
         </mxCell>
         <mxCell id="gLersqh-HJtK5dhqzv4M-7" value="Tìm kiếm" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="340" y="1160" width="91" height="30" as="geometry" />
+          <mxGeometry x="334" y="1170" width="91" height="30" as="geometry" />
         </mxCell>
         <mxCell id="gLersqh-HJtK5dhqzv4M-9" value="App Quản lý hóa đơn" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-160" y="1130" width="131" height="70" as="geometry" />
         </mxCell>
         <mxCell id="gLersqh-HJtK5dhqzv4M-10" value="Sửa" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="280" y="1060" width="91" height="30" as="geometry" />
+          <mxGeometry x="300" y="1070" width="91" height="30" as="geometry" />
         </mxCell>
         <mxCell id="gLersqh-HJtK5dhqzv4M-16" value="Tổng khách hàng từng loại" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="191" y="1380" width="175" height="40" as="geometry" />
@@ -257,73 +257,73 @@
             <mxPoint x="440" y="1120" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-1" value="Hiển thị giao diện&lt;br&gt;Thêm" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-1" value="Hiển thị giao diện&lt;br&gt;Thêm" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-20" y="940" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-2" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;entryX=0.29;entryY=0.071;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="RwjYz60BjzYn1NvRFIWm-1" target="gLersqh-HJtK5dhqzv4M-9">
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-2" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;entryX=0.29;entryY=0.071;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="RwjYz60BjzYn1NvRFIWm-1" target="gLersqh-HJtK5dhqzv4M-9" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="235" y="972" as="sourcePoint" />
             <mxPoint x="72" y="1002" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-3" value="Hiển thị giao diện &lt;br&gt;Xóa" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-3" value="Hiển thị giao diện &lt;br&gt;Xóa" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="60" y="1000" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-4" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="RwjYz60BjzYn1NvRFIWm-3" target="gLersqh-HJtK5dhqzv4M-9">
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-4" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" parent="1" source="RwjYz60BjzYn1NvRFIWm-3" target="gLersqh-HJtK5dhqzv4M-9" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="280" y="1035" as="sourcePoint" />
             <mxPoint x="172" y="1042" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-5" value="Hiển thị giao diện&amp;nbsp;&lt;br&gt;Trung bình thành tiền khách hàng nước ngoài" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-5" value="Hiển thị giao diện&amp;nbsp;&lt;br&gt;Trung bình thành tiền khách hàng nước ngoài" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-120" y="1430" width="170" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-6" value="Hiển thị giao diện&amp;nbsp;&lt;br&gt;Tổng khách hàng từng loại" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-6" value="Hiển thị giao diện&amp;nbsp;&lt;br&gt;Tổng khách hàng từng loại" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-5" y="1370" width="160" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-7" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0.679;entryY=0.943;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="RwjYz60BjzYn1NvRFIWm-6" target="gLersqh-HJtK5dhqzv4M-9">
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-7" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0.679;entryY=0.943;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="RwjYz60BjzYn1NvRFIWm-6" target="gLersqh-HJtK5dhqzv4M-9" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="226" y="1336" as="sourcePoint" />
             <mxPoint x="140" y="1311" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-8" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="RwjYz60BjzYn1NvRFIWm-5" target="gLersqh-HJtK5dhqzv4M-19">
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-8" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="RwjYz60BjzYn1NvRFIWm-5" target="gLersqh-HJtK5dhqzv4M-19" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="50" y="1510" as="sourcePoint" />
             <mxPoint x="210" y="1510" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-10" value="Hiển thị giao diện&amp;nbsp;&lt;br&gt;Xuất theo tháng" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-10" value="Hiển thị giao diện&amp;nbsp;&lt;br&gt;Xuất theo tháng" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="41" y="1300" width="139" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-11" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;exitX=0.1;exitY=0.167;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="RwjYz60BjzYn1NvRFIWm-10" target="gLersqh-HJtK5dhqzv4M-9">
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-11" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;exitX=0.1;exitY=0.167;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitPerimeter=0;" parent="1" source="RwjYz60BjzYn1NvRFIWm-10" target="gLersqh-HJtK5dhqzv4M-9" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="275" y="1334" as="sourcePoint" />
             <mxPoint x="190" y="1315" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-12" value="Hiển thị giao diện&amp;nbsp;&lt;br&gt;Xuất toàn bộ" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-12" value="Hiển thị giao diện&amp;nbsp;&lt;br&gt;Xuất toàn bộ" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="55" y="1230" width="145" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-13" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="RwjYz60BjzYn1NvRFIWm-12" target="gLersqh-HJtK5dhqzv4M-20">
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-13" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="RwjYz60BjzYn1NvRFIWm-12" target="gLersqh-HJtK5dhqzv4M-20" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="60" y="1470" as="sourcePoint" />
             <mxPoint x="197" y="1470" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-14" value="Hiển thị giao diện&amp;nbsp;&lt;br&gt;Tìm kiếm" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-14" value="Hiển thị giao diện&amp;nbsp;&lt;br&gt;Tìm kiếm" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="100" y="1180" width="145" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-15" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;exitX=0.077;exitY=0.8;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="gLersqh-HJtK5dhqzv4M-7" target="RwjYz60BjzYn1NvRFIWm-14">
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-15" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;exitX=0.077;exitY=0.8;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" parent="1" source="gLersqh-HJtK5dhqzv4M-7" target="RwjYz60BjzYn1NvRFIWm-14" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="142" y="1201" as="sourcePoint" />
             <mxPoint x="-20" y="1180" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-16" value="Hiển thị giao diện&amp;nbsp;&lt;br&gt;Sửa" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="75" y="1100" width="145" height="40" as="geometry" />
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-16" value="Hiển thị giao diện&amp;nbsp;&lt;br&gt;Sửa" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="90" y="1100" width="145" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="RwjYz60BjzYn1NvRFIWm-17" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gLersqh-HJtK5dhqzv4M-10" target="RwjYz60BjzYn1NvRFIWm-16">
+        <mxCell id="RwjYz60BjzYn1NvRFIWm-17" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" parent="1" source="gLersqh-HJtK5dhqzv4M-10" target="RwjYz60BjzYn1NvRFIWm-16" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="100" y="1130" as="sourcePoint" />
             <mxPoint x="210" y="1110" as="targetPoint" />
@@ -333,10 +333,13 @@
     </mxGraphModel>
   </diagram>
   <diagram id="7m-iIiB3nsCZwgmJCafQ" name="UseCase">
-    <mxGraphModel dx="3154" dy="2603" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1840" dy="1977" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="vA0I-P2hkw-Z8vSy2MsQ-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFC9C9;" vertex="1" parent="1">
+          <mxGeometry x="20" y="-360" width="1180" height="630" as="geometry" />
+        </mxCell>
         <mxCell id="JZw17qxOE9MegbQSXABs-7" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Thêm hóa đơn tiền điện&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input:&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;- Họ tên khách hàng&lt;br&gt;&amp;nbsp;- Ngày ra hóa đơn&lt;br&gt;&amp;nbsp;- Đối tượng khách hàng&lt;br&gt;&amp;nbsp;- Số lượng điện tiêu thụ&lt;br&gt;&amp;nbsp;- Đơn giá&lt;br&gt;&amp;nbsp;- Quốc tịch của khách hàng&lt;br&gt;&amp;nbsp;- Định mức&lt;br&gt;&lt;br&gt;* Output:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;- Thành công / Thất bại&lt;br&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;br&gt;&amp;nbsp; 1. Nhận vào các thông tin.&lt;br&gt;&amp;nbsp; 2. Kiểm tra tính hợp lệ của dữ liệu (số lượng và đơn giá phải là số, đúng định dạng thời gian,...)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 3. Nếu không hợp lệ -&amp;gt; Trả về thất bại&lt;br&gt;&amp;nbsp; 4. Nếu hợp lệ -&amp;gt; Lưu hóa đơn và trả về thành công&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="680" y="340" width="350" height="370" as="geometry" />
         </mxCell>
@@ -361,56 +364,56 @@
         <mxCell id="VKrNqdVTND8BY5gXqCIs-7" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Xuất hóa đơn tiền điện theo tháng&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input:&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- Tháng&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- Các hóa đơn tiền điện của tháng / Thất bại&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;br&gt;&amp;nbsp; 1. Nhận vào tháng.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 2. Kiểm tra tính hợp lệ của dữ liệu (tháng phải là số từ 1 -&amp;gt; 12)&lt;br&gt;&amp;nbsp; 3. Nếu không hợp lệ -&amp;gt; Trả về thất bại và kết thúc&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 4. Nếu hợp lệ -&amp;gt; Truy xuất các hoá đơn theo tháng đã chọn,&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 5. Nếu không có hoá đơn -&amp;gt; Trả về thất bại.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 6. Nếu có hóa đơn -&amp;gt; Trả về các hóa đơn theo tháng đã chọn.&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="3250" y="760" width="350" height="370" as="geometry" />
         </mxCell>
-        <mxCell id="uhcHyAl7JGkW0d-8c9ke-1" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;App Quản lý hóa đơn&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input:(Sự lựa chọn)&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;- Thêm hóa đơn&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;- Xóa hóa đơn&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;- Sửa hóa đơn&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;- Tìm kiếm hóa đơn&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;- Xuất toàn bộ hóa đơn&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;- Xuất theo tháng hóa đơn&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;- Tính trung bình thành tiền hóa đơn nước ngoài&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;- Tính tổng khách hàng&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;- Chuyển đến các tính năng tương ứng&lt;br&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;br&gt;&amp;nbsp; 1. Xử lý để chuyển đến chức năng tương ứng (gọi đến UC tương ứng)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
-          <mxGeometry x="280" y="-280" width="430" height="370" as="geometry" />
+        <mxCell id="uhcHyAl7JGkW0d-8c9ke-1" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;App Quản lý hóa đơn&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input:(Sự lựa chọn)&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;- Thêm hóa đơn&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;- Xóa hóa đơn&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;- Sửa hóa đơn&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;- Tìm kiếm hóa đơn&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;- Xuất toàn bộ hóa đơn&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;- Xuất theo tháng hóa đơn&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;- Tính trung bình thành tiền hóa đơn nước ngoài&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp;- Tính tổng khách hàng&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;- Chuyển đến các tính năng tương ứng&lt;br&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;1`. &quot;&lt;b&gt;Thêm hóa đơn&lt;/b&gt;&quot; - Xử lý chuyển để UC hiển thị Thêm hóa đơn.&lt;br&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&quot;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Xóa hóa đơn&lt;/b&gt;&quot; - Xử lý chuyển để UC hiển thị Xóa hóa đơn.&lt;br&gt;&lt;/span&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &quot;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Sửa hóa đơn&lt;/b&gt;&quot; - Xử lý chuyển để UC hiển thị Sửa hóa đơn.&lt;br&gt;&lt;/span&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &quot;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Tìm kiếm hóa đơn&lt;/b&gt;&quot; - Xử lý chuyển để UC hiển thị Tìm kiếm hóa đơn.&lt;br&gt;&lt;/span&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &quot;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Xuất toàn bộ hóa đơn&lt;/b&gt;&quot; - Xử lý chuyển để UC hiển thị Xuất toàn bộ hóa đơn.&lt;br&gt;&lt;/span&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &quot;&lt;b&gt;Xuất theo tháng hóa đơn&lt;/b&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&quot; - Xử lý chuyển để UC hiển thị Xuất theo tháng hóa đơn.&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &quot;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Tính trung bình thành tiền hóa đơn nước ngoài&lt;/b&gt;&quot; - Xử lý chuyển để UC hiển thị Tính trung bình thành tiền hóa đơn nước ngoài.&lt;br&gt;&lt;/span&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &quot;&lt;b&gt;Tính tổng khách hàng&lt;/b&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&quot; - Xử lý chuyển để UC hiển thị Tính tổng khách hàng&lt;/span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="200" y="-220" width="830" height="370" as="geometry" />
         </mxCell>
-        <mxCell id="D40rZhR5NRdhnB71hMaN-1" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form Thêm hóa đơn tiền điện&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;- Danh sách các loại đối tượng khách hàng&lt;br&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;br&gt;&amp;nbsp; 1. Lấy danh sách loại đối tượng khách hàng.&lt;br&gt;&amp;nbsp; 2. Chuyển danh sách loại đối tượng khách hàng lên màn hình&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 1&#39;. &quot;Thêm hóa đơn&quot; (Xử lý chuyển đến UC &quot;Thêm hóa đơn&quot;)&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+        <mxCell id="D40rZhR5NRdhnB71hMaN-1" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form Thêm hóa đơn tiền điện&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;- Danh sách các loại đối tượng khách hàng&lt;br&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;br&gt;&amp;nbsp; 1. Lấy danh sách loại đối tượng khách hàng.&lt;br&gt;&amp;nbsp; 1.1. Chuyển danh sách loại đối tượng khách hàng lên màn hình&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 1&#39;. &quot;Thêm hóa đơn&quot; (Xử lý chuyển đến UC &quot;Thêm hóa đơn&quot;)&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="290" y="340" width="350" height="370" as="geometry" />
         </mxCell>
-        <mxCell id="YSHOp1gNdADVfutMDYKt-1" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form Xóa hóa đơn tiền điện&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;br&gt;&amp;nbsp; 1. Phần mềm hiển thị Form &quot;Xóa hóa đơn tiền điện&quot;.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 1&#39;. &quot;Xóa hóa đơn&quot; (Xử lý chuyển đến UC &quot;Xóa hóa đơn&quot;)&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+        <mxCell id="YSHOp1gNdADVfutMDYKt-1" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form Xóa hóa đơn tiền điện&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;br&gt;&amp;nbsp; 1. Phần mềm hiển thị Form &quot;Xóa hóa đơn tiền điện&quot;.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 1&#39;. &quot;Xóa hóa đơn&quot; (Xử lý chuyển đến UC &quot;Xóa hóa đơn&quot;)&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="1130" y="330" width="350" height="370" as="geometry" />
         </mxCell>
-        <mxCell id="YSHOp1gNdADVfutMDYKt-2" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form Sửa hóa đơn tiền điện&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output: Thông tin của hóa đơn&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Primary process:&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 1.&amp;nbsp;&lt;br&gt;&amp;nbsp; 1. Phần mềm hiển thị Form &quot;Sửa hóa đơn tiền điện&quot;.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 1&#39;. &quot;Xóa hóa đơn&quot; (Xử lý chuyển đến UC &quot;Sửa hóa đơn&quot;)&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+        <mxCell id="YSHOp1gNdADVfutMDYKt-2" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form Sửa hóa đơn tiền điện&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output: Thông tin của hóa đơn&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Primary process:&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 1. Phần mềm lấy thông tin của hóa đơn cần sửa (Xử lý chuyển quan UC &quot;Tìm kiếm hóa đơn&quot; để lấy kết quả)&lt;br&gt;&amp;nbsp; 1.1. Phần mềm chuyển thông tin của hóa đơn lên màn hình.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 1&#39;. &quot;Sửa hóa đơn&quot; (Xử lý chuyển đến UC &quot;Sửa hóa đơn&quot;)&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="1960" y="330" width="350" height="370" as="geometry" />
         </mxCell>
-        <mxCell id="YSHOp1gNdADVfutMDYKt-3" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form Xuất toàn bộ hóa đơn tiền điện&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output: Danh sách hóa đơn&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Primary process:&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 1. Phần mềm lấy danh sách hóa đơn (Xử lý chuyển đến UC &quot;Xuất toàn bộ hóa đơn tiền điện&quot; để lấy kết quả)&lt;br&gt;&amp;nbsp; 2. Phần mềm hiển thị danh sách hóa đơn tiền điện..&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+        <mxCell id="YSHOp1gNdADVfutMDYKt-3" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form Xuất toàn bộ hóa đơn tiền điện&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output: Danh sách hóa đơn&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Primary process:&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 1. Phần mềm lấy danh sách hóa đơn (Xử lý chuyển đến UC &quot;Xuất toàn bộ hóa đơn tiền điện&quot; để lấy kết quả)&lt;br&gt;&amp;nbsp; 1.1. Phần mềm hiển thị danh sách hóa đơn tiền điện..&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="2850" y="330" width="370" height="370" as="geometry" />
         </mxCell>
-        <mxCell id="6fRb6LDehdmI_rvBOTMK-1" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form Tìm kiếm hóa đơn tiền điện&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;br&gt;&amp;nbsp; 1. Phần mềm hiển thị Form &quot;Tìm kiếm hóa đơn tiền điện&quot;.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 1&#39;. &quot;Tìm kiếm hóa đơn&quot; (Xử lý chuyển đến UC &quot;Tìm kiếm hóa đơn&quot;)&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+        <mxCell id="6fRb6LDehdmI_rvBOTMK-1" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form Tìm kiếm hóa đơn tiền điện&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;br&gt;&amp;nbsp; 1. Phần mềm hiển thị Form &quot;Tìm kiếm hóa đơn tiền điện&quot;.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 1&#39;. &quot;Tìm kiếm hóa đơn&quot; (Xử lý chuyển đến UC &quot;Tìm kiếm hóa đơn&quot;)&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="290" y="760" width="350" height="370" as="geometry" />
         </mxCell>
-        <mxCell id="6fRb6LDehdmI_rvBOTMK-2" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form Tính t&lt;/b&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;rung bình thành tiền khách hàng nước ngoài&amp;nbsp;của hóa đơn tiền điện&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output:&amp;nbsp;&lt;/span&gt;Trung bình thành tiền khách hàng nước ngoài&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;1. Phần mềm lấy kết quả trung bình thành tiền (Xử lý chuyển đến &quot;&lt;b style=&quot;background-color: initial; text-align: center; border-color: var(--border-color);&quot;&gt;Trung bình thành tiền khách hàng nước ngoài&amp;nbsp;của hóa đơn tiền điện&quot;&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;để lấy kết quả).&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;2. Phần mềm hiển thị kết quả tính trung bình thành tiền khách hàng nước ngoài&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+        <mxCell id="6fRb6LDehdmI_rvBOTMK-2" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form Tính t&lt;/b&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;rung bình thành tiền khách hàng nước ngoài&amp;nbsp;của hóa đơn tiền điện&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output:&amp;nbsp;&lt;/span&gt;Trung bình thành tiền khách hàng nước ngoài&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;1. Phần mềm lấy kết quả trung bình thành tiền (Xử lý chuyển đến &quot;&lt;b style=&quot;background-color: initial; text-align: center; border-color: var(--border-color);&quot;&gt;Trung bình thành tiền khách hàng nước ngoài&amp;nbsp;của hóa đơn tiền điện&quot;&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;để lấy kết quả).&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; 1.1. Phần mềm hiển thị kết quả tính trung bình thành tiền khách hàng nước ngoài&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="1130" y="750" width="350" height="370" as="geometry" />
         </mxCell>
-        <mxCell id="6fRb6LDehdmI_rvBOTMK-3" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="6fRb6LDehdmI_rvBOTMK-3" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="2770" y="1230" as="sourcePoint" />
             <mxPoint x="2770" y="170" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="6fRb6LDehdmI_rvBOTMK-4" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="6fRb6LDehdmI_rvBOTMK-4" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1100" y="1210" as="sourcePoint" />
             <mxPoint x="1100" y="150" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="6fRb6LDehdmI_rvBOTMK-5" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="6fRb6LDehdmI_rvBOTMK-5" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1920" y="1200" as="sourcePoint" />
             <mxPoint x="1920" y="140" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="6fRb6LDehdmI_rvBOTMK-6" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form t&lt;/b&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;ổng khách hàng từng loại&amp;nbsp;của hóa đơn tiền điện&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;br&gt;&amp;nbsp; 1. Phần mềm hiển thị Form &quot;Tổng khách hàng từng loại của hóa đơn tiền điện&quot;.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp; 1&#39;. &quot;Tính tổng&quot; (Xử lý chuyển đến UC &quot;&lt;b style=&quot;background-color: initial; text-align: center; border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;Tổng khách hàng từng loại&lt;/span&gt;&amp;nbsp;của hóa đơn tiền điện&quot;&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+        <mxCell id="6fRb6LDehdmI_rvBOTMK-6" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form t&lt;/b&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;ổng khách hàng từng loại&amp;nbsp;của hóa đơn tiền điện&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;br&gt;&amp;nbsp; 1. Phần mềm hiển thị Form &quot;Tổng khách hàng từng loại của hóa đơn tiền điện&quot;.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp; 1&#39;. &quot;Tính tổng&quot; (Xử lý chuyển đến UC &quot;&lt;b style=&quot;background-color: initial; text-align: center; border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;Tổng khách hàng từng loại&lt;/span&gt;&amp;nbsp;của hóa đơn tiền điện&quot;&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="1950" y="760" width="350" height="370" as="geometry" />
         </mxCell>
-        <mxCell id="6fRb6LDehdmI_rvBOTMK-7" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form t&lt;/b&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;ổng khách hàng từng loại&amp;nbsp;của hóa đơn tiền điện&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;br&gt;&amp;nbsp; 1. Phần mềm hiển thị Form &quot;Xuất hóa đơn tiền điện theo tháng&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp; 1&#39;. &quot;Xuất hóa đơn&quot; (Xử lý chuyển đến UC &quot;&lt;b style=&quot;background-color: initial; text-align: center; border-color: var(--border-color);&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Xuất hóa đơn tiền điện theo tháng&lt;/b&gt;&quot;&lt;/b&gt;)&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+        <mxCell id="6fRb6LDehdmI_rvBOTMK-7" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;Hiển thị Form t&lt;/b&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;ổng khách hàng từng loại&amp;nbsp;của hóa đơn tiền điện&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;* Input: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Output: KHÔNG CÓ&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;* Primary process:&amp;nbsp;&lt;br&gt;&amp;nbsp; 1. Phần mềm hiển thị Form &quot;Xuất hóa đơn tiền điện theo tháng&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&amp;nbsp; 1&#39;. &quot;Xuất hóa đơn&quot; (Xử lý chuyển đến UC &quot;&lt;b style=&quot;background-color: initial; text-align: center; border-color: var(--border-color);&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Xuất hóa đơn tiền điện theo tháng&lt;/b&gt;&quot;&lt;/b&gt;)&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="2850" y="760" width="350" height="370" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="iMwjaiaqGUlJKjUvLaAd" name="Mức phân tích">
-    <mxGraphModel dx="1060" dy="1315" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="-123" dy="751" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4147,11 +4150,333 @@
         <mxCell id="tVRt2FQZCBlNhCyFhGY5-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="4860" y="4710" width="20" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;QuanLyHDTienDienInputBoundary&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ field: Type&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ execute(QuanLyHDTienDienInputDTO): void&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="5610" y="260" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QuanLyHDTienDienUseCase&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- addInvoice: AddInvoiceUIInputBoundary&lt;br&gt;- deleteInvoice: DeleteInvoiceUIInputBoundary&lt;br&gt;- editInvoice: EditInvoiceUIInputBoundary&lt;br&gt;- findInvoice: FindInvoiceUIInputBoundary&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- getListInvoices: GetListInvoiceUIInputBoundary&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- exportInvoiceByMonthUIInputBoundary&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- avgMoneyInvoiceNN: AvgMoneyInvoiceNuocNgoaiUIInputBoundary&lt;br&gt;- sumKHInvoice: SumKHInvoiceUIInputBoundary&lt;br&gt;- quanLyHDTienDienOutputBoundary: QuanLyHDTienDienOutputBoundary&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ execute(QuanLyHDTienDienInputDTO): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="5937.5" y="235" width="420" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--4" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;QuanLyHDTienDienOutputBoundary&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ field: Type&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ exportResult(QuanLyHDTienDienOutputDTO): void&lt;br&gt;+ exportError(QuanLyHDTienDienOutputDTO): void&lt;br&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="5605" y="453" width="330" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--6" value="" style="shape=link;html=1;rounded=0;fontSize=10;strokeWidth=5;" edge="1" parent="1">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="5590" y="130" as="sourcePoint" />
+            <mxPoint x="5550" y="980" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--7" value="Detail&amp;nbsp;&lt;div&gt;UI: CUI, GUI, Web, ...&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="5250" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--10" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=-0.003;exitY=0.473;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="BpWFipL1X3Ft5UfiTzL--3" target="BpWFipL1X3Ft5UfiTzL--2">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="5900" y="450" as="sourcePoint" />
+            <mxPoint x="6060" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--11" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="BpWFipL1X3Ft5UfiTzL--3" target="BpWFipL1X3Ft5UfiTzL--4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="5960" y="470" as="sourcePoint" />
+            <mxPoint x="6010" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--13" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QuanLyHDTienDienPresenter&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ field: Type&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ exportResult(QuanLyHDTienDienOutputDTO): void&lt;br&gt;+ exportError(QuanLyHDTienDienOutputDTO): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="5180" y="440" width="310" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--14" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=1;exitY=0.566;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="BpWFipL1X3Ft5UfiTzL--13" target="BpWFipL1X3Ft5UfiTzL--4">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="5900" y="450" as="sourcePoint" />
+            <mxPoint x="6060" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--15" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="BpWFipL1X3Ft5UfiTzL--7" target="BpWFipL1X3Ft5UfiTzL--2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="5960" y="470" as="sourcePoint" />
+            <mxPoint x="6010" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--22" value="App Quản lý hóa đơn" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+          <mxGeometry x="3364.74" y="160" width="90" height="860" as="geometry" />
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--51" value="QuanLyHDTienDienInputDTO" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="5720" y="100" width="210" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--52" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="BpWFipL1X3Ft5UfiTzL--51">
+          <mxGeometry y="26" width="210" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--53" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="BpWFipL1X3Ft5UfiTzL--51">
+          <mxGeometry y="52" width="210" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--54" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="BpWFipL1X3Ft5UfiTzL--51">
+          <mxGeometry y="60" width="210" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--55" value="QuanLyHDTienDienOutputDTO" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="5607.5" y="670" width="200" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--56" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="BpWFipL1X3Ft5UfiTzL--55">
+          <mxGeometry y="26" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--57" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="BpWFipL1X3Ft5UfiTzL--55">
+          <mxGeometry y="52" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--58" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="BpWFipL1X3Ft5UfiTzL--55">
+          <mxGeometry y="60" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--60" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.383;exitY=-0.029;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.17;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="BpWFipL1X3Ft5UfiTzL--2" target="BpWFipL1X3Ft5UfiTzL--54">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="5660" y="210" as="sourcePoint" />
+            <mxPoint x="5820" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--61" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.122;exitY=0.002;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="BpWFipL1X3Ft5UfiTzL--3" target="BpWFipL1X3Ft5UfiTzL--54">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="5920" y="200" as="sourcePoint" />
+            <mxPoint x="6080" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--62" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.674;exitY=1.022;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="BpWFipL1X3Ft5UfiTzL--4" target="BpWFipL1X3Ft5UfiTzL--55">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="5770" y="610" as="sourcePoint" />
+            <mxPoint x="5930" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BpWFipL1X3Ft5UfiTzL--63" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=1;exitY=0.888;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="BpWFipL1X3Ft5UfiTzL--13" target="BpWFipL1X3Ft5UfiTzL--56">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="5520" y="570" as="sourcePoint" />
+            <mxPoint x="5680" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-1" value="«interface»&lt;br&gt;&lt;b&gt;AddInvoiceUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="6245" y="30" width="235" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="wIWLz5GE4EsGBIKyCNPP-1" target="BpWFipL1X3Ft5UfiTzL--3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="6102" y="410" as="sourcePoint" />
+            <mxPoint x="6075.072463768116" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-3" value="«interface»&lt;br&gt;&lt;b&gt;DeleteInvoiceUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="6310" y="90" width="235" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-4" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.861;entryY=-0.018;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wIWLz5GE4EsGBIKyCNPP-3" target="BpWFipL1X3Ft5UfiTzL--3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="6167.25" y="480" as="sourcePoint" />
+            <mxPoint x="6237.25" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-5" value="«interface»&lt;br&gt;&lt;b&gt;EditInvoiceUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="6400" y="150" width="235" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-6" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.999;entryY=0.368;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wIWLz5GE4EsGBIKyCNPP-5" target="BpWFipL1X3Ft5UfiTzL--3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="6184.5" y="580" as="sourcePoint" />
+            <mxPoint x="6277.25" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-7" value="«interface»&lt;br&gt;&lt;b&gt;FindInvoiceUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="6427.5" y="230" width="232.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="wIWLz5GE4EsGBIKyCNPP-7" target="BpWFipL1X3Ft5UfiTzL--3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="6192" y="660" as="sourcePoint" />
+            <mxPoint x="6267.5" y="392" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-9" value="«interface»&lt;br&gt;&lt;b&gt;GetListInvoiceUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="6445" y="310" width="235" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.998;entryY=0.691;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wIWLz5GE4EsGBIKyCNPP-9" target="BpWFipL1X3Ft5UfiTzL--3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="6222" y="745" as="sourcePoint" />
+            <mxPoint x="6260" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-11" value="«interface»&lt;br&gt;&lt;b&gt;ExportInvoiceByMonthUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="6400" y="390" width="235" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-12" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.998;entryY=0.947;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wIWLz5GE4EsGBIKyCNPP-11" target="BpWFipL1X3Ft5UfiTzL--3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="6222" y="820" as="sourcePoint" />
+            <mxPoint x="6260" y="475" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-14" value="«interface»&lt;br&gt;&lt;b&gt;AvgMoneyInvoiceNuocNgoaiUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="6365" y="470" width="335" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-15" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.803;entryY=1.005;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wIWLz5GE4EsGBIKyCNPP-14" target="BpWFipL1X3Ft5UfiTzL--3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="6199.45" y="897.79" as="sourcePoint" />
+            <mxPoint x="6207.549999999999" y="440.00000000000006" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-17" value="«interface»&lt;br&gt;&lt;b&gt;SumKHInvoiceUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="6331.95" y="551.79" width="235" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wIWLz5GE4EsGBIKyCNPP-18" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.669;entryY=1.005;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wIWLz5GE4EsGBIKyCNPP-17" target="BpWFipL1X3Ft5UfiTzL--3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="6153.95" y="981.79" as="sourcePoint" />
+            <mxPoint x="6197.5" y="515" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3712.5" y="480" width="1015" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="4022.5" y="515" width="430" height="255" as="geometry" />
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-3" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="4022.5" y="544.71" as="sourcePoint" />
+            <mxPoint x="4072.5" y="544.71" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-4" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="4082.5" y="533.71" as="sourcePoint" />
+            <mxPoint x="4072.5" y="544.71" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-5" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="4082.5" y="514.71" as="sourcePoint" />
+            <mxPoint x="4082.5" y="534.71" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-6" value="alt" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="4022.5" y="515" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-7" value="QuanLyHoaDonTienDien&amp;nbsp; Input Boundary Object" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="4012.5" y="330" width="170" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-8" value="QuanLyHoaDonTienDien&amp;nbsp; Output Boundary Object" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="4272.5" y="330" width="160" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-9" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" edge="1" parent="1" target="WYyKEB_6hBBDMOdESffx-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3882.5" y="565" as="sourcePoint" />
+            <mxPoint x="4122.5" y="565" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-10" value="1: execute(InputDTO)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="WYyKEB_6hBBDMOdESffx-9">
+          <mxGeometry x="-0.312" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-11" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.637;entryY=1.003;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="WYyKEB_6hBBDMOdESffx-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="4122.5" y="960" as="sourcePoint" />
+            <mxPoint x="4492.5" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-12" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.61;entryY=0.997;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="WYyKEB_6hBBDMOdESffx-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="4372.5" y="960" as="sourcePoint" />
+            <mxPoint x="4492.5" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-13" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.482;entryY=0.984;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="WYyKEB_6hBBDMOdESffx-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="4122.5" y="955" as="sourcePoint" />
+            <mxPoint x="4118.5" y="322" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-14" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3862.5" y="365" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-15" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3882.5" y="945" as="sourcePoint" />
+            <mxPoint x="3882.5" y="435" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-16" value="2.&amp;nbsp; verify(InputDTO))" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="1" target="WYyKEB_6hBBDMOdESffx-21">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="4127.5" y="565" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="4157.5" y="595" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-17" value="QuanLyHoaDonTienDien UseCase&amp;nbsp; Object" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="4022.5" y="130" width="178.74" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-18" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0;exitY=0.608;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.005;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="4022.5" y="656.02" as="sourcePoint" />
+            <mxPoint x="4454.65" y="653.98" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-19" value="[Else]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="4042.5" y="685" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-20" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.482;entryY=0.984;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="WYyKEB_6hBBDMOdESffx-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="4122.5" y="955" as="sourcePoint" />
+            <mxPoint x="4118.5" y="322" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-21" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="4112.5" y="560" width="20" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-22" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="WYyKEB_6hBBDMOdESffx-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="4132.5" y="685" as="sourcePoint" />
+            <mxPoint x="4372.5" y="685" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-23" value="2.1. exportError(OutputDTO)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="WYyKEB_6hBBDMOdESffx-22">
+          <mxGeometry x="-0.312" y="1" relative="1" as="geometry">
+            <mxPoint x="23" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-24" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="WYyKEB_6hBBDMOdESffx-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="4127.5" y="835" as="sourcePoint" />
+            <mxPoint x="4372.5" y="834" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-25" value="4. exportResult(OutputDTO)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="WYyKEB_6hBBDMOdESffx-24">
+          <mxGeometry x="-0.312" y="1" relative="1" as="geometry">
+            <mxPoint x="23" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-26" value="QuanLyHoaDonTienDien&amp;nbsp;&lt;br&gt;Presenter Boundary Object" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="4233.13" y="135" width="238.74" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-27" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="4362.5" y="660" width="20" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-28" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="4362.5" y="805" width="20" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-29" value="" style="endArrow=classic;html=1;rounded=0;exitX=1.25;exitY=0.221;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="WYyKEB_6hBBDMOdESffx-21" target="WYyKEB_6hBBDMOdESffx-33">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="4627.5" y="414" as="sourcePoint" />
+            <mxPoint x="4767.5" y="634" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-30" value="3. execute()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="WYyKEB_6hBBDMOdESffx-29">
+          <mxGeometry x="-0.0316" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-31" value="AddInvoiceUI&lt;br&gt;Input Boundary Object" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="4564.12" y="330" width="160" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-32" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.583;entryY=0.993;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="WYyKEB_6hBBDMOdESffx-31">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="4657" y="1040" as="sourcePoint" />
+            <mxPoint x="4797.5" y="434" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYyKEB_6hBBDMOdESffx-33" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="4652.23" y="612.5" width="14" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="hVHPOED9rRtyUysImpwX" name="Mức thiết kế">
-    <mxGraphModel dx="2804" dy="-574" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="4460" dy="1315" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4188,7 +4513,7 @@
             <mxPoint x="1680" y="2322.557871167757" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="mE9x2hhx87S9r7FqepsP-25" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AddInvoiceView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- addInvoiceController: AddInvoiceController&lt;br&gt;- jLabel,....: JLabel&lt;br&gt;- jTextField: JTextField&lt;br&gt;- jButton: JButton&lt;br&gt;- jComboBox: JComboBox&lt;br&gt;- jDatePicker: JDatePicker&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;AddInvoiceView(AddInvoiceViewModel)&lt;br&gt;+ mainShow(): void&lt;br&gt;- build(): void&lt;br&gt;- actionPerformed(ActionEvent): void&lt;br&gt;+ showMsgResult(AddInvoiceViewModel): void&lt;br&gt;+ showMsgError(AddInvoiceViewModel): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+        <mxCell id="mE9x2hhx87S9r7FqepsP-25" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AddInvoiceView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- addInvoiceController: AddInvoiceController&lt;br&gt;- jLabel,....: JLabel&lt;br&gt;- jTextField: JTextField&lt;br&gt;- jButton: JButton&lt;br&gt;- jComboBox: JComboBox&lt;br&gt;- jDatePicker: JDatePicker&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;AddInvoiceView()&lt;br&gt;+ mainShow(): void&lt;br&gt;- build(): void&lt;br&gt;- actionPerformed(ActionEvent): void&lt;br&gt;+ showMsgResult(AddInvoiceViewModel): void&lt;br&gt;+ showMsgError(AddInvoiceViewModel): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="1275" y="2031.5" width="285" height="230" as="geometry" />
         </mxCell>
         <mxCell id="mE9x2hhx87S9r7FqepsP-26" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AddInvoiceController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- addInvoiceInputBoundary: AddInvoiceInputBoundary&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;AddInvoiceController(AddInvoiceInputBoundary)&lt;br&gt;+ execute(AddInvoiceInputDTO): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
@@ -4410,7 +4735,7 @@
             <mxPoint x="1745" y="3510.057871167757" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TgYSmcdMS3CiDLVyfmtA-15" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;DeleteInvoiceView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- deleteInvoiceController: DeleteInvoiceController&lt;br&gt;- jLabel,....: JLabel&lt;br&gt;- jTextField: JTextField&lt;br&gt;- jButton: JButton&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;DeleteInvoiceView(DeleteInvoiceViewModel)&lt;br&gt;+ mainShow(): void&lt;br&gt;- build(): void&lt;br&gt;- actionPerformed(ActionEvent): void&lt;br&gt;+ showMsgResult(DeleteInvoiceViewModel): void&lt;br&gt;+ showMsgError(DeleteInvoiceViewModel): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+        <mxCell id="TgYSmcdMS3CiDLVyfmtA-15" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;DeleteInvoiceView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- deleteInvoiceController: DeleteInvoiceController&lt;br&gt;- jLabel,....: JLabel&lt;br&gt;- jTextField: JTextField&lt;br&gt;- jButton: JButton&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;DeleteInvoiceView()&lt;br&gt;+ mainShow(): void&lt;br&gt;- build(): void&lt;br&gt;- actionPerformed(ActionEvent): void&lt;br&gt;+ showMsgResult(DeleteInvoiceViewModel): void&lt;br&gt;+ showMsgError(DeleteInvoiceViewModel): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="1340" y="3219" width="285" height="230" as="geometry" />
         </mxCell>
         <mxCell id="TgYSmcdMS3CiDLVyfmtA-16" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;DeleteInvoiceController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- deleteInvoiceInputBoundary: DeleteInvoiceInputBoundary&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;DeleteInvoiceController(DeleteInvoiceInputBoundary)&lt;br&gt;+ execute(DeleteInvoiceInputDTO): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
@@ -5141,7 +5466,7 @@
             <mxPoint x="1667.5" y="4740.057871167757" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="QQ5SJAHkg7aTsJEmGX2W-104" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;EditInvoiceView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- editInvoiceController: EditInvoiceController&lt;br&gt;- jLabel,....: JLabel&lt;br&gt;- jTextField: JTextField&lt;br&gt;- jButton: JButton&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;EditInvoiceView(EditInvoiceViewModel)&lt;br&gt;+ mainShow(): void&lt;br&gt;- build(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- actionPerformed(ActionEvent): void&lt;br&gt;+ showInvoice(EditInvoiceViewModel): void&lt;br&gt;+ showMsgResult(EditInvoiceViewModel): void&lt;br&gt;+ showMsgError(EditInvoiceViewModel): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+        <mxCell id="QQ5SJAHkg7aTsJEmGX2W-104" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;EditInvoiceView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- editInvoiceController: EditInvoiceController&lt;br&gt;- jLabel,....: JLabel&lt;br&gt;- jTextField: JTextField&lt;br&gt;- jButton: JButton&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;EditInvoiceView()&lt;br&gt;+ mainShow(): void&lt;br&gt;- build(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- actionPerformed(ActionEvent): void&lt;br&gt;+ showInvoice(EditInvoiceViewModel): void&lt;br&gt;+ showMsgResult(EditInvoiceViewModel): void&lt;br&gt;+ showMsgError(EditInvoiceViewModel): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="1262.5" y="4449" width="285" height="230" as="geometry" />
         </mxCell>
         <mxCell id="QQ5SJAHkg7aTsJEmGX2W-105" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;EditInvoiceController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- editInvoiceInputBoundary: EditInvoiceInputBoundary&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;EditInvoiceController(EditInvoiceInputBoundary)&lt;br&gt;+ execute(EditInvoiceInputDTO): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
@@ -5460,7 +5785,7 @@
             <mxPoint x="1625" y="6494.057871167757" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="QvZDNrbPhKpZXWB_nOef-3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;GetListInvoiceView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- getListInvoiceController: GetListInvoiceController&lt;br&gt;- jLabel,....: JLabel&lt;br&gt;- jTable: JTable&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;GetListInvoiceView(GetListInvoiceViewModel)&lt;br&gt;+ mainShow(): void&lt;br&gt;- build(): void&lt;br&gt;+ showResult(List&amp;lt;GetListInvoiceViewModel&amp;gt;): void&lt;br&gt;+ showMsgError(GetListInvoiceViewModel): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+        <mxCell id="QvZDNrbPhKpZXWB_nOef-3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;GetListInvoiceView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- getListInvoiceController: GetListInvoiceController&lt;br&gt;- jLabel,....: JLabel&lt;br&gt;- jTable: JTable&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;GetListInvoiceView()&lt;br&gt;+ mainShow(): void&lt;br&gt;- build(): void&lt;br&gt;+ showResult(List&amp;lt;GetListInvoiceViewModel&amp;gt;): void&lt;br&gt;+ showMsgError(GetListInvoiceViewModel): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="1220" y="6203" width="285" height="230" as="geometry" />
         </mxCell>
         <mxCell id="QvZDNrbPhKpZXWB_nOef-4" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;GetListInvoiceController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- getListInvoiceInputBoundary: GetListInvoiceInputBoundary&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;GetListInvoiceController(GetListInvoiceInputBoundary)&lt;br&gt;+ execute(): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
@@ -5658,7 +5983,7 @@
         <mxCell id="RRYobPxxTeeC2lNwXE2A-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;FindInvoicePresenter&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- findInvoiceViewModel: FindInvoiceViewModel&lt;br&gt;- findInvoiceView: FindInvoiceView&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;FindInvoicePresenter(FindInvoiceView, FindInvoiceViewModel)&lt;br&gt;+ exportError(FindInvoiceOutputDTO): void&lt;br&gt;+ present(List&amp;lt;&lt;span style=&quot;background-color: initial;&quot;&gt;Find&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;InvoiceOutputDTO&amp;gt;): void&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="1599.9899999999998" y="7460.5" width="375" height="141" as="geometry" />
         </mxCell>
-        <mxCell id="RRYobPxxTeeC2lNwXE2A-2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;FindInvoiceView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- findInvoiceController: FindInvoiceController&lt;br&gt;- jLabel,....: JLabel&lt;br&gt;- jTextField: JTextField&lt;br&gt;- jButton: JButton&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;FindInvoiceView(FindInvoiceViewModel)&lt;br&gt;+ mainShow(): void&lt;br&gt;- build(): void&lt;br&gt;- actionPerformed(ActionEvent): void&lt;br&gt;+ showResult(List&amp;lt;FindInvoiceViewModel&amp;gt;): void&lt;br&gt;+ showMsgError(FIndInvoiceViewModel): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+        <mxCell id="RRYobPxxTeeC2lNwXE2A-2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;FindInvoiceView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- findInvoiceController: FindInvoiceController&lt;br&gt;- jLabel,....: JLabel&lt;br&gt;- jTextField: JTextField&lt;br&gt;- jButton: JButton&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;FindInvoiceView()&lt;br&gt;+ mainShow(): void&lt;br&gt;- build(): void&lt;br&gt;- actionPerformed(ActionEvent): void&lt;br&gt;+ showResult(List&amp;lt;FindInvoiceViewModel&amp;gt;): void&lt;br&gt;+ showMsgError(FIndInvoiceViewModel): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="1172.5" y="7349" width="285" height="230" as="geometry" />
         </mxCell>
         <mxCell id="RRYobPxxTeeC2lNwXE2A-3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;FindInvoiceController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- findInvoiceInputBoundary:&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Find&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;InvoiceInputBoundary&lt;/span&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Find&lt;/span&gt;InvoiceController(&lt;span style=&quot;background-color: initial;&quot;&gt;Find&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;InvoiceInputBoundary)&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ execute(&lt;span style=&quot;background-color: initial;&quot;&gt;Find&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;InvoiceInputDTO): void&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
@@ -5877,7 +6202,7 @@
             <mxPoint x="1435" y="8970.057871167757" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="0gnIHcpbLVIA7CjN9CDB-44" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AvgInvoiceNuocNgoaiView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- avgMoneyInvoiceNuocNgoaiController : AvgMoneyInvoiceNuocNgoaiController&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;AvgMoneyInvoiceNuocNgoaiView (&lt;span style=&quot;background-color: initial;&quot;&gt;AvgMoneyInvoiceNuocNgoaiViewModel)&lt;/span&gt;&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;mainShow()&lt;span style=&quot;background-color: initial;&quot;&gt;: void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showMsgResult&lt;span style=&quot;background-color: initial;&quot;&gt;(AvgMoneyInvoiceNuocNgoaiViewModel): void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showMsgError&lt;span style=&quot;background-color: initial;&quot;&gt;(AvgMoneyInvoiceNuocNgoaiViewModel): void&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+        <mxCell id="0gnIHcpbLVIA7CjN9CDB-44" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AvgInvoiceNuocNgoaiView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- avgMoneyInvoiceNuocNgoaiController : AvgMoneyInvoiceNuocNgoaiController&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;AvgMoneyInvoiceNuocNgoaiView (&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;mainShow()&lt;span style=&quot;background-color: initial;&quot;&gt;: void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showMsgResult&lt;span style=&quot;background-color: initial;&quot;&gt;(AvgMoneyInvoiceNuocNgoaiViewModel): void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showMsgError&lt;span style=&quot;background-color: initial;&quot;&gt;(AvgMoneyInvoiceNuocNgoaiViewModel): void&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="960" y="8695" width="415" height="230" as="geometry" />
         </mxCell>
         <mxCell id="0gnIHcpbLVIA7CjN9CDB-45" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;b style=&quot;background-color: initial; border-color: var(--border-color);&quot;&gt;AvgMoneyInvoiceNuocNgoai&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Controller&lt;/b&gt;&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- avgMoneyInvoiceNuocNgoaiInputBoundary: AvgMoneyInvoiceNuocNgoaiInputBoundary&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;AvgMoneyInvoiceNuocNgoaiController&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;(AvgMoneyInvoiceNuocNgoaiInputBoundary)&lt;br&gt;+ execute(): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
@@ -6054,7 +6379,7 @@
             <mxPoint x="1285" y="10334.057871167757" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="0gnIHcpbLVIA7CjN9CDB-139" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;SumKHInvoiceView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- sumKHInvoiceController: SumKHInvoiceController&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- lb_loaiKH: JLabel&lt;br&gt;- cb_loaiKH: JComboBox&amp;lt;String&amp;gt;&lt;br&gt;- sumInvoiceBtn: JButton&amp;nbsp;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;SumKHInvoiceView(SumKHInvoice&lt;span style=&quot;background-color: initial;&quot;&gt;ViewModel)&lt;/span&gt;&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;mainShow()&lt;span style=&quot;background-color: initial;&quot;&gt;: void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- build(): void&lt;br&gt;- actionPerformed(ActionEvent): void&lt;br&gt;+ showMsgResult(SumKHInvoiceViewModel): void&lt;br&gt;+ showMsgError(SumKHInvoiceViewModel): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+        <mxCell id="0gnIHcpbLVIA7CjN9CDB-139" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;SumKHInvoiceView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- sumKHInvoiceController: SumKHInvoiceController&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- lb_loaiKH: JLabel&lt;br&gt;- cb_loaiKH: JComboBox&amp;lt;String&amp;gt;&lt;br&gt;- sumInvoiceBtn: JButton&amp;nbsp;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;SumKHInvoiceView(&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;mainShow()&lt;span style=&quot;background-color: initial;&quot;&gt;: void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- build(): void&lt;br&gt;- actionPerformed(ActionEvent): void&lt;br&gt;+ showMsgResult(SumKHInvoiceViewModel): void&lt;br&gt;+ showMsgError(SumKHInvoiceViewModel): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="880" y="10043" width="285" height="230" as="geometry" />
         </mxCell>
         <mxCell id="0gnIHcpbLVIA7CjN9CDB-140" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;SumKHInvoiceController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- sumKHInvoiceInputBoundary: SumKHIvoiceInputBoundary&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;SumKHInvoiceController(SumKHInvoiceInputBoundary)&lt;br&gt;+ execute(SumKHInvoiceInputDTO): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
@@ -6421,7 +6746,7 @@
             <mxPoint x="1840" y="11624.057871167757" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="0gnIHcpbLVIA7CjN9CDB-220" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ExportInvoiceByMonthView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- exportInvoiceByMonthController: ExportInvoiceByMonthController&lt;br&gt;- jLabel,....: JLabel&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- jComboBox: JComboBox&lt;br&gt;- jTable: JTable&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;ExportInvoiceByMonthView(ExportInvoiceByMonthViewModel)&lt;br&gt;+ mainShow(): void&lt;br&gt;- build(): void&lt;br&gt;+ showResult(List&amp;lt;ExportInvoiceByMonthViewModel&amp;gt;): void&lt;br&gt;+ showMsgError(ExportInvoiceByMonthViewModel): void&lt;/p&gt;&amp;nbsp;+ showMsgResult(ExportInvoiceByMonthViewModel): void" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+        <mxCell id="0gnIHcpbLVIA7CjN9CDB-220" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ExportInvoiceByMonthView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- exportInvoiceByMonthController: ExportInvoiceByMonthController&lt;br&gt;- jLabel,....: JLabel&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- jComboBox: JComboBox&lt;br&gt;- jTable: JTable&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;ExportInvoiceByMonthView()&lt;br&gt;+ mainShow(): void&lt;br&gt;- build(): void&lt;br&gt;+ showResult(List&amp;lt;ExportInvoiceByMonthViewModel&amp;gt;): void&lt;br&gt;+ showMsgError(ExportInvoiceByMonthViewModel): void&lt;/p&gt;&amp;nbsp;+ showMsgResult(ExportInvoiceByMonthViewModel): void" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="1360" y="11333" width="370" height="230" as="geometry" />
         </mxCell>
         <mxCell id="0gnIHcpbLVIA7CjN9CDB-221" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ExportInvoiceByMonthController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- exportInvoiceByMonthInputBoundary: ExportInvoiceByMonthInputBoundary&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;ExportInvoiceByMonthController(ExportInvoiceByMonthInputBoundary)&lt;br&gt;+ execute(ExportInvoiceByMonthInputDTO): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
@@ -8604,6 +8929,391 @@
           <mxGeometry x="0.2584" relative="1" as="geometry">
             <mxPoint x="18" y="-5" as="offset" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;QuanLyHDTienDienInputBoundary&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ field: Type&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ execute(QuanLyHDTienDienInputDTO): void&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1485" y="796" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QuanLyHDTienDienUseCase&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- addInvoice: AddInvoiceUIInputBoundary&lt;br&gt;- deleteInvoice: DeleteInvoiceUIInputBoundary&lt;br&gt;- editInvoice: EditInvoiceUIInputBoundary&lt;br&gt;- findInvoice: FindInvoiceUIInputBoundary&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- getListInvoices: GetListInvoiceUIInputBoundary&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- exportInvoiceByMonthUIInputBoundary&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- avgMoneyInvoiceNN: AvgMoneyInvoiceNuocNgoaiUIInputBoundary&lt;br&gt;- sumKHInvoice: SumKHInvoiceUIInputBoundary&lt;br&gt;- quanLyHDTienDienOutputBoundary: QuanLyHDTienDienOutputBoundary&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ execute(QuanLyHDTienDienInputDTO): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1812.4999999999998" y="771" width="420" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;QuanLyHDTienDienOutputBoundary&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ field: Type&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ exportResult(QuanLyHDTienDienOutputDTO): void&lt;br&gt;+ exportError(QuanLyHDTienDienOutputDTO): void&lt;br&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="989" width="330" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-4" value="" style="shape=link;html=1;rounded=0;fontSize=10;strokeWidth=5;" edge="1" parent="1">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="1465" y="666" as="sourcePoint" />
+            <mxPoint x="1425" y="1516" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-6" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=-0.003;exitY=0.473;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-2" target="67v9nHGFBxZ2xwdru-WP-1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1775" y="986" as="sourcePoint" />
+            <mxPoint x="1934.9999999999998" y="986" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-7" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-2" target="67v9nHGFBxZ2xwdru-WP-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1834.9999999999998" y="1006" as="sourcePoint" />
+            <mxPoint x="1884.9999999999998" y="956" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-8" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QuanLyHDTienDienPresenter&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- quanLyHDTienDienView: QuanLyHDTienDienView&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- quanLyHDTienDienViewModel: QuanLyHDTienDienViewModel&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;QuanLyHDTienDienPresenter(QuanLyHDTienDienView, QuanLyHDTienDienViewModel)&lt;br&gt;+ exportResult(QuanLyHDTienDienOutputDTO): void&lt;br&gt;+ exportError(QuanLyHDTienDienOutputDTO): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1035" y="936" width="365" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-9" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=1;exitY=0.566;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-8" target="67v9nHGFBxZ2xwdru-WP-3">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1775" y="986" as="sourcePoint" />
+            <mxPoint x="1934.9999999999998" y="986" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-10" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-70" target="67v9nHGFBxZ2xwdru-WP-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1245" y="874.6206896551723" as="sourcePoint" />
+            <mxPoint x="1884.9999999999998" y="956" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-11" value="QuanLyHDTienDienInputDTO" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1575" y="616" width="210" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-12" value="- chucNang: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="67v9nHGFBxZ2xwdru-WP-11">
+          <mxGeometry y="26" width="210" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-13" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="67v9nHGFBxZ2xwdru-WP-11">
+          <mxGeometry y="52" width="210" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-14" value="QuanLyHDTienDienInputDTO()&lt;br&gt;+ getter() / setter()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="67v9nHGFBxZ2xwdru-WP-11">
+          <mxGeometry y="60" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-15" value="QuanLyHDTienDienOutputDTO" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1482.5" y="1206" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-16" value="- msg: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="67v9nHGFBxZ2xwdru-WP-15">
+          <mxGeometry y="26" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-17" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="67v9nHGFBxZ2xwdru-WP-15">
+          <mxGeometry y="52" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-18" value="QuanLyHDTienDienOutputDTO&lt;br&gt;+ getter() / setter()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="67v9nHGFBxZ2xwdru-WP-15">
+          <mxGeometry y="60" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-19" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.383;exitY=-0.029;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.17;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-1" target="67v9nHGFBxZ2xwdru-WP-14">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1535" y="746" as="sourcePoint" />
+            <mxPoint x="1695" y="746" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-20" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.122;exitY=0.002;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-2" target="67v9nHGFBxZ2xwdru-WP-14">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1795" y="736" as="sourcePoint" />
+            <mxPoint x="1954.9999999999998" y="736" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-21" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.674;exitY=1.022;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-3" target="67v9nHGFBxZ2xwdru-WP-15">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1645" y="1146" as="sourcePoint" />
+            <mxPoint x="1805" y="1146" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-22" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=1;exitY=0.888;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-8" target="67v9nHGFBxZ2xwdru-WP-16">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1395" y="1106" as="sourcePoint" />
+            <mxPoint x="1555" y="1106" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-23" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-525" y="1016" width="1015" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-24" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-215" y="1051" width="430" height="255" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-25" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-215" y="1080.71" as="sourcePoint" />
+            <mxPoint x="-165" y="1080.71" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-26" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-155" y="1069.71" as="sourcePoint" />
+            <mxPoint x="-165" y="1080.71" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-27" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-155" y="1050.71" as="sourcePoint" />
+            <mxPoint x="-155" y="1070.71" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-28" value="alt" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-215" y="1051" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-29" value="QuanLyHoaDonTienDien&amp;nbsp; Input Boundary Object" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-225" y="866" width="170" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-30" value="QuanLyHoaDonTienDien&amp;nbsp; Output Boundary Object" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="35" y="866" width="160" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-31" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" edge="1" parent="1" target="67v9nHGFBxZ2xwdru-WP-43">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-355" y="1101" as="sourcePoint" />
+            <mxPoint x="-114.99999999999999" y="1101" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-32" value="1: execute(InputDTO)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="67v9nHGFBxZ2xwdru-WP-31">
+          <mxGeometry x="-0.312" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-33" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.637;entryY=1.003;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="67v9nHGFBxZ2xwdru-WP-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-114.99999999999999" y="1496" as="sourcePoint" />
+            <mxPoint x="255" y="1076" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-34" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.61;entryY=0.997;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="67v9nHGFBxZ2xwdru-WP-30">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="135" y="1496" as="sourcePoint" />
+            <mxPoint x="255" y="1076" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-35" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.482;entryY=0.984;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-43">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-114.99999999999999" y="1491" as="sourcePoint" />
+            <mxPoint x="-118.99999999999999" y="858" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-36" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-375" y="901" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-37" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-355" y="1481" as="sourcePoint" />
+            <mxPoint x="-355" y="971" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-38" value="2.&amp;nbsp; verify(InputDTO))" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="1" target="67v9nHGFBxZ2xwdru-WP-43">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-109.99999999999999" y="1101" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="-79.99999999999999" y="1131" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-39" value="QuanLyHoaDonTienDien UseCase&amp;nbsp; Object" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-215" y="666" width="178.74" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-40" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0;exitY=0.608;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.005;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-215" y="1192.02" as="sourcePoint" />
+            <mxPoint x="217.14999999999964" y="1189.98" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-41" value="[Else]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-195" y="1221" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-42" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.482;entryY=0.984;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="67v9nHGFBxZ2xwdru-WP-43">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-114.99999999999999" y="1491" as="sourcePoint" />
+            <mxPoint x="-118.99999999999999" y="858" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-43" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="-124.99999999999999" y="1096" width="20" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-44" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="67v9nHGFBxZ2xwdru-WP-49">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-104.99999999999999" y="1221" as="sourcePoint" />
+            <mxPoint x="135" y="1221" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-45" value="2.1. exportError(OutputDTO)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="67v9nHGFBxZ2xwdru-WP-44">
+          <mxGeometry x="-0.312" y="1" relative="1" as="geometry">
+            <mxPoint x="23" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-46" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="67v9nHGFBxZ2xwdru-WP-50">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-110" y="1371" as="sourcePoint" />
+            <mxPoint x="135" y="1370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-47" value="4. exportResult(OutputDTO)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="67v9nHGFBxZ2xwdru-WP-46">
+          <mxGeometry x="-0.312" y="1" relative="1" as="geometry">
+            <mxPoint x="23" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-48" value="QuanLyHoaDonTienDien&amp;nbsp;&lt;br&gt;Presenter Boundary Object" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-4.369999999999887" y="671" width="238.74" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-49" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="125.00000000000001" y="1196" width="20" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-50" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="125.00000000000001" y="1341" width="20" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-51" value="«interface»&lt;br&gt;&lt;b&gt;AddInvoiceUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="2120" y="566" width="235" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-52" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-51" target="67v9nHGFBxZ2xwdru-WP-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1976.9999999999998" y="946" as="sourcePoint" />
+            <mxPoint x="1950.0724637681158" y="1026" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-53" value="«interface»&lt;br&gt;&lt;b&gt;DeleteInvoiceUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="2185" y="626" width="235" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-54" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.861;entryY=-0.018;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-53" target="67v9nHGFBxZ2xwdru-WP-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2042.25" y="1016" as="sourcePoint" />
+            <mxPoint x="2112.25" y="866" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-55" value="«interface»&lt;br&gt;&lt;b&gt;EditInvoiceUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="2275" y="686" width="235" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-56" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.999;entryY=0.368;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-55" target="67v9nHGFBxZ2xwdru-WP-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2059.5" y="1116" as="sourcePoint" />
+            <mxPoint x="2152.25" y="896" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-57" value="«interface»&lt;br&gt;&lt;b&gt;FindInvoiceUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="2302.5" y="766" width="232.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-58" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-57" target="67v9nHGFBxZ2xwdru-WP-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2067" y="1196" as="sourcePoint" />
+            <mxPoint x="2142.5" y="928" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-59" value="«interface»&lt;br&gt;&lt;b&gt;GetListInvoiceUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="2320" y="846" width="235" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-60" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.998;entryY=0.691;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-59" target="67v9nHGFBxZ2xwdru-WP-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2097" y="1281" as="sourcePoint" />
+            <mxPoint x="2135" y="936" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-61" value="«interface»&lt;br&gt;&lt;b&gt;ExportInvoiceByMonthUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="2275" y="926" width="235" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-62" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.998;entryY=0.947;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-61" target="67v9nHGFBxZ2xwdru-WP-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2097" y="1356" as="sourcePoint" />
+            <mxPoint x="2135" y="1011" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-63" value="«interface»&lt;br&gt;&lt;b&gt;AvgMoneyInvoiceNuocNgoaiUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="2240" y="1006" width="335" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-64" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.803;entryY=1.005;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-63" target="67v9nHGFBxZ2xwdru-WP-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2074.45" y="1433.79" as="sourcePoint" />
+            <mxPoint x="2082.5499999999993" y="976" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-65" value="«interface»&lt;br&gt;&lt;b&gt;SumKHInvoiceUIInputBoundary&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="2206.95" y="1087.79" width="235" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-66" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.669;entryY=1.005;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-65" target="67v9nHGFBxZ2xwdru-WP-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2028.9499999999996" y="1517.79" as="sourcePoint" />
+            <mxPoint x="2072.5" y="1051" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-67" value="App quản lý hóa đơn tiền điện" style="whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="650" width="90" height="900" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-68" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="67v9nHGFBxZ2xwdru-WP-75" source="67v9nHGFBxZ2xwdru-WP-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1089" y="1077.5" as="sourcePoint" />
+            <mxPoint x="995" y="1117.0578711677572" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-69" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QuanLyHDTienDienView&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- qlHDTienDienController: QuanLyHDTienDienController&lt;br&gt;- jLabel,....: JLabel&lt;br&gt;- jButton: JButton&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;QuanLyHDTienDienView()&lt;br&gt;+ mainShow(): void&lt;br&gt;- build(): void&lt;br&gt;- actionPerformed(ActionEvent): void&lt;br&gt;+ showMsgResult(AddInvoiceViewModel): void&lt;br&gt;+ showMsgError(AddInvoiceViewModel): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="590" y="826" width="320" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-70" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;QuanLyHDTienDienController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- qlHDTienDienInputBoundary: QuanLyHDTienDienInputBoundary&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;QuanLyHDTienDienController(QuanLyHDTienDienInputBoundary)&lt;br&gt;+ execute(QuanLyHDTienDienInputDTO): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="780" width="390" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-71" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;java.awt.event&lt;br&gt;ActionListener&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;-&amp;nbsp;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="845" y="663.5" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-72" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.898;exitY=-0.006;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-69" target="67v9nHGFBxZ2xwdru-WP-71">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1215" y="766" as="sourcePoint" />
+            <mxPoint x="1310" y="546" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-73" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;javax.swing&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;JFrame&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;-&amp;nbsp;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="672.5" y="656" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-74" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;exitX=0.631;exitY=-0.015;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-69" target="67v9nHGFBxZ2xwdru-WP-73">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="953" y="842" as="sourcePoint" />
+            <mxPoint x="1460" y="-38" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-75" value="QuanLyHDTienDienViewModel" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="856.12" y="1106" width="205" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-76" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="67v9nHGFBxZ2xwdru-WP-75">
+          <mxGeometry y="26" width="205" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-77" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="67v9nHGFBxZ2xwdru-WP-75">
+          <mxGeometry y="52" width="205" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-78" value="QuanLyHDTienDienViewModel()&lt;br&gt;+ getters()/setters()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="67v9nHGFBxZ2xwdru-WP-75">
+          <mxGeometry y="60" width="205" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-79" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.008;exitY=0.335;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="67v9nHGFBxZ2xwdru-WP-69" source="67v9nHGFBxZ2xwdru-WP-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1014" y="990.5" as="sourcePoint" />
+            <mxPoint x="1005" y="1116" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-80" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.998;exitY=0.177;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-69" target="67v9nHGFBxZ2xwdru-WP-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1024" y="1000" as="sourcePoint" />
+            <mxPoint x="930" y="985" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67v9nHGFBxZ2xwdru-WP-81" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.467;exitY=0.999;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-69" target="67v9nHGFBxZ2xwdru-WP-75">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="785" y="1076" as="sourcePoint" />
+            <mxPoint x="945" y="1076" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3ox21LSoPGjZxZbZcm4m-1" value="" style="endArrow=classic;html=1;rounded=0;exitX=1.25;exitY=0.221;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="67v9nHGFBxZ2xwdru-WP-43" target="3ox21LSoPGjZxZbZcm4m-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="950" as="sourcePoint" />
+            <mxPoint x="530" y="1170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3ox21LSoPGjZxZbZcm4m-6" value="3. execute()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3ox21LSoPGjZxZbZcm4m-1">
+          <mxGeometry x="-0.0316" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3ox21LSoPGjZxZbZcm4m-2" value="AddInvoiceUI&lt;br&gt;Input Boundary Object" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="326.62" y="866" width="160" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="3ox21LSoPGjZxZbZcm4m-3" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.583;entryY=0.993;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="3ox21LSoPGjZxZbZcm4m-4" target="3ox21LSoPGjZxZbZcm4m-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="1670" as="sourcePoint" />
+            <mxPoint x="560" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3ox21LSoPGjZxZbZcm4m-5" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.583;entryY=0.993;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="3ox21LSoPGjZxZbZcm4m-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="1670" as="sourcePoint" />
+            <mxPoint x="420" y="995" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3ox21LSoPGjZxZbZcm4m-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="414.73" y="1148.5" width="14" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
