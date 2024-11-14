@@ -38,7 +38,7 @@ public class FindInvoiceView extends JFrame implements ActionListener {
     
     public void mainShow() {
         buildFind();
-        setTitle("Tìm kiếm hóa đơn tiền điện");
+        setTitle("Tìm kiếm");
         setSize(600, 200);
         setResizable(false);
         setLayout(new GridLayout(6, 2));
@@ -137,7 +137,7 @@ public class FindInvoiceView extends JFrame implements ActionListener {
     public void showResult(List<FindInvoiceViewModel> listViewModel) {
         this.listViewModel = listViewModel;
         getContentPane().removeAll();
-        setTitle("Tìm kiếm hóa đơn tiền điện");
+        setTitle("Tìm kiếm");
         setResizable(false);
         setSize(900, 500);
 

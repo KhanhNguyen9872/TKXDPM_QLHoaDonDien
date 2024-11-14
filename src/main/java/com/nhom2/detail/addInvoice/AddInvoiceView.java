@@ -80,7 +80,7 @@ public class AddInvoiceView extends JFrame implements ActionListener {
         jCb_isKHNN = new JCheckBox();
         jCb_isKHNN.addItemListener(v -> {
             
-            if (!jCb_isKHNN.isSelected()) {
+            if (jCb_isKHNN.isSelected()) {
                 lb_QuocTich.setVisible(true);
                 tf_QuocTich.setText("");
                 tf_QuocTich.setVisible(true);
@@ -141,12 +141,16 @@ public class AddInvoiceView extends JFrame implements ActionListener {
         add(new JLabel()); // Empty cell in grid
         add(addInvoiceBtn);
 
-        tf_QuocTich.setText("");
-        tf_QuocTich.setVisible(true);
-        cb_DoiTuongKH.setVisible(false);
-        tf_DinhMuc.setVisible(false);
-        lb_DoiTuongKH.setVisible(false);
-        lb_DinhMuc.setVisible(false);
+        lb_QuocTich.setVisible(false);
+        tf_QuocTich.setVisible(false);
+
+        cb_DoiTuongKH.setSelectedIndex(0);
+        cb_DoiTuongKH.setVisible(true);
+
+        tf_DinhMuc.setText("0");
+        tf_DinhMuc.setVisible(true);
+        lb_DoiTuongKH.setVisible(true);
+        lb_DinhMuc.setVisible(true);
     }
 
     public void showMsgResult(AddInvoiceViewModel addInvoiceViewModel) {

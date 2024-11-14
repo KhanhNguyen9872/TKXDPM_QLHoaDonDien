@@ -1,9 +1,12 @@
 package com.nhom2.detail.findInvoice;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.nhom2.businessRules.findInvoice.FindInvoiceOutputBoundary;
 import com.nhom2.businessRules.findInvoice.FindInvoiceOutputDTO;
+import com.nhom2.detail.getListInvoice.GetListInvoiceViewModel;
+import com.nhom2.detail.quanLyHDTienDien.QuanLyHDTienDienView;
 
 public class FindInvoicePresenter implements FindInvoiceOutputBoundary {
     private FindInvoiceView findInvoiceView;
@@ -81,6 +84,10 @@ public class FindInvoicePresenter implements FindInvoiceOutputBoundary {
 
         if (this.findInvoiceView != null) {
             this.findInvoiceView.showResult(this.listViewModel);
+
+            // QuanLyHDTienDienView quanLyHDTienDienView = QuanLyHDTienDienView.getQuanLyHDTienDienView();
+            // quanLyHDTienDienView.setResultListInvoice(listInvoice_);
+            // this.findInvoiceView.setVisible(false);
         }
     }
     

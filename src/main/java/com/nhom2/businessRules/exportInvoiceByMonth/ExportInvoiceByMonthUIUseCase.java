@@ -1,16 +1,16 @@
 package com.nhom2.businessRules.exportInvoiceByMonth;
 
-import com.nhom2.detail.exportInvoiceByMonth.ExportInvoiceByMonthView;
+import com.nhom2.detail.exportInvoiceByMonth.ExportInvoiceByMonthUIPresenter;
 
 public class ExportInvoiceByMonthUIUseCase implements ExportInvoiceByMonthUIInputBoundary {
-    private ExportInvoiceByMonthView exportInvoiceByMonthView;
+    private ExportInvoiceByMonthUIPresenter exportInvoiceByMonthUIPresenter;
 
-    public ExportInvoiceByMonthUIUseCase(ExportInvoiceByMonthView exportInvoiceByMonthView) {
-        this.exportInvoiceByMonthView = exportInvoiceByMonthView;
+    public ExportInvoiceByMonthUIUseCase(ExportInvoiceByMonthUIPresenter exportInvoiceByMonthUIPresenter) {
+        this.exportInvoiceByMonthUIPresenter = exportInvoiceByMonthUIPresenter;
     }
 
     @Override
     public void execute() {
-        this.exportInvoiceByMonthView.mainShow();
+        this.exportInvoiceByMonthUIPresenter.present();
     }
 }

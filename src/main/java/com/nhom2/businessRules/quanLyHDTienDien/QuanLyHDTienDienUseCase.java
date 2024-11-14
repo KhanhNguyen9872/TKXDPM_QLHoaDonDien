@@ -2,8 +2,11 @@ package com.nhom2.businessRules.quanLyHDTienDien;
 
 import com.nhom2.businessRules.addInvoice.AddInvoiceUIInputBoundary;
 import com.nhom2.businessRules.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiUIInputBoundary;
+import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceInputDTO;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceUIInputBoundary;
+import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceUIInputDTO;
 import com.nhom2.businessRules.editInvoice.EditInvoiceUIInputBoundary;
+import com.nhom2.businessRules.editInvoice.EditInvoiceUIInputDTO;
 import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthUIInputBoundary;
 import com.nhom2.businessRules.findInvoice.FindInvoiceUIInputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceUIInputBoundary;
@@ -27,11 +30,6 @@ public class QuanLyHDTienDienUseCase implements QuanLyHDTienDienInputBoundary {
 
     @Override
     public void execute(QuanLyHDTienDienInputDTO quanLyHDTienDienInputDTO) {
-        if (quanLyHDTienDienInputDTO == null) {
-            this.quanLyHDTienDienOutputBoundary.present();
-            return;
-        }
-
         String chucNang = quanLyHDTienDienInputDTO.getChucNang();
         QuanLyHDTienDienOutputDTO quanLyHDTienDienOutputDTO = new QuanLyHDTienDienOutputDTO();
 
@@ -42,19 +40,48 @@ public class QuanLyHDTienDienUseCase implements QuanLyHDTienDienInputBoundary {
 
         } else if (chucNang.equals("Xóa")) {
             if (this.deleteInvoiceUIInputBoundary != null) {
-                this.deleteInvoiceUIInputBoundary.execute();
+                String maKH = quanLyHDTienDienInputDTO.getMaKH();
+                if (maKH == null || maKH.isEmpty()) {
+                    quanLyHDTienDienOutputDTO.setMsg("Vui lòng chọn thông tin!");
+                    this.quanLyHDTienDienOutputBoundary.exportError(quanLyHDTienDienOutputDTO);
+                    return;
+                }
+                DeleteInvoiceUIInputDTO deleteInvoiceUIInputDTO = new DeleteInvoiceUIInputDTO();
+                deleteInvoiceUIInputDTO.setMaKH(maKH);
+                this.deleteInvoiceUIInputBoundary.execute(deleteInvoiceUIInputDTO);
             }
 
         } else if (chucNang.equals("Sửa")) {
             if (this.editInvoiceUIInputBoundary != null) {
-                this.editInvoiceUIInputBoundary.execute();
+                String maKH = quanLyHDTienDienInputDTO.getMaKH();
+                if (maKH == null || maKH.isEmpty()) {
+                    quanLyHDTienDienOutputDTO.setMsg("Vui lòng chọn thông tin!");
+                    this.quanLyHDTienDienOutputBoundary.exportError(quanLyHDTienDienOutputDTO);
+                    return;
+                }
+                String tenKH = quanLyHDTienDienInputDTO.getTenKH();
+                String ngayHD = quanLyHDTienDienInputDTO.getNgayHD();
+                String soLuong = quanLyHDTienDienInputDTO.getSoLuong();
+                String donGia = quanLyHDTienDienInputDTO.getDonGia();
+                String quocTich = quanLyHDTienDienInputDTO.getQuocTich();
+                String doiTuongKH = quanLyHDTienDienInputDTO.getDoiTuongKH();
+                String dinhMuc = quanLyHDTienDienInputDTO.getDinhMuc();
+                String thanhTien = quanLyHDTienDienInputDTO.getThanhTien();
+
+                EditInvoiceUIInputDTO editInvoiceUIInputDTO = new EditInvoiceUIInputDTO();
+                editInvoiceUIInputDTO.setMaKH(maKH);
+                editInvoiceUIInputDTO.setTenKH(tenKH);
+                editInvoiceUIInputDTO.setNgayHD(ngayHD);
+                editInvoiceUIInputDTO.setSoLuong(soLuong);
+                editInvoiceUIInputDTO.setDonGia(donGia);
+                editInvoiceUIInputDTO.setQuocTich(quocTich);
+                editInvoiceUIInputDTO.setDoiTuongKH(doiTuongKH);
+                editInvoiceUIInputDTO.setDinhMuc(dinhMuc);
+                editInvoiceUIInputDTO.setThanhTien(thanhTien);
+                
+                this.editInvoiceUIInputBoundary.execute(editInvoiceUIInputDTO);
             }
 
-        } else if (chucNang.equals("Xuất toàn bộ")) {
-            if (this.getListInvoiceUIInputBoundary != null) {
-                this.getListInvoiceUIInputBoundary.execute();
-            }
-            
         } else if (chucNang.equals("Xuất theo tháng")) {
             if (this.exportInvoiceByMonthUIInputBoundary != null) {
                 this.exportInvoiceByMonthUIInputBoundary.execute();

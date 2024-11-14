@@ -18,8 +18,8 @@ import com.nhom2.businessRules.findInvoice.FindInvoiceInputDTO;
 import com.nhom2.detail.findInvoice.FindInvoiceViewModel;
 
 public class EditInvoiceView extends JFrame implements ActionListener {
-    private List<FindInvoiceViewModel> findInvoiceViewModels;
-    private FindInvoiceInputBoundary findInvoiceInputBoundary;
+    // private List<FindInvoiceViewModel> findInvoiceViewModels;
+    // private FindInvoiceInputBoundary findInvoiceInputBoundary;
     private EditInvoiceController editInvoiceController;
     private JTextField tf_MaKH, tf_TenKH, tf_SoLuong, tf_DonGia, tf_QuocTich, tf_DinhMuc;
     private JLabel lb_MaKH, lb_TenKH, lb_NgayHD, lb_SoLuong, lb_DonGia, lb_QuocTich, lb_DoiTuongKH, lb_DinhMuc, lb_isKHNN;
@@ -35,21 +35,46 @@ public class EditInvoiceView extends JFrame implements ActionListener {
         
     }
 
-    public void mainShow() {
-        buildFind();
-        setTitle("Sửa hóa đơn tiền điện");
-        setSize(600, 200);
-        setResizable(false);
-        setLayout(new GridLayout(4, 2));
-        setVisible(true);
-    }
+    // public void mainShow() {
+    //     buildFind();
+    //     setTitle("Sửa hóa đơn tiền điện");
+    //     setSize(600, 200);
+    //     setResizable(false);
+    //     setLayout(new GridLayout(4, 2));
+    //     setVisible(true);
+    // }
 
     private void mainShowEdit() {
+        if (!jCb_isKHNN.isSelected()) {
+            tf_QuocTich.setText("");
+            tf_QuocTich.setVisible(false);
+            lb_QuocTich.setVisible(false);
+
+            cb_DoiTuongKH.setVisible(true);
+            lb_DoiTuongKH.setVisible(true);
+
+            tf_DinhMuc.setVisible(true);
+            lb_DinhMuc.setVisible(true);
+            
+        } else {
+            tf_QuocTich.setVisible(true);
+            lb_QuocTich.setVisible(true);
+
+            cb_DoiTuongKH.setSelectedIndex(0);
+            cb_DoiTuongKH.setVisible(false);
+            lb_DoiTuongKH.setVisible(false);
+
+            tf_DinhMuc.setText("0");
+            tf_DinhMuc.setVisible(false);
+            lb_DinhMuc.setVisible(false);
+        }
+
         setTitle("Sửa hóa đơn tiền điện");
         setSize(650, 450);
         setResizable(false);
         setLayout(new GridLayout(19, 2));
         setVisible(true);
+        
     }
 
     private void build() {
@@ -112,19 +137,26 @@ public class EditInvoiceView extends JFrame implements ActionListener {
             
             if (!jCb_isKHNN.isSelected()) {
                 tf_QuocTich.setText("");
-                tf_QuocTich.setEnabled(false);
-
-                cb_DoiTuongKH.setEnabled(true);
-
-                tf_DinhMuc.setEnabled(true);
+                tf_QuocTich.setVisible(false);
+                lb_QuocTich.setVisible(false);
+    
+                cb_DoiTuongKH.setVisible(true);
+                lb_DoiTuongKH.setVisible(true);
+    
+                tf_DinhMuc.setVisible(true);
+                lb_DinhMuc.setVisible(true);
+                
             } else {
-                tf_QuocTich.setEnabled(true);
-
+                tf_QuocTich.setVisible(true);
+                lb_QuocTich.setVisible(true);
+    
                 cb_DoiTuongKH.setSelectedIndex(0);
-                cb_DoiTuongKH.setEnabled(false);
-
+                cb_DoiTuongKH.setVisible(false);
+                lb_DoiTuongKH.setVisible(false);
+    
                 tf_DinhMuc.setText("0");
-                tf_DinhMuc.setEnabled(false);
+                tf_DinhMuc.setVisible(false);
+                lb_DinhMuc.setVisible(false);
             }
         });
 
@@ -151,43 +183,38 @@ public class EditInvoiceView extends JFrame implements ActionListener {
         editInvoiceBtn.addActionListener(this);
         add(new JLabel());
         add(editInvoiceBtn);
-
-        tf_QuocTich.setText("");
-        tf_QuocTich.setEnabled(false);
-        cb_DoiTuongKH.setEnabled(true);
-        tf_DinhMuc.setEnabled(true);
     }
 
-    private void buildFind() {
-        getContentPane().removeAll();
+    // private void buildFind() {
+    //     getContentPane().removeAll();
         
-        // Initialize JLabels as instance variables
-        lb_MaKH = new JLabel("Mã khách hàng: ");
-        lb_MaKHErr = new JLabel("");
-        lb_MaKHErr.setForeground(Color.RED);
+    //     // Initialize JLabels as instance variables
+    //     lb_MaKH = new JLabel("Mã khách hàng: ");
+    //     lb_MaKHErr = new JLabel("");
+    //     lb_MaKHErr.setForeground(Color.RED);
 
-        // Initialize JTextFields as instance variables
-        tf_MaKH = new JTextField();
+    //     // Initialize JTextFields as instance variables
+    //     tf_MaKH = new JTextField();
 
-        // Add JLabels and JTextFields to the frame
-        add(lb_MaKH); add(tf_MaKH);
-        add(new JLabel()); add(lb_MaKHErr);
+    //     // Add JLabels and JTextFields to the frame
+    //     add(lb_MaKH); add(tf_MaKH);
+    //     add(new JLabel()); add(lb_MaKHErr);
 
-        // Create and add submit button
-        findInvoiceBtn = new JButton("Find");
-        findInvoiceBtn.addActionListener(this);
-        add(new JLabel()); // Empty cell in grid
-        add(findInvoiceBtn);
-    }
+    //     // Create and add submit button
+    //     findInvoiceBtn = new JButton("Find");
+    //     findInvoiceBtn.addActionListener(this);
+    //     add(new JLabel()); // Empty cell in grid
+    //     add(findInvoiceBtn);
+    // }
 
     public void setEditInvoiceController(EditInvoiceController editInvoiceController) {
         this.editInvoiceController = editInvoiceController;
     }
 
-    public void setFindInvoice(FindInvoiceInputBoundary findInvoiceInputBoundary, List<FindInvoiceViewModel> findInvoiceViewModels) {
-        this.findInvoiceInputBoundary = findInvoiceInputBoundary;
-        this.findInvoiceViewModels = findInvoiceViewModels;
-    }
+    // public void setFindInvoice(FindInvoiceInputBoundary findInvoiceInputBoundary, List<FindInvoiceViewModel> findInvoiceViewModels) {
+    //     this.findInvoiceInputBoundary = findInvoiceInputBoundary;
+    //     this.findInvoiceViewModels = findInvoiceViewModels;
+    // }
 
     public void showInvoice(EditInvoiceViewModel editInvoiceViewModel) {
         String maKH = editInvoiceViewModel.maKH;
@@ -215,6 +242,12 @@ public class EditInvoiceView extends JFrame implements ActionListener {
         tf_QuocTich.setText(quocTich);
         cb_DoiTuongKH.setSelectedItem(doiTuongKH);
         tf_DinhMuc.setText(dinhMuc);
+        
+        if (quocTich == null || quocTich.isEmpty()) {
+            jCb_isKHNN.setSelected(false);
+        } else {
+            jCb_isKHNN.setSelected(true);
+        }
         mainShowEdit();
     }
 
@@ -291,38 +324,38 @@ public class EditInvoiceView extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();
         
-        if (cmd.equals(findInvoiceBtn.getActionCommand())) {
-            FindInvoiceInputDTO findInvoiceInputDTO = new FindInvoiceInputDTO();
-            findInvoiceInputDTO.setFindType("Mã KH");
-            findInvoiceInputDTO.setMaKH(tf_MaKH.getText());
+        // if (cmd.equals(findInvoiceBtn.getActionCommand())) {
+        //     FindInvoiceInputDTO findInvoiceInputDTO = new FindInvoiceInputDTO();
+        //     findInvoiceInputDTO.setFindType("Mã KH");
+        //     findInvoiceInputDTO.setMaKH(tf_MaKH.getText());
             
-            findInvoiceInputBoundary.execute(findInvoiceInputDTO);
+        //     findInvoiceInputBoundary.execute(findInvoiceInputDTO);
             
-            EditInvoiceViewModel editInvoiceViewModel = new EditInvoiceViewModel();
-            FindInvoiceViewModel findInvoiceViewModel = this.findInvoiceViewModels.get(0);
-            String status = findInvoiceViewModel.status;
+        //     EditInvoiceViewModel editInvoiceViewModel = new EditInvoiceViewModel();
+        //     FindInvoiceViewModel findInvoiceViewModel = this.findInvoiceViewModels.get(0);
+        //     String status = findInvoiceViewModel.status;
             
-            if (status.equals("success")) {
-                editInvoiceViewModel.maKH = findInvoiceViewModel.maKH;
-                editInvoiceViewModel.tenKH = findInvoiceViewModel.tenKH;
-                editInvoiceViewModel.ngayHD = findInvoiceViewModel.ngayHD;
-                editInvoiceViewModel.soLuong = findInvoiceViewModel.soLuong;
-                editInvoiceViewModel.donGia = findInvoiceViewModel.donGia;
-                editInvoiceViewModel.quocTich = findInvoiceViewModel.quocTich;
-                editInvoiceViewModel.doiTuongKH = findInvoiceViewModel.doiTuongKH;
-                editInvoiceViewModel.dinhMuc = findInvoiceViewModel.dinhMuc;
+        //     if (status.equals("success")) {
+        //         editInvoiceViewModel.maKH = findInvoiceViewModel.maKH;
+        //         editInvoiceViewModel.tenKH = findInvoiceViewModel.tenKH;
+        //         editInvoiceViewModel.ngayHD = findInvoiceViewModel.ngayHD;
+        //         editInvoiceViewModel.soLuong = findInvoiceViewModel.soLuong;
+        //         editInvoiceViewModel.donGia = findInvoiceViewModel.donGia;
+        //         editInvoiceViewModel.quocTich = findInvoiceViewModel.quocTich;
+        //         editInvoiceViewModel.doiTuongKH = findInvoiceViewModel.doiTuongKH;
+        //         editInvoiceViewModel.dinhMuc = findInvoiceViewModel.dinhMuc;
 
-                showInvoice(editInvoiceViewModel);
-            }
+        //         showInvoice(editInvoiceViewModel);
+        //     }
 
-            if (status.equals("error")) {
-                editInvoiceViewModel.status = findInvoiceViewModel.status;
-                editInvoiceViewModel.msg = findInvoiceViewModel.msg;
-                editInvoiceViewModel.maKHErr = findInvoiceViewModel.inputFindErr;
-                showMsgError(editInvoiceViewModel);
-            }
-            return;
-        }
+        //     if (status.equals("error")) {
+        //         editInvoiceViewModel.status = findInvoiceViewModel.status;
+        //         editInvoiceViewModel.msg = findInvoiceViewModel.msg;
+        //         editInvoiceViewModel.maKHErr = findInvoiceViewModel.inputFindErr;
+        //         showMsgError(editInvoiceViewModel);
+        //     }
+        //     return;
+        // }
 
         if (cmd.equals(editInvoiceBtn.getActionCommand())) {
             EditInvoiceInputDTO editInvoiceInputDTO = new EditInvoiceInputDTO();

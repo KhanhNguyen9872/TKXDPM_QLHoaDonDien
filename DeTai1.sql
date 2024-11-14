@@ -13,6 +13,12 @@ CREATE TABLE `invoice` (
   primary key (`maKH`)
 );
 
+CREATE TABLE `doiTuongKH` (
+  `maDT` int(11) NOT NULL AUTO_INCREMENT,
+  `doiTuong` varchar(255) NOT NULL,
+  primary key (`maDT`)
+);
+
 DELETE FROM `invoice`;
 ALTER TABLE `invoice` AUTO_INCREMENT = 1;
 
@@ -24,5 +30,13 @@ INSERT INTO `invoice` (`tenKH`, `ngayHD`, `soLuong`, `donGia`, `quocTich`, `doiT
 ('Văn A', '2024-03-12', '17', '160', 'USA', '', '0'),
 ('Văn B', '2024-02-04', '13', '140', 'USA', '', '0'),
 ('Văn C', '2024-05-09', '19', '150', 'USA', '', '0');
+
+DELETE FROM `doiTuongKH`;
+ALTER TABLE `doiTuongKH` AUTO_INCREMENT = 1;
+
+INSERT INTO `doiTuongKH` (`doiTuong`) VALUES
+('Sinh hoạt'),
+('Kinh doanh'),
+('Sản xuất');
 
 SELECT * FROM invoice;

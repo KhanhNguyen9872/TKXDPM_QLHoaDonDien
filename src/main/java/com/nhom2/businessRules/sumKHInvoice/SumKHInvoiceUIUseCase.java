@@ -1,17 +1,17 @@
 package com.nhom2.businessRules.sumKHInvoice;
 
-import com.nhom2.detail.sumKHInvoice.SumKHInvoiceView;
+import com.nhom2.detail.sumKHInvoice.SumKHInvoiceUIPresenter;
 
 public class SumKHInvoiceUIUseCase implements SumKHInvoiceUIInputBoundary {
-    private SumKHInvoiceView sumKHInvoiceView;
+    private SumKHInvoiceUIPresenter sumKHInvoiceUIPresenter;
 
-    public SumKHInvoiceUIUseCase(SumKHInvoiceView sumKHInvoiceView) {
-        this.sumKHInvoiceView = sumKHInvoiceView;   
+    public SumKHInvoiceUIUseCase(SumKHInvoiceUIPresenter sumKHInvoiceUIPresenter) {
+        this.sumKHInvoiceUIPresenter = sumKHInvoiceUIPresenter;   
     }
 
     @Override
     public void execute() {
-        this.sumKHInvoiceView.mainShow();
+        this.sumKHInvoiceUIPresenter.present();
     }
 
 

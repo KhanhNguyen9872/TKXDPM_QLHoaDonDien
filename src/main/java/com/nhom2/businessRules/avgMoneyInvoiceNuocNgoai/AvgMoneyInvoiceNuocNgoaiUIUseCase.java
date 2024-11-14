@@ -1,16 +1,16 @@
 package com.nhom2.businessRules.avgMoneyInvoiceNuocNgoai;
 
-import com.nhom2.detail.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiView;
+import com.nhom2.detail.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiUIPresenter;
 
 public class AvgMoneyInvoiceNuocNgoaiUIUseCase implements AvgMoneyInvoiceNuocNgoaiUIInputBoundary {
-    private AvgMoneyInvoiceNuocNgoaiView avgMoneyInvoiceNuocNgoaiView;
+    private AvgMoneyInvoiceNuocNgoaiUIPresenter avgMoneyInvoiceNuocNgoaiUIPresenter;
 
-    public AvgMoneyInvoiceNuocNgoaiUIUseCase(AvgMoneyInvoiceNuocNgoaiView avgMoneyInvoiceNuocNgoaiView) {
-        this.avgMoneyInvoiceNuocNgoaiView = avgMoneyInvoiceNuocNgoaiView;
+    public AvgMoneyInvoiceNuocNgoaiUIUseCase(AvgMoneyInvoiceNuocNgoaiUIPresenter avgMoneyInvoiceNuocNgoaiUIPresenter) {
+        this.avgMoneyInvoiceNuocNgoaiUIPresenter = avgMoneyInvoiceNuocNgoaiUIPresenter;
     }
 
     @Override
     public void execute() {
-        this.avgMoneyInvoiceNuocNgoaiView.mainShow();
+        this.avgMoneyInvoiceNuocNgoaiUIPresenter.present();
     }
 }

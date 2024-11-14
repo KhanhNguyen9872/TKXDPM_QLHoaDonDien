@@ -29,55 +29,57 @@ public class GetListInvoiceView extends JFrame {
     }
 
     public void showResult(List<GetListInvoiceViewModel> listInvoice) {
-        this.listInvoice = listInvoice;
-        setTitle("Xuất hóa đơn tiền điện");
-        setResizable(false);
-        setSize(900, 500);
+        return;
+        
+        // this.listInvoice = listInvoice;
+        // setTitle("Xuất hóa đơn tiền điện");
+        // setResizable(false);
+        // setSize(900, 500);
 
-        // Create title label
-        JLabel titleLabel = new JLabel("DANH SÁCH HÓA ĐƠN TIỀN ĐIỆN", SwingConstants.CENTER);
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
-        titleLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0)); // Padding around the title
+        // // Create title label
+        // JLabel titleLabel = new JLabel("DANH SÁCH HÓA ĐƠN TIỀN ĐIỆN", SwingConstants.CENTER);
+        // titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        // titleLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0)); // Padding around the title
 
-        // Column headers for the JTable
-        String[] columns = {
-            "Mã KH", "Tên KH", "Ngày HD", "Số lượng", "Đơn giá", "Quốc tịch", "Đối tượng KH", "Định mức", "Thành tiền"
-        };
+        // // Column headers for the JTable
+        // String[] columns = {
+        //     "Mã KH", "Tên KH", "Ngày HD", "Số lượng", "Đơn giá", "Quốc tịch", "Đối tượng KH", "Định mức", "Thành tiền"
+        // };
 
-        // Create table model
-        DefaultTableModel tableModel = new DefaultTableModel(columns, 0);
-        JTable table = new JTable(tableModel);
+        // // Create table model
+        // DefaultTableModel tableModel = new DefaultTableModel(columns, 0);
+        // JTable table = new JTable(tableModel);
 
-        //custom
-        table.setDefaultRenderer(Object.class, new InvoiceCellRenderer());
+        // //custom
+        // table.setDefaultRenderer(Object.class, new InvoiceCellRenderer());
 
-        // Add student data to the table
-        for (GetListInvoiceViewModel invoice: listInvoice) {
-            Object[] row = {
-                invoice.maKH,
-                invoice.tenKH,
-                invoice.ngayHD,
-                invoice.soLuong,
-                invoice.donGia,
-                invoice.quocTich,
-                invoice.doiTuongKH,
-                invoice.dinhMuc,
-                invoice.thanhTien
-            };
-            tableModel.addRow(row);
-        }
+        // // Add student data to the table
+        // for (GetListInvoiceViewModel invoice: listInvoice) {
+        //     Object[] row = {
+        //         invoice.maKH,
+        //         invoice.tenKH,
+        //         invoice.ngayHD,
+        //         invoice.soLuong,
+        //         invoice.donGia,
+        //         invoice.quocTich,
+        //         invoice.doiTuongKH,
+        //         invoice.dinhMuc,
+        //         invoice.thanhTien
+        //     };
+        //     tableModel.addRow(row);
+        // }
 
-        // Add the table to a scroll pane
-        JScrollPane scrollPane = new JScrollPane(table);
+        // // Add the table to a scroll pane
+        // JScrollPane scrollPane = new JScrollPane(table);
 
-        // Set up layout for the frame
-        this.setLayout(new BorderLayout());
-        this.add(titleLabel, BorderLayout.NORTH); // Add title label at the top
-        this.add(scrollPane, BorderLayout.CENTER); // Add the table in the center
+        // // Set up layout for the frame
+        // this.setLayout(new BorderLayout());
+        // this.add(titleLabel, BorderLayout.NORTH); // Add title label at the top
+        // this.add(scrollPane, BorderLayout.CENTER); // Add the table in the center
 
-        // Make the frame visible
-        this.setLocationRelativeTo(null);
-        this.setVisible(true);
+        // // Make the frame visible
+        // this.setLocationRelativeTo(null);
+        // this.setVisible(true);
     }
 
     class InvoiceCellRenderer extends DefaultTableCellRenderer {

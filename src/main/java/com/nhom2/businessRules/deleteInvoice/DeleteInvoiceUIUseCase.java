@@ -1,17 +1,19 @@
 package com.nhom2.businessRules.deleteInvoice;
 
-import com.nhom2.detail.deleteInvoice.DeleteInvoiceView;
+import com.nhom2.detail.deleteInvoice.DeleteInvoiceUIPresenter;
 
 public class DeleteInvoiceUIUseCase implements DeleteInvoiceUIInputBoundary {
-    private DeleteInvoiceView deleteInvoiceView;
+    private DeleteInvoiceUIPresenter deleteInvoiceUIPresenter;
 
-    public DeleteInvoiceUIUseCase(DeleteInvoiceView deleteInvoiceView) {
-        this.deleteInvoiceView = deleteInvoiceView;
+    public DeleteInvoiceUIUseCase(DeleteInvoiceUIPresenter deleteInvoiceUIPresenter) {
+        this.deleteInvoiceUIPresenter = deleteInvoiceUIPresenter;
     } 
 
     @Override
-    public void execute() {
-        this.deleteInvoiceView.mainShow();
+    public void execute(DeleteInvoiceUIInputDTO deleteInvoiceUIInputDTO) {
+        DeleteInvoiceUIOutputDTO deleteInvoiceUIOutputDTO = new DeleteInvoiceUIOutputDTO();
+        deleteInvoiceUIOutputDTO.setMaKH(deleteInvoiceUIInputDTO.getMaKH());
+        this.deleteInvoiceUIPresenter.present(deleteInvoiceUIOutputDTO);
     }
 
 }
