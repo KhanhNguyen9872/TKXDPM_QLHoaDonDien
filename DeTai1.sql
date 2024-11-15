@@ -19,6 +19,14 @@ CREATE TABLE `doiTuongKH` (
   primary key (`maDT`)
 );
 
+CREATE TABLE `account` (
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `isAdmin` bit DEFAULT 0,
+  primary key (`username`)
+);
+
 DELETE FROM `invoice`;
 ALTER TABLE `invoice` AUTO_INCREMENT = 1;
 
@@ -39,4 +47,11 @@ INSERT INTO `doiTuongKH` (`doiTuong`) VALUES
 ('Kinh doanh'),
 ('Sản xuất');
 
+DELETE FROM `account`;
+
+INSERT INTO `account` (`username`, `password`, `email`, `isAdmin`) VALUES
+('admin', 'admin', 'admin@localhost.com', 1),
+('user', 'user', 'user@localhost.com', 0);
+
 SELECT * FROM invoice;
+SELECT * FROM account;

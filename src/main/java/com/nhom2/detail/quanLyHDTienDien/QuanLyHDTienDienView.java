@@ -15,8 +15,8 @@ import java.util.List;
 
 public class QuanLyHDTienDienView extends JFrame implements ListSelectionListener, ActionListener {
     private static QuanLyHDTienDienView quanLyHDTienDienView;
-
-    private JButton addInvoiceBtn, deleteInvoiceBtn, editInvoiceBtn, exportInvoiceByMonthBtn, findInvoiceBtn, avgMoneyInvoiceBtn, sumKHInvoiceBtn, reloadBtn;
+    private JLabel labelUsername;
+    private JButton addInvoiceBtn, deleteInvoiceBtn, editInvoiceBtn, exportInvoiceByMonthBtn, findInvoiceBtn, avgMoneyInvoiceBtn, sumKHInvoiceBtn, reloadBtn, signOutBtn;
     private JTable table;
     private DefaultTableModel tableModel;
     private int selectedRow = -1;
@@ -25,7 +25,78 @@ public class QuanLyHDTienDienView extends JFrame implements ListSelectionListene
     private GetListInvoiceInputBoundary getListInvoiceInputBoundary;
 
     private QuanLyHDTienDienView() {
+        setTitle("Quản lý hóa đơn tiền điện");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false);
+        setSize(1200, 500);
+    
+        // Create title label
+        JLabel titleLabel = new JLabel("QUẢN LÝ HÓA ĐƠN TIỀN ĐIỆN", SwingConstants.CENTER);
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        titleLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0)); // Padding around the title
+    
+        // Column headers for the JTable
+        String[] columns = {
+            "Mã KH", "Tên KH", "Ngày HD", "Số lượng", "Đơn giá", "Quốc tịch", "Đối tượng KH", "Định mức", "Thành tiền"
+        };
+    
+        // Create table model
+        tableModel = new DefaultTableModel(columns, 0);
+        table = new JTable(tableModel);
+        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        table.getSelectionModel().addListSelectionListener(this);
+    
+        // Add the table to a scroll pane
+        JScrollPane scrollPane = new JScrollPane(table);
+    
+        // Set up layout for the frame
+        this.setLayout(new BorderLayout());
+        this.add(titleLabel, BorderLayout.NORTH); // Add title label at the top
+        this.add(scrollPane, BorderLayout.CENTER); // Add the table in the center
+    
+        // Create button panel for the buttons at the bottom
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 18, 18));
         
+        addInvoiceBtn = new JButton("Thêm");
+        deleteInvoiceBtn = new JButton("Xóa");
+        editInvoiceBtn = new JButton("Sửa");
+        exportInvoiceByMonthBtn = new JButton("Xuất theo tháng");
+        findInvoiceBtn = new JButton("Tìm kiếm");
+        avgMoneyInvoiceBtn = new JButton("Tính TB thành tiền nước ngoài");
+        sumKHInvoiceBtn = new JButton("Tổng khách hàng");
+        reloadBtn = new JButton("Làm mới");
+        signOutBtn = new JButton("Đăng xuất");
+
+        labelUsername = new JLabel("User: ");
+    
+        // Add ActionListener
+        addInvoiceBtn.addActionListener(this);
+        deleteInvoiceBtn.addActionListener(this);
+        editInvoiceBtn.addActionListener(this);
+        exportInvoiceByMonthBtn.addActionListener(this);
+        findInvoiceBtn.addActionListener(this);
+        avgMoneyInvoiceBtn.addActionListener(this);
+        sumKHInvoiceBtn.addActionListener(this);
+        reloadBtn.addActionListener(this);
+        signOutBtn.addActionListener(this);
+    
+        // Add buttons to the panel
+        buttonPanel.add(addInvoiceBtn);
+        buttonPanel.add(deleteInvoiceBtn);
+        buttonPanel.add(editInvoiceBtn);
+        buttonPanel.add(exportInvoiceByMonthBtn);
+        buttonPanel.add(findInvoiceBtn);
+        buttonPanel.add(avgMoneyInvoiceBtn);
+        buttonPanel.add(sumKHInvoiceBtn);
+        buttonPanel.add(reloadBtn);
+        buttonPanel.add(labelUsername);
+        buttonPanel.add(signOutBtn);
+    
+        // Add the button panel to the bottom
+        this.add(buttonPanel, BorderLayout.SOUTH);
+
+        // Make the frame visible
+        setLocationRelativeTo(null);
     }
 
     public void setListInvoice(List<GetListInvoiceViewModel> listInvoice) {
@@ -86,78 +157,9 @@ public class QuanLyHDTienDienView extends JFrame implements ListSelectionListene
     }
 
     public void showGUI() {
-        setTitle("Quản lý hóa đơn tiền điện");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(false);
-        setSize(1000, 500);
-    
-        // Create title label
-        JLabel titleLabel = new JLabel("QUẢN LÝ HÓA ĐƠN TIỀN ĐIỆN", SwingConstants.CENTER);
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
-        titleLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0)); // Padding around the title
-    
-        // Column headers for the JTable
-        String[] columns = {
-            "Mã KH", "Tên KH", "Ngày HD", "Số lượng", "Đơn giá", "Quốc tịch", "Đối tượng KH", "Định mức", "Thành tiền"
-        };
-    
-        // Create table model
-        tableModel = new DefaultTableModel(columns, 0);
-        table = new JTable(tableModel);
-        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        table.getSelectionModel().addListSelectionListener(this);
-    
-        // Add the table to a scroll pane
-        JScrollPane scrollPane = new JScrollPane(table);
-    
-        // Set up layout for the frame
-        this.setLayout(new BorderLayout());
-        this.add(titleLabel, BorderLayout.NORTH); // Add title label at the top
-        this.add(scrollPane, BorderLayout.CENTER); // Add the table in the center
-    
-        // Create button panel for the buttons at the bottom
-        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 14, 14));
-        
-        addInvoiceBtn = new JButton("Thêm");
-        deleteInvoiceBtn = new JButton("Xóa");
-        editInvoiceBtn = new JButton("Sửa");
-        exportInvoiceByMonthBtn = new JButton("Xuất theo tháng");
-        findInvoiceBtn = new JButton("Tìm kiếm");
-        avgMoneyInvoiceBtn = new JButton("Tính TB thành tiền nước ngoài");
-        sumKHInvoiceBtn = new JButton("Tổng khách hàng");
-        reloadBtn = new JButton("Làm mới");
-    
-        // Add ActionListener
-        addInvoiceBtn.addActionListener(this);
-        deleteInvoiceBtn.addActionListener(this);
-        editInvoiceBtn.addActionListener(this);
-        exportInvoiceByMonthBtn.addActionListener(this);
-        findInvoiceBtn.addActionListener(this);
-        avgMoneyInvoiceBtn.addActionListener(this);
-        sumKHInvoiceBtn.addActionListener(this);
-        reloadBtn.addActionListener(this);
-    
-        // Add buttons to the panel
-        buttonPanel.add(addInvoiceBtn);
-        buttonPanel.add(deleteInvoiceBtn);
-        buttonPanel.add(editInvoiceBtn);
-        buttonPanel.add(exportInvoiceByMonthBtn);
-        buttonPanel.add(findInvoiceBtn);
-        buttonPanel.add(avgMoneyInvoiceBtn);
-        buttonPanel.add(sumKHInvoiceBtn);
-        buttonPanel.add(reloadBtn);
-    
-        // Add the button panel to the bottom
-        this.add(buttonPanel, BorderLayout.SOUTH);
-        
         this.getList();
-
-        // Make the frame visible
-        setLocationRelativeTo(null);
         setVisible(true);
     }
-    
-
     
     public void setQuanLyHDTienDienController(QuanLyHDTienDienController quanLyHDTienDienController) {
         this.quanLyHDTienDienController = quanLyHDTienDienController;
@@ -170,6 +172,10 @@ public class QuanLyHDTienDienView extends JFrame implements ListSelectionListene
         if (cmd.equals(reloadBtn.getText())) {
             this.getList();
             return;
+        }
+
+        if (cmd.equals(signOutBtn.getText())) {
+            this.setVisible(false);
         }
 
         QuanLyHDTienDienInputDTO quanLyHDTienDienInputDTO = new QuanLyHDTienDienInputDTO();
@@ -215,5 +221,18 @@ public class QuanLyHDTienDienView extends JFrame implements ListSelectionListene
     @Override
     public void valueChanged(ListSelectionEvent e) {
         this.selectedRow = table.getSelectedRow(); // Get the index of the selected row
+    }
+
+    public void setUser(String username, boolean isAdmin) {
+        this.labelUsername.setText("User: " + username);
+        if (isAdmin) {
+            addInvoiceBtn.setVisible(true);
+            deleteInvoiceBtn.setVisible(true);
+            editInvoiceBtn.setVisible(true);
+        } else {
+            addInvoiceBtn.setVisible(false);
+            deleteInvoiceBtn.setVisible(false);
+            editInvoiceBtn.setVisible(false);
+        }
     }
 }

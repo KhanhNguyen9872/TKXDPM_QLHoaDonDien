@@ -39,15 +39,36 @@ import com.nhom2.businessRules.findInvoice.FindInvoiceOutputBoundary;
 import com.nhom2.businessRules.findInvoice.FindInvoiceUIInputBoundary;
 import com.nhom2.businessRules.findInvoice.FindInvoiceUIUseCase;
 import com.nhom2.businessRules.findInvoice.FindInvoiceUseCase;
+import com.nhom2.businessRules.forgot.ForgotDatabaseBoundary;
+import com.nhom2.businessRules.forgot.ForgotInputBoundary;
+import com.nhom2.businessRules.forgot.ForgotOutputBoundary;
+import com.nhom2.businessRules.forgot.ForgotUIInputBoundary;
+import com.nhom2.businessRules.forgot.ForgotUIOutputBoundary;
+import com.nhom2.businessRules.forgot.ForgotUIUseCase;
+import com.nhom2.businessRules.forgot.ForgotUseCase;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceInputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceOutputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceUIInputBoundary;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceUIUseCase;
 import com.nhom2.businessRules.getListInvoice.GetListInvoiceUseCase;
+import com.nhom2.businessRules.login.LoginDatabaseBoundary;
+import com.nhom2.businessRules.login.LoginInputBoundary;
+import com.nhom2.businessRules.login.LoginOutputBoundary;
+import com.nhom2.businessRules.login.LoginUIInputBoundary;
+import com.nhom2.businessRules.login.LoginUIOutputBoundary;
+import com.nhom2.businessRules.login.LoginUIUseCase;
+import com.nhom2.businessRules.login.LoginUseCase;
 import com.nhom2.businessRules.quanLyHDTienDien.QuanLyHDTienDienInputBoundary;
 import com.nhom2.businessRules.quanLyHDTienDien.QuanLyHDTienDienOutputBoundary;
 import com.nhom2.businessRules.quanLyHDTienDien.QuanLyHDTienDienUseCase;
+import com.nhom2.businessRules.register.RegisterDatabaseBoundary;
+import com.nhom2.businessRules.register.RegisterInputBoundary;
+import com.nhom2.businessRules.register.RegisterOutputBoundary;
+import com.nhom2.businessRules.register.RegisterUIInputBoundary;
+import com.nhom2.businessRules.register.RegisterUIOutputBoundary;
+import com.nhom2.businessRules.register.RegisterUIUseCase;
+import com.nhom2.businessRules.register.RegisterUseCase;
 import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceInputBoundary;
 import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceOutputBoundary;
@@ -60,7 +81,10 @@ import com.nhom2.database.mysql.DeleteInvoiceDAOMySQL;
 import com.nhom2.database.mysql.EditInvoiceDAOMySQL;
 import com.nhom2.database.mysql.ExportInvoiceByMonthDAOMySQL;
 import com.nhom2.database.mysql.FindInvoiceDAOMySQL;
+import com.nhom2.database.mysql.ForgotDAOMySQL;
 import com.nhom2.database.mysql.GetListInvoiceDAOMySQL;
+import com.nhom2.database.mysql.LoginDAOMySQL;
+import com.nhom2.database.mysql.RegisterDAOMySQL;
 import com.nhom2.database.mysql.SumKHInvoiceDAOMySQL;
 import com.nhom2.detail.addInvoice.AddInvoiceController;
 import com.nhom2.detail.addInvoice.AddInvoicePresenter;
@@ -92,14 +116,35 @@ import com.nhom2.detail.findInvoice.FindInvoiceController;
 import com.nhom2.detail.findInvoice.FindInvoicePresenter;
 import com.nhom2.detail.findInvoice.FindInvoiceView;
 import com.nhom2.detail.findInvoice.FindInvoiceViewModel;
+import com.nhom2.detail.forgot.ForgotController;
+import com.nhom2.detail.forgot.ForgotPresenter;
+import com.nhom2.detail.forgot.ForgotUIController;
+import com.nhom2.detail.forgot.ForgotUIPresenter;
+import com.nhom2.detail.forgot.ForgotUIView;
+import com.nhom2.detail.forgot.ForgotUIViewModel;
+import com.nhom2.detail.forgot.ForgotViewModel;
 import com.nhom2.detail.getListInvoice.GetListInvoiceController;
 import com.nhom2.detail.getListInvoice.GetListInvoicePresenter;
 import com.nhom2.detail.getListInvoice.GetListInvoiceView;
 import com.nhom2.detail.getListInvoice.GetListInvoiceViewModel;
+import com.nhom2.detail.login.LoginController;
+import com.nhom2.detail.login.LoginPresenter;
+import com.nhom2.detail.login.LoginUIController;
+import com.nhom2.detail.login.LoginUIPresenter;
+import com.nhom2.detail.login.LoginUIView;
+import com.nhom2.detail.login.LoginUIViewModel;
+import com.nhom2.detail.login.LoginViewModel;
 import com.nhom2.detail.quanLyHDTienDien.QuanLyHDTienDienController;
 import com.nhom2.detail.quanLyHDTienDien.QuanLyHDTienDienPresenter;
 import com.nhom2.detail.quanLyHDTienDien.QuanLyHDTienDienView;
 import com.nhom2.detail.quanLyHDTienDien.QuanLyHDTienDienViewModel;
+import com.nhom2.detail.register.RegisterController;
+import com.nhom2.detail.register.RegisterPresenter;
+import com.nhom2.detail.register.RegisterUIController;
+import com.nhom2.detail.register.RegisterUIPresenter;
+import com.nhom2.detail.register.RegisterUIView;
+import com.nhom2.detail.register.RegisterUIViewModel;
+import com.nhom2.detail.register.RegisterViewModel;
 import com.nhom2.detail.sumKHInvoice.SumKHInvoiceController;
 import com.nhom2.detail.sumKHInvoice.SumKHInvoicePresenter;
 import com.nhom2.detail.sumKHInvoice.SumKHInvoiceUIPresenter;
@@ -238,10 +283,59 @@ public class QLHoaDonTienDienApp
         quanLyHDTienDienInputBoundary.setFindInvoiceUIInputBoundary(findInvoiceUIInputBoundary);
         quanLyHDTienDienInputBoundary.setAvgMoneyInvoiceNuocNgoaiUIInputBoundary(avgMoneyInvoiceNuocNgoaiUIInputBoundary);
         quanLyHDTienDienInputBoundary.setSumKHInvoiceUIInputBoundary(sumKHInvoiceUIInputBoundary);
-        quanLyHDTienDienInputBoundary.setGetListInvoiceUIInputBoundary(getListInvoiceUIInputBoundary);
         quanLyHDTienDienInputBoundary.setExportInvoiceByMonthUIInputBoundary(exportInvoiceByMonthUIInputBoundary);
 
-        // setVisible(true)
-        quanLyHDTienDienView.showGUI();
+        // forgot form
+        ForgotUIViewModel forgotUIViewModel = new ForgotUIViewModel();
+        ForgotUIView forgotUIView = new ForgotUIView();
+        ForgotUIOutputBoundary forgotUIOutputBoundary = new ForgotUIPresenter(forgotUIView, forgotUIViewModel);
+        ForgotUIInputBoundary forgotUIInputBoundary = new ForgotUIUseCase(forgotUIOutputBoundary);
+        ForgotUIController forgotUIController = new ForgotUIController(forgotUIInputBoundary);
+
+        // forgot
+        ForgotViewModel forgotViewModel = new ForgotViewModel();
+        ForgotDatabaseBoundary forgotDatabaseBoundary = new ForgotDAOMySQL(ipAddress, port, db, username, password);
+        ForgotOutputBoundary forgotOutputBoundary = new ForgotPresenter(forgotUIView, forgotViewModel);
+        ForgotInputBoundary forgotInputBoundary = new ForgotUseCase(forgotDatabaseBoundary, forgotOutputBoundary);
+        ForgotController forgotController = new ForgotController(forgotInputBoundary);
+        forgotUIView.setForgotController(forgotController);
+
+        // register form
+        RegisterUIViewModel registerUIViewModel = new RegisterUIViewModel();
+        RegisterUIView registerUIView = new RegisterUIView();
+        RegisterUIOutputBoundary registerUIOutputBoundary = new RegisterUIPresenter(registerUIView, registerUIViewModel);
+        RegisterUIInputBoundary registerUIInputBoundary = new RegisterUIUseCase(registerUIOutputBoundary);
+        RegisterUIController registerUIController = new RegisterUIController(registerUIInputBoundary);
+
+
+        // register
+        RegisterViewModel registerViewModel = new RegisterViewModel();
+        RegisterDatabaseBoundary registerDatabaseBoundary = new RegisterDAOMySQL(ipAddress, port, db, username, password);
+        RegisterOutputBoundary registerOutputBoundary = new RegisterPresenter(registerUIView, registerViewModel);
+        RegisterInputBoundary registerInputBoundary = new RegisterUseCase(registerDatabaseBoundary, registerOutputBoundary);
+        RegisterController registerController = new RegisterController(registerInputBoundary);
+        registerUIView.setRegisterController(registerController);
+
+        // login form
+        LoginUIViewModel loginUIViewModel = new LoginUIViewModel();
+        LoginUIView loginUIView = new LoginUIView();
+        LoginUIOutputBoundary loginUIOutputBoundary = new LoginUIPresenter(loginUIView, loginUIViewModel);
+        LoginUIInputBoundary loginUIInputBoundary = new LoginUIUseCase(loginUIOutputBoundary);
+        LoginUIController loginUIController = new LoginUIController(loginUIInputBoundary);
+        quanLyHDTienDienInputBoundary.setLoginUIInputBoundary(loginUIInputBoundary);
+
+        // login
+        LoginViewModel loginViewModel = new LoginViewModel();
+        LoginDatabaseBoundary loginDatabaseBoundary = new LoginDAOMySQL(ipAddress, port, db, username, password);
+        LoginOutputBoundary loginOutputBoundary = new LoginPresenter(loginUIView, loginViewModel, quanLyHDTienDienView);
+        LoginInputBoundary loginInputBoundary = new LoginUseCase(loginDatabaseBoundary, loginOutputBoundary);
+        LoginController loginController = new LoginController(loginInputBoundary);
+
+        loginUIView.setLoginController(loginController);
+        loginUIView.setRegisterUIController(registerUIController);
+        loginUIView.setForgotUIController(forgotUIController);
+
+        // run Login form
+        loginUIController.execute();
     }
 }

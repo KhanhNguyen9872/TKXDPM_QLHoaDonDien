@@ -2,14 +2,13 @@ package com.nhom2.businessRules.quanLyHDTienDien;
 
 import com.nhom2.businessRules.addInvoice.AddInvoiceUIInputBoundary;
 import com.nhom2.businessRules.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiUIInputBoundary;
-import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceInputDTO;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceUIInputBoundary;
 import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceUIInputDTO;
 import com.nhom2.businessRules.editInvoice.EditInvoiceUIInputBoundary;
 import com.nhom2.businessRules.editInvoice.EditInvoiceUIInputDTO;
 import com.nhom2.businessRules.exportInvoiceByMonth.ExportInvoiceByMonthUIInputBoundary;
 import com.nhom2.businessRules.findInvoice.FindInvoiceUIInputBoundary;
-import com.nhom2.businessRules.getListInvoice.GetListInvoiceUIInputBoundary;
+import com.nhom2.businessRules.login.LoginUIInputBoundary;
 import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceUIInputBoundary;
 
 public class QuanLyHDTienDienUseCase implements QuanLyHDTienDienInputBoundary {
@@ -17,10 +16,10 @@ public class QuanLyHDTienDienUseCase implements QuanLyHDTienDienInputBoundary {
     private DeleteInvoiceUIInputBoundary deleteInvoiceUIInputBoundary;
     private EditInvoiceUIInputBoundary editInvoiceUIInputBoundary;
     private FindInvoiceUIInputBoundary findInvoiceUIInputBoundary;
-    private GetListInvoiceUIInputBoundary getListInvoiceUIInputBoundary;
     private ExportInvoiceByMonthUIInputBoundary exportInvoiceByMonthUIInputBoundary;
     private AvgMoneyInvoiceNuocNgoaiUIInputBoundary avgMoneyInvoiceNuocNgoaiUIInputBoundary;
     private SumKHInvoiceUIInputBoundary sumKHInvoiceUIInputBoundary;
+    private LoginUIInputBoundary loginUIInputBoundary;
 
     private QuanLyHDTienDienOutputBoundary quanLyHDTienDienOutputBoundary;
     
@@ -101,7 +100,10 @@ public class QuanLyHDTienDienUseCase implements QuanLyHDTienDienInputBoundary {
             if (this.sumKHInvoiceUIInputBoundary != null) {
                 this.sumKHInvoiceUIInputBoundary.execute();
             }
-
+        } else if (chucNang.equals("Đăng xuất")) {
+            if (this.loginUIInputBoundary != null) {
+                this.loginUIInputBoundary.execute();
+            }
         } else {
             quanLyHDTienDienOutputDTO.setMsg("Chức năng [" + chucNang + "] không tồn tại");
             this.quanLyHDTienDienOutputBoundary.exportError(quanLyHDTienDienOutputDTO);
@@ -132,10 +134,7 @@ public class QuanLyHDTienDienUseCase implements QuanLyHDTienDienInputBoundary {
         this.findInvoiceUIInputBoundary = findInvoiceUIInputBoundary;
     }
 
-    @Override
-    public void setGetListInvoiceUIInputBoundary(GetListInvoiceUIInputBoundary getListInvoiceUIInputBoundary) {
-        this.getListInvoiceUIInputBoundary = getListInvoiceUIInputBoundary;
-    }
+    
 
     @Override
     public void setExportInvoiceByMonthUIInputBoundary(
@@ -152,5 +151,10 @@ public class QuanLyHDTienDienUseCase implements QuanLyHDTienDienInputBoundary {
     @Override
     public void setSumKHInvoiceUIInputBoundary(SumKHInvoiceUIInputBoundary sumKHInvoiceUIInputBoundary) {
         this.sumKHInvoiceUIInputBoundary = sumKHInvoiceUIInputBoundary;
+    }
+
+    @Override
+    public void setLoginUIInputBoundary(LoginUIInputBoundary loginUIInputBoundary) {
+        this.loginUIInputBoundary = loginUIInputBoundary;
     }
 }
