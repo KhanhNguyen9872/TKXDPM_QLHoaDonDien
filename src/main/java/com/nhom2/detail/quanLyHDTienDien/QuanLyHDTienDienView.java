@@ -12,11 +12,12 @@ import com.nhom2.detail.getListInvoice.GetListInvoiceViewModel;
 import java.awt.event.*;
 import java.awt.*;
 import java.util.List;
+import com.nhom2.detail.observer.Subscriber;
 
-public class QuanLyHDTienDienView extends JFrame implements ListSelectionListener, ActionListener {
+public class QuanLyHDTienDienView extends JFrame implements ListSelectionListener, ActionListener, Subscriber {
     private static QuanLyHDTienDienView quanLyHDTienDienView;
     private JLabel labelUsername;
-    private JButton addInvoiceBtn, deleteInvoiceBtn, editInvoiceBtn, exportInvoiceByMonthBtn, findInvoiceBtn, avgMoneyInvoiceBtn, sumKHInvoiceBtn, reloadBtn, signOutBtn;
+    private JButton addInvoiceBtn, deleteInvoiceBtn, editInvoiceBtn, exportInvoiceByMonthBtn, findInvoiceBtn, avgMoneyInvoiceBtn, sumKHInvoiceBtn, signOutBtn;
     private JTable table;
     private DefaultTableModel tableModel;
     private int selectedRow = -1;
@@ -64,7 +65,6 @@ public class QuanLyHDTienDienView extends JFrame implements ListSelectionListene
         findInvoiceBtn = new JButton("Tìm kiếm");
         avgMoneyInvoiceBtn = new JButton("Tính TB thành tiền nước ngoài");
         sumKHInvoiceBtn = new JButton("Tổng khách hàng");
-        reloadBtn = new JButton("Làm mới");
         signOutBtn = new JButton("Đăng xuất");
 
         labelUsername = new JLabel("User: ");
@@ -77,7 +77,6 @@ public class QuanLyHDTienDienView extends JFrame implements ListSelectionListene
         findInvoiceBtn.addActionListener(this);
         avgMoneyInvoiceBtn.addActionListener(this);
         sumKHInvoiceBtn.addActionListener(this);
-        reloadBtn.addActionListener(this);
         signOutBtn.addActionListener(this);
     
         // Add buttons to the panel
@@ -88,7 +87,6 @@ public class QuanLyHDTienDienView extends JFrame implements ListSelectionListene
         buttonPanel.add(findInvoiceBtn);
         buttonPanel.add(avgMoneyInvoiceBtn);
         buttonPanel.add(sumKHInvoiceBtn);
-        buttonPanel.add(reloadBtn);
         buttonPanel.add(labelUsername);
         buttonPanel.add(signOutBtn);
     
@@ -169,11 +167,6 @@ public class QuanLyHDTienDienView extends JFrame implements ListSelectionListene
     public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();
 
-        if (cmd.equals(reloadBtn.getText())) {
-            this.getList();
-            return;
-        }
-
         if (cmd.equals(signOutBtn.getText())) {
             this.setVisible(false);
         }
@@ -234,5 +227,10 @@ public class QuanLyHDTienDienView extends JFrame implements ListSelectionListene
             deleteInvoiceBtn.setVisible(false);
             editInvoiceBtn.setVisible(false);
         }
+    }
+
+    @Override
+    public void update() {
+        this.getList();
     }
 }

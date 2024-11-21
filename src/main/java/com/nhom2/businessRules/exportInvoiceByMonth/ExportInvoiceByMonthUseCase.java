@@ -6,8 +6,9 @@ import java.util.List;
 import com.nhom2.businessRules.entity.Invoice;
 import com.nhom2.businessRules.entity.InvoiceNuocNgoai;
 import com.nhom2.businessRules.entity.InvoiceVN;
+import com.nhom2.detail.observer.Publisher;
 
-public class ExportInvoiceByMonthUseCase implements ExportInvoiceByMonthInputBoundary {
+public class ExportInvoiceByMonthUseCase extends Publisher implements ExportInvoiceByMonthInputBoundary {
     private ExportInvoiceByMonthDatabaseBoundary exportInvoiceByMonthDatabaseBoundary;
     private ExportInvoiceByMonthOutputBoundary exportInvoiceByMonthOutputBoundary;
 
@@ -55,6 +56,8 @@ public class ExportInvoiceByMonthUseCase implements ExportInvoiceByMonthInputBou
         }
 
         this.exportInvoiceByMonthOutputBoundary.present(listOutputDTO);
+
+        notifySubscribers();
     }
 
     private boolean verify(ExportInvoiceByMonthInputDTO exportInvoiceByMonthInputDTO, ExportInvoiceByMonthOutputDTO responseError) {

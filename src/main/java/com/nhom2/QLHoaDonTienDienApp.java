@@ -162,7 +162,7 @@ public class QLHoaDonTienDienApp
         final int port = 3306;
         final String db = "invoice";
         final String username = "root";
-        final String password = "12345678";
+        final String password = "khanhnguyen";
 
         // add Invoice
         AddInvoiceViewModel addInvoiceViewModel = new AddInvoiceViewModel();
@@ -285,6 +285,14 @@ public class QLHoaDonTienDienApp
         quanLyHDTienDienInputBoundary.setSumKHInvoiceUIInputBoundary(sumKHInvoiceUIInputBoundary);
         quanLyHDTienDienInputBoundary.setExportInvoiceByMonthUIInputBoundary(exportInvoiceByMonthUIInputBoundary);
 
+        ((AddInvoiceUseCase)addInvoiceInputBoundary).subscriber(quanLyHDTienDienView);
+        ((DeleteInvoiceUseCase)deleteInvoiceInputBoundary).subscriber(quanLyHDTienDienView);
+        ((EditInvoiceUseCase)editInvoiceInputBoundary).subscriber(quanLyHDTienDienView);
+        ((FindInvoiceUseCase)findInvoiceInputBoundary).subscriber(quanLyHDTienDienView);
+        ((AvgMoneyInvoiceNuocNgoaiUseCase)avgMoneyInvoiceNuocNgoaiInputBoundary).subscriber(quanLyHDTienDienView);
+        ((SumKHInvoiceUseCase)sumKHInvoiceInputBoundary).subscriber(quanLyHDTienDienView);
+        ((ExportInvoiceByMonthUseCase)exportInvoiceByMonthInputBoundary).subscriber(quanLyHDTienDienView);
+
         // forgot form
         ForgotUIViewModel forgotUIViewModel = new ForgotUIViewModel();
         ForgotUIView forgotUIView = new ForgotUIView();
@@ -298,7 +306,6 @@ public class QLHoaDonTienDienApp
         ForgotOutputBoundary forgotOutputBoundary = new ForgotPresenter(forgotUIView, forgotViewModel);
         ForgotInputBoundary forgotInputBoundary = new ForgotUseCase(forgotDatabaseBoundary, forgotOutputBoundary);
         ForgotController forgotController = new ForgotController(forgotInputBoundary);
-        forgotUIView.setForgotController(forgotController);
 
         // register form
         RegisterUIViewModel registerUIViewModel = new RegisterUIViewModel();
@@ -314,7 +321,6 @@ public class QLHoaDonTienDienApp
         RegisterOutputBoundary registerOutputBoundary = new RegisterPresenter(registerUIView, registerViewModel);
         RegisterInputBoundary registerInputBoundary = new RegisterUseCase(registerDatabaseBoundary, registerOutputBoundary);
         RegisterController registerController = new RegisterController(registerInputBoundary);
-        registerUIView.setRegisterController(registerController);
 
         // login form
         LoginUIViewModel loginUIViewModel = new LoginUIViewModel();
@@ -331,9 +337,17 @@ public class QLHoaDonTienDienApp
         LoginInputBoundary loginInputBoundary = new LoginUseCase(loginDatabaseBoundary, loginOutputBoundary);
         LoginController loginController = new LoginController(loginInputBoundary);
 
-        loginUIView.setLoginController(loginController);
-        loginUIView.setRegisterUIController(registerUIController);
-        loginUIView.setForgotUIController(forgotUIController);
+
+        registerUIInputBoundary.setRegisterInputBoundary(registerInputBoundary);
+        forgotUIInputBoundary.setForgotInputBoundary(forgotInputBoundary);
+
+        loginUIInputBoundary.setLoginInputBoundary(loginInputBoundary);
+        loginUIInputBoundary.setRegisterUIInputBoundary(registerUIInputBoundary);
+        loginUIInputBoundary.setForgotUIInputBoundary(forgotUIInputBoundary);
+
+        loginUIView.setLoginUIController(loginUIController);
+        registerUIView.setRegisterUIController(registerUIController);
+        forgotUIView.setForgotUIInputBoundary(forgotUIInputBoundary);
 
         // run Login form
         loginUIController.execute();

@@ -6,8 +6,9 @@ import java.util.List;
 import com.nhom2.businessRules.entity.Invoice;
 import com.nhom2.businessRules.entity.InvoiceNuocNgoai;
 import com.nhom2.businessRules.entity.TinhToanInvoice;
+import com.nhom2.detail.observer.Publisher;
 
-public class AvgMoneyInvoiceNuocNgoaiUseCase implements AvgMoneyInvoiceNuocNgoaiInputBoundary {
+public class AvgMoneyInvoiceNuocNgoaiUseCase extends Publisher implements AvgMoneyInvoiceNuocNgoaiInputBoundary {
     private AvgMoneyInvoiceNuocNgoaiDatabaseBoundary avgMoneyInvoiceNuocNgoaiDatabaseBoundary;
     private AvgMoneyInvoiceNuocNgoaiOutputBoundary avgMoneyInvoiceNuocNgoaiOutputBoundary;
 
@@ -39,6 +40,8 @@ public class AvgMoneyInvoiceNuocNgoaiUseCase implements AvgMoneyInvoiceNuocNgoai
         avgMoneyInvoiceNuocNgoaiOutputDTO.setStatus("success");
         avgMoneyInvoiceNuocNgoaiOutputDTO.setTotal(String.valueOf(total));
         this.avgMoneyInvoiceNuocNgoaiOutputBoundary.present(avgMoneyInvoiceNuocNgoaiOutputDTO);
+
+        notifySubscribers();
     }
 
 }

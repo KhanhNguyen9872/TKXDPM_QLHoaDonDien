@@ -3,13 +3,15 @@ package com.nhom2.detail.register;
 import javax.swing.*;
 
 import com.nhom2.businessRules.register.RegisterInputDTO;
+import com.nhom2.businessRules.register.RegisterUIInputBoundary;
+import com.nhom2.businessRules.register.RegisterUIInputDTO;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class RegisterUIView extends JFrame implements ActionListener {
-    private RegisterController registerController;
+    private RegisterUIController registerUIController;
     private JLabel lblUsername, lblEmail, lblPassword, lblRePassword;
     private JLabel lblUsernameErr, lblEmailErr, lblPasswordErr, lblRePasswordErr;
     private JTextField txtUsername, txtEmail;
@@ -22,9 +24,11 @@ public class RegisterUIView extends JFrame implements ActionListener {
 
     
 
-    public void setRegisterController(RegisterController registerController) {
-        this.registerController = registerController;
+
+    public void setRegisterUIController(RegisterUIController registerUIController) {
+        this.registerUIController = registerUIController;
     }
+
 
 
 
@@ -122,18 +126,20 @@ public class RegisterUIView extends JFrame implements ActionListener {
             lblPasswordErr.setText("");
             lblRePasswordErr.setText("");
 
+            String chucNang = "Đăng ký";
             String username = txtUsername.getText().trim();
             String email = txtEmail.getText().trim();
             String password = new String(txtPassword.getPassword());
             String rePassword = new String(txtRePassword.getPassword());
 
-            RegisterInputDTO registerInputDTO = new RegisterInputDTO();
-            registerInputDTO.setUsername(username);
-            registerInputDTO.setEmail(email);
-            registerInputDTO.setPassword(password);
-            registerInputDTO.setRepassword(rePassword);
+            RegisterUIInputDTO registerUIInputDTO = new RegisterUIInputDTO();
+            registerUIInputDTO.setChucNang(chucNang);
+            registerUIInputDTO.setUsername(username);
+            registerUIInputDTO.setEmail(email);
+            registerUIInputDTO.setPassword(password);
+            registerUIInputDTO.setRepassword(rePassword);
 
-            this.registerController.execute(registerInputDTO);
+            this.registerUIController.execute(registerUIInputDTO);
         }
     }
 

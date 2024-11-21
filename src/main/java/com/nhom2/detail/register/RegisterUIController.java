@@ -1,6 +1,7 @@
 package com.nhom2.detail.register;
 
 import com.nhom2.businessRules.register.RegisterUIInputBoundary;
+import com.nhom2.businessRules.register.RegisterUIInputDTO;
 
 public class RegisterUIController {
     private RegisterUIInputBoundary registerUIInputBoundary;
@@ -9,7 +10,7 @@ public class RegisterUIController {
         this.registerUIInputBoundary = registerUIInputBoundary;
     }
 
-    public void execute() {
-        this.registerUIInputBoundary.execute();
+    public void execute(RegisterUIInputDTO registerUIInputDTO) {
+        this.registerUIInputBoundary.execute(registerUIInputDTO);
     }
 }

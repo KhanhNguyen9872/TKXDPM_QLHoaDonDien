@@ -6,8 +6,9 @@ import java.util.Date;
 import com.nhom2.businessRules.entity.Invoice;
 import com.nhom2.businessRules.entity.InvoiceNuocNgoai;
 import com.nhom2.businessRules.entity.InvoiceVN;
+import com.nhom2.detail.observer.Publisher;
 
-public class EditInvoiceUseCase implements EditInvoiceInputBoundary {
+public class EditInvoiceUseCase extends Publisher implements EditInvoiceInputBoundary {
     private EditInvoiceDatabaseBoundary editInvoiceDatabaseBoundary;
     private EditInvoiceOutputBoundary editInvoiceOutputBoundary;
 
@@ -57,6 +58,8 @@ public class EditInvoiceUseCase implements EditInvoiceInputBoundary {
         editInvoiceOutputDTO.setStatus("success");
         editInvoiceOutputDTO.setMsg("Đã sửa thành công (KH: " + maKH + ")");
         editInvoiceOutputBoundary.exportResult(editInvoiceOutputDTO);
+
+        notifySubscribers();
     }
 
     private boolean verify(EditInvoiceInputDTO requestData, EditInvoiceOutputDTO responseError) {

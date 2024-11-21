@@ -7,8 +7,9 @@ import com.nhom2.businessRules.entity.Invoice;
 import com.nhom2.businessRules.entity.InvoiceNuocNgoai;
 import com.nhom2.businessRules.entity.InvoiceVN;
 import com.nhom2.businessRules.entity.TinhToanInvoice;
+import com.nhom2.detail.observer.Publisher;
 
-public class SumKHInvoiceUseCase implements SumKHInvoiceInputBoundary {
+public class SumKHInvoiceUseCase extends Publisher implements SumKHInvoiceInputBoundary {
     private SumKHInvoiceDatabaseBoundary sumKHInvoiceDatabaseBoundary;
     private SumKHInvoiceOutputBoundary sumKHInvoiceOutputBoundary;
 
@@ -45,6 +46,8 @@ public class SumKHInvoiceUseCase implements SumKHInvoiceInputBoundary {
         sumKHInvoiceOutputDTO.setLoaiKH(loaiKH);
         sumKHInvoiceOutputDTO.setTotal(String.valueOf(total));
         this.sumKHInvoiceOutputBoundary.present(sumKHInvoiceOutputDTO);
+
+        notifySubscribers();
     }
 
     private List<Invoice> filterLoaiKH(List<Invoice> listInvoices, String loaiKH) {

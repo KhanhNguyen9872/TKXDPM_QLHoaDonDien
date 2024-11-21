@@ -3,6 +3,7 @@ package com.nhom2.detail.login;
 import javax.swing.*;
 
 import com.nhom2.businessRules.login.LoginInputDTO;
+import com.nhom2.businessRules.login.LoginUIInputDTO;
 import com.nhom2.detail.forgot.ForgotUIController;
 import com.nhom2.detail.register.RegisterUIController;
 
@@ -12,9 +13,7 @@ import java.awt.event.ActionListener;
 
 
 public class LoginUIView extends JFrame implements ActionListener {
-    private LoginController loginController;
-    private RegisterUIController registerUIController;
-    private ForgotUIController forgotUIController;
+    private LoginUIController loginUIController;
     private JLabel lblUsername, lblPassword;
     private JLabel lblUsernameErr, lblPasswordErr;
     private JTextField txtUsername;
@@ -25,9 +24,13 @@ public class LoginUIView extends JFrame implements ActionListener {
 
     }
 
-    public void setLoginController(LoginController loginController) {
-        this.loginController = loginController;
+    
+
+    public void setLoginUIController(LoginUIController loginUIController) {
+        this.loginUIController = loginUIController;
     }
+
+
 
     public void mainShow() {
         getContentPane().removeAll();
@@ -99,22 +102,23 @@ public class LoginUIView extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();
-
+        String chucNang = "";
+        
         if (cmd.equals(btnLogin.getText())) {
-            String username = txtUsername.getText();
-            String password = new String(txtPassword.getPassword());
-
-            LoginInputDTO loginInputDTO = new LoginInputDTO();
-            loginInputDTO.setUsername(username);
-            loginInputDTO.setPassword(password);
-            
-            this.loginController.execute(loginInputDTO);
+            chucNang = "Đăng nhập";
         } else if (cmd.equals(btnRegister.getText())) {
-            this.registerUIController.execute();
+           chucNang = "Đăng ký";
 
         } else if (cmd.equals(btnForgotPassword.getText())) {
-            this.forgotUIController.execute();
+            chucNang = "Quên mật khẩu";
         }
+
+        LoginUIInputDTO loginUIInputDTO = new LoginUIInputDTO();
+        loginUIInputDTO.setChucNang(chucNang);
+        loginUIInputDTO.setUsername(txtUsername.getText());
+        loginUIInputDTO.setPassword(new String(txtPassword.getPassword()));
+
+        this.loginUIController.execute(loginUIInputDTO);
     }
 
     public void showMsgError(LoginViewModel loginViewModel) {
@@ -146,15 +150,7 @@ public class LoginUIView extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(null,
             loginViewModel.msg,
                 loginViewModel.status,
-                JOptionPane.ERROR_MESSAGE);
-    }
-
-    public void setRegisterUIController(RegisterUIController registerUIController) {
-        this.registerUIController = registerUIController;
-    }
-
-    public void setForgotUIController(ForgotUIController forgotUIController) {
-        this.forgotUIController = forgotUIController;
+                JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void wipeInput() {

@@ -5,13 +5,15 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import com.nhom2.businessRules.forgot.ForgotInputDTO;
+import com.nhom2.businessRules.forgot.ForgotUIInputBoundary;
+import com.nhom2.businessRules.forgot.ForgotUIInputDTO;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ForgotUIView extends JFrame implements ActionListener {
-    private ForgotController forgotController;
+    private ForgotUIInputBoundary forgotUIInputBoundary;
     private JLabel lblUsername, lblUsernameErr, lblEmail, lblEmailErr;
     private JTextField txtUsername, txtEmail;
     private JButton btnForgotPassword;
@@ -76,10 +78,12 @@ public class ForgotUIView extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    public void setForgotController(ForgotController forgotController) {
-        this.forgotController = forgotController;
-    }
+    
 
+
+    public void setForgotUIInputBoundary(ForgotUIInputBoundary forgotUIInputBoundary) {
+        this.forgotUIInputBoundary = forgotUIInputBoundary;
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -93,11 +97,12 @@ public class ForgotUIView extends JFrame implements ActionListener {
             String username = txtUsername.getText().trim();
             String email = txtEmail.getText().trim();
 
-            ForgotInputDTO forgotInputDTO = new ForgotInputDTO();
-            forgotInputDTO.setUsername(username);
-            forgotInputDTO.setEmail(email);
+            ForgotUIInputDTO forgotUIInputDTO = new ForgotUIInputDTO();
+            forgotUIInputDTO.setChucNang("Quên mật khẩu");
+            forgotUIInputDTO.setUsername(username);
+            forgotUIInputDTO.setEmail(email);
 
-            this.forgotController.execute(forgotInputDTO);
+            this.forgotUIInputBoundary.execute(forgotUIInputDTO);
         }
     }
 

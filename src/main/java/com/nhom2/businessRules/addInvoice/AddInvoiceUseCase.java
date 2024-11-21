@@ -6,8 +6,9 @@ import java.util.Date;
 import com.nhom2.businessRules.entity.Invoice;
 import com.nhom2.businessRules.entity.InvoiceNuocNgoai;
 import com.nhom2.businessRules.entity.InvoiceVN;
+import com.nhom2.detail.observer.Publisher;
 
-public class AddInvoiceUseCase implements AddInvoiceInputBoundary {
+public class AddInvoiceUseCase extends Publisher implements AddInvoiceInputBoundary {
     private AddInvoiceOutputBoundary addInvoiceOutputBoundary;
     private AddInvoiceDatabaseBoundary addInvoiceDatabaseBoundary;
 
@@ -74,6 +75,8 @@ public class AddInvoiceUseCase implements AddInvoiceInputBoundary {
         outputDTO.setMsg("Đã thêm thành công! (TenKH: " + tenKH + ")");
 
         this.addInvoiceOutputBoundary.present(outputDTO);
+
+        notifySubscribers();
     }
 
     private boolean verify(AddInvoiceInputDTO requestData, AddInvoiceOutputDTO responseError) {

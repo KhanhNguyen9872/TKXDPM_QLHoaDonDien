@@ -8,8 +8,9 @@ import java.util.List;
 import com.nhom2.businessRules.entity.Invoice;
 import com.nhom2.businessRules.entity.InvoiceNuocNgoai;
 import com.nhom2.businessRules.entity.InvoiceVN;
+import com.nhom2.detail.observer.Publisher;
 
-public class FindInvoiceUseCase implements FindInvoiceInputBoundary {
+public class FindInvoiceUseCase extends Publisher implements FindInvoiceInputBoundary {
     private FindInvoiceDatabaseBoundary findInvoiceDatabaseBoundary;
     private FindInvoiceOutputBoundary findInvoiceOutputBoundary;
 
@@ -71,6 +72,8 @@ public class FindInvoiceUseCase implements FindInvoiceInputBoundary {
         }
         
         findInvoiceOutputBoundary.present(listOutputDTO);
+
+        notifySubscribers();
     }
 
     private boolean verify(FindInvoiceInputDTO findInvoiceInputDTO, FindInvoiceOutputDTO responseError) {

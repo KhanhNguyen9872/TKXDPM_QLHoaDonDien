@@ -1,6 +1,8 @@
 package com.nhom2.businessRules.deleteInvoice;
 
-public class DeleteInvoiceUseCase implements DeleteInvoiceInputBoundary {
+import com.nhom2.detail.observer.Publisher;
+
+public class DeleteInvoiceUseCase extends Publisher implements DeleteInvoiceInputBoundary {
     private DeleteInvoiceOutputBoundary deleteInvoiceOutputBoundary;
     private DeleteInvoiceDatabaseBoundary deleteInvoiceDatabaseBoundary;
 
@@ -42,6 +44,8 @@ public class DeleteInvoiceUseCase implements DeleteInvoiceInputBoundary {
         outputDTO.setStatus("error");
         outputDTO.setMsg("Đã xóa thành công! (KH: " + deleteInvoiceInputDTO.getMaKH() + ")");
         deleteInvoiceOutputBoundary.present(outputDTO);
+
+        notifySubscribers();
     }
 
     private boolean verify(DeleteInvoiceInputDTO deleteInvoiceInputDTO, DeleteInvoiceOutputDTO responseError) {
