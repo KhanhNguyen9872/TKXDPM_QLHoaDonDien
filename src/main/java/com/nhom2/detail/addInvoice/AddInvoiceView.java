@@ -31,8 +31,20 @@ public class AddInvoiceView extends JFrame implements ActionListener {
         this.addInvoiceController = addInvoiceController;
     }
 
-    public void mainShow() {
+    public void mainShow(AddInvoiceUIViewModel addInvoiceViewModel) {
         build();
+        cb_DoiTuongKH.removeAll();
+        for (String s : addInvoiceViewModel.list) {
+            cb_DoiTuongKH.addItem(s);
+        }
+        
+        cb_DoiTuongKH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lb_DoiTuongKHErr.setText("");
+            }
+        });
+
         setTitle("Add Invoice Form");
         setSize(600, 400);
         setResizable(false);
@@ -104,7 +116,7 @@ public class AddInvoiceView extends JFrame implements ActionListener {
         });
 
         // Initialize JComboBox as instance variables
-        String[] options = {"", "Sinh hoạt", "Kinh doanh", "Sản xuất"};
+        String[] options = {""};
         cb_DoiTuongKH = new JComboBox<>(options);
         cb_DoiTuongKH.addActionListener(new ActionListener() {
             @Override

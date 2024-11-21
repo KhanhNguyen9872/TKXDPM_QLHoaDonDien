@@ -184,11 +184,11 @@ public class AddInvoiceUseCase extends Publisher implements AddInvoiceInputBound
                     throw new Exception("doiTuongKH,Đối tượng khách hàng không được để trống");
                 }
                 
-                if (doiTuongKH.equals("Sinh hoạt") || doiTuongKH.equals("Kinh doanh") || doiTuongKH.equals("Sản xuất")) {
+                // if (doiTuongKH.equals("Sinh hoạt") || doiTuongKH.equals("Kinh doanh") || doiTuongKH.equals("Sản xuất")) {
 
-                } else {
-                    throw new Exception("doiTuongKH,Đối tượng khách hàng VN phải là (Sinh hoạt | Kinh doanh | Sản xuất)");
-                }
+                // } else {
+                //     throw new Exception("doiTuongKH,Đối tượng khách hàng VN phải là (Sinh hoạt | Kinh doanh | Sản xuất)");
+                // }
 
                 String dinhMucStr = requestData.getDinhMuc();
                 if (dinhMucStr == null || dinhMucStr.isEmpty()) {

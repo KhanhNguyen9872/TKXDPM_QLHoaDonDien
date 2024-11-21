@@ -6,6 +6,7 @@ import java.util.List;
 import com.nhom2.businessRules.addInvoice.AddInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.addInvoice.AddInvoiceInputBoundary;
 import com.nhom2.businessRules.addInvoice.AddInvoiceOutputBoundary;
+import com.nhom2.businessRules.addInvoice.AddInvoiceUIDatabaseBoundary;
 import com.nhom2.businessRules.addInvoice.AddInvoiceUseCase;
 import com.nhom2.businessRules.addInvoice.AddInvoiceUIInputBoundary;
 import com.nhom2.businessRules.addInvoice.AddInvoiceUIUseCase;
@@ -76,6 +77,7 @@ import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceUIInputBoundary;
 import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceUIUseCase;
 import com.nhom2.businessRules.sumKHInvoice.SumKHInvoiceUseCase;
 import com.nhom2.database.mysql.AddInvoiceDAOMySQL;
+import com.nhom2.database.mysql.AddInvoiceUIDAOMySQL;
 import com.nhom2.database.mysql.AvgMoneyInvoiceNuocNgoaiDAOMySQL;
 import com.nhom2.database.mysql.DeleteInvoiceDAOMySQL;
 import com.nhom2.database.mysql.EditInvoiceDAOMySQL;
@@ -88,6 +90,8 @@ import com.nhom2.database.mysql.RegisterDAOMySQL;
 import com.nhom2.database.mysql.SumKHInvoiceDAOMySQL;
 import com.nhom2.detail.addInvoice.AddInvoiceController;
 import com.nhom2.detail.addInvoice.AddInvoicePresenter;
+import com.nhom2.detail.addInvoice.AddInvoiceUIPresenter;
+import com.nhom2.detail.addInvoice.AddInvoiceUIViewModel;
 import com.nhom2.detail.addInvoice.AddInvoiceView;
 import com.nhom2.detail.addInvoice.AddInvoiceViewModel;
 import com.nhom2.detail.avgMoneyInvoiceNuocNgoai.AvgMoneyInvoiceNuocNgoaiController;
@@ -174,7 +178,10 @@ public class QLHoaDonTienDienApp
         addInvoiceView.setAddInvoiceController(addInvoiceController);
 
         // UC show Add Invoice UI
-        AddInvoiceUIInputBoundary addInvoiceUIInputBoundary = new AddInvoiceUIUseCase(addInvoiceView);
+        AddInvoiceUIViewModel addInvoiceUIViewModel = new AddInvoiceUIViewModel();
+        AddInvoiceUIPresenter addInvoiceUIPresenter = new AddInvoiceUIPresenter(addInvoiceView, addInvoiceUIViewModel);
+        AddInvoiceUIDatabaseBoundary addInvoiceUIDatabaseBoundary = new AddInvoiceUIDAOMySQL(ipAddress, port, db, username, password);
+        AddInvoiceUIInputBoundary addInvoiceUIInputBoundary = new AddInvoiceUIUseCase(addInvoiceUIPresenter, addInvoiceUIDatabaseBoundary);
 
         // delete Invoice
         DeleteInvoiceViewModel DeleteInvoiceViewModel = new DeleteInvoiceViewModel();
