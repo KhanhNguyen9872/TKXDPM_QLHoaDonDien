@@ -17,5 +17,5 @@ public class Nhom2Test {
     protected final int port = 3306;
     protected final String db = "invoice";
     protected final String username = "root";
-    protected final String password = "12345678";
+    protected final String password = "khanhnguyen";
 }

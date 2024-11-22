@@ -53,10 +53,14 @@ public class LoginPresenter implements LoginOutputBoundary {
         loginViewModel.msg = loginOutputDTO.getMsg();
 
         // this.loginUIView.showMsgResult(loginViewModel);
-        this.loginUIView.hideGUI();
+        if (this.loginUIView != null) {
+            this.loginUIView.hideGUI();
+        }
 
-        this.quanLyHDTienDienView.setUser(loginOutputDTO.getUsername(), loginOutputDTO.isAdmin());
-        this.quanLyHDTienDienView.showGUI();
+        if (this.quanLyHDTienDienView != null) {
+            this.quanLyHDTienDienView.setUser(loginOutputDTO.getUsername(), loginOutputDTO.isAdmin());
+            this.quanLyHDTienDienView.showGUI();
+        }
     }
 
 }

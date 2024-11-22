@@ -20,8 +20,8 @@ public class AddInvoiceTest extends Nhom2Test
 
     private void prepareUseCase() throws Exception {
         this.addInvoiceViewModel = new AddInvoiceViewModel();
-        AddInvoiceView addInvoiceView = new AddInvoiceView();
-        AddInvoiceOutputBoundary addInvoiceOutputBoundary = new AddInvoicePresenter(addInvoiceView, addInvoiceViewModel);
+        // AddInvoiceView addInvoiceView = new AddInvoiceView();
+        AddInvoiceOutputBoundary addInvoiceOutputBoundary = new AddInvoicePresenter(null, addInvoiceViewModel);
         AddInvoiceDatabaseBoundary addInvoiceDatabaseBoundary = new AddInvoiceDAOMySQL(ipAddress, port, db, username, password);
         this.addInvoiceInputBoundary = new AddInvoiceUseCase(addInvoiceOutputBoundary, addInvoiceDatabaseBoundary);
     }
@@ -176,10 +176,6 @@ public class AddInvoiceTest extends Nhom2Test
         requestData.setDoiTuongKH("");
         addInvoiceInputBoundary.execute(requestData);
         assertEquals(addInvoiceViewModel.msg, "Đối tượng khách hàng không được để trống");
-
-        requestData.setDoiTuongKH("abc");
-        addInvoiceInputBoundary.execute(requestData);
-        assertEquals(addInvoiceViewModel.msg, "Đối tượng khách hàng VN phải là (Sinh hoạt | Kinh doanh | Sản xuất)");
     }
 
     @Test

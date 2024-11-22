@@ -1,3 +1,4 @@
+drop database if exists invoice;
 create database invoice;
 use invoice;
 
@@ -55,3 +56,4 @@ INSERT INTO `account` (`username`, `password`, `email`, `isAdmin`) VALUES
 
 SELECT * FROM invoice;
 SELECT * FROM account;
+select * from doiTuongKH;
