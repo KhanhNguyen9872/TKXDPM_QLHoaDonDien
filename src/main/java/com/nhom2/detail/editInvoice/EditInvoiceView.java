@@ -117,7 +117,7 @@ public class EditInvoiceView extends JFrame implements ActionListener {
         tf_DinhMuc = new JTextField(10);
 
         // Initialize JComboBox as instance variables
-        String[] options = {"", "Sinh hoạt", "Kinh doanh", "Sản xuất"};
+        String[] options = {""};
         cb_DoiTuongKH = new JComboBox<>(options);
         cb_DoiTuongKH.addActionListener(new ActionListener() {
             @Override
@@ -216,7 +216,7 @@ public class EditInvoiceView extends JFrame implements ActionListener {
     //     this.findInvoiceViewModels = findInvoiceViewModels;
     // }
 
-    public void showInvoice(EditInvoiceViewModel editInvoiceViewModel) {
+    public void showInvoice(EditInvoiceViewModel editInvoiceViewModel, EditInvoiceUIViewModel editInvoiceUIViewModel) {
         String maKH = editInvoiceViewModel.maKH;
         String tenKH = editInvoiceViewModel.tenKH;
         String ngayHD = editInvoiceViewModel.ngayHD;
@@ -228,6 +228,20 @@ public class EditInvoiceView extends JFrame implements ActionListener {
 
         build();
 
+        if (editInvoiceUIViewModel != null) {
+            cb_DoiTuongKH.removeAll();
+            for (String s : editInvoiceUIViewModel.list) {
+                cb_DoiTuongKH.addItem(s);
+            }
+            
+            cb_DoiTuongKH.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    lb_DoiTuongKHErr.setText("");
+                }
+            });
+        }
+        
         tf_MaKH.setText(maKH);
         tf_TenKH.setText(tenKH);
 

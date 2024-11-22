@@ -5,13 +5,20 @@ import com.nhom2.businessRules.editInvoice.EditInvoiceUIOutputDTO;
 public class EditInvoiceUIPresenter {
     private EditInvoiceView editInvoiceView;
     private EditInvoiceViewModel editInvoiceViewModel;
+    private EditInvoiceUIViewModel editInvoiceUIViewModel;
 
-    public EditInvoiceUIPresenter(EditInvoiceView editInvoiceView, EditInvoiceViewModel editInvoiceViewModel) {
+    public EditInvoiceUIPresenter(EditInvoiceView editInvoiceView, EditInvoiceViewModel editInvoiceViewModel, EditInvoiceUIViewModel editInvoiceUIViewModel) {
         this.editInvoiceView = editInvoiceView;
         this.editInvoiceViewModel = editInvoiceViewModel;
+        this.editInvoiceUIViewModel = editInvoiceUIViewModel;
     }
 
     public void present(EditInvoiceUIOutputDTO editInvoiceUIOutputDTO) {
+        this.editInvoiceUIViewModel.list.clear();
+        for (String string : editInvoiceUIOutputDTO.getList()) {
+            this.editInvoiceUIViewModel.list.add(string);
+        }
+
         String maKH = editInvoiceUIOutputDTO.getMaKH();
         String tenKH = editInvoiceUIOutputDTO.getTenKH();
         String ngayHD = editInvoiceUIOutputDTO.getNgayHD();
@@ -30,6 +37,6 @@ public class EditInvoiceUIPresenter {
         editInvoiceViewModel.doiTuongKH = doiTuongKH;
         editInvoiceViewModel.dinhMuc = dinhMuc;
 
-        this.editInvoiceView.showInvoice(editInvoiceViewModel);
+        this.editInvoiceView.showInvoice(editInvoiceViewModel, editInvoiceUIViewModel);
     }
 }

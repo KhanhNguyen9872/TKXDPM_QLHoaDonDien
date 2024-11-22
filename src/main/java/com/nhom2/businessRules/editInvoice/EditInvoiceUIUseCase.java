@@ -1,16 +1,22 @@
 package com.nhom2.businessRules.editInvoice;
 
+import java.util.List;
+
 import com.nhom2.detail.editInvoice.EditInvoiceUIPresenter;
 
 public class EditInvoiceUIUseCase implements EditInvoiceUIInputBoundary {
     private EditInvoiceUIPresenter editInvoiceUIPresenter;
+    private EditInvoiceUIDatabaseBoundary editInvoiceUIDatabaseBoundary;
 
-    public EditInvoiceUIUseCase(EditInvoiceUIPresenter editInvoiceUIPresenter) {
+    public EditInvoiceUIUseCase(EditInvoiceUIPresenter editInvoiceUIPresenter, EditInvoiceUIDatabaseBoundary editInvoiceUIDatabaseBoundary) {
         this.editInvoiceUIPresenter = editInvoiceUIPresenter;
+        this.editInvoiceUIDatabaseBoundary = editInvoiceUIDatabaseBoundary;
     } 
 
     @Override
     public void execute(EditInvoiceUIInputDTO editInvoiceUIInputDTO) {
+        List<String> list = this.editInvoiceUIDatabaseBoundary.getAllTypes();
+
         String maKH = editInvoiceUIInputDTO.getMaKH();
         String tenKH = editInvoiceUIInputDTO.getTenKH();
         String ngayHD = editInvoiceUIInputDTO.getNgayHD();
@@ -29,6 +35,7 @@ public class EditInvoiceUIUseCase implements EditInvoiceUIInputBoundary {
         editInvoiceUIOutputDTO.setQuocTich(quocTich);
         editInvoiceUIOutputDTO.setDoiTuongKH(doiTuongKH);
         editInvoiceUIOutputDTO.setDinhMuc(dinhMuc);
+        editInvoiceUIOutputDTO.setList(list);
 
         this.editInvoiceUIPresenter.present(editInvoiceUIOutputDTO);
     }

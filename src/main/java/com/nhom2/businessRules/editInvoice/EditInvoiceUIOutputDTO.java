@@ -1,6 +1,9 @@
 package com.nhom2.businessRules.editInvoice;
 
+import java.util.List;
+
 public class EditInvoiceUIOutputDTO {
+    private List<String> list;
     private String maKH;
     private String tenKH;
     private String ngayHD;
@@ -14,6 +17,8 @@ public class EditInvoiceUIOutputDTO {
     public EditInvoiceUIOutputDTO() {
 
     }
+
+    
 
     public String getMaKH() {
         return maKH;
@@ -85,5 +90,17 @@ public class EditInvoiceUIOutputDTO {
 
     public void setThanhTien(String thanhTien) {
         this.thanhTien = thanhTien;
+    }
+
+
+
+    public List<String> getList() {
+        return list;
+    }
+
+
+
+    public void setList(List<String> list) {
+        this.list = list;
     }
 }

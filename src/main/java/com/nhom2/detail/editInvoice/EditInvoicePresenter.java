@@ -103,7 +103,7 @@ public class EditInvoicePresenter implements EditInvoiceOutputBoundary {
         editInvoiceViewModel.dinhMuc = editInvoiceOutputDTO.getDinhMuc();
         
         if (this.editInvoiceView != null) {
-            this.editInvoiceView.showInvoice(this.editInvoiceViewModel);
+            this.editInvoiceView.showInvoice(this.editInvoiceViewModel, null);
         }
     }
 }

@@ -25,6 +25,7 @@ import com.nhom2.businessRules.deleteInvoice.DeleteInvoiceUseCase;
 import com.nhom2.businessRules.editInvoice.EditInvoiceDatabaseBoundary;
 import com.nhom2.businessRules.editInvoice.EditInvoiceInputBoundary;
 import com.nhom2.businessRules.editInvoice.EditInvoiceOutputBoundary;
+import com.nhom2.businessRules.editInvoice.EditInvoiceUIDatabaseBoundary;
 import com.nhom2.businessRules.editInvoice.EditInvoiceUIInputBoundary;
 import com.nhom2.businessRules.editInvoice.EditInvoiceUIUseCase;
 import com.nhom2.businessRules.editInvoice.EditInvoiceUseCase;
@@ -81,6 +82,7 @@ import com.nhom2.database.mysql.AddInvoiceUIDAOMySQL;
 import com.nhom2.database.mysql.AvgMoneyInvoiceNuocNgoaiDAOMySQL;
 import com.nhom2.database.mysql.DeleteInvoiceDAOMySQL;
 import com.nhom2.database.mysql.EditInvoiceDAOMySQL;
+import com.nhom2.database.mysql.EditInvoiceUIDAOMySQL;
 import com.nhom2.database.mysql.ExportInvoiceByMonthDAOMySQL;
 import com.nhom2.database.mysql.FindInvoiceDAOMySQL;
 import com.nhom2.database.mysql.ForgotDAOMySQL;
@@ -109,6 +111,7 @@ import com.nhom2.detail.deleteInvoice.DeleteInvoiceViewModel;
 import com.nhom2.detail.editInvoice.EditInvoiceController;
 import com.nhom2.detail.editInvoice.EditInvoicePresenter;
 import com.nhom2.detail.editInvoice.EditInvoiceUIPresenter;
+import com.nhom2.detail.editInvoice.EditInvoiceUIViewModel;
 import com.nhom2.detail.editInvoice.EditInvoiceView;
 import com.nhom2.detail.editInvoice.EditInvoiceViewModel;
 import com.nhom2.detail.exportInvoiceByMonth.ExportInvoiceByMonthController;
@@ -220,8 +223,10 @@ public class QLHoaDonTienDienApp
         editInvoiceView.setEditInvoiceController(editInvoiceController);
 
         // UC show Edit Invoice UI
-        EditInvoiceUIPresenter editInvoiceUIPresenter = new EditInvoiceUIPresenter(editInvoiceView, editInvoiceViewModel);
-        EditInvoiceUIInputBoundary editInvoiceUIInputBoundary = new EditInvoiceUIUseCase(editInvoiceUIPresenter);
+        EditInvoiceUIViewModel editInvoiceUIViewModel = new EditInvoiceUIViewModel();
+        EditInvoiceUIDatabaseBoundary editInvoiceUIDatabaseBoundary = new EditInvoiceUIDAOMySQL(ipAddress, port, db, username, password);
+        EditInvoiceUIPresenter editInvoiceUIPresenter = new EditInvoiceUIPresenter(editInvoiceView, editInvoiceViewModel, editInvoiceUIViewModel);
+        EditInvoiceUIInputBoundary editInvoiceUIInputBoundary = new EditInvoiceUIUseCase(editInvoiceUIPresenter, editInvoiceUIDatabaseBoundary);
 
         // get list Invoice
         List<GetListInvoiceViewModel> listGetListInvoiceViewModel = new ArrayList<>();
