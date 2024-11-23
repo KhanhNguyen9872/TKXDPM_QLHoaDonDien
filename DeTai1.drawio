@@ -4646,7 +4646,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="hVHPOED9rRtyUysImpwX" name="Mức thiết kế">
-    <mxGraphModel dx="8597" dy="10003" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="8294" dy="9805" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -12650,7 +12650,7 @@
             <mxPoint x="-5586" y="3297.75" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="G7G2rebyvtVesIQaem-H-325" value="1. execute()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="G7G2rebyvtVesIQaem-H-324" vertex="1" connectable="0">
+        <mxCell id="G7G2rebyvtVesIQaem-H-325" value="1. execute(id)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="G7G2rebyvtVesIQaem-H-324" vertex="1" connectable="0">
           <mxGeometry x="-0.0548" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -12661,7 +12661,7 @@
             <mxPoint x="-5376" y="3317.75" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="G7G2rebyvtVesIQaem-H-327" value="2. execute()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="G7G2rebyvtVesIQaem-H-326" vertex="1" connectable="0">
+        <mxCell id="G7G2rebyvtVesIQaem-H-327" value="2. execute(id)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="G7G2rebyvtVesIQaem-H-326" vertex="1" connectable="0">
           <mxGeometry x="-0.0548" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -12690,7 +12690,7 @@
             <mxPoint x="-5166" y="3359.005" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="G7G2rebyvtVesIQaem-H-340" value="3. presenter(List&amp;lt;String&amp;gt;)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="G7G2rebyvtVesIQaem-H-339" vertex="1" connectable="0">
+        <mxCell id="G7G2rebyvtVesIQaem-H-340" value="3. presenter(id)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="G7G2rebyvtVesIQaem-H-339" vertex="1" connectable="0">
           <mxGeometry x="0.1267" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -12730,7 +12730,7 @@
             <mxPoint x="-5824" y="3465.75" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="G7G2rebyvtVesIQaem-H-349" value="5. Hiển thị giao diện thêm hóa đơn" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="G7G2rebyvtVesIQaem-H-348" vertex="1" connectable="0">
+        <mxCell id="G7G2rebyvtVesIQaem-H-349" value="5. Hiển thị giao diện xóa hóa đơn" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="G7G2rebyvtVesIQaem-H-348" vertex="1" connectable="0">
           <mxGeometry x="0.082" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -13227,7 +13227,7 @@
             <mxPoint x="-5705.7" y="4702.500000000001" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="G7G2rebyvtVesIQaem-H-478" value="7. Hiển thị giao diện thêm hóa đơn" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="G7G2rebyvtVesIQaem-H-477" vertex="1" connectable="0">
+        <mxCell id="G7G2rebyvtVesIQaem-H-478" value="7. Hiển thị giao diện sửa hóa đơn" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="G7G2rebyvtVesIQaem-H-477" vertex="1" connectable="0">
           <mxGeometry x="0.082" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
